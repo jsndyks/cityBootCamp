@@ -21,11 +21,11 @@ function preload() {
   //}
 
   man1 = loadImage("data/man0.png");
-  man2 = loadImage("data/man1.png"); 
-  man3 = loadImage("data/man2.png"); 
-  man4 = loadImage("data/man3.png"); 
-  man5 = loadImage("data/man4.png"); 
-  man6 = loadImage("data/man5.png"); 
+  man2 = loadImage("data/man1.png");
+  man3 = loadImage("data/man2.png");
+  man4 = loadImage("data/man3.png");
+  man5 = loadImage("data/man4.png");
+  man6 = loadImage("data/man5.png");
   man7 = loadImage("data/man6.png");
   man8 = loadImage("data/man7.png");
   sprite = new Array(man1, man2, man3, man4, man5, man6, man7, man8);
@@ -91,13 +91,13 @@ function run() {
 
 function jump() {
   if (isJumping) {
-    playerY--;
-    playerY--;
+    playerY--4;
+    playerY--4;
     if (playerY == 2) {
       isJumping = false;
     }
   } else if (playerY !=160) {
-    playerY++;
+    playerY++4;
   }
 }
 
@@ -106,7 +106,7 @@ function collisionDetection() {
   //println("Player y: " + (playerY+180));
   //println("logX: " + (logX-frameCount%(width+100)));
   if (logX-frameCount%(width+100) <= playerX + 100 &&
-    logX-frameCount%(width+100) > playerX && 
+    logX-frameCount%(width+100) > playerX &&
     logY < playerY+180) {
     text("Sorry, you didn't make it.", width/2, height/2);
     noLoop();
