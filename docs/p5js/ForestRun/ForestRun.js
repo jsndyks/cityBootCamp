@@ -91,13 +91,13 @@ function run() {
 
 function jump() {
   if (isJumping) {
-    playerY--4;
-    playerY--4;
+    playerY--8;
+    playerY--8;
     if (playerY == 2) {
       isJumping = false;
     }
   } else if (playerY !=160) {
-    playerY++4;
+    playerY++8;
   }
 }
 
