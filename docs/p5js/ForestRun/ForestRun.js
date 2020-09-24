@@ -88,12 +88,12 @@ function run() {
 
 function jump() {
   if (isJumping) {
-    playerY-- ;
+    playerY--  ;
     if (playerY <= 2) {
       isJumping = false;
     }
   } else if (playerY !=160) {
-    playerY++ ;
+    playerY++  ;
   }
 }
 
@@ -108,4 +108,3 @@ function collisionDetection() {
     noLoop();
   }
 }
- 
