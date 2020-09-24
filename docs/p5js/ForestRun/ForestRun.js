@@ -10,26 +10,23 @@ var obstacleCount;
 var logX, logY;
 var isJumping = false;
 
-//var man1, man2, man3, man4, man5, man6, man6, man8;
-
 function preload() {
   //load images
-  bg = loadImage("data/forest.jpg");
-  logImg = loadImage("data/log.png");
-  //for (var i = 0; i < 8; i=i+1) {
-  //  sprite[i] = loadImage("data/man" + i + ".png");
-  //}
+  bg = loadImage("https://jsndyks.github.io/cityBootCamp/p5js/ForestRun/data/forest.jpg");
+  logImg = loadImage("https://jsndyks.github.io/cityBootCamp/p5js/ForestRun/data/log.png");
 
-  man1 = loadImage("data/man0.png");
-  man2 = loadImage("data/man1.png");
-  man3 = loadImage("data/man2.png");
-  man4 = loadImage("data/man3.png");
-  man5 = loadImage("data/man4.png");
-  man6 = loadImage("data/man5.png");
-  man7 = loadImage("data/man6.png");
-  man8 = loadImage("data/man7.png");
+  man1 = loadImage("https://jsndyks.github.io/cityBootCamp/p5js/ForestRun/data/man0.png");
+  man2 = loadImage("https://jsndyks.github.io/cityBootCamp/p5js/ForestRun/data/man1.png");
+  man3 = loadImage("https://jsndyks.github.io/cityBootCamp/p5js/ForestRun/data/man2.png");
+  man4 = loadImage("https://jsndyks.github.io/cityBootCamp/p5js/ForestRun/data/man3.png");
+  man5 = loadImage("https://jsndyks.github.io/cityBootCamp/p5js/ForestRun/data/man4.png");
+  man6 = loadImage("https://jsndyks.github.io/cityBootCamp/p5js/ForestRun/data/man5.png");
+  man7 = loadImage("https://jsndyks.github.io/cityBootCamp/p5js/ForestRun/data/man6.png");
+  man8 = loadImage("https://jsndyks.github.io/cityBootCamp/p5js/ForestRun/data/man7.png");
   sprite = new Array(man1, man2, man3, man4, man5, man6, man7, man8);
 }
+
+
 
 function setup() {
   createCanvas(500, 389);
@@ -91,13 +88,12 @@ function run() {
 
 function jump() {
   if (isJumping) {
-    playerY-=8;
-    playerY-=8;
-    if (playerY == 2) {
+    playerY-- ;
+    if (playerY <= 2) {
       isJumping = false;
     }
   } else if (playerY !=160) {
-    playerY+=8;
+    playerY++ ;
   }
 }
 
@@ -112,3 +108,4 @@ function collisionDetection() {
     noLoop();
   }
 }
+ 
