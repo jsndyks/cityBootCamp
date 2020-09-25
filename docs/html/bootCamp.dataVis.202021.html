@@ -708,7 +708,7 @@ void draw()
 
 				 <div class="unit-30" id="annotation">   <!-- Right column -->
 
-				 <script>loadImage('https://www.staff.city.ac.uk/~jwo/bootcamp2016/lecture10/images/tempBars1.png',400,200, 'Daily temperatures');</script>
+				 <script>loadImage('https://jsndyks.github.io/cityBootCamp/images/tempBars1.png',400,200, 'Daily temperatures');</script>
 				 <p>Daily temperatures shown as rectangles sized according to numeric temperature values</p>
 
 
@@ -843,7 +843,7 @@ void draw()
 
 				 <div class="unit-30" id="annotation">   <!-- Right column -->
 
-				  <script>loadImage('https://staff.city.ac.uk/~jwo/bootcamp2016/lecture10/images/tempBars2.png',400,200, 'Daily temperatures');</script>
+				  <script>loadImage('https://jsndyks.github.io/cityBootCamp/images/tempBars2.png',400,200, 'Daily temperatures');</script>
 				 <p>Daily temperatures rescaled with the map() command</p>
 
 
@@ -866,16 +866,23 @@ void draw()
     <div class="units-row">
       <div class="unit-70">   <!-- Left column -->
         <p>
-					Let's bring together the reading of text files (<code>loadStrings()</code>) with the parsing of lines of text into tokens (<code>split()</code>) containing numbers (<code>float()</code>) with an example.
+					Let's bring together the three things we have been focussing on :</p>
+          <ul>
+            <li>reading of text files - <code>loadStrings()</code></li>
+            <li>parsing of lines of text into tokens - <code>split()</code></li>
+            <li>converting text strings into numbers - <code>float()</code></li>
+            </ul>
+          <p>We can do so with a data visualization example.<br/>
           Our example attempts to visualize data from the <a href="https://tfl.gov.uk/modes/cycling/santander-cycles" target="_blank">London Cycle Hire Scheme</a>.
 
 				</p><p>
 					Transport for London release some very large datasets that include the <a href="http://cycling.data.tfl.gov.uk/" target="_blank">times and places of all journeys
-					made using the bikes</a>. But for now we are going to use a simpler dataset that records how many bikes
+					made using the bikes</a>. This could be great source of data and ideas for your <code><b>#BootCamp</b></code> project.
+            But for now we are going to use a simpler dataset that records how many bikes
 					are docked at a series of docking stations at various points in time.
           The first few rows and columns of this table of data look like this:
         </p>
-					<img src="https://staff.city.ac.uk/~jwo/bootcamp2016/lecture10/images/formattedStationStatus.png" width="1530" height="427">
+					<img src="https://jsndyks.github.io/cityBootCamp/images/formattedStationStatus.png" width="1530" height="427">
 
 				<p>
 					Each row (apart from the first 'header' row) contains data about a particular bicycle docking station. It
@@ -886,7 +893,7 @@ void draw()
 				</p>
 
 				<p>
-					The full table can be downloaded as <a href="https://staff.city.ac.uk/~jwo/bootcamp2016/lecture10/data/bikeShare.txt" target="_blank">bikeShare.txt</a>
+					The full table can be downloaded as <a href="https://jsndyks.github.io/cityBootCamp/data/bikeShare.txt" target="_blank">bikeShare.txt</a>
 					(right-click to download).
           Each bike station has its own line in the file and each value in every row is separated
 					with a comma. This makes it an ideal format for reading with <code>loadStrings()</code> and parsing with
@@ -896,11 +903,11 @@ void draw()
 
 					</div>
           <div class="unit-30" id="annotation">   <!-- Right column -->
-            <a href="https://staff.city.ac.uk/~jad7/bootCamp/img/bikeStation.noBikes.jpg"><img src="https://staff.city.ac.uk/~jad7/bootCamp/img/bikeStation.noBikes.jpg" width=300/></a>
+            <a href="https://jsndyks.github.io/cityBootCamp/images/bikeStation.noBikes.jpg"><img src="https://jsndyks.github.io/cityBootCamp/images/bikeStation.noBikes.jpg" width=300/></a>
             <p>No bikes!</p>
-            <a href="https://staff.city.ac.uk/~jad7/bootCamp/img/bikeStation.oneBike.jpg"><img src="https://staff.city.ac.uk/~jad7/bootCamp/img/bikeStation.oneBike.jpg" width=300/></a>
+            <a href="https://jsndyks.github.io/cityBootCamp/images/bikeStation.oneBike.jpg"><img src="https://jsndyks.github.io/cityBootCamp/images/bikeStation.oneBike.jpg" width=300/></a>
             <p>One bike</p>
-            <a href="https://staff.city.ac.uk/~jad7/bootCamp/img/bikeStation.manyBikes.jpg"><img src="https://staff.city.ac.uk/~jad7/bootCamp/img/bikeStation.manyBikes.jpg" width=300/></a>
+            <a href="https://jsndyks.github.io/cityBootCamp/images/bikeStation.manyBikes.jpg"><img src="https://jsndyks.github.io/cityBootCamp/images/bikeStation.manyBikes.jpg" width=300/></a>
             <p>Plenty of bikes!</p>
           </div>
         </div>
@@ -973,7 +980,7 @@ void draw()
 
 				 <div class="unit-30" id="annotation">   <!-- Right column -->
 
-					 <script>loadImage('https://staff.city.ac.uk/~jwo/bootcamp2016/lecture10/images/stations25.png',600,405, 'Bike station status');</script>
+					 <script>loadImage('https://jsndyks.github.io/cityBootCamp/images/stations25.png',600,405, 'Bike station status');</script>
 				 <p>Output from bikeshare sketch <i>(click to enlarge)</i></p>
 
 				 </div>	<!-- end of right column -->
@@ -1103,7 +1110,7 @@ void draw()
 
 				 <div class="unit-30" id="annotation">   <!-- Right column -->
 
-				 <script>loadImage('https://staff.city.ac.uk/~jwo/bootcamp2016/lecture10/images/bikeshareMap.png',600,405, 'Bikeshare map');</script>
+				 <script>loadImage('https://jsndyks.github.io/cityBootCamp/images/bikeshareMap.png',600,405, 'Bikeshare map');</script>
 				 <p>Output from the bikeshare map sketch</p>
        </div>	<!-- end of right column -->
       </div>  <!-- End of row -->
