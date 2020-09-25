@@ -391,10 +391,10 @@ void draw()
 				<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 
+        <h4>An interactive example</h4>
 					<div class="units-row">
         <div class="unit-70">   <!-- Left column -->
 
-					<h4>An interactive example</h4>
           <p>
 						Instead of a simple list of names, we can use the same approach to read in a larger text file. For example,
 						<a href="http://www.gutenberg.org" target="_blank">Project Guttenberg</a> provides a repository for free
@@ -408,7 +408,12 @@ void draw()
 					</p>
           <!--- http://staff.city.ac.uk/~jwo/bootcamp2016/lecture10/pde/gulliver/data/gulliversTravels.txt --->
 
-					</div></div>
+					</div>
+          <div class="unit-30" id="annotation">   <!-- Right column -->
+  <img src="https://www.gutenberg.org/cache/epub/35/pg35.cover.medium.jpg" width="140" height="210" style="border:1px #d0d0d0 solid">
+
+          </div>
+        </div>
           <p>&nbsp;</p>
           <div class="units-row"><div class="unit-70">   <!-- Row break ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 					<pre class="brush: processing; gutter: false; toolbar: false;">            String[] textLines;  // Lines of text from file.
@@ -477,7 +482,7 @@ void draw()
         <div class="unit-70">
       <div class="codeTask">
         <p>Open a new <em>Processing Sketch</em>, download <a href="https://jsndyks.github.io/cityBootCamp/data/theTimeMachine.txt">the text file containing the book</a>, and drag it into the sketch.</p>
-        <p>Now copy the code from the example above into your <em>Processing Sketch</em> and try out the interactions.</p>
+        <p>Now copy the code from the example above into your <em>Processing Sketch</em> and try out the interactions <specified></specified> in <code>keyPressed()</code>.</p>
         <p>What do the <code>&amp;&amp; (lineToDisplay &gt; 0)</code> and <code>&amp;&amp; (lineToDisplay &lt; textLines.length-1)</code>
         tests do?<br/>
         Why are they necessary?</p>
@@ -490,7 +495,7 @@ void draw()
       </div>
     </div>	<!-- end of right column -->
     <div class="unit-30" id="annotation">
-      <p>Well done - you have just created a rudimentary digital book reader.<br/>
+      <p style="padding-top:8em">Well done - you have just created a rudimentary digital book reader.<br/>
         It should work for any book stored as a text file.<br/>
         As long as the title is on line 10!</p>
     </div>  <!-- End of left column -->
@@ -498,7 +503,7 @@ void draw()
 
 				<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-
+<hr>
 
 					<div class="units-row">
         <div class="unit-70">   <!-- Left column -->
@@ -511,7 +516,7 @@ void draw()
             <p>
             For example, each line may be a <em>record</em> about a thing that we are interested in, such as a day of the week.
             It may contain multiple pieces of information about the thing, such as your  maximum heart rate as recorded by an activity tracker.
-            Here is an example text file that might be the basis of the <em>Year of NikeFuel</em> data visualization we saw above - <a href="https://staff.city.ac.uk/~jad7/bootCamp/hourlyBPM.txt" target="_blank">hourlyBPM.txt</a>. Each row is a day. Each line contains the name of the day and then 24 numbers that show maximum heart rate for each hour of the day:
+            Here is an example text file that might be the basis of the <em>Year of NikeFuel</em> data visualization we saw above - <a href="https://jsndyks.github.io/cityBootCamp/data/hourlyBPM.txt" target="_blank">hourlyBPM.txt</a>. Each row is a day. Each line contains the name of the day and then 24 numbers that show maximum heart rate for each hour of the day:
           </p>
           <!--p>&nbsp;</p-->
           <pre>Monday,54,52,52,54,55,54,120,77,135,72,62,62,75,82,58,62,66,75,121,66,82,120,66,54
@@ -525,7 +530,7 @@ Sunday,55,51,49,62,65,62,127,75,77,140,85,89,105,77,61,66,74,71,73,121,86,114,70
 						We have seen that the <code>loadStrings()</code> method is very useful when you wish to read in lines of text into an array, line by line.
             But sometimes we may wish to go further than this and extract the individual elements <i>within</i>
 						each line.
-            For example, the words that make up a sentence or the numbers in the kinds of comma separated lists of numbers shown above.
+            For example, the words that make up a sentence or the numbers in the kinds of comma separated lists of numbers (or rows of numbers) shown above.
             These elements are often referred to as <i>tokens</i> and the process of extracting them as <i>parsing</i>.
 					</p>
 
@@ -535,6 +540,8 @@ Sunday,55,51,49,62,65,62,127,75,77,140,85,89,105,77,61,66,74,71,73,121,86,114,70
 						smaller strings, using the separator character to divide the text.
 					</p>
 
+          <p>Read that sentence one more time!</p>
+
           <p>Let's say that again and take it slowly ...<br/>
             If a <i>String</i> (such as one that you load from a line of a text file) contains a series of characters that are separated by a <i>separator</i> (such as a comma), then <a href="http://processing.org/reference/split_.html" target="_blank">split()</a> will convert the <i>String</i> into an array containing each of the parts of the <i>String</i> that are separated by the <i>separator</i>.
           </p>
@@ -542,7 +549,7 @@ Sunday,55,51,49,62,65,62,127,75,77,140,85,89,105,77,61,66,74,71,73,121,86,114,70
           <div class="codeTask">
             <p>Let's try a simple example.<br/>
               Load the following code into a new sketch and check the console to see the output from <code>println()</code>.</p>
-              <p>Use the suggestions in the <i>IDEA</i> comments to experiment.</p>
+              <p>Use the suggestions in the two <code>IDEA</code> comments to experiment and make sure you understand.</p>
           </div>
           <pre class="brush: processing; gutter: false; toolbar: false; highlight:[15];">// -- create a String:
 String someText = "BootCamp is a fantastic experience";
@@ -551,7 +558,7 @@ String someText = "BootCamp is a fantastic experience";
 // -- Create an array containing the Strings that are the result of
 // --   splitting the original String:
 String [] splitText = split(someText,' ');
-// -- IDEA - try changing the separator to 'a' or 'e' ...
+// -- IDEA - try changing the separator to 'a' or 'e' or somethign else ...
 
 // -- Loop through each String in the array and print it to the console
 // --   along with number of the array element:
@@ -560,7 +567,7 @@ for (int i=0; i&lt;splitText.length; i++) {
 }</pre>
 
 					<p>
-            Now we can read lines of text from a file and split them up into arrays we can use the contents of files to inform our sketches.</p>
+            Now we can read lines of text from a file and split each line up into arrays we can use the contents of files to inform our sketches. So we have an array or lines, and an array of <i>tokens</i> for each line that splits the line contents according to a particular <i>separator</i>.</p>
           <p>Let's think about unstructured text first.
 						As an example, suppose we wished to display each of the words of a sentence in different colours:
 					</p>
@@ -596,7 +603,7 @@ for (int i=0; i&lt;splitText.length; i++) {
 						Here, the <i>separator</i> is the " " (i.e. a space), which is what we normally use to separate
 						words from one another in a sentence. The returned result after calling the method is an array of <code>String</code>s,
 						which in this example we have named as the array variable <code>tokens</code>. We then use a 'for-each' loop to iterate through
-						that array, displaying each word in turn in a different random colour.
+						that array, displaying each word in turn in a different random colour at a different vertical position.
 					</p>
 
 					<div class="codeTask">
@@ -604,7 +611,7 @@ for (int i=0; i&lt;splitText.length; i++) {
               See whether you can explain the code to your neighbour.</p>
 						<p>Why is the <code>noLoop()</code> command used in the example?</p>
             <p>Can you predict what would happen if you removed it?<br/>
-            Have a think, and then see whether you were correct.</p>
+            Have a think, and then give it a try to see whether you were correct.</p>
 					</div>
           <p>Let's try a few more things out with the same sketch ...</p>
           <div class="codeTask">
@@ -652,7 +659,7 @@ for (int i=0; i&lt;splitText.length; i++) {
 
 					<h4>Extracting numeric values</h4>
           <p>
-						The same principle can be used to extract numeric values from a line of structured text.
+						The same principle can be used to extract numeric values from a line of structured text, like the ones we saw in the heart rate data above.
             As we have seen, numbers
 						in a text file might be separated by commas rather than spaces, so it becomes a simple matter of passing a comma <code>","</code>
 						rather than a space <code>" "</code> to the <code>split()</code> method.
@@ -701,7 +708,7 @@ void draw()
 
 				 <div class="unit-30" id="annotation">   <!-- Right column -->
 
-				 <script>loadImage('https://staff.city.ac.uk/~jwo/bootcamp2016/lecture10/images/tempBars1.png',400,200, 'Daily temperatures');</script>
+				 <script>loadImage('https://www.staff.city.ac.uk/~jwo/bootcamp2016/lecture10/images/tempBars1.png',400,200, 'Daily temperatures');</script>
 				 <p>Daily temperatures shown as rectangles sized according to numeric temperature values</p>
 
 
@@ -762,7 +769,7 @@ void draw()
 						<code>map()</code> requires 5 parameters to be specified. The first is the number we wish to rescale. In the example above it
 						is the value held in the <code>temperature</code> variable. The next pair of parameters are the minimum
 						and maximum data values we can expect our data value to fall between.
-            This is the <i>range</i> that we <i>map <b>from</b></i> or the <i>source</i> range..
+            This is the <i>range</i> that we <i>map <b>from</b></i> or the <i>source</i> range.
             With UK temperatures, we will work
 						on the assumption that our temperature range is between 0 and 30 degrees Celsius.
             The final pair of numbers
@@ -822,7 +829,7 @@ void draw()
             <b>Heart Rate Data:</b>
 
             <p>
-            Can you create something that looks like the <em>NikeFuel</em> example with the heart rate data in <a href="https://staff.city.ac.uk/~jad7/bootCamp/hourlyBPM.txt" target="_blank">hourlyBPM.txt</a>?</p>
+            Can you create something that looks like the <em>NikeFuel</em> example with the heart rate data in <a href="https://jsndyks.github.io/cityBootCamp/data/hourlyBPM.txt" target="_blank">hourlyBPM.txt</a>?</p>
             <p>
               Use <code>rect()</code> to create bars, or explore
             <code><a href="https://processing.org/reference/beginShape_.html" target="_blank">beginShape()</a></code>, <code>endShape()</code> and <code>vertex()</code> for shapes that show hourly rates in a continuous curve.<br/>
@@ -849,6 +856,7 @@ void draw()
         <div class="unit-70">   <!-- Left column -->
 				<p></p>
 
+<hr>
 
 				<h3>4. Example: Showing Bikeshare data</h3>
 
