@@ -52,7 +52,7 @@
 
       <div class="intro">
 
-        <p><strong>If you read through these lecture notes, attempt the tasks and exercises and use the resources that we have made available, then by the end of this session you should be able to:</strong>
+        <p><strong>If you read through these lecture notes, attempt the tasks and exercises and use the resources that we have made available, then by the end of this session you should be able to:</strong></p>
 
 			<ul>
 				<li>Drag and drop data files into your Processing code window;</li>
@@ -85,7 +85,8 @@
           <h3>0. Before we start</h3>
           <p>Before we get going, you'll need some data and to know a key method - <code>loadStrings()</code>.
           <br/>
-        So be sure to complete these two tasks first of all. They will ensure thsat you know how to use <code>loadStrings()</code>.</p>
+        So be sure to complete these two tasks first of all.<br/>
+        They will ensure that you know how to use <code>loadStrings()</code>.</p>
 
       <div class="codeTask">
         <p><b>loadStrings() Example:</b></p>
@@ -104,42 +105,68 @@
         Try the following two-line sketch.
         It will load the file and print one of the array elements that has been loaded into the <code>lines</code> array.
       </p>
-        <pre class="brush: processing; gutter: false; toolbar: false;">          String[] lines = loadStrings("namesData.txt");  // read a text file into an array with loadStrings()
-          println(lines[0]);    // print the first String in the array to the console</pre>
-          <p>&nbsp;</p>
+        <pre class="brush: processing; gutter: false; toolbar: false;">
+          // Read a text file into an array names 'lines' with loadStrings()
+          String[] lines = loadStrings("namesData.txt");
+
+          // Print the first String in the array to the console
+          println(lines[0]);
+
+          // Print the second String in the array to the console
+          println(lines[1]);    </pre>
       </div>
-<p>So far, so good - you have data and are reading it into a sketch that responds to the data.</p>
-<div class="challenge">
-  If you know how to edit a text file, then make some changes to the names, save the file and re-run the sketch, just to prove to yourself that the sketch is reading from a file on your computer.
-</div>
-
-<p>Let's edit the sketch a little, to process and display the data in different ways.</p>
-
-</div>
-</div>
-
-<div class="units-row">
-<div class="unit-70">   <!-- Left column -->
-    <div class="codeTask">
-      <p>Can you extend the sketch to ...</p>
-      <ol>
-        <li>Print each line of the data file from top to bottom?</li>
-        <li>From bottom to top?</li>
-        <li>Use <code>text()</code> the put each line on the canvas?
-        <br/>&nbsp;&nbsp;&nbsp;&nbsp;(<i>You'll need to increase the y position ot the text each time the loop is executed</i>)</li>
-      </ol>
+      <div class="challenge">
+        If you know how to edit a text file, then make some changes to the names, save the file and re-run the sketch, just to prove to yourself that the sketch is reading from a file on your computer.
       </div>
-      <p>Everything else that we do in this session will build upon this basic idea, that you should now have got the hang of. We will load data from a file somewhere on our computers, and then process this data to effect what we display in our sketches. That's (a good part of ) <b>data visualization</b>.</p>
 
-    </div>
-    <div class="unit-30" id="annotation">   <!-- Right column -->
-      <p style="padding-top:3em">Here's a sketch that we will use in the lecture:</p>
-      <ul>
-        <li>sketch - <a href="https://staff.city.ac.uk/~jad7/bootCamp/sketch/namesData.zip">namesData.zip</a></li>
-      </ul>
-      <p>Download, unzip, open, edit!</p>
+
     </div>
   </div>
+
+<div class="units-row" style="padding-top:3em">
+  <div class="unit-70">   <!-- Left column -->
+  <p>So far, so good - you have data and are reading it into a sketch that responds to the data.</p>
+  <p>Let's build this sketch a little, to process and display the data in different ways.</p>
+  <p>Download the code provided to the right as the basis of your sketch.</p>
+
+  </div>
+  <div class="unit-30" id="annotation">   <!-- Right column -->
+      <p>Here's a skeleton sketch that we will use in the lecture:</p>
+      <ul>
+        <li>skeleton sketch - <a href="https://staff.city.ac.uk/~jad7/bootCamp/sketch/namesData.zip">namesData.zip</a></li>
+      </ul>
+      <p>Download, unzip, open, edit!</p>
+  </div>
+  </div>
+
+  <div class="units-row">
+    <div class="unit-70">   <!-- Left column -->
+  <div class="codeTask">
+    <p>Now you need to extend the skeleton sketch that reads data to ...</p>
+    <ol>
+      <li>Print each line of the data file from top to bottom;</li>
+      <li>From bottom to top;</li>
+      <li>Use <code>text()</code> the put each line of text on the canvas;
+      <br/>&nbsp;&nbsp;&nbsp;&nbsp;(<i>You'll need to increase the <b>y position</b> of the text each time the loop is executed</i>)</li>
+    </ol>
+    </div>
+    <p>Everything else that we do in this session will build upon this basic idea, that you should now have got the hang of.</p>
+    <ol>
+      <li>load text from a file into an array of strings</li>
+      <li>access line of text from element of array</li>
+      <li>use line of text in sketch</li>
+    </ol>
+    <p>We will subsequently learn to ...</p>
+    <ol start="4">
+      <li>split the lines into separate text strings</li>
+      <li>convert these strings into numbers</li>
+      <li>transform these numbers into positions on the canvas</li>
+    </ol>
+    <p>This will enable us to load data from a file somewhere on our computers, and then process this data to effect what we display in our sketches.<br/>That's (a good part of) <b>data visualization</b>.</p>
+</div>
+</div>
+
+<hr>
 
       <div class="units-row">
         <div class="unit-70">   <!-- Left column -->
@@ -147,7 +174,7 @@
 
           <p>
 						So far, most of the sketches you have built have involved creating some form of visual representation
-						that you as a programmer have controlled (e.g. by putting numbers into your program code or asking Processing
+						that you as a programmer have controlled (e.g. by putting numbers into your program code or asking <i>Processing</i>
 						to generate random numbers for you), or you as a user have influenced (e.g. by moving the mouse or pressing
 						keys).
 					</p>
@@ -174,8 +201,9 @@
 				  <p>
 						The web has many, many creative visual representations of data. This is in part due to the popularity and
 					  importance of <a href="http://en.wikipedia.org/wiki/Open_data" target="_blank">Open Data</a> and because
-						many of these use Processing. Other languages and programming
-						frameworks are also common. Here are just a few examples of sites showing data visualization:
+						many of the various technologies that enable people to process this data - such as <i>Processing</i>.
+            Other languages and programming frameworks are also common.
+            Here are just a few examples of sites that contain interesting and informative data visualization:
 					</p>
 
 					<ul>
@@ -187,7 +215,7 @@
               <a href="http://www.visualcomplexity.com/vc/search.cfm?input=football" target="_blank">football</a>,
               <a href="http://www.visualcomplexity.com/vc/search.cfm?input=twitter" target="_blank">social media</a>, etc.
 						</li><li><a href="http://www.informationisbeautifulawards.com" target="_blank">www.informationisbeautifulawards.com</a></li>
-						<li><a href="http://mappinglondon.co.uk/category/data/" target="_blank">mappinglondon.co.uk/category/data</a> - e.g. <a href="http://theinformationcapital.com/wp-content/uploads/2014/09/TheFootballTribes_spread1.jpg">The Football Tribes</a>
+						<li><a href="http://mappinglondon.co.uk/category/data/" target="_blank">mappinglondon.co.uk/category/data</a> - e.g. <a href="https://mappinglondon.co.uk/2014/the-football-tribes/">The Football Tribes</a>
 					</li></ul>
 
           <h4>Example 1 - Personal Activity Tracking</h4>
@@ -212,7 +240,7 @@
 					</p>
           --->
 
-          <p>
+          <p style="padding-top:3em">
 						And here are some specific examples created with Processing:
 					</p>
 
@@ -271,6 +299,8 @@
 
 				<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
+<hr>
+
 				<div class="units-row">
         <div class="unit-70">   <!-- Left column -->
 
@@ -293,9 +323,9 @@
 
 void setup()
 {
-  size(300,500);
+  size(300,580);
   fill(0);
-  textSize(18);  // -- try changing the size of the text
+  textSize(14);  // -- try changing the size of the text
 
   names = loadStrings("names.txt");
 }
@@ -314,19 +344,19 @@ void draw()
 					<p>
 						Notice that nowhere in the code is there any list of the actual names to display. Instead the <code>loadStrings()</code>
 						method looks for a data file called <code>names.txt</code> that contains the actual names. Each line from this
-						file is read into a separate array element which we've called <code>names</code> in this example. The <code>draw()</code>
-						method then uses a for-each loop to iterate through this array, displaying each element one-by-one.
+						file is read into a separate element in an array that we've called <code>names</code> in this example.
+            The <code>draw()</code> method then uses a for-each loop to iterate through this array, displaying each element one-by-one.
 					</p>
 
 					<p>
-						In order for Processing to know where to look to find the file <code>names.txt</code>, it needs to be created somewhere and then dragged into the Processing window.
-            This will make a copy of the file in the Processing sketch.
+						In order for <i>Processing</i> to know where to look to find the file <code>names.txt</code>, it needs to be created somewhere and then dragged into the <i>Processing</i> window.
+            This will make a copy of the file in the <i>Processing</i> sketch.
 					</p>
 <!--  -->
 					<div class="codeTask">
 						<p>Try this sketch yourself.</p>
-            <p>Make sure you have a copy of <a href="https://staff.city.ac.uk/~jad7/bootCamp/names.txt" target="_blank">names.txt</a>
-						(right-click to save a copy) and that you drag it into your Processing sketch code window.</p>
+            <p>Make sure you have a copy of <a href="https://jsndyks.github.io/cityBootCamp/data/namesData.txt" target="_blank">names.txt</a>
+						(<i>right-click to save a copy</i>) and that you drag it into your <i>Processing</i> sketch code window.</p>
             <p>Change things around as suggested by the comments.</p>
             <p>Additionally, are you able to adapt the sketch to:</p>
             <ol>
@@ -338,7 +368,7 @@ void draw()
             </div>
             <div class="challenge">
               <p>If you've got that done and would like to try some more challenging modifications, then ...</p>
-              <ol start=4>
+              <ol start="4">
                 <li>Try changing a few of the names in the text file (but nothing in the sketch code) and re-run the sketch to check it shows the new list. Add your name, and the name of the person next to you.</li>
                 <li>See whether you can modify the sketch so that the text size and the spacing between the lines is always sufficient to display all the names in the sketch window, regardless of the number it items in the list?<br/><i>You'll need to edit and save the text file a few times to check this</i><br/>
               <i>Hint:</i> You can find out how many names are in the list by using <code>names.length</code> that will report the
@@ -350,7 +380,7 @@ void draw()
 
 				 <div class="unit-30" id="annotation">   <!-- Right column -->
 
-				 <script>loadImage('https://staff.city.ac.uk/~jad7/bootCamp/names.png',270,450, 'output from names sketch');</script>
+				 <script>loadImage('https://jsndyks.github.io/cityBootCamp/images/names.png',169,600, 'output from names sketch');</script>
 				 <p>Output from the names sketch</p>
 
 
@@ -1026,7 +1056,7 @@ void draw()
             <b>Adding Interaction to the Cycling Data Scripts:</b>
             <p>Of course, there are many other things you can usefully do here.<br/>
               See whether you can ...</p>
-            <ol start=4>
+            <ol start="4">
                   <li>Show the differences between two times<br/>
                   &nbsp;&nbsp;&nbsp;&nbsp;<i>Hint: This will involve calculating differences between two <code>floats</code> that you extract from the array of <code>values</code> and you will end up with negative numbers</i></li>
                   <li>Only show stations that have particular names or geographic locations<br/>
@@ -1045,7 +1075,7 @@ void draw()
           <div class="challenge">
             <b>Adding Interaction to the Cycling Data Scripts:</b>
             <p>Why not make things interactive?</p>
-            <ol start=8>
+            <ol start="8">
             <li>Can you add an interaction to the bar graph that allows us to scroll up and down through the data file, while always showing data for 25 stations?<br/>
             <em>Hint: you will need to replace the numeric values used to identify the column in which the 9:00am data is stored, and the lines that are used in the loop, with variables that change in response to particular inputs.</em>
           </li>
@@ -1142,7 +1172,6 @@ void draw()
             </div>	<!-- End of checkOutcomes -->
           </div>
 <hr>
-					</div>
 
 					<!--
 
