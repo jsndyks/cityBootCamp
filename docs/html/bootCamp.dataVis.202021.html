@@ -42,7 +42,7 @@
       <div class="intro">
 
 			<p>
-        This session introduces the idea of data visualization — turning data into graphics. In particular it focusses on how to read text from files into Processing and how to <i>parse</i> the text to extract words and numbers that you can use as variables in your sketches.</p>
+        This session introduces the idea of <b>data visualization</b> — turning data into graphics. In particular it focusses on how to read text from files into Processing and how to <i>parse</i> the text to extract words and numbers that you can use as variables in your sketches. This means that you can read data and use it to position, shape and colour elements in your sketch.</p>
       <p>
         In doing so it may give you ideas about ways in which you can use data visualization in your project.
         The various challenges are designed to help you develop project ideas.
@@ -52,25 +52,27 @@
 
       <div class="intro">
 
-			<p><strong>By the end of this session you should be able to:</strong></p>
+        <p><strong>If you read through these lecture notes, attempt the tasks and exercises and use the resources that we have made available, then by the end of this session you should be able to:</strong>
 
 			<ul>
 				<li>Drag and drop data files into your Processing code window;</li>
 				<li>Create a sketch to read a text file using <code>loadStrings()</code>;</li>
-				<li>Use data read from a file to change the colour, size or appearance of graphics in your sketch;</li>
-				<li>Split a line of text into <i>tokens</i> representing individual words or numbers;</li>
-        <li>Rescale a number from one range to another using the <code>map()</code> command.</li>
+        <li>Split a line of text into <i>tokens</i> representing individual words or numbers;</li>
+        <li>Rescale a number from one range to another using the <code>map()</code> command;</li>
+        <li>Use data that you have read from a file and rescaled to change the colour, size or appearance of graphics in your sketch.</li>
       </ul>
 
       <p>Remember, that to achieve this you will need to read these notes through and ...</p>
       <div class="codeTask">complete all of the <b>coding tasks</b> that you see, either in the lecture when we try things out, or in the lab afterwards with the help of your teachers.</div>
       <div class="coreTask">complete all of the <b>core tasks</b> that are included, either in the lecture or in the lab.</div>
 
-      <p>You should also complete the <a href="https://moodle.city.ac.uk/mod/page/view.php?id=1405389">Practical Exercise</a>, in the lab or in your own time subsequently</p>
-
       <p>If you have completed the <b>coding tasks</b> and would like to try some more challenging tasks, then ...</p>
       <div class="challenge">try some of the <b>challenges</b> to test yourself and learn a little more.
       </div>
+
+      <p>If you have completed all the work on this page and want to learn more, the try the optional <b><a href="https://moodle.city.ac.uk/mod/page/view.php?id=1649144">Extra Tasks</a></b> where we look at <i>a</i>, <i>b</i> and <i>c</i>.
+      This could well be fun for some of you and may give you ideas for using data visualization in your <b><code>#BootCamp</code></b>projects.</p>
+
 
 			</div>  <!-- End of intro section -->
 
@@ -83,12 +85,12 @@
           <h3>0. Before we start</h3>
           <p>Before we get going, you'll need some data and to know a key method - <code>loadStrings()</code>.
           <br/>
-        So be sure to complete these two tasks first of all, so you know how to use it.</p>
+        So be sure to complete these two tasks first of all. They will ensure thsat you know how to use <code>loadStrings()</code>.</p>
 
       <div class="codeTask">
         <p><b>loadStrings() Example:</b></p>
         <p>
-        We will be using a simple data file when live coding in the lecture - <a href="https://staff.city.ac.uk/~jad7/bootCamp/namesData.txt" target="_blank">namesData.txt</a><br/>
+        We will be using a simple data file when live coding in the lecture - <a href="https://jsndyks.github.io/cityBootCamp/data/namesData.txt" target="_blank">namesData.txt</a><br/>
         So please <strong>download this data file in advance</strong>.
         You should right-click the link above to download and save a copy.<br/>
         It's important that you <strong>make sure you know where the file has been saved</strong> on your laptop.
