@@ -1053,10 +1053,9 @@ void draw()
 
 					<p>
 						Here we read in values from columns 2 and 3 representing the coordinates of each docking station. These
-						numbers are Ordnance Survey grid coordinates, so we need to translate them into pixel locations using the
-						<code>map()</code> command for rescaling the numbers. This relies on knowing what the geographic range of
-						our the data is, here stored in the variables <code>NORTH</code>, <code>SOUTH</code>, <code>EAST</code>
-						and <code>WEST</code>.
+						numbers are Ordnance Survey grid coordinates at 1m resolution. To fit the data ontot he screen we need to translate them into locations on the canvas in pixels. The <code>map()</code> command for rescaling the numbers will do this for us. But to get the scaling right, we need to know the geographic range of
+						our data is. Here we store this in the variables <code>NORTH</code>, <code>SOUTH</code>, <code>EAST</code>
+						and <code>WEST</code>. These are the geographic extents of our data.
 					</p>
 
           <div class="codeTask">
@@ -1074,7 +1073,7 @@ void draw()
               See whether you can ...</p>
             <ol start="4">
                   <li>Show the differences between two times<br/>
-                  &nbsp;&nbsp;&nbsp;&nbsp;<i>Hint: This will involve calculating differences between two <code>floats</code> that you extract from the array of <code>values</code> and you will end up with negative numbers</i></li>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<i>Hint: This will involve calculating differences between two <code>floats</code> that you extract from the array of <code>values</code> and you will end up with negative numbers - but we have thought about how to visualize negative numbers in the lecture.</i></li>
                   <li>Only show stations that have particular names or geographic locations<br/>
                   <em>Hint: You'll have to record the station name as a <code>String</code> when you read values from the lines of text.</em></li>
                   <li>Use squares or bars in the map instead of circles;</li>
@@ -1118,13 +1117,14 @@ void draw()
 
 				<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
+<hr>
 
 			<div class="units-row">
         <div class="unit-70">   <!-- Left column -->
 
 					<h3>5. Summary</h3>
 
-          <p>You have what you need to do some basic data visualization, and hopefully you can look back at the movies we introduced earlier and begin to imaging the kinds of data and the types of sketch and commands that may have produced them. It's worth looking back and having a think about how these designs might have been implemented.</p>
+          <p>You now have what you need to do some basic data visualization, and hopefully you can look back at the movies we introduced earlier and begin to imagine the kinds of data and the types of sketch and commands that may have been used to produce them. It's worth looking back and having a think about how these designs might have been implemented.</p>
           <p>The most important thing is that you know that:</p>
 					<ul>
 					<li>
@@ -1134,24 +1134,26 @@ void draw()
 						This usually involves reading from a data file and storing the data in variables so they can be used in your sketches.
 					</li>
 					<li>
-						Processing contains a useful method for reading lines of text from a file — <code>loadStrings()</code>
+						<i>Processing</i> contains a useful method for reading lines of text from a file — <code>loadStrings()</code>
 					</li>
 					<li>
-						Elements within a line of text such as words or numbers can be <i>parsed</i> and extracted in Processing using
+						Elements within a line of text such as words or numbers can be <i>parsed</i> and extracted in <i>Processing</i> using
 						the <code>split()</code> method.
 					</li>
           <li>
 						We can use <code>map()</code> to re-scale our data from the original numeric range of the data set to a range that allows us to create graphics by plotting shapes that represent the numbers in screen coordinates.
 					</li>
         </ul>
-          <p>If you do, and you can use these methods and understand how to draw shapes with variables, then you are pretty much set - <b>the World is your Data Visualization oyster</b> ...</p>
+          <p>If you do know these things, and you can use these methods and understand how to draw shapes with variables, then you are pretty much set - <b>the World is your Data Visualization oyster</b> ...</p>
 
-          <p>We expect you all to complete all of the code tasks and core tasks.</p>
-          <p>Remember to experiment, use your debugging skills and to discuss solutions and approaches with student colleagues and teaching staff. You will recall what we learned last week: that if you want to be a good coder, you need to code, and the more you practice the easier it gets.</p>
+          <p>Remember, that we expect you all to complete all of the code tasks and core tasks.</p>
+          <p>Remember that we don't expect this to be straightforward. We expect you to experiment, use your debugging skills and to discuss solutions and approaches and problems and errors with student colleagues and teaching staff. You will recall what we learned last week: that if you want to be a good coder, you need to code, and the more you practice the easier it gets.</p>
 
+<hr>
+<!---
           <h3>6. Reading</h3>
           <p>It's BootCamp - so there is no reading.</p>
-          <p>But if you are interested in data visualization and want to find out more, we have a <b><a href="https://libraryservices.city.ac.uk/">library</a></b>, which has some excellent sources.
+          <p>But if you are interested in data visualization and want to find out more, we have a <b><a href="https://libraryservices.city.ac.uk/">library</a></b>, which has some excellent and sources - inspiring and informative.
           You'll find that quite a lot of the material is available online too!</p>
 
 					<div class="challenge">
@@ -1172,8 +1174,8 @@ void draw()
             </ul>
           <p>See if you can use any of the ideas in the books to inform your data visualization.</p>
           </div>
-
-          <h3>7. Check on Learning Outcomes</h3>
+--->
+          <h3>6. Check on Learning Outcomes</h3>
           <div class="task">
             <p>So, you should be able to check each of these boxes having completed the lecture and the tasks.
               If not, head back and read through the text, try the examples and discuss your efforts with your class teachers.</p>
@@ -1182,12 +1184,11 @@ void draw()
            	<input type="checkbox" id="sa1">  <label for="sa1">Can I drag a data file into Processing so it can be read by my code?<br/></label><br/>
              <input type="checkbox" id="sa2">  <label for="sa2">Can I read a simple text file using <code>loadStrings()</code>?<br/></label><br/>
              <input type="checkbox" id="sa3">  <label for="sa3">Can I parse a line of text into tokens using <code>split()</code>?<br/></label><br/>
-             <input type="checkbox" id="sa4">  <label for="sa4">Can I re-scale a number from one range to another using <code>map()</code>?</label><br/>
-             <input type="checkbox" id="sa5">  <label for="sa5">Can I use these capabilities to change the colour, size or appearance of graphics according to data read from file in a simple sketch ?<br/></label>
+             <input type="checkbox" id="sa4">  <label for="sa4">Can I re-scale a number from one range to another using <code>map()</code>?<br/></label><br/>
+             <input type="checkbox" id="sa5">  <label for="sa5">Can I use these capabilities to change the colour, size or appearance of graphics according to data read from file in a simple sketch ?<br/></label><br/>
 
             </div>	<!-- End of checkOutcomes -->
           </div>
-<hr>
 
 					<!--
 
