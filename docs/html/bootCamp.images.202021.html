@@ -90,7 +90,7 @@
     Many of these are taken with digital cameras.
     Unsurprisingly, this is also an increasing trend.<br/>
     Here's an image from <a href="https://www.statista.com/chartoftheday/">Statista</a> that shows this nicely.<br/>
-    And here's another one from <a href="https://www.businessinsider.com/12-trillion-photos-to-be-taken-in-2017-thanks-to-smartphones-chart-2017-8?r=US&IR=T">Business Insider</a> that shows the same data.<br/>We even get multiple images of the same thing!
+    And here's another one from <a href="https://www.businessinsider.com/12-trillion-photos-to-be-taken-in-2017-thanks-to-smartphones-chart-2017-8?r=US&IR=T">Business Insider</a> that shows the same data in a slightly different way.<br/>We even get multiple images of the same information about images!
   </p>
   <table cellspacing="4" cellpadding="4" border="0">
     <tr>
@@ -266,7 +266,7 @@
         Check <code>keyPressed()</code>.<br/>
         If you press a key, the current content of the canvas will be saved to the sketch folder with <code>save()</code>.</p>
         <p>You will need to add an image file name or URL to the <code>loadImage()</code> method.<br/>
-        You should be able to interpret the code to work out how you can interact with the canvas in order to change the image what is saved.</p>
+        You should be able to interpret the code to work out how you can interact with the canvas in order to change the image that is saved.</p>
     </div>
   </div>
   <div class="unit-30"  id="annotation" style="padding-top:12em">
@@ -316,7 +316,7 @@ void keyPressed () {
   <p><b>Extra Task!</b><br/>
   If you have done that already and are hanging around waiting for something to do, or just want to feel the excitement of achievement, then try something else ...</p>
   <ol>
-  <li>Can you use the optional second and third parameters to the <i>Processing</i> <code><a href="https://processing.org/reference/image_.html">image()</a></code> command to change the size of the image displayed on the canvas?</li>
+  <li>Can you use the optional fourth and fifth parameters to the <i>Processing</i> <code><a href="https://processing.org/reference/image_.html">image()</a></code> command to change the size of the image displayed on the canvas?</li>
   <li>Can you add a condition in <code>keyPressed()</code> to redraw the image if a particular key is pressed?</li>
   </ol>
   </div>
@@ -922,6 +922,7 @@ void setup() {
 
 </div>
 
+<!---
 <hr>
 <h4>4.2 - A simple image editing program</h4>
 
@@ -1017,7 +1018,6 @@ void draw() {
 
     <div class="units-row">
       <div class="unit-70">
-        <!--h3>Exercise: Get a new look</h3-->
 
         <div class="codeTask">
           <p>Now, open a new sketch and run the code that was provided above.</p>
@@ -1035,25 +1035,6 @@ void draw() {
             <li>save your doctored image</li>
           </ol>
         </div>
-<!--
-        <pre class="brush: processing; gutter: false; toolbar: false; ">PImage img;
-
-void setup() {
-  img = loadImage("face.png");
-  size(307, 342);
-  image(img, 0, 0);
-  noStroke();
-  fill(0, 0, 255, 20);
-}
-
-void draw() {
-}
-
-void mouseClicked() {
-  ellipse(mouseX, mouseY, 10, 10);
-}
-</pre>
--->
       </div>
       <div class="unit-30" id="annotation">
         <script>
@@ -1062,9 +1043,10 @@ void mouseClicked() {
         An application that doctors an image.
       </div>
     </div>
+--->
 
 <hr>
-<h4>4.3 - Tint</h4>
+<h4>4.2 - Tint</h4>
 
     <div class="units-row">
       <div class="unit-70">
@@ -1206,7 +1188,7 @@ image(img, 0, 0);
 
 
 <hr>
-<h4>4.4 - Multiple Images</h4>
+<h4>4.3 - Multiple Images</h4>
     <div class="units-row">
       <div class="unit-70">
         <p>Of course, you can draw an image more than once on a canvas, and you can load multiple images into a single sketch.</p>
@@ -1262,7 +1244,7 @@ void draw() {
     </div>
 -->
 <hr>
-    <h4>4.5 Image filtering</h4>
+    <h4>4.4 Image filtering</h4>
     <div class="units-row">
       <div class="unit-70">
         <p>Much image processing involves using filters.
@@ -1361,7 +1343,7 @@ This approach gets us quite close to some of the work that we introduced at the 
 </div>
 
 <hr>
-<h4>4.6 - The Data : Accessing pixel and colour values</h4>
+<h4>4.5 - The Data : Accessing pixel and colour values</h4>
   <div class="units-row">
     <div class="unit-70">
         <p>Individual pixel values can be accessed and changed using the <code><a href="http://processing.org/reference/get_.html">get()</a></code> and <code><a href="http://processing.org/reference/set_.html">set()</a></code> methods.
