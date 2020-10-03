@@ -1,4 +1,4 @@
-<html>
+<em>Processing</em><html>
   <head>
     <title>Programming Bootcamp Lecture: Data Visualization</title>
 
@@ -42,7 +42,7 @@
       <div class="intro">
 
 			<p>
-        This session introduces the idea of <b>data visualization</b> — turning data into graphics. In particular it focusses on how to read text from files into Processing and how to <i>parse</i> the text to extract words and numbers that you can use as variables in your sketches. This means that you can read data and use it to position, shape and colour elements in your sketch.</p>
+        This session introduces the idea of <b>data visualization</b> — turning data into graphics. In particular it focusses on how to read text from files into <em>Processing</em> and how to <i>parse</i> the text to extract words and numbers that you can use as variables in your sketches. This means that you can read data and use it to position, shape and colour elements in your sketch.</p>
       <p>
         In doing so it may give you ideas about ways in which you can use data visualization in your project.
         The various challenges are designed to help you develop project ideas.
@@ -56,7 +56,7 @@
         <p><strong>If you read through these lecture notes, attempt the tasks and exercises and use the resources that we have made available, then by the end of this session you should be able to:</strong></p>
 
 			<ul>
-				<li>Drag and drop data files into your Processing code window;</li>
+				<li>Drag and drop data files into your <em>Processing</em> code window;</li>
 				<li>Create a sketch to read a text file using <code>loadStrings()</code>;</li>
         <li>Split a line of text into <i>tokens</i> representing individual words or numbers;</li>
         <li>Rescale a number from one range to another using the <code>map()</code> command;</li>
@@ -185,7 +185,7 @@
 
           <p>
 						So far, most of the sketches you have built have involved creating some form of visual representation
-						that you as a programmer have controlled (e.g. by putting numbers into your program code or asking <i>Processing</i>
+						that you as a programmer have controlled (e.g. by putting numbers into your program code or asking <em>Processing</em>
 						to generate random numbers for you), or you as a user have influenced (e.g. by moving the mouse or pressing
 						keys).
 					</p>
@@ -211,7 +211,7 @@
 				  <p>
 						The web has many, many creative visual representations of data. This is in part due to the popularity and
 					  importance of <a href="http://en.wikipedia.org/wiki/Open_data" target="_blank">Open Data</a> and because
-						many of the various technologies that enable people to process this data - such as <i>Processing</i>.
+						many of the various technologies that enable people to process this data - such as <em>Processing</em>.
             Other languages and programming frameworks are also common.
             Here are just a few examples of sites that contain interesting and informative data visualization:
 					</p>
@@ -251,7 +251,7 @@
           --->
 
           <p style="padding-top:3em">
-						And here are some specific examples created with Processing:
+						And here are some specific examples created with <em>Processing</em>:
 					</p>
 
 
@@ -287,7 +287,7 @@
             You should spend some time interpreting these - they may inspire you with project ideas.</p>
 <br/><br/>
             <div class="coreTask">
-          <p>Find two interesting examples that use Processing on the <em>Visual Complexity</em> website.<br/>
+          <p>Find two interesting examples that use <em>Processing</em> on the <em>Visual Complexity</em> website.<br/>
           What do they show? How might this be useful, and to whom?</p>
           <ul>
           <li><a href="http://www.visualcomplexity.com/vc/search.cfm?input=processing" target="_blank">http://www.visualcomplexity.com/</a></li>
@@ -317,7 +317,7 @@
 					<h3>2. Getting simple text data into a sketch</h3>
           <p>
 						So how do we make a connection between the data we might want to visualize and our coding instructions?
-						Thankfully Processing offers us several built-in methods for reading data, whether it comes from text files, activity trackers, remote databases or the Web.
+						Thankfully <em>Processing</em> offers us several built-in methods for reading data, whether it comes from text files, activity trackers, remote databases or the Web.
 					</p>
 
 					<p>
@@ -355,18 +355,18 @@ void draw()
 						Notice that nowhere in the code is there any list of the actual names to display. Instead the <code>loadStrings()</code>
 						method looks for a data file called <code>names.txt</code> that contains the actual names. Each line from this
 						file is read into a separate element in an array that we've called <code>names</code> in this example.
-            The <code>draw()</code> method then uses a for-each loop to iterate through this array, displaying each element one-by-one. So the output of our sketch is determined by the data.
+            The <code>draw()</code> method then uses a for-each loop to iterate through this array, displaying each element one-by-one. So the output of our sketch is determined by the data. More names in the file, will give us more names on the canvas, with the same code.
 					</p>
 
 					<p>
-						In order for <i>Processing</i> to know where to look to find the file <code>names.txt</code>, it needs to be created somewhere and then dragged into the <i>Processing</i> window.
-            This will make a copy of the file in the <i>Processing</i> sketch.
+						In order for <em>Processing</em> to know where to look to find the file <code>names.txt</code>, it needs to be created somewhere and then dragged into the <em>Processing</em> window.
+            This will make a copy of the file in the <em>Processing</em> sketch.
 					</p>
 <!--  -->
 					<div class="codeTask">
 						<p>Try this code for yourself -- copy it into a sketch from above.</p>
             <p>Make sure you have a copy of <a href="https://jsndyks.github.io/cityBootCamp/data/names.txt" target="_blank">names.txt</a>
-						(<i>right-click to save a copy</i>) and that you drag it into your <i>Processing</i> sketch code window.</p>
+						(<i>right-click to save a copy</i>) and that you drag it into your <em>Processing</em> sketch code window.</p>
             <p>Change things around as suggested by the comments.</p>
              <pre class="brush: processing; gutter: false; toolbar: false;">// -- try things out that are written like this!</pre>
             <p>Additionally, are you able to adapt the sketch to:</p>
@@ -381,7 +381,7 @@ void draw()
               <p><b>Challenge - Make The Sketch More Robust</b><br/>
               If you've got that done and would like to try some more challenging modifications, then ...</p>
               <ol start="4">
-                <li>Try changing a few of the names in the text file (but nothing in the sketch code) and re-run the sketch to check it shows the new list. Add your name, and the name of the person next to you.</li>
+                <li>Try changing a few of the names in the text file (but nothing in the sketch code) and re-run the sketch to check it shows the new list. Add your name, and the name of somebody else in the class.</li>
                 <li>See whether you can modify the sketch so that the text size and the spacing between the lines is always sufficient to display all the names in the sketch window, regardless of the number it items in the list?<br/><i>You'll need to edit and save the text file a few times to check this</i><br/>
               <i>Hint:</i> You can find out how many names are in the list by using <code>names.length</code> that will report the
               size of the array holding all the names once the file has been read using <code>loadStrings()</code>.
@@ -433,8 +433,8 @@ void draw()
             void setup()
             {
               size(600,400);
-              textLines = loadStrings("theTimeMachine.txt");
-              lineToDisplay = 142;    // He pulls the lever ...
+              textLines = loadStrings("https://jsndyks.github.io/cityBootCamp/data/theTimeMachine.txt");
+              lineToDisplay = 142;    // See above that loadStrings() will load from an online file
 
               textSize(14);
               fill(0);
@@ -464,10 +464,10 @@ void draw()
             }</pre>
 
 					<p>
-						The only element of this sketch that may be new is that we are using a slightly different version of Processing's
-						<code>text()</code> method that takes 5 parameters — the text string to display, the position of the
+						The only element of this sketch that may be new is that we are using a slightly different version of <em>Processing</em>'s
+						<a href="https://processing.org/reference/text_.html"><code>text()</code></a> method that takes 5 parameters — the text string to display, the position of the
 						top-left of the text area and the width and height of the text area. When specified like this (i.e. as a rectangle),
-						Processing will attempt to lay out the text, line by line, within the rectangle. This saves us having to update
+						<em>Processing</em> will attempt to lay out the text, line by line, within the rectangle. This saves us having to update
 						the position of each line as we did in the first example.
 					</p>
 
@@ -546,7 +546,7 @@ Sunday,55,51,49,62,65,62,127,75,77,140,85,89,105,77,61,66,74,71,73,121,86,114,70
 					</p>
 
 					<p>
-						Processing provides a useful command to help with parsing tokens — <a href="http://processing.org/reference/split_.html" target="_blank">split()</a>.
+						<em>Processing</em> provides a useful command to help with parsing tokens — <a href="http://processing.org/reference/split_.html" target="_blank">split()</a>.
 						This method will take a string and a <i>separator</i> as parameters and split the text up into an array of
 						smaller strings, using the separator character to divide the text.
 					</p>
@@ -645,7 +645,7 @@ for (int i=0; i&lt;splitText.length; i++) {
             So, pressing 'a' on the keyboard will split by the letter <b>a</b>, pressing 'b' will split by the letter <b>b</b>, etc.
           </p>
           <p>
-            <em>Hint: you will need to use a variable as the <i>separator</i> in <code>split()</code> - Processing creates one that could be useful when <code>keyPressed()</code> is called.</em>
+            <em>Hint: you will need to use a variable as the <i>separator</i> in <code>split()</code> - <em>Processing</em> creates one that could be useful when <code>keyPressed()</code> is called.</em>
           </p>
           </div>
 
@@ -745,7 +745,7 @@ void draw()
 						It is quite common in data visualization to want to rescale data values so they match the sizes in pixel units
 						we wish to use. We could achieve this by multiplying each data value (stored in the <code>temperature</code> variable
 						above) by some value, say 4, so that 19 Celsius becomes 19*4 = 76 pixels tall. But a more general approach
-						would be to use Processing's <a href="http://processing.org/reference/map_.html" target="_blank">map()</a> command that rescales any number from one
+						would be to use <em>Processing</em>'s <a href="http://processing.org/reference/map_.html" target="_blank">map()</a> command that rescales any number from one
 						range to another:
 					</p>
 
@@ -1067,7 +1067,7 @@ void draw()
 					</p>
 
           <div class="codeTask">
-            <p>Copy the code from the <i>Bike Station Bar Graph Sketch</i> and get it to run in Processing.</p>
+            <p>Copy the code from the <i>Bike Station Bar Graph Sketch</i> and get it to run in <em>Processing</em>.</p>
             <p>Run the sketch and then adapt it to ...</p>
             <ol>
               <li>Show data for 50 stations</li>
@@ -1139,10 +1139,10 @@ void draw()
 						This usually involves reading from a data file and storing the data in variables so they can be used in your sketches.
 					</li>
 					<li>
-						<i>Processing</i> contains a useful method for reading lines of text from a file — <code>loadStrings()</code>
+						<em>Processing</em> contains a useful method for reading lines of text from a file — <code>loadStrings()</code>
 					</li>
 					<li>
-						Elements within a line of text such as words or numbers can be <i>parsed</i> and extracted in <i>Processing</i> using
+						Elements within a line of text such as words or numbers can be <i>parsed</i> and extracted in <em>Processing</em> using
 						the <code>split()</code> method.
 					</li>
           <li>
@@ -1186,7 +1186,7 @@ void draw()
               If not, head back and read through the text, try the examples and discuss your efforts with your class teachers.</p>
 
             <div class="checkOutcomes">
-           	<input type="checkbox" id="sa1">  <label for="sa1">I can drag a data file into <i>Processing</i> so it can be read by my code<br/></label><br/>
+           	<input type="checkbox" id="sa1">  <label for="sa1">I can drag a data file into <em>Processing</em> so it can be read by my code<br/></label><br/>
              <input type="checkbox" id="sa2">  <label for="sa2">I can read a simple text file using <code>loadStrings()</code><br/></label><br/>
              <input type="checkbox" id="sa3">  <label for="sa3">I can parse a line of text into tokens using <code>split()</code><br/></label><br/>
              <input type="checkbox" id="sa4">  <label for="sa4">I can re-scale a number from one range to another using <code>map()</code><br/></label><br/>
