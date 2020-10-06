@@ -29,9 +29,10 @@
   - *namesData_lectureSketch*
   - **pde**
 
-## **50**. BIKES **TODO**
-- **pde**
-	- TABLE - bikeShare.txt _show it_
+## 50. BIKES
+  > 4. Example: Showing Bikeshare data
+	- TABLE - bikeShare.txt _show it_ _download it_
+  - https://jsndyks.github.io/cityBootCamp/data/bikeShare.txt
 	- *bikeBar*
 	- *bikeMap* COORDINATES / map
 	- *bikeMap* DYNAMIC - size

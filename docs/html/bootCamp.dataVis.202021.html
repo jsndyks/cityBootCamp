@@ -395,7 +395,6 @@ void draw()
 				 <script>loadImage('https://jsndyks.github.io/cityBootCamp/images/names.png',100,355, 'output from names sketch');</script>
 				 <p>Output from the names sketch</p>
 
-
 				 </div>	<!-- end of right column -->
       </div>  <!-- End of row -->
 
@@ -974,6 +973,7 @@ void setup()
   }
 }
 
+
 void draw()
 {
   background(255);
@@ -987,11 +987,11 @@ void draw()
 
     noStroke();
     fill(50,50,200,100);
-    rect(220,yPos+1,availableBikes[i]*8,14);
+    rect(220,yPos+1,availableBikes[i]*8,14); // &lt;-- available rect
 
     noFill();
     stroke(0);
-    rect(220,yPos+1,capacities[i]*8,14);
+    rect(220,yPos+1,capacities[i]*8,14);     // &lt;-- capacities rect
 
     yPos += 16;
   }
@@ -1002,8 +1002,11 @@ void draw()
 
 				 <div class="unit-30" id="annotation">   <!-- Right column -->
 
-					 <script>loadImage('https://jsndyks.github.io/cityBootCamp/images/stations25.png',600,405, 'Bike station status');</script>
+					 <script>loadImage('https://jsndyks.github.io/cityBootCamp/images/stations25.png',600,405, 'Bike station status - bar chart');</script>
 				 <p>Output from bikeshare sketch <i>(click to enlarge)</i></p>
+          <br/>
+         <script>loadImage('https://jsndyks.github.io/cityBootCamp/images/stations55.spine.png',600,405, 'Bike station status - spine plot');</script>
+       <p>A <em>spine plot</em> showing the bikeShare data.<br/>Can you eit the code to make one?<br/>Height is based on <b>capacity</b>, fill is based on <b>availability</b> <i>(click to enlarge)</i></p>
 
 				 </div>	<!-- end of right column -->
       </div>  <!-- End of row -->
@@ -1026,7 +1029,7 @@ void draw()
 					<pre class="brush: processing; gutter: false; toolbar: false;">// -- Bike Station Map Sketch
 String[]  stations;
 int[]     capacities;
-PVector[] locations;
+PVector[] locations;     // &lt;-- use a PVector to store station coordinates
 
 float NORTH = 184600;    // Geographic coordinates defining the boundaries
 float SOUTH = 177280;    //  of the area we are studying.
@@ -1066,6 +1069,7 @@ void draw()
   {
     PVector location = locations[i];
     int capacity     = capacities[i];
+    // Scale the locations (coordinates) to the canvas with map()
     float xPos = map(location.x, WEST, EAST, 10, width-10);
     float yPos = map(location.y, NORTH, SOUTH, 10, height-10);
 
@@ -1236,7 +1240,7 @@ void draw()
       <hr/>
       <div style="float:right; padding-right:4em">
         <b>Jason DYKES</b><br/>
-        <i>05 Oct 2020</i>
+        <i>056 Oct 2020</i>
       </div>
       <div style="padding-bottom:2em;clear:both"/>
 	  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
