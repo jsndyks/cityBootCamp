@@ -1,4 +1,4 @@
-# DATA VIS - 201005
+# DATA VIS - 201006
 
 ## 10 . INTRO TO DATA VISUALIZATION
  - NikeFuel
@@ -26,21 +26,20 @@
   - copy sketch
 
 ## 40. SPLIT TOKENS Sketch
+  > 3. Extracting tokens from a line of text
   - *namesData_lectureSketch*
-  - **pde**
 
 ## 50. BIKES
   > 4. Example: Showing Bikeshare data
 	- TABLE - bikeShare.txt _show it_ _download it_
   - https://jsndyks.github.io/cityBootCamp/data/bikeShare.txt
-	- *bikeBar*
-	- *bikeMap* COORDINATES / map
-	- *bikeMap* DYNAMIC - size
+	- *bikes_lectureSketch* -> 100 -> SPINE
+	- *bikes_lectureSketch* COORDINATES / map -> DYNAMIC
 
 ## **MENTION** CORE & CODING TASKS - book, temperature and cycling examples
 
 ## 55. ROBOTS
-- **pde**
+  - *robotArmy* -> paper!
 
 ---
 ### START
@@ -59,5 +58,20 @@
   [/] - mapTimer
   [/] - loadStrings
   [/] - book
-  [x] - bikeShare
-  [x] - print index
+  [/] - bikeShare
+  [/] - print index
+
+### MESSAGE
+
+My MacBook has not randomly crashed and rebooted yet this morning.
+Bad news.
+
+If I disappear - use teams, I have this on the iPad.
+I will take 5 mins to reappear.
+
+Please get the students to read and work through ...
+SECTION 3. Extracting tokens from a line of text
+
+This is self-explanatory and will work well while I get back on my feet!
+
+J.
