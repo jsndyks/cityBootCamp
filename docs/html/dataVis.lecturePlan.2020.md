@@ -1,5 +1,19 @@
 # DATA VIS - 201006
 
+---
+
+### START
+
+- Zoom : audio / video ON
+- Safari : favourites off
+- Processing : opens on new screen; save example sketch
+- KeyNote : loaded
+- Processing : Slides sketch
+
+
+---
+
+
 ## 10 . INTRO TO DATA VISUALIZATION
  - NikeFuel
  - Commits
@@ -42,13 +56,6 @@
   - *robotArmy* -> paper!
 
 ---
-### START
-
-- Zoom : audio / video ON
-- Safari : favourites off
-- Processing : opens on new screen; save example sketch
-- KeyNote : loaded
-- Processing : Slides sketch
 
 ### TODO
   [/] - PPT
