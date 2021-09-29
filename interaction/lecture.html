@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Programming Bootcamp Lecture: Interaction</title>
+
+    <!-- Header, 16th September, 2021 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Embedded fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab|Shadows+Into+Light|Source+Code+Pro&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom layout and style -->
+    <link rel="stylesheet" href="https://www.staff.city.ac.uk/~jwo/moodle/css/shCore.css" type="text/css" />
+    <link rel="stylesheet" href="https://www.staff.city.ac.uk/~jwo/moodle/css/shThemeDefault.css" type="text/css" />
+    <link rel="stylesheet" href="https://www.staff.city.ac.uk/~jwo/moodle/css/kube.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://www.staff.city.ac.uk/~jwo/moodle/css/master.css?rnd=123" type="text/css" />
+    <link rel="stylesheet" href="https://www.staff.city.ac.uk/~jwo/moodle/css/highslide.css" type="text/css" />
+
+    <!-- General browser compatibility handling -->
+    <script type="text/javascript" src="https://www.staff.city.ac.uk/~jwo/moodle/js/jquery-3.1.0.slim.min.js"></script>
+
+    <!-- Formatted source code -->
+    <script type="text/javascript" src="https://www.staff.city.ac.uk/~jwo/moodle/js/shCore.js"></script>
+    <script type="text/javascript" src="https://www.staff.city.ac.uk/~jwo/moodle/js/shBrushProcessing.js"></script>
+
+    <!-- Sketch popups and hidden text-->
+    <script src="https://www.staff.city.ac.uk/~jwo/moodle/js/highslide-with-html.packed.js"></script>
+    <script src="https://www.staff.city.ac.uk/~jwo/moodle/js/highslide-cfg.js"></script>
+    <script src="https://www.staff.city.ac.uk/~jwo/moodle/js/master.js"></script>
+    <style type="text/css">
+      .key {font-weight:bold; padding:6px; margin:2px; padding-top:2px; padding-bottom:2px; background-color:#e0e0e0; border:1px solid #c0c0c0; border-right:2px solid #909090; border-bottom:2px solid #909090; }
+    </style>
+</head>
+
+<body>
+    <div id="page">
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Introduction ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <!-- TITLE HEADING OF PAGE SHOULD BE VIA MOODLE, NOT HERE -->
+        <!-- Add summary sentence or two below, which will act as an easy introduction -->
+
+        <div class="intro">
+
+            <p>
+                This session introduces ways in which you can collect and use <b>input</b> from somebody who is using your <b>Processing</b> application through their <b>interactions</b> with the keyboard and mouse. We'll use these key presses or mouse events to control what happens in our sketches.
+            </p>
+
+            <p><strong>By the end of this session you should be able to:</strong></p>
+
+            <ul>
+                <li>collect and use input that comes from interactions with the mouse;</li>
+                <li>collect and use input that comes from interactions with the keyboard;</li>
+                <li>display the nature of this input;</li>
+                <li>use this input to control flow and behaviour in a sketch;</li>
+                <li>generate random numbers within a range.</li>
+            </ul>
+
+        </div> <!-- End of intro section -->
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Main content ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <div class="units-row">
+            <div class="unit-70">
+                <!-- Left column -->
+                <h3>1. Mouse Input</h3>
+                <p>
+                    You already know the global variables <code>mouseX</code> and <code>mouseY</code>.
+                    These tell you something about how your sketch is beign interacted with.
+                    Processing supplies a special method called <a href="https://processing.org/reference/mouseClicked_.html"
+                        target="_blank">mouseClicked()</a>. Processing detects a click of the mouse and calls this method whenever that happens.
+                        So, if the mouse is clicked in a sketch, Processing looks for a method called <a href="https://processing.org/reference/mouseClicked_.html"
+                            target="_blank">mouseClicked()</a>, and if it finds one in the sketch, it runs it.
+                    Code in this method can do anything - <code>println()</code>, <code>background(255,0,0)</code>, whatever. Try these!<br/>
+                    However, it is usually best used to record the <i>state of your sketch</i> - esentially to update the values of global variables that describe what is currently going on.
+                </p>
+
+                <div class="task">
+                    Using the code below as a start point get <code>clickCount</code> to increment every time the mouse is clicked.
+                    This variable records the number of times the canvas has been clicked in your sketch.
+                </div>
+
+                <pre class="brush: processing; gutter: false; toolbar: false; ">int clickCount = 0;
+
+void setup()
+{
+  size(300,300);
+  fontSize(36)
+  fill(200);
+}
+
+void draw(){
+  background(254, 232, 134);
+  fill(0);
+  text(clickCount, width/2, height/2);
+}</pre>
+
+                <div class="task">
+                    <p>
+                      <b>Extension 1</b>: Add a <code>rect()</code> at the centre of the canvas that increases in size each time the mouse is clicked.<br/>
+                      <code><a href="https://processing.org/reference/rectMode_.html">rectMode(CENTER)</a></code> should help here.
+                      </p>
+                    <p>
+                    <b>Extension 2</b>: In the previous session you were introduced to the <a href="https://processing.org/reference/random_.html" target="_blank">random()</a> method. Modify your code to add and display a second variable <code>randomNum</code>, the contains a different random value between 0 and 99 each time the mouse is clicked.
+                    </p>
+                    <p>
+                    <b>Extension 3</b>: Now see whether you can show the <b>average</b> of all the random numbers produced on each click.
+                    This will require a third variable that contains the <code>runningTotal</code> of all the random numbers generated during the various clicks.
+                    </p>
+                </div>
+
+                <h4>Clicking a button</h4>
+                <pre class="brush: processing; gutter: false; toolbar: false; ">int x, y, w, h;
+
+void setup()
+{
+  size(240, 120);
+  x = 80;
+  y = 30;
+  w = 80;
+  h = 60;
+}
+
+void draw()
+{
+  rect(x, y, w, h);
+}
+
+void mouseClicked()
+{
+  if  ((mouseX &gt; x) && (mouseY &gt; y) && (mouseX &lt; x+w) && (mouseY &lt; y+h))
+  {
+    println("clicked");
+  }
+}
+</pre>
+
+<div class="challenge">
+    <p>
+    <b>Challenge</b>: If you found that straightforward, try showing how the average varies as clicks increase.<br/>
+    Plot a small circle, with the x position showign the number of clicks - this needs to increase as the number of clicks increases.<br/>
+    The y position should depend on the <b>average</b> that you have calculated. What happens to this average over time?<br/>
+    </p>
+</div>
+
+
+            </div> <!-- End of left column -->
+
+            <div class="unit-30 annotation">
+                <!-- Right hand column for small images, popup sketches and annotations. -->
+                <br />
+            </div> <!-- end of right column -->
+        </div> <!-- End of row -->
+
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <div class="units-row">
+            <div class="unit-70">
+                <!-- Left column -->
+                <h4>Event handling methods: mouse</h4>
+
+                <table>
+                    <tr>
+                        <td><a href="https://processing.org/reference/mouseX.html" target="_blank">mouseX</a></td>
+                        <td>A global float variable that holds the x coordinate of the mouse pointer.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://processing.org/reference/mouseY.html" target="_blank">mouseY</a></td>
+                        <td>A global float variable that holds the y coordinate of the mouse pointer.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://processing.org/reference/mousePressed.html"
+                                target="_blank">mousePressed</a></td>
+                        <td>A global Boolean variable that is true while the mouse left button is pressed.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://processing.org/reference/mouseButton.html" target="_blank">mouseButton</a>
+                        </td>
+                        <td>A global variable that is equal the constant <code>LEFT</code> when the left button is
+                            pressed and <code>RIGHT</code> when the right button is pressed.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://processing.org/reference/mouseClicked_.html"
+                                target="_blank">mouseClicked()</a></td>
+                        <td>A method that is called in response to the mouse left button being pressed and released.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://processing.org/reference/mousePressed_.html"
+                                target="_blank">mousePressed()</a></td>
+                        <td>A method that is called in response to the mouse left button being pressed.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://processing.org/reference/mouseReleased_.html"
+                                target="_blank">mouseReleased()</a></td>
+                        <td>A method that is called in response to the mouse left button being released.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://processing.org/reference/mouseMoved_.html" target="_blank">mouseMoved()</a>
+                        </td>
+                        <td>A method that is called in response to the mouse being moved with no buttons being pressed.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://processing.org/reference/mouseDragged_.html"
+                                target="_blank">mouseDragged()</a></td>
+                        <td>A method that is called in response to the mouse being moved while the left button is
+                            pressed.</td>
+                    </tr>
+                </table>
+
+            </div> <!-- End of left column -->
+
+            <div class="unit-30 annotation">
+                <!-- Right hand column for small images, popup sketches and annotations. -->
+                <br />
+            </div> <!-- end of right column -->
+        </div> <!-- End of row -->
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <div class="units-row">
+            <div class="unit-70">
+                <!-- Left column -->
+                <h3>2. Reading Keyboard Input</h3>
+                <p>
+                    The <a href="https://processing.org/reference/keyPressed_.html" target="_blank">keyPressed()</a>
+                    method works with a global variable (like <code>mouseX</code> and <code>mouseY</code> called <a
+                        href="https://processing.org/reference/key.html" target="_blank">key</a>. The key variable holds
+                    the value of the most recently pressed key.
+                </p>
+
+                <h4>ColourKey Sketch</h4>
+                <p>
+                    You can use the <code>keyPressed()</code> method to modify the contents of variables in your sketch.
+                    By combining void <code>keyPressed()</code> with the conditional code from the previous session, you
+                    can modify any type of variable depending on the value of the input.
+                </p>
+
+                <p>
+                    In the sketch below, a rectangle is drawn using the the <a
+                        href="https://processing.org/reference/rect_.html" target="_blank">rect()</a> method. The
+                    rectangle is filled with colour (by a call to <a href="https://processing.org/reference/fill_.html"
+                        target="_blank">fill</a>) using a global set of values called <code>r</code>, <code>g</code> and
+                    <code>b</code> (representing red, green and blue). Initially, amount of red in the fill is 0 out of
+                    255, the amount of green in the is 0 out of 255 and likewise the amount of blue in the fill is 0 out
+                    of 255 so the overall colour given by <code>fill(r, g, b)</code> is made of no red, no green and no
+                    blue and is black.
+                </p>
+
+                <pre class="brush: processing; gutter: false; toolbar: false; ">int r, g, b;
+
+void setup() {
+  size(200, 200);
+  r = 0;
+  g = 0;
+  b = 0;
+}
+
+void draw() {
+  background(254, 232, 134);
+  fill(r, g, b);
+  rect(50, 50, 100, 100);
+}</pre>
+
+
+            </div> <!-- End of left column -->
+
+            <div class="unit-30 annotation">
+                <!-- Right hand column for small images, popup sketches and annotations. -->
+                <br />
+            </div> <!-- end of right column -->
+        </div> <!-- End of row -->
+
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <div class="units-row">
+            <div class="unit-70">
+                <!-- Left column -->
+                <div class="task">Add a void <code>keyPressed()</code> method with code that changes the rectangle's
+                    fill color to green if the key 'g' is pressed and blue if the key 'b' is pressed.
+                    <br /><br />
+                    You may find the following code useful:
+                    <br /><br />
+                    <pre class="brush: processing; gutter: false; toolbar: false; ">if (key == 'r')
+{
+  // Change the value of r
+}</pre>
+                </div>
+            </div> <!-- End of left column -->
+
+            <div class="unit-30 annotation">
+                <!-- Right hand column for small images, popup sketches and annotations. -->
+                <script>loadSketch("https://www.staff.city.ac.uk/~jwo/bootcamp2021/p5js/colourKey", 200, 200, "https://www.staff.city.ac.uk/~jwo/bootcamp2021/lecture04/images/colourKey.png");</script>
+                <p>ColourKey sketch (click to activate and try pressing the 'R', 'G' and 'B' keys).</p>
+            </div> <!-- end of right column -->
+        </div> <!-- End of row -->
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <div class="units-row">
+            <div class="unit-70">
+                <!-- Left column -->
+                <h4>Event handling methods: keyboard</h4>
+                <table>
+                    <tr>
+                        <td><a href="https://processing.org/reference/key.html" target="_blank">key</a></td>
+                        <td>A global char variable that holds the value of the most recently pressed key.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://processing.org/reference/keyPressed.html" target="_blank">keyPressed</a>
+                        </td>
+                        <td>A global Boolean variable that is true while any key is being pressed and false
+                            otherwise.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://processing.org/reference/keyPressed_.html" target="_blank">keyPressed()</a>
+                        </td>
+                        <td>A method that is called in response to a key being pressed.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://processing.org/reference/keyReleased_.html"
+                                target="_blank">keyReleased()</a></td>
+                        <td>A method that is called in response to a key being released.</td>
+                    </tr>
+                </table>
+
+            </div> <!-- End of left column -->
+
+            <div class="unit-30 annotation">
+                <!-- Right hand column for small images, popup sketches and annotations. -->
+                <br />
+            </div> <!-- end of right column -->
+        </div> <!-- End of row -->
+
+
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <div class="units-row">
+            <div class="unit-70">
+                <!-- Left column -->
+
+                <h3>3. Summary and Further Reading</h3>
+
+                <ul>
+                    <li>
+                        XXX Add summary point like this.
+                    </li>
+
+                    <li>
+                        XXX Add summary point like this.
+                    </li>
+
+                    <li>
+                        XXX Add summary point like this.
+                    </li>
+                </ul>
+
+
+
+
+            </div> <!-- End of left column -->
+
+            <div class="unit-30 annotation">
+                <!-- Right column -->
+                <br />
+            </div> <!-- end of right column -->
+        </div> <!-- End of row -->
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    </div> <!-- End of page div -->
+    <script type="text/javascript">SyntaxHighlighter.all()</script>
+</body>
+
+</html>
