@@ -207,8 +207,8 @@
               <div class="unit-70">
                   <!-- Left column -->
 
-                <pre class="brush: processing; gutter: false; toolbar: false; ">// -- Set up the things that don't change ...
-setup() {
+                <pre class="brush: processing; gutter: false; toolbar: false; ">// -- set up the things that don't change ...
+void setup() {
   size(400, 400);
   background(220);
   textSize(18);
@@ -244,22 +244,24 @@ void mouseClicked() {
                 <!-- Left column -->
 
               <pre class="brush: processing; gutter: false; toolbar: false; ">// -- global variable - x position of text
-int x =0;
+int x = 0; // -- this sill store the x position of the text:
 
+// -- set up the things that don't change ...
 void setup() {
-  createCanvas(400, 400);
+  size(400, 400);
   background(220);
   textSize(18);
   fill(64);
 }
 
-// -- do nothing in th edraw loop for now!
+// -- do nothing in the draw loop for now!
 void draw() {}
 
 void keyPressed() {
+  // -- increase value of x by 12 each time key is pressed:
   x+=12;
   // -- put the char held in 'key' at a screen position
-  // -- that incresases in x and y with each key press
+  // -- that increases in x and y with each key press
   text(key,x%width, 100 + 24*int(x/width));
 }
 
@@ -285,9 +287,9 @@ void mouseClicked() {
             <pre class="brush: processing; gutter: false; toolbar: false; ">// -- global variables to store the position of the text to be added:
 float textX, textY;
 
-// -- set up the things that don't change :
+// -- set up the things that don't change ...
 void setup() {
-  createCanvas(400, 400);
+  size(400, 400);
   background(220);
   textSize(18);
   fill(64);
@@ -303,7 +305,7 @@ void keyPressed() {
 }
 
 void mouseClicked() {
-  if (mouseButton = LEFT) {
+  if (mouseButton == LEFT) {
     // -- left button - update text position:
     textX = mouseX;
     textY = mouseY;

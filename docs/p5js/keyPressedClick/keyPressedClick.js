@@ -19,7 +19,7 @@ function keyPressed() {
 }
 
 function mouseClicked() {
-  if (mouseButton = LEFT) {
+  if (mouseButton == LEFT) {
     // -- left button - update text position:
     textX = mouseX;
     textY = mouseY;
