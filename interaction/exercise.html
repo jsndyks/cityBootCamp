@@ -49,8 +49,12 @@
         </p>
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
+        <h3>1. Moving Shape.</h3>
+        <p>The whole idea of studying <i>Interaction</i> is that it enables you (or others) to control a sketch with your mouse and keyboard once it is running. We can control colours, positions, behaviours ... pretty much anything really. And that's what many sophisticated sketches do.</p>
+        <p>Let's start my making something move.</p>
+
         <div class="coreTask">
-            <h4>1. Travelling Square.</h4>
+            <h4>1. Moving Shape.</h4>
             <p>
                 Create a new sketch that draws a square in the centre of a square window sized 400 by 400.<br/>
                 Use two global variables <code>float x</code> and <code>float y</code> to specify the position of the square:
@@ -62,36 +66,49 @@
 </p>
             <p>
             Remember you have to declare those variables at the top of your sketch and you should initialise them with
-            appropriate values inside <code>setup()</code> so that your square is positioned correctly when your sketch
+            appropriate values inside <code>setup()</code>, so that your square is positioned correctly when your sketch
             starts.
             <br /><br />
             Run your sketch to check it behaves as expected.
             <br /><br />
             Now add a <code>keyPressed()</code> method to the sketch that maps the <span class="key">w</span> and <span class="key">s</span> keys to commands that increment and decrement
-            the variable <code>y</code> by a value of 1 respectively (think about the coordinate system and how pressing <span class="key">w</span> will
-            move the square up).
+            the variable <code>y</code> by a value of 1 respectively.<br/>
+            The condition in <code>keyPressed()</code> that gives you the keyboard interaction will look something like this:
+            <pre class="brush: processing; gutter: false; toolbar: false; ">if (key == 'w') {
+// -- do something in here that moves the rectangle up!
+}</pre>
+            Really think about the coordinate system and how pressing <span class="key">w</span> will move the square up here.
             <br /><br />
             Add conditions to <code>keyPressed()</code> that map the <span class="key">a</span> and <span class="key">d</span> keys to commands that increment and decrement the variable <code>x</code> by a value
             of 1 respectively.
             <br /><br />
             Run your sketch to check you can move the square around the canvas using the <span class="key">a</span>, <span class="key">d</span>, <span class="key">s</span> and <span class="key">w</span> keys.
           </p>
-          <p>This is pretty cool - you have an interactive sketch!<br/>Show your friends, show your tutor.<br/>Celebrate!</p>
-
           </div>
-          <br /><br />
+
+          <p style="margin-top:2em">
+            This is pretty cool - you have an interactive sketch!<br/>Show your friends, show your tutor.<br/>Celebrate!</p>
+          <p>But not too much ... because there are a few more features and tricks that you should try now - they will serve you well.</p>
+
+          <p>If you managed that, you can try a few more useful extensions to add to your sketch.</p>
+          <p>This next exercise is not obligatory, but we recommend that you give it a try and expect most of you to be able to do it.</p>
+          <p>Don't forget to document your code, ask for help and show your teachers how you are doing.</p>
+
 
           <div class="challenge">
-              <h4>1+. Super Travelling Square.</h4>
-              <p>If you managed that, you can try a few more useful extensions to add to your sketch:</p>
+              <h4>1+. Super Moving Shape.</h4>
+              <p>Let's push things a bit, and learn a little more, by enhancing this interactive sketch:</p>
+
+              <h5>Constrain!</h5>
               <p>
-            <b>Extension 1a: </b> Add <code>if</code> statements to prevent the values of <code>x</code> and <code>y</code> becoming less than 0 or more than 400.
+            <b>Extension 1a:</b> Add <code>if</code> statements to prevent the values of <code>x</code> and <code>y</code> becoming less than 0 or more than 400.
             <br /><br />
             <b>Extension 1b: </b> Add <code>if</code> statements to allow the square to go up to, but not past, the bounds of the sketch.
             <br /><br />
             <b>Extension 1c: </b> Can you find and use a <i>Processing</i> command that will <a href="https://processing.org/reference/constrain_.html">constrain</a> the extents of <code>x</code> and <code>y</code> in a single method?
-            <br /><br />
           </p>
+
+          <h5>Report!</h5>
             <p>
             <b>Extension 2a:</b> Add code to the <code>draw()</code> method that displays the <code>x</code> and <code>y</code> position of the
             rectangle in the bottom corner of the sketch.<br/>
@@ -101,9 +118,23 @@
             <br /><br />
             <b>Extension 2c:</b> Add code to the <code>draw()</code> method that displays the letter of the most recently pressed <code>key</code> inside the rectangle.
             </p>
+
+            <h5>Change!</h5>
+              <p>
+              <b>Extension 3a:</b> Add a boolean global variable called <code>isSquare</code> with <code>isSquare = true;</code><br/>.
+              This will store information about the status of your sketch: is the shape a square or not? Well, at the moment it is, but we can add an interaction that enables ius to vary this.
+              <br/><br/>
+              <b>Extension 3b:</b> Add a condition to the <code>keyPressed()</code> method changes <code>isSquare</code> to <code>false</code> if you click a particular key.<br/><br/>
+              <b>Extension 3c:</b> Now add a condition in the <code>draw()</code> loop that checks whether <code>isSquare</code> is <code>true</code> and draws a <code>rect()</code> or an <code>ellipse()</code> dependent upon this.<br/><br/>
+              <b>Extension 3d:</b> You have probably figured out by now that you'll need another condition in <code>keyPressed()</code> that enables you to make <code>isSquare</code> <code>true</code> again - so add one of these!<br/><br/>
+              </p>
+
         </div>
         <br /><br />
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+        <h3>3. Red Range</h3>
+        <p>This kind of interaction can be used to control almost anything in your sketch: shapes, positions, colours, sizes ... all sorts of behaviours.<br/>Let's change the colour of a shape according to input from the keyboard for starters.</p>
 
         <div class="coreTask">
             <h4>2. Red Range.</h4>
@@ -122,24 +153,52 @@
 }</pre>
             <br />
             Use <i>Processing's</i> <code>void keyPressed()</code> method to increment the value of <code>red</code> by 10 for every press of
-            the <span class="key">r</span> key.
-            Decrement the value or <code>red</code> by 10 for every press of the <span class="key">b</span> key.
-            <br /><br />
-            <b>Extension:</b> Add statements that prevent the value of red becoming less than 0 or more than 255.
-            </p>
+            the <span class="key">R</span> key.<br/>
+            Add another interaction that decrements the value or <code>red</code> by 10 for every press of the <span class="key">r</span> key.
+          </p>
+        </div>
+
+        <p>That's pretty good, but wiht a few more commands and a little more creatice thinking you can create a RGB colour selector!</p>
+
+        <div class="challenge">
+            <h4>3+. Red Green Blue Selector.</h4>
+          <p><b>Extension 1:</b> Add statements that prevent the value of red becoming less than 0 or more than 255.</p>
+          <p><b>Extension 2:</b> Add statements that change the <b>green</b> and <b>blue</b> colour components with <span class="key">G</span>/<span class="key">g</span> and <span class="key">B</span>/<span class="key">b</span>.</p>
+          <p><b>Extension 3:</b> Add statements that show the currently selected colour by adding <code>text()</code> that contains a <code>String</code> that shows all three colours - e.g.</p>
+<pre class="brush: processing; gutter: false; toolbar: false; ">// -- initialise a string to hold colour details
+  String colourDefinition = "";
+
+// -- update with the current colour:
+  colourDefinition = "rgb("+red+","+green+","+blue")"
+  text(colourDefinition,width/2,2*height/3);"
+</pre>
+
         </div>
         <br /><br />
 
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <!-- <h4>3. Password Reader.</h4> -->
 
+        <h3>3. Target Hunter.</h3>
+        <p>We can use the detection of events, and the creation of shapes on screen to produce simple games.</p>
+        <p>One very useful method is <code><a href="https://processing.org/reference/dist_.html">dist()</a></code> - which calculates the distance between two points. So we can calcutae the distance between the mouse position and the centre of a circle. This let's us know whether the mouse is <i>inside</i> the circle (closer to its centre than its radius) or not.<br/><br/>
+        In <i>pseudo-code</i> this looks something like :
+        </p>
+        <pre class="brush: processing; gutter: false; toolbar: false; ">if (dist(circleX,circleY,mouseX,mouseY) &lt; radius) {
+  // -- within circle
+} else {
+  // -- outside circle
+}</pre>
+
+          <img src="https://raw.githubusercontent.com/jsndyks/cityBootCamp/master/interaction/img/colourPic.png"/>
+
 
         <div class="coreTask">
             <h4>3. Target Hunter.</h4>
 
             <p>
-                Write code that produces a white circle at a random position on the screen.<br/>
-                Each time you click inside the circle it it redrawn at a random position within the sketch and at a random size.
+                Write code that produces a circle in your favourite <code>fill()</code> colour at a random position on the screen.<br/>
+                Each time you click inside the circle redraw it at a random position within the sketch and at a random size.
                 <br /><br />
                 Before you start writing code consider the global variables and the functions you will need to implement
                 the behaviour of your sketch. A good approach would be break the behaviour of the sketch down into
@@ -170,9 +229,14 @@
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <!-- <h4>5. Password Reader (advanced).</h4> -->
 
+        <h3>4. Colour Splash.</h3>
+        <p>Let's use what we have learned to add some interactions that allow you to rapidly change a dynamic display.</p>
+        <br/><br/>
+
+        <img src="https://raw.githubusercontent.com/jsndyks/cityBootCamp/master/interaction/img/colourPic.png"/>
 
         <div class="challenge">
-            <h4>4. Colour Splash.</h4>
+            <h4>Exercise 4. Colour Splash.</h4>
             <p>Make a big canvas in <code>setup()</code> and give it a white <code><a href="https://processing.org/reference/background_.html">background()</a></code>.</p>
             <p>Add a <code>draw()</code> method that draws a circle with your favourite <code>fill()</code> wherever the mouse is positioned.</p>
             <p>The circle should have no outline -  <code><a href="https://processing.org/reference/noStroke_.html">noStroke()</a></code></p>
