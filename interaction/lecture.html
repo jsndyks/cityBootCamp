@@ -34,6 +34,8 @@
     <style type="text/css">
       .key {font-weight:bold; padding:6px; margin:2px; padding-top:2px; padding-bottom:2px; background-color:#e0e0e0; border:1px solid #c0c0c0; border-right:2px solid #909090; border-bottom:2px solid #909090; }
       pre {margin-left:2em; padding-top:8px; padding-bottom:8px; padding-left:2em;}
+      .todo {margin:2em; background-color:#fffff0}
+      .figCaption {margin:1em; color:#606060; font-style:italic; font-size: 90%}
     </style>
 </head>
 
@@ -55,7 +57,8 @@
             <p>
               And we're going to play with the basics today.<br/>
 
-                This session introduces ways in which you can collect and use <b>input</b> from somebody who is using your <b>Processing</b> application through their <b>interactions</b> with the keyboard and mouse. We'll use these key presses or mouse events to control what happens in our sketches.
+                This session introduces ways in which you can collect and use <b>input</b> from somebody who is using your <b>Processing</b> application through their <b>interactions</b> with the keyboard and mouse.
+                We'll use these <i>key presses</i> or <i>mouse events</i> to control what happens in our sketches.
             </p>
 
             <p><strong>By the end of this session you should be able to:</strong></p>
@@ -71,7 +74,90 @@
         </div> <!-- End of intro section -->
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Main content ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-<!-- https://www.notion.so/blog/stu-card -->
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <div class="units-row">
+            <div class="unit-70">
+                <!-- Left column -->
+                <h3>1. Interaction</h3>
+                <p>
+                  Think about how we interact with computers:
+                </p>
+                <ul>
+                  <li>we talk to them</li>
+                  <li>we drag mice and trackpads</li>
+                  <li>we swipe and touch and tilt them</li>
+                  <li>we tap on keyboards and wrestle with game controllers</li>
+                  <li>anything else?</li>
+                </ul>
+                <div class="coreTask">
+                  <b>Interacting with Computers</b>
+                  <p>Is that it?<br/>Can you think of other ways you interact with computers?</p>
+                  <!-- guitar, bike -->
+                </div>
+                  <p>Interaction is how we get computers to do things that are useful to us, and how they know what we're up to and what we want.</p>
+                  <p>So, if we're going to make interesting applications we need to know how to collect information about interactions, how to detect what people doing are make our programs and sketches respond.</p>
+
+                <h4>The Mouse</h4>
+                <p>
+                  I'm lucky enough to have met one of the great innovators in 20th Century Computing.</p>
+                  <p> I presented <a href="https://dl.acm.org/profile/81406592524">Stu Card</a> with a <a href="http://ieeevis.org/year/2017/info/awards/test-of-time-awards">Test of Time Award </a> at the IEEE VIS conference in 2017 in Phoenix, Arizona, and irt was a great honour.
+
+
+
+                    led a team at Xerox in Palo Alto, California in the 1970s.
+                  Stu and his colleagues were thinking (probably more deeply than we just did) about how to  get comoputers to know what we need of them. They wanted to come up with devices that were easy to use and provided efficient and precise interactions.
+                </p>
+              </div>
+                <div class="unit-30 annotation">
+                    <!-- Right hand column for small images, popup sketches and annotations. -->
+                    <img src="https://jsndyks.github.io/cityBootCamp/images/interaction/stuCard.171003.small.jpg" width="200"/>
+                    <p class="figCaption">
+                      A photo of Stu Card taking a photo of the 'data trophy' that we made for him.<br/>
+                      Source: Jason Dykes.
+                    </p>
+
+                </div> <!-- end of right column -->
+            </div> <!-- End of row -->
+
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <div class="units-row">
+                <div class="unit-70">
+                    <!-- Left column -->
+
+                <!-- https://www.notion.so/blog/stu-card -->
+                <table cellspacing="4" cellpadding="4" border="0">
+                  <tr>
+                    <td >
+                      <a href="https://www.notion.so/blog/stu-card" title="The outside of an early mouse prototype."><img src="https://www.notion.so/cdn-cgi/image/w=3840,q=100/https://images.ctfassets.net/spoqsaf9291f/4Sm2xHEXWftLIrPqrLBaV9/122d64ee43eb3f2b7cf69db345a28b42/STU-17.jpeg" alt="The outside of an early mouse prototype" width="100%" height="auto" style="width: 100%;"/></a>
+                    </td>
+                    <td>
+                      <a href="https://i.insider.com/59a895c679bbfd2b008b73a8?width=1200&format=jpeg&auto=webp" title="The inside of an early mouse prototype."><img src="https://www.notion.so/cdn-cgi/image/w=3840,q=100/https://images.ctfassets.net/spoqsaf9291f/7hPCU6DqHLUf9I8qtMQEoE/6f7aad8a785bfc1fd9f572bce594046e/STU-15.jpeg" alt="The inside of an early mouse prototype." width="100%" height="auto" style="width: 100%;"/></a>
+
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="figCaption">
+                      Source: <a href="https://www.notion.so/blog/stu-card">Notion Labs, Inc.</a>
+                    </td>
+                    <td class="figCaption">
+                      Source: <a href="https://www.notion.so/blog/stu-card">Notion Labs, Inc.</a>
+                    </td>
+                  </tr>
+                </table>
+
+            </div> <!-- End of left column -->
+
+            <div class="unit-30 annotation">
+                <!-- Right hand column for small images, popup sketches and annotations. -->
+                <img src="https://www.notion.so/cdn-cgi/image/w=200,q=100/https://images.ctfassets.net/spoqsaf9291f/59pwajkZivZw28kkjUlYUo/55f9dc0c7623470f87b7b72381276c82/STU-11.jpeg" width="200"/>
+                <p class="figCaption">
+                  Source: <a href="https://www.notion.so/blog/stu-card">Notion Labs, Inc.</a>
+                </p>
+
+            </div> <!-- end of right column -->
+        </div> <!-- End of row -->
+
+
 
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <div class="units-row">
