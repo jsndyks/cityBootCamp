@@ -33,6 +33,7 @@
     <script src="https://www.staff.city.ac.uk/~jwo/moodle/js/master.js"></script>
     <style type="text/css">
       .key {font-weight:bold; padding:6px; margin:2px; padding-top:2px; padding-bottom:2px; background-color:#e0e0e0; border:1px solid #c0c0c0; border-right:2px solid #909090; border-bottom:2px solid #909090; }
+      pre {margin-left:2em; padding-top:8px; padding-bottom:8px; padding-left:2em;}
     </style>
 </head>
 
@@ -47,6 +48,32 @@
             These exercises give you practice with key and mouse input and updating and changing the state of global
             variables and thereby changing the behaviour of the sketch.
         </p>
+        <p>We expect you to work on all of the <b>CORE TASKS</b>. Do something like this ...:</p>
+        <ol>
+          <li>Try it out</li>
+          <li>See if it works</li>
+          <li>Try something else </li>
+          <li>See if it works</li>
+          <li>Ask a friend or teacher - show then your commented code, the behaviour of the sketch and any error messages</li>
+          <li>Try again </li>
+          <li>Dive into the excellent <a href="https://processing.org/reference">Processing Reference Materials</a> and keep trying </li>
+        </ol>
+        <p>And not necessarily in that order, but we want to encourage you to experiment, try things out, learn from error messages and observed behaviours and problem solve.</p>
+
+        <div class="coreTask">
+      <p>It will really help you in the long run if you can get these completed.</p>
+      </div>
+
+        <p>We would really like you to try the <b>challenges</b>. They don't add anything new, but get you thinking about what yiou have learned and applying this in new ays. So these are useful exercises that should be within all of your capabilities. Give them a go if you can.</p>
+
+        <div class="challenge">
+      <p>We expect most people to try the challenges and many of you should be able to complete them!</p>
+      </div>
+
+      <p><b>Please try to get these exercises done by the end of the day.</b></p>
+
+  <hr/>
+
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
         <h3>1. Moving Shape.</h3>
@@ -59,10 +86,12 @@
                 Create a new sketch that draws a square in the centre of a square window sized 400 by 400.<br/>
                 Use two global variables <code>float x</code> and <code>float y</code> to specify the position of the square:
                 <br />
-            <pre class="brush: processing; gutter: false; toolbar: false; ">void draw()
+            <pre class="brush: processing; gutter: false; toolbar: false; ">
+void draw()
 {
   rect(x, y, 60, 60);
-}</pre>
+}
+</pre>
 </p>
             <p>
             Remember you have to declare those variables at the top of your sketch and you should initialise them with
@@ -74,9 +103,11 @@
             Now add a <code>keyPressed()</code> method to the sketch that maps the <span class="key">w</span> and <span class="key">s</span> keys to commands that increment and decrement
             the variable <code>y</code> by a value of 1 respectively.<br/>
             The condition in <code>keyPressed()</code> that gives you the keyboard interaction will look something like this:
-            <pre class="brush: processing; gutter: false; toolbar: false; ">if (key == 'w') {
+            <pre class="brush: processing; gutter: false; toolbar: false; ">
+if (key == 'w') {
 // -- do something in here that moves the rectangle up!
-}</pre>
+}
+</pre>
             Really think about the coordinate system and how pressing <span class="key">w</span> will move the square up here.
             <br /><br />
             Add conditions to <code>keyPressed()</code> that map the <span class="key">a</span> and <span class="key">d</span> keys to commands that increment and decrement the variable <code>x</code> by a value
@@ -92,7 +123,7 @@
 
           <p>If you managed that, you can try a few more useful extensions to add to your sketch.</p>
           <p>This next exercise is not obligatory, but we recommend that you give it a try and expect most of you to be able to do it.</p>
-          <p>Don't forget to document your code, ask for help and show your teachers how you are doing.</p>
+          <p>Don't forget to document your code with explanatory comments, save progress regularly and ask for help and show your teachers how you are doing.</p>
 
 
           <div class="challenge">
@@ -100,6 +131,7 @@
               <p>Let's push things a bit, and learn a little more, by enhancing this interactive sketch:</p>
 
               <h5>Constrain!</h5>
+              <p>It's pretty easy to keep the shape on the canvas ...</p>
               <p>
             <b>Extension 1a:</b> Add <code>if</code> statements to prevent the values of <code>x</code> and <code>y</code> becoming less than 0 or more than 400.
             <br /><br />
@@ -109,6 +141,7 @@
           </p>
 
           <h5>Report!</h5>
+          <p>We probably want to know sometrhing about what is going on in the sketch ...</p>
             <p>
             <b>Extension 2a:</b> Add code to the <code>draw()</code> method that displays the <code>x</code> and <code>y</code> position of the
             rectangle in the bottom corner of the sketch.<br/>
@@ -120,6 +153,7 @@
             </p>
 
             <h5>Change!</h5>
+            <p>Add an interaction that changes the status of the sketch, and the behaviour of the sketch as a result ...</p>
               <p>
               <b>Extension 3a:</b> Add a boolean global variable called <code>isSquare</code> with <code>isSquare = true;</code><br/>.
               This will store information about the status of your sketch: is the shape a square or not? Well, at the moment it is, but we can add an interaction that enables ius to vary this.
@@ -133,7 +167,7 @@
         <br /><br />
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-        <h3>3. Red Range</h3>
+        <h3>2. Red Range</h3>
         <p>This kind of interaction can be used to control almost anything in your sketch: shapes, positions, colours, sizes ... all sorts of behaviours.<br/>Let's change the colour of a shape according to input from the keyboard for starters.</p>
 
         <div class="coreTask">
@@ -145,12 +179,14 @@
                 <br /><br />
                 Add a <code>void draw()</code> method that contains the following code:
                 <br />
-            <pre class="brush: processing; gutter: false; toolbar: false; ">void draw()
+            <pre class="brush: processing; gutter: false; toolbar: false; ">
+void draw()
 {
   background(100);
   fill(red, 128, 128);
   rect(100, 100, 60, 60);
-}</pre>
+}
+</pre>
             <br />
             Use <i>Processing's</i> <code>void keyPressed()</code> method to increment the value of <code>red</code> by 10 for every press of
             the <span class="key">R</span> key.<br/>
@@ -161,15 +197,18 @@
         <p>That's pretty good, but wiht a few more commands and a little more creatice thinking you can create a RGB colour selector!</p>
 
         <div class="challenge">
-            <h4>3+. Red Green Blue Selector.</h4>
+            <h4>2+. Red Green Blue Selector.</h4>
           <p><b>Extension 1:</b> Add statements that prevent the value of red becoming less than 0 or more than 255.</p>
           <p><b>Extension 2:</b> Add statements that change the <b>green</b> and <b>blue</b> colour components with <span class="key">G</span>/<span class="key">g</span> and <span class="key">B</span>/<span class="key">b</span>.</p>
           <p><b>Extension 3:</b> Add statements that show the currently selected colour by adding <code>text()</code> that contains a <code>String</code> that shows all three colours - e.g.</p>
-<pre class="brush: processing; gutter: false; toolbar: false; ">// -- initialise a string to hold colour details
+<pre class="brush: processing; gutter: false; toolbar: false; ">
+// -- initialise a string to hold colour details
   String colourDefinition = "";
 
 // -- update with the current colour:
   colourDefinition = "rgb("+red+","+green+","+blue")"
+
+// -- show the current colour on the canvas:
   text(colourDefinition,width/2,2*height/3);"
 </pre>
 
@@ -181,16 +220,28 @@
 
         <h3>3. Target Hunter.</h3>
         <p>We can use the detection of events, and the creation of shapes on screen to produce simple games.</p>
-        <p>One very useful method is <code><a href="https://processing.org/reference/dist_.html">dist()</a></code> - which calculates the distance between two points. So we can calcutae the distance between the mouse position and the centre of a circle. This let's us know whether the mouse is <i>inside</i> the circle (closer to its centre than its radius) or not.<br/><br/>
-        In <i>pseudo-code</i> this looks something like :
+        <p>One very useful method is <code><a href="https://processing.org/reference/dist_.html">dist()</a></code> - which calculates the distance between two points.  The <a href="https://processing.org/examples/distance2d.html">Distance2D sketch</a> shows how nicely this can be tied to interactions.</p>
+        <img src="https://raw.githubusercontent.com/jsndyks/cityBootCamp/master/interaction/img/distance2D.png"/>
+        <p>But let's not get ahead of ourselves! For now, rather handily, <code><a href="https://processing.org/reference/dist_.html">dist()</a></code> allows us to calculate the distance between the mouse position and the centre of a circle. This tells us whether the mouse is either:</p>
+        <ul>
+          <li><i>inside</i> the circle - closer to its centre than its radius), or</li>
+          <li><i>outside</i> the circle - further from its centre than its radius</li>
+        </ul>
+        <p>In <i>pseudo-code</i> this looks something like :
         </p>
-        <pre class="brush: processing; gutter: false; toolbar: false; ">if (dist(circleX,circleY,mouseX,mouseY) &lt; radius) {
-  // -- within circle
+        <pre class="brush: processing; gutter: false; toolbar: false; ">
+// -- check on distance from mouse to circle centre:
+if (dist(circleX,circleY,mouseX,mouseY) &lt; radius) {
+  // -- within circle - do something
+  fill(255,128,64);
 } else {
-  // -- outside circle
-}</pre>
+  // -- outside circle - do something else
+  fill(255);
+}
 
-          <img src="https://raw.githubusercontent.com/jsndyks/cityBootCamp/master/interaction/img/colourPic.png"/>
+// -- draw the circle
+ellipse(circleX,circleY,radius,radius);</pre>
+
 
 
         <div class="coreTask">
@@ -198,11 +249,14 @@
 
             <p>
                 Write code that produces a circle in your favourite <code>fill()</code> colour at a random position on the screen.<br/>
-                Each time you click inside the circle redraw it at a random position within the sketch and at a random size.
-                <br /><br />
+                Each time you <i>move</i> the mouse inside the circle highlight it in some way, with a different <code>fill()</code> or <code>stroke()</code> or <code>strokeWeight()</code>.
+              </p>
+              <p>
+                When you click inside the circle, redraw it at a random position within the sketch and at a random size.
+              </p><p>
                 Before you start writing code consider the global variables and the functions you will need to implement
                 the behaviour of your sketch. A good approach would be break the behaviour of the sketch down into
-                smaller testable goals, for example:
+                smaller testable goals, for example:</p>
             <ul>
                 <li>Make a list of global variables and discuss it with one of the lab staff;</li>
                 <li>Draw a centred circle and test;</li>
@@ -215,14 +269,14 @@
             <ul>
                 <li>To detect whether the click is within the circle you can use Processing's <a
                         href="https://processing.org/reference/dist_.html" target="_blank">dist()</a> method.</li>
-                <li>To test for the click detection consider printing "Click" to the console.</li>
+                        <li>To test whether the mouse is in the circle consider printing "In" to the console when it is.</li>
+                        <li>To test for the click detection consider printing "Click" to the console.</li>
                 <li>To test whether the click is inside the circle consider printing "Hit" or "Miss" to the console.</li>
                 <li>To set the position of the circle to a random position you can use Processing's <a
                         href="https://processing.org/reference/random_.html" target="_blank">random()</a> method.</li>
                 <li>Make sure you <a href="https://processing.org/reference/constrain_.html">constrain</a> the positions and the circle size so the circle stays within the sketch and is big enough to see and click!</li>
             </ul>
 
-            </p>
         </div>
         <br /><br />
 
@@ -230,7 +284,7 @@
         <!-- <h4>5. Password Reader (advanced).</h4> -->
 
         <h3>4. Colour Splash.</h3>
-        <p>Let's use what we have learned to add some interactions that allow you to rapidly change a dynamic display.</p>
+        <p>Let's use what we have learned to add some interactions that allow you to rapidly change a dynamic display ... and perhaps even get a little creative!</p>
         <br/><br/>
 
         <img src="https://raw.githubusercontent.com/jsndyks/cityBootCamp/master/interaction/img/colourPic.png"/>
@@ -240,7 +294,7 @@
             <p>Make a big canvas in <code>setup()</code> and give it a white <code><a href="https://processing.org/reference/background_.html">background()</a></code>.</p>
             <p>Add a <code>draw()</code> method that draws a circle with your favourite <code>fill()</code> wherever the mouse is positioned.</p>
             <p>The circle should have no outline -  <code><a href="https://processing.org/reference/noStroke_.html">noStroke()</a></code></p>
-            <p>It should move as the mouse moves, and leave a trail - so make sure you have no <code><a href="https://processing.org/reference/background_.html">background()</a></code> command in <code>draw()</code>.</p>
+            <p>It should move as the mouse moves, and leave a trail - so make sure you have no <code><a href="https://processing.org/reference/background_.html">background()</a></code> command in <code>draw()</code>. This would wipe the background clear in every <code>draw()</code> loop.</p>
             <p>Now update the colour of the circle depending on the position of the mouse - so that there is more <b>red</b> in the colour as the mouse moves right and more <code>blue</code> in the colour as the mouse moves down.<br/>This should look quite cool and colourful.</p>
             <p>But it gets better!<br/>
               Now vary the colour depending upon whether the <span class="key">r</span>, <span class="key">g</span> or <span class="key">b</span> keys were most recently pressed.<br/>
@@ -284,6 +338,7 @@
 
 
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <hr/>
 
         <h2>Check on Progress</h2>
         <div class="task">

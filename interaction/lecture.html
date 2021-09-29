@@ -33,6 +33,7 @@
     <script src="https://www.staff.city.ac.uk/~jwo/moodle/js/master.js"></script>
     <style type="text/css">
       .key {font-weight:bold; padding:6px; margin:2px; padding-top:2px; padding-bottom:2px; background-color:#e0e0e0; border:1px solid #c0c0c0; border-right:2px solid #909090; border-bottom:2px solid #909090; }
+      pre {margin-left:2em; padding-top:8px; padding-bottom:8px; padding-left:2em;}
     </style>
 </head>
 
@@ -46,6 +47,14 @@
         <div class="intro">
 
             <p>
+            A computer isn't much good without <b>interaction</b>!
+            </p>
+            <p>
+            Luckily (actually, there is careful planning and sophisticated functionality involved) <i>Processing</i> has rich and straightforward capabilites for detecting input from mouse, keyboard and elsewhere and using this to allow us to interact rapidly and consistently with sketches.
+            </p>
+            <p>
+              And we're going to play with the basics today.<br/>
+
                 This session introduces ways in which you can collect and use <b>input</b> from somebody who is using your <b>Processing</b> application through their <b>interactions</b> with the keyboard and mouse. We'll use these key presses or mouse events to control what happens in our sketches.
             </p>
 
@@ -61,6 +70,124 @@
 
         </div> <!-- End of intro section -->
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Main content ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!-- https://www.notion.so/blog/stu-card -->
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <div class="units-row">
+            <div class="unit-70">
+                <!-- Left column -->
+                <h3>1. Keyboard Input</h3>
+                <p>
+                    The <a href="https://processing.org/reference/keyPressed_.html" target="_blank">keyPressed()</a>
+                    method works with a global variable (like <code>mouseX</code> and <code>mouseY</code> called <a
+                        href="https://processing.org/reference/key.html" target="_blank">key</a>. The key variable holds
+                    the value of the most recently pressed key.
+                </p>
+
+                <h4>ColourKey Sketch</h4>
+                <p>
+                    You can use the <code>keyPressed()</code> method to modify the contents of variables in your sketch.
+                    By combining void <code>keyPressed()</code> with the conditional code from the previous session, you
+                    can modify any type of variable depending on the value of the input.
+                </p>
+
+                <p>
+                    In the sketch below, a rectangle is drawn using the the <a
+                        href="https://processing.org/reference/rect_.html" target="_blank">rect()</a> method. The
+                    rectangle is filled with colour (by a call to <a href="https://processing.org/reference/fill_.html"
+                        target="_blank">fill</a>) using a global set of values called <code>r</code>, <code>g</code> and
+                    <code>b</code> (representing red, green and blue). Initially, amount of red in the fill is 0 out of
+                    255, the amount of green in the is 0 out of 255 and likewise the amount of blue in the fill is 0 out
+                    of 255 so the overall colour given by <code>fill(r, g, b)</code> is made of no red, no green and no
+                    blue and is black.
+                </p>
+
+                <pre class="brush: processing; gutter: false; toolbar: false; ">int r, g, b;
+
+void setup() {
+  size(200, 200);
+  r = 0;
+  g = 0;
+  b = 0;
+}
+
+void draw() {
+  background(254, 232, 134);
+  fill(r, g, b);
+  rect(50, 50, 100, 100);
+}</pre>
+
+
+            </div> <!-- End of left column -->
+
+            <div class="unit-30 annotation">
+                <!-- Right hand column for small images, popup sketches and annotations. -->
+                <br />
+            </div> <!-- end of right column -->
+        </div> <!-- End of row -->
+
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <div class="units-row">
+            <div class="unit-70">
+                <!-- Left column -->
+                <div class="task">Add a void <code>keyPressed()</code> method with code that changes the rectangle's
+                    fill color to green if the key 'g' is pressed and blue if the key 'b' is pressed.
+                    <br /><br />
+                    You may find the following code useful:
+                    <br /><br />
+                    <pre class="brush: processing; gutter: false; toolbar: false; ">if (key == 'r')
+{
+  // Change the value of r
+}</pre>
+                </div>
+            </div> <!-- End of left column -->
+
+            <div class="unit-30 annotation">
+                <!-- Right hand column for small images, popup sketches and annotations. -->
+                <script>loadSketch("https://www.staff.city.ac.uk/~jwo/bootcamp2021/p5js/colourKey", 200, 200, "https://www.staff.city.ac.uk/~jwo/bootcamp2021/lecture04/images/colourKey.png");</script>
+                <p>ColourKey sketch (click to activate and try pressing the 'R', 'G' and 'B' keys).</p>
+            </div> <!-- end of right column -->
+        </div> <!-- End of row -->
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <div class="units-row">
+            <div class="unit-70">
+                <!-- Left column -->
+                <h4>Event handling methods: keyboard</h4>
+                <table>
+                    <tr>
+                        <td><a href="https://processing.org/reference/key.html" target="_blank">key</a></td>
+                        <td>A global char variable that holds the value of the most recently pressed key.</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://processing.org/reference/keyPressed.html" target="_blank">keyPressed</a>
+                        </td>
+                        <td>A global Boolean variable that is true while any key is being pressed and false
+                            otherwise.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://processing.org/reference/keyPressed_.html" target="_blank">keyPressed()</a>
+                        </td>
+                        <td>A method that is called in response to a key being pressed.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://processing.org/reference/keyReleased_.html"
+                                target="_blank">keyReleased()</a></td>
+                        <td>A method that is called in response to a key being released.</td>
+                    </tr>
+                </table>
+
+            </div> <!-- End of left column -->
+
+            <div class="unit-30 annotation">
+                <!-- Right hand column for small images, popup sketches and annotations. -->
+                <br />
+            </div> <!-- end of right column -->
+        </div> <!-- End of row -->
 
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <div class="units-row">
@@ -219,123 +346,6 @@ void mouseClicked()
                 <br />
             </div> <!-- end of right column -->
         </div> <!-- End of row -->
-
-        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-        <div class="units-row">
-            <div class="unit-70">
-                <!-- Left column -->
-                <h3>2. Reading Keyboard Input</h3>
-                <p>
-                    The <a href="https://processing.org/reference/keyPressed_.html" target="_blank">keyPressed()</a>
-                    method works with a global variable (like <code>mouseX</code> and <code>mouseY</code> called <a
-                        href="https://processing.org/reference/key.html" target="_blank">key</a>. The key variable holds
-                    the value of the most recently pressed key.
-                </p>
-
-                <h4>ColourKey Sketch</h4>
-                <p>
-                    You can use the <code>keyPressed()</code> method to modify the contents of variables in your sketch.
-                    By combining void <code>keyPressed()</code> with the conditional code from the previous session, you
-                    can modify any type of variable depending on the value of the input.
-                </p>
-
-                <p>
-                    In the sketch below, a rectangle is drawn using the the <a
-                        href="https://processing.org/reference/rect_.html" target="_blank">rect()</a> method. The
-                    rectangle is filled with colour (by a call to <a href="https://processing.org/reference/fill_.html"
-                        target="_blank">fill</a>) using a global set of values called <code>r</code>, <code>g</code> and
-                    <code>b</code> (representing red, green and blue). Initially, amount of red in the fill is 0 out of
-                    255, the amount of green in the is 0 out of 255 and likewise the amount of blue in the fill is 0 out
-                    of 255 so the overall colour given by <code>fill(r, g, b)</code> is made of no red, no green and no
-                    blue and is black.
-                </p>
-
-                <pre class="brush: processing; gutter: false; toolbar: false; ">int r, g, b;
-
-void setup() {
-  size(200, 200);
-  r = 0;
-  g = 0;
-  b = 0;
-}
-
-void draw() {
-  background(254, 232, 134);
-  fill(r, g, b);
-  rect(50, 50, 100, 100);
-}</pre>
-
-
-            </div> <!-- End of left column -->
-
-            <div class="unit-30 annotation">
-                <!-- Right hand column for small images, popup sketches and annotations. -->
-                <br />
-            </div> <!-- end of right column -->
-        </div> <!-- End of row -->
-
-
-        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-        <div class="units-row">
-            <div class="unit-70">
-                <!-- Left column -->
-                <div class="task">Add a void <code>keyPressed()</code> method with code that changes the rectangle's
-                    fill color to green if the key 'g' is pressed and blue if the key 'b' is pressed.
-                    <br /><br />
-                    You may find the following code useful:
-                    <br /><br />
-                    <pre class="brush: processing; gutter: false; toolbar: false; ">if (key == 'r')
-{
-  // Change the value of r
-}</pre>
-                </div>
-            </div> <!-- End of left column -->
-
-            <div class="unit-30 annotation">
-                <!-- Right hand column for small images, popup sketches and annotations. -->
-                <script>loadSketch("https://www.staff.city.ac.uk/~jwo/bootcamp2021/p5js/colourKey", 200, 200, "https://www.staff.city.ac.uk/~jwo/bootcamp2021/lecture04/images/colourKey.png");</script>
-                <p>ColourKey sketch (click to activate and try pressing the 'R', 'G' and 'B' keys).</p>
-            </div> <!-- end of right column -->
-        </div> <!-- End of row -->
-
-        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-        <div class="units-row">
-            <div class="unit-70">
-                <!-- Left column -->
-                <h4>Event handling methods: keyboard</h4>
-                <table>
-                    <tr>
-                        <td><a href="https://processing.org/reference/key.html" target="_blank">key</a></td>
-                        <td>A global char variable that holds the value of the most recently pressed key.</td>
-                    </tr>
-                    <tr>
-                        <td><a href="https://processing.org/reference/keyPressed.html" target="_blank">keyPressed</a>
-                        </td>
-                        <td>A global Boolean variable that is true while any key is being pressed and false
-                            otherwise.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="https://processing.org/reference/keyPressed_.html" target="_blank">keyPressed()</a>
-                        </td>
-                        <td>A method that is called in response to a key being pressed.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="https://processing.org/reference/keyReleased_.html"
-                                target="_blank">keyReleased()</a></td>
-                        <td>A method that is called in response to a key being released.</td>
-                    </tr>
-                </table>
-
-            </div> <!-- End of left column -->
-
-            <div class="unit-30 annotation">
-                <!-- Right hand column for small images, popup sketches and annotations. -->
-                <br />
-            </div> <!-- end of right column -->
-        </div> <!-- End of row -->
-
 
 
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
