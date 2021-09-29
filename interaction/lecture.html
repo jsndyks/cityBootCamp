@@ -73,6 +73,7 @@
 
         </div> <!-- End of intro section -->
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Main content ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <hr/>
 
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <div class="units-row">
@@ -97,25 +98,44 @@
                   <p>Interaction is how we get computers to do things that are useful to us, and how they know what we're up to and what we want.</p>
                   <p>So, if we're going to make interesting applications we need to know how to collect information about interactions, how to detect what people doing are make our programs and sketches respond.</p>
 
+
+                </div> <!-- End of left column -->
+
+                <div class="unit-30 annotation">
+                    <!-- Right hand column for small images, popup sketches and annotations. -->
+                </div> <!-- end of right column -->
+            </div> <!-- End of row -->
+
+
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <div class="units-row">
+                <div class="unit-70">
                 <h4>The Mouse</h4>
                 <p>
                   I'm lucky enough to have met one of the great innovators in 20th Century Computing.</p>
-                  <p> I presented <a href="https://dl.acm.org/profile/81406592524">Stu Card</a> with a <a href="http://ieeevis.org/year/2017/info/awards/test-of-time-awards">Test of Time Award </a> at the IEEE VIS conference in 2017 in Phoenix, Arizona, and irt was a great honour.
+                  <p> I presented <a href="https://dl.acm.org/profile/81406592524">Stuart Card</a> with a <a href="http://ieeevis.org/year/2017/info/awards/test-of-time-awards">Test of Time Award </a> at the IEEE VIS conference in 2017 in Phoenix, Arizona. It was a great honour.</p>
 
-
-
-                    led a team at Xerox in Palo Alto, California in the 1970s.
-                  Stu and his colleagues were thinking (probably more deeply than we just did) about how to  get comoputers to know what we need of them. They wanted to come up with devices that were easy to use and provided efficient and precise interactions.
-                </p>
+                  <p>Stuart worked in and led a hugely creative and productive team at Xerox in Palo Alto, California from the mid 1970s unitl 2010.
+                  One of the many things that he and his colleagues were thinking about back then (probably more deeply than we just did) was how to get computers to know what we need of them.
+                  They wanted to come up with devices that were easy to use and provided efficient and precise interactions.
+                 </p>
+                 <p>So they invented the mouse!</p>
+                 <p>Wheels and rollers that generated electronic signals, that reliably allowed a computer user to specify positions on a desk, that could in turn be converted into positions on a screen.
+                 This gives us an effective means of interacting with computers.</p>
+                 <p>Here are some prototypes, taken from a nice article and interview on <a href="https://www.notion.so/blog/stu-card">Notion</a>: <a href="https://www.notion.so/blog/stu-card">Stu Card on inventing the future</a>.
+                   The article is a half hour read that is full of wisdom from one of the pioneers of the subject you are now focussing on for a few years.<br/> It's inspiring stuff.
+                   I recommend you have a look.
+                 </p>
+             <!-- https://www.notion.so/blog/stu-card -->
               </div>
                 <div class="unit-30 annotation">
                     <!-- Right hand column for small images, popup sketches and annotations. -->
+                    <h4>&nbsp;</h4>
                     <img src="https://jsndyks.github.io/cityBootCamp/images/interaction/stuCard.171003.small.jpg" width="200"/>
                     <p class="figCaption">
-                      A photo of Stu Card taking a photo of the 'data trophy' that we made for him.<br/>
+                      A photo of Stu Card taking a photo of the 'data trophy' that we made for him at IEEE VIS in 2017.<br/>
                       Source: Jason Dykes.
                     </p>
-
                 </div> <!-- end of right column -->
             </div> <!-- End of row -->
 
@@ -123,8 +143,6 @@
             <div class="units-row">
                 <div class="unit-70">
                     <!-- Left column -->
-
-                <!-- https://www.notion.so/blog/stu-card -->
                 <table cellspacing="4" cellpadding="4" border="0">
                   <tr>
                     <td >
@@ -137,9 +155,11 @@
                   </tr>
                   <tr>
                     <td class="figCaption">
+                      The outside of an early mouse prototype.<br/>
                       Source: <a href="https://www.notion.so/blog/stu-card">Notion Labs, Inc.</a>
                     </td>
                     <td class="figCaption">
+                      The inside of an early mouse prototype.<br/>
                       Source: <a href="https://www.notion.so/blog/stu-card">Notion Labs, Inc.</a>
                     </td>
                   </tr>
@@ -149,15 +169,15 @@
 
             <div class="unit-30 annotation">
                 <!-- Right hand column for small images, popup sketches and annotations. -->
+                <h4>&nbsp;</h4>
                 <img src="https://www.notion.so/cdn-cgi/image/w=200,q=100/https://images.ctfassets.net/spoqsaf9291f/59pwajkZivZw28kkjUlYUo/55f9dc0c7623470f87b7b72381276c82/STU-11.jpeg" width="200"/>
                 <p class="figCaption">
+                  Stu Card with a mouse - what a great way to interact with a computer!<br/>
                   Source: <a href="https://www.notion.so/blog/stu-card">Notion Labs, Inc.</a>
                 </p>
 
             </div> <!-- end of right column -->
         </div> <!-- End of row -->
-
-
 
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <div class="units-row">
@@ -170,6 +190,143 @@
                         href="https://processing.org/reference/key.html" target="_blank">key</a>. The key variable holds
                     the value of the most recently pressed key.
                 </p>
+
+                <h4>KeyPressed Sketch</h4>
+                <p>
+                  Here's a sketch!
+                </p>
+              </div> <!-- End of left column -->
+
+              <div class="unit-30 annotation">
+                  <!-- Right hand column for small images, popup sketches and annotations. -->
+              </div> <!-- end of right column -->
+          </div> <!-- End of row -->
+
+          <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+          <div class="units-row">
+              <div class="unit-70">
+                  <!-- Left column -->
+
+                <pre class="brush: processing; gutter: false; toolbar: false; ">// -- Set up the things that don't change ...
+setup() {
+  size(400, 400);
+  background(220);
+  textSize(18);
+  fill(64);
+}
+
+// -- An empty draw() loop for now
+void draw() {
+}
+
+// -- If you have a method called keyPressed(), it is called when a key is pressed!
+void keyPressed() {
+  text(key,random(20,width-20),random(20,height-20));
+}
+
+// -- If you have a method called mouseClicked(), is called when the mouse is clicked!
+void mouseClicked() {
+  background(220);
+}</pre>
+
+            </div> <!-- End of left column -->
+
+            <div class="unit-30 annotation">
+                <!-- Right hand column for small images, popup sketches and annotations. -->
+                <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedRand/", 200, 200, "https://jsndyks.github.io/cityBootCamp/p5js/keyPressedRand/p5js.keyPressedRand.png");</script>
+                <p>KeyPressed sketch (click to activate and press keys on the keyboard, click to clear).</p>
+            </div> <!-- end of right column -->
+        </div> <!-- End of row -->
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <div class="units-row">
+            <div class="unit-70">
+                <!-- Left column -->
+
+              <pre class="brush: processing; gutter: false; toolbar: false; ">// -- global variable - x position of text
+int x =0;
+
+void setup() {
+  createCanvas(400, 400);
+  background(220);
+  textSize(18);
+  fill(64);
+}
+
+// -- do nothing in th edraw loop for now!
+void draw() {}
+
+void keyPressed() {
+  x+=12;
+  // -- put the char held in 'key' at a screen position
+  // -- that incresases in x and y with each key press
+  text(key,x%width, 100 + 24*int(x/width));
+}
+
+void mouseClicked() {
+  background(220);
+}
+</pre>
+
+          </div> <!-- End of left column -->
+
+          <div class="unit-30 annotation">
+              <!-- Right hand column for small images, popup sketches and annotations. -->
+              <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedX/", 200, 200, "https://jsndyks.github.io/cityBootCamp/p5js/keyPressedRand/p5js.keyPressedX.png");</script>
+              <p>KeyPressed sketch (click to activate and press keys on the keyboard, click to clear).</p>
+          </div> <!-- end of right column -->
+      </div> <!-- End of row -->
+
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+      <div class="units-row">
+          <div class="unit-70">
+              <!-- Left column -->
+
+            <pre class="brush: processing; gutter: false; toolbar: false; ">// -- global variables to store the position of the text to be added:
+float textX, textY;
+
+// -- set up the things that don't change :
+void setup() {
+  createCanvas(400, 400);
+  background(220);
+  textSize(18);
+  fill(64);
+}
+
+// -- do nothing - for now!
+void draw() {
+}
+
+void keyPressed() {
+// -- add text at the text position:
+  text(key, textX, textY);
+}
+
+void mouseClicked() {
+  if (mouseButton = LEFT) {
+    // -- left button - update text position:
+    textX = mouseX;
+    textY = mouseY;
+  } else {
+    // -- right button - clear the screen:
+    background(220);
+  }
+}</pre>
+
+        </div> <!-- End of left column -->
+
+        <div class="unit-30 annotation">
+            <!-- Right hand column for small images, popup sketches and annotations. -->
+            <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedX/", 200, 200, "https://jsndyks.github.io/cityBootCamp/p5js/keyPressedRand/p5js.keyPressedClick.png");</script>
+            <p>KeyPressed Click sketch (click to activate and press keys on the keyboard, click to reposition, roight click to clear).</p>
+        </div> <!-- end of right column -->
+    </div> <!-- End of row -->
+
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <div class="units-row">
+            <div class="unit-70">
+                <!-- Left column -->
 
                 <h4>ColourKey Sketch</h4>
                 <p>
@@ -209,8 +366,6 @@ void draw() {
 
             <div class="unit-30 annotation">
                 <!-- Right hand column for small images, popup sketches and annotations. -->
-                <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedRand/", 200, 200, "https://jsndyks.github.io/cityBootCamp/p5js/keyPressedRand/p5js.keyPressedRand.png");</script>
-                <p>KeyPressed sketch (click to activate and press keys on the keyboard, clik to clear).</p>
             </div> <!-- end of right column -->
         </div> <!-- End of row -->
 
