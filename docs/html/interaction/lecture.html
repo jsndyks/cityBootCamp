@@ -109,6 +109,30 @@
                       Useful!
                   </p>
 
+                  <h4>Key Sketch</h4>
+                  <p>
+                    Here's a sketch that takes advantage of the way that <code>key</code> is updated from the keyboard to show interactions made through the keyboard on the canvas.
+                  </p>
+                  <pre class="brush: processing; gutter: false; toolbar: false; ">// -- set up the things that don't change ...
+void setup() {
+  size(400, 400);
+  textSize(128);      // &lt;-- try changing this
+  textAlign(CENTER); // &lt;-- centers text!
+}
+
+// -- do these things 60 times per second ...
+void draw() {
+
+  // -- clear the canvas:
+  background(220);              // &lt;-- try a different colour
+
+  // -- show the value of the key variable in the middle of the canvas:
+  text(key,width/2,height/2); // &lt;-- try a different position
+}</pre>
+
+<p>There you go - interaction!</p>
+<p>But of course we can do more, and _Processing_ has some useful features that help with this.</p>
+
                 </div> <!-- End of left column -->
 
                 <div class="unit-30 annotation">
@@ -120,25 +144,6 @@
             <div class="units-row">
                 <div class="unit-70">
                     <!-- Left column -->
-                    <h4>Key Sketch</h4>
-                    <p>
-                      Here's a sketch that takes advantage of the way that <code>key</code> is updated from the keyboard to show interactions made through the keyboard on the canvas.
-                    </p>
-                    <pre class="brush: processing; gutter: false; toolbar: false; ">// -- set up the things that don't change ...
-    void setup() {
-      size(400, 400);
-      textSize(128);     // &lt;-- try changing this
-      textAlign(CENTER); // &lt;-- centers text!
-    }
-
-    // -- do these things 60 times per second ...
-    void draw() {
-
-      // -- clear the canvas:
-      background(220);            // &lt;-- try a different colour
-      // -- show the value of the key variable:
-      text(key,width/2,height/2); // &lt;-- try a different position
-    }</pre>
               <div class="task">
                 <p>Read through the code to see if you can work out what it does.</p>
                 <p>Then run the sketch on the right - click it and press some keys and see how the value of <code>key</code> changes.</p>
@@ -149,11 +154,11 @@
 
                 <div class="unit-30 annotation">
                   <!-- Right hand column for small images, popup sketches and annotations. -->
-                  <h4>&nbsp;</h4>
                   <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyBig/", 200, 200, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyBig.png");</script>
-                  <p>Key sketch (click to activate and press keys on the keyboard to see how the value of <b>key</b> changes).</p>
+                  <p>Key sketch<br/>(click to activate and press keys on the keyboard to see how the value of <b>key</b> changes).</p>
                 </div> <!-- end of right column -->
             </div> <!-- End of row -->
+
 
 
   <hr/>
