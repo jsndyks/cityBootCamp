@@ -76,6 +76,7 @@
         <div class="units-row">
             <div class="unit-70">
                 <!-- Left column -->
+                <hr/>
                 <h3>1. Interaction</h3>
                 <p>
                   Think about how we interact with computers:
@@ -96,9 +97,8 @@
                   <p>So, if we're going to make interesting applications we need to know how to collect information about interactions, how to detect what people doing are make our programs and sketches respond.</p>
                   <p>Let's start with the keyboard - a handy device that you may have used from time to time - that enables us to select from a series of letters, that are detected by the computer and used as input to various programmes and apps that it runs!</p>
 
-                  <img src="https://jsndyks.github.io/cityBootCamp/images/interaction/keyboard.png"/>
-
-                  <h3>1. Keyboard Input</h3>
+                  <hr/>
+                  <h3>2. Keyboard Input</h3>
                   <p>
                       Happily, <i>Processing</i> sketches are aware of what's going on with the keyboard.
                       You can find this out and use this in your sketches in a couple of ways.
@@ -107,6 +107,7 @@
                       This is a <i>character</i> variable holds the value of the most recently pressed key on the keyboard.
                       Useful!
                   </p>
+                  <img src="https://jsndyks.github.io/cityBootCamp/images/interaction/keyboard.png"/>
 
                   <h4>Key Sketch</h4>
                   <p>
@@ -222,9 +223,12 @@ void keyPressed() {
 <p>If they don't - discuss!</p>
 </div>
 
+
 <h4>Ordered Characters Sketch</h4>
 
-<p>This is pretty, but we might want to do something a bit more structured with the input, like arrange it in a way that shows sequence.<br/>
+<p>This is pretty, but we might want to do something a bit more structured with the input, like arrange it in a way that shows sequence.</p>
+<img src="https://jsndyks.github.io/cityBootCamp/images/interaction/orderedCharacters.png"/>
+<p>
   To do this we'll need to store information about where we put each piece of <code>text()</code> that we generate in response to a key press being detected in <code>keyPressed()</code>.
   <br/>
   Hopefully you'll be thinking <i>global variables</i> as you are reading this?
@@ -332,7 +336,7 @@ void keyPressed() {
 <div class="task">
 <p>But for now, try the sketch shown to the right.</p>
 <p>Then implement this yourself by copying the code from above to add this condition to the <code>keyPressed()</code> method in your sketch.
-  Remember to save the sketch with it with a meaningful new name.</p>
+  Remember to save the sketch and give it a meaningful new name.</p>
 <p>The comments in the code suggest <b>three changes</b> that you should make.<br/>Try these out.<br/>In each case ...</p>
 <ul>
   <li>Be brave - have a think - <b>predict</b> that you think will happen</li>
@@ -373,7 +377,7 @@ void keyPressed() {
         <!-- Left column -->
 
         <h4>ColourKey Sketch</h4>
-        <p>So far, our interaction has resulted in a <i>truly terrible</i> world processing package. Shocking. Awful.</p>
+        <p>So far, our interaction has resulted in a <i>truly terrible</i> world processing package. Shocking. Awful. Sorry about that!</p>
         <p>But we have been messing about like this to make sure you understand how to:</p>
         <ul>
           <li>Relate a key press to the <code>key</code> variable</li>
@@ -455,206 +459,17 @@ void draw() {
 </div> <!-- End of row -->
 
 
-<hr/>
-<hr/>
-
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 <div class="units-row">
     <div class="unit-70">
         <!-- Left column -->
-        <pre class="brush: processing; gutter: false; toolbar: false; ">
-void setup() {
-size(400, 400);
-background(220);
-fill(64);
-textSize(18);
-}
-
-function draw() {
-}
-
-function keyPressed() {
-text(key,random(20,width-20),random(20,height-20));
-}
-
-void mouseClicked() {
-background(220);
-}
-</pre>
-
-      </div> <!-- End of left column -->
-
-
-            <div class="unit-30 annotation">
-                <!-- Right hand column for small images, popup sketches and annotations. -->
-                <br/>
-            </div> <!-- end of right column -->
-        </div> <!-- End of row -->
-
-        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-        <div class="units-row">
-            <div class="unit-70">
-                <!-- Left column -->
-
-              <pre class="brush: processing; gutter: false; toolbar: false; ">// -- global variable - x position of text
-int x = 0; // -- this will store the x position of the text:
-
-// -- set up the things that don't change ...
-void setup() {
-  size(400, 400);
-  background(220);
-  textSize(18);
-  fill(64);
-}
-
-// -- do nothing in the draw loop for now!
-void draw() {}
-
-void keyPressed() {
-  // -- increase value of x by 12 each time key is pressed:
-  x+=12;
-  // -- put the char held in 'key' at a screen position
-  // -- that increases in x and y with each key press
-  text(key,x%width, 100 + 24*int(x/width));
-}
-
-void mouseClicked() {
-  background(220);
-}
-</pre>
-
-          </div> <!-- End of left column -->
-
-          <div class="unit-30 annotation">
-              <!-- Right hand column for small images, popup sketches and annotations. -->
-          </div> <!-- end of right column -->
-      </div> <!-- End of row -->
-
-      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-      <div class="units-row">
-          <div class="unit-70">
-              <!-- Left column -->
-
-            <pre class="brush: processing; gutter: false; toolbar: false; ">// -- global variables to store the position of the text to be added:
-float textX, textY;
-
-// -- set up the things that don't change ...
-void setup() {
-  size(400, 400);
-  background(220);
-  textSize(18);
-  fill(64);
-}
-
-// -- do nothing - for now!
-void draw() {
-}
-
-void keyPressed() {
-// -- add text at the text position:
-  text(key, textX, textY);
-}
-
-void mouseClicked() {
-  if (mouseButton == LEFT) {
-    // -- left button - update text position:
-    textX = mouseX;
-    textY = mouseY;
-  } else {
-    // -- right button - clear the screen:
-    background(220);
-  }
-}</pre>
-
-        </div> <!-- End of left column -->
-
-        <div class="unit-30 annotation">
-            <!-- Right hand column for small images, popup sketches and annotations. -->
-            <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedX/", 200, 200, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyPressedClick.png");</script>
-            <p>KeyPressed Click sketch (click to activate and press keys on the keyboard, click to reposition, roight click to clear).</p>
-        </div> <!-- end of right column -->
-    </div> <!-- End of row -->
-
-    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    <div class="units-row">
-        <div class="unit-70">
-        <h4>The Mouse</h4>
-        <p>
-          I'm lucky enough to have met one of the great innovators in 20th Century Computing.</p>
-          <p> I presented <a href="https://dl.acm.org/profile/81406592524">Stuart Card</a> with a <a href="http://ieeevis.org/year/2017/info/awards/test-of-time-awards">Test of Time Award </a> at the IEEE VIS conference in 2017 in Phoenix, Arizona. It was a great honour.</p>
-
-          <p>Stuart worked in and led a hugely creative and productive team at Xerox in Palo Alto, California from the mid 1970s unitl 2010.
-          One of the many things that he and his colleagues were thinking about back then (probably more deeply than we just did) was how to get computers to know what we need of them.
-          They wanted to come up with devices that were easy to use and provided efficient and precise interactions.
-         </p>
-         <p>So they invented the mouse!</p>
-         <p>Wheels and rollers that generated electronic signals, that reliably allowed a computer user to specify positions on a desk, that could in turn be converted into positions on a screen.
-         This gives us an effective means of interacting with computers.</p>
-         <p>Here are some prototypes, taken from a nice article and interview on <a href="https://www.notion.so/blog/stu-card">Notion</a>: <a href="https://www.notion.so/blog/stu-card">Stu Card on inventing the future</a>.
-           The article is a half hour read that is full of wisdom from one of the pioneers of the subject you are now focussing on for a few years.<br/> It's inspiring stuff.
-           I recommend you have a look.
-         </p>
-     <!-- https://www.notion.so/blog/stu-card -->
-      </div>
-        <div class="unit-30 annotation">
-            <!-- Right hand column for small images, popup sketches and annotations. -->
-            <h4>&nbsp;</h4>
-            <img src="https://jsndyks.github.io/cityBootCamp/images/interaction/stuCard.171003.small.jpg" width="200"/>
-            <p class="figCaption">
-              A photo of Stu Card taking a photo of the 'data trophy' that we made for him at IEEE VIS in 2017.<br/>
-              Source: Jason Dykes.
-            </p>
-        </div> <!-- end of right column -->
-    </div> <!-- End of row -->
-
-    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    <div class="units-row">
-        <div class="unit-70">
-            <!-- Left column -->
-        <table cellspacing="4" cellpadding="4" border="0">
-          <tr>
-            <td >
-              <a href="https://www.notion.so/blog/stu-card" title="The outside of an early mouse prototype."><img src="https://www.notion.so/cdn-cgi/image/w=3840,q=100/https://images.ctfassets.net/spoqsaf9291f/4Sm2xHEXWftLIrPqrLBaV9/122d64ee43eb3f2b7cf69db345a28b42/STU-17.jpeg" alt="The outside of an early mouse prototype" width="100%" height="auto" style="width: 100%;"/></a>
-            </td>
-            <td>
-              <a href="https://www.notion.so/blog/stu-card" title="The inside of an early mouse prototype."><img src="https://www.notion.so/cdn-cgi/image/w=3840,q=100/https://images.ctfassets.net/spoqsaf9291f/7hPCU6DqHLUf9I8qtMQEoE/6f7aad8a785bfc1fd9f572bce594046e/STU-15.jpeg" alt="The inside of an early mouse prototype." width="100%" height="auto" style="width: 100%;"/></a>
-
-            </td>
-          </tr>
-          <tr>
-            <td class="figCaption">
-              The outside of an early mouse prototype.<br/>
-              Source: <a href="https://www.notion.so/blog/stu-card">Notion Labs, Inc.</a>
-            </td>
-            <td class="figCaption">
-              The inside of an early mouse prototype.<br/>
-              Source: <a href="https://www.notion.so/blog/stu-card">Notion Labs, Inc.</a>
-            </td>
-          </tr>
-        </table>
-
-    </div> <!-- End of left column -->
-
-    <div class="unit-30 annotation">
-        <!-- Right hand column for small images, popup sketches and annotations. -->
-        <h4>&nbsp;</h4>
-        <img src="https://www.notion.so/cdn-cgi/image/w=200,q=100/https://images.ctfassets.net/spoqsaf9291f/59pwajkZivZw28kkjUlYUo/55f9dc0c7623470f87b7b72381276c82/STU-11.jpeg" width="200"/>
-        <p class="figCaption">
-          Stu Card with a mouse - what a great way to interact with a computer!<br/>
-          Source: <a href="https://www.notion.so/blog/stu-card">Notion Labs, Inc.</a>
-        </p>
-
-    </div> <!-- end of right column -->
-</div> <!-- End of row -->
-
-
-        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-        <div class="units-row">
-            <div class="unit-70">
-                <!-- Left column -->
-                <h4>Event handling methods: keyboard</h4>
+                <p>So far so good. We can click keys on the keyboard and get our sketches to do things in response.<br/>
+                This is the fundamental thing with interaction. But here is a summary of the event handling methods and variables that are available. You'll not that we haven't covered everything, so you should follow up on this in your own time.</p>
+                <p>For example, <code><a href="https://processing.org/reference/keyCode.html">keyCode</a></code> is a useful variable that enables us to use keys other than the character keys.</p>
+                <h4>Event handling : keyboard</h4>
                 <table>
                     <tr>
+                      <td rowspan="2"><b>Variables</b></td>
                         <td><a href="https://processing.org/reference/key.html" target="_blank">key</a></td>
                         <td>A global char variable that holds the value of the most recently pressed key.</td>
                     </tr>
@@ -663,6 +478,13 @@ void mouseClicked() {
                         </td>
                         <td>A global Boolean variable that is true while any key is being pressed and false
                             otherwise.
+                        </td>
+                    </tr>
+                    <tr>
+                      <td rowspan="3"><b>Methods</b></td>
+                        <td><a href="https://processing.org/reference/keyCode.html" target="_blank">keyCode</a>
+                        </td>
+                        <td>A global variable that holds the value of the  most recently pressed key was a special non-character key, such as the arrow keys or ALT, CONTROL, SHIFT, etc. The key variable is set to "CODED".<br/><code>if (key == CODED) {}</code>
                         </td>
                     </tr>
                     <tr>
@@ -686,19 +508,309 @@ void mouseClicked() {
             </div> <!-- end of right column -->
         </div> <!-- End of row -->
 
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div class="units-row">
+    <div class="unit-70">
+        <!-- Left column -->
+        <hr/>
+        <h3>3. What About the Mouse?</h3>
+        <p>
+          So, we have a useful series of variables and methods to enable us to interact with and through the keyboard.
+          But that only gets us so far - we can only specify a limited set of things as defined by the keys.
+          What if we want to identify locations on the screen. Quickly. With precision?<br/>
+          I think you know where this is going, right?<br/>
+        </p>
+
+        <img src="https://jsndyks.github.io/cityBootCamp/images/interaction/stuMouse.png"/>
+
+        <p>Well, in the 1970s researchers at the Xerox Reseaerch Centre in Palo Alto, California were asking themselves the same question:</p>
+          <blockquote>What if we want to identify locations on the screen?<br/>Quickly. With precision?<br/>How do we do that?</blockquote>
+          <p>So they invented the mouse!</p>
+        </div> <!-- End of left column -->
+
+        <div class="unit-30 annotation">
+            <!-- Right hand column for small images, popup sketches and annotations. -->
+            <h3>&nbsp;</h3>
+            <p>&nbsp;</p><p>&nbsp;</p><p>🐁</p>
+        </div> <!-- end of right column -->
+    </div> <!-- End of row -->
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="units-row">
+        <div class="unit-70">
+            <!-- Left column -->
+
+          <p>It's hard to imagine just how innovative this mode of interaction was nback then, and the kind of computing and interaction is has enabled.</p>
+          <p>One of these innovators was <b><a href="https://dl.acm.org/profile/81406592524">Stuart K. Card</a></b>, who worked in and subsequently led a hugely creative and productive team at Xerox PARC from the mid 1970s unitl 2010.
+          One of the many things that he and his colleagues were thinking about back then (probably more deeply than we just did) was how to get computers to know what we need of them.
+          They wanted to come up with devices that were easy to use and provided efficient and precise interactions.
+         </p>
+         <p>In their mous prototypes, wheels and rollers generated electronic signals (and squeaked a bit sometimes), that reliably allowed a computer user to specify positions on a desk, that could in turn be converted into positions on a screen.
+         This gives us an effective flexible and efficient new means of interacting with computers.</p>
+         <p>Here are some prototypes, taken from a nice article and interview on <a href="https://www.notion.so/blog/stu-card">Notion</a>: <a href="https://www.notion.so/blog/stu-card">Stu Card on inventing the future</a>.
+         </p>
+
+         <table cellspacing="4" cellpadding="4" border="0">
+           <tr>
+             <td >
+               <a href="https://www.notion.so/blog/stu-card" title="The outside of an early mouse prototype."><img src="https://www.notion.so/cdn-cgi/image/w=3840,q=100/https://images.ctfassets.net/spoqsaf9291f/4Sm2xHEXWftLIrPqrLBaV9/122d64ee43eb3f2b7cf69db345a28b42/STU-17.jpeg" alt="The outside of an early mouse prototype" width="100%" height="auto" style="width: 100%;"/></a>
+             </td>
+             <td>
+               <a href="https://www.notion.so/blog/stu-card" title="The inside of an early mouse prototype."><img src="https://www.notion.so/cdn-cgi/image/w=3840,q=100/https://images.ctfassets.net/spoqsaf9291f/7hPCU6DqHLUf9I8qtMQEoE/6f7aad8a785bfc1fd9f572bce594046e/STU-15.jpeg" alt="The inside of an early mouse prototype." width="100%" height="auto" style="width: 100%;"/></a>
+
+             </td>
+           </tr>
+           <tr>
+             <td class="figCaption">
+               The outside of an early mouse prototype.<br/>
+               Source: <a href="https://www.notion.so/blog/stu-card">Notion Labs, Inc.</a>
+             </td>
+             <td class="figCaption">
+               The inside of an early mouse prototype.<br/>
+               Source: <a href="https://www.notion.so/blog/stu-card">Notion Labs, Inc.</a>
+             </td>
+           </tr>
+         </table>
+
+
+         <div class="aside">
+           <p>
+             The article '<a href="https://www.notion.so/blog/stu-card">Stu Card on inventing the future</a>' is a half hour read.<br/> It is full of wisdom from one of the pioneers of the subject you are now focussing on for a few years.<br/> It's inspiring stuff.<br/>
+            I recommend you have a look.</p>
+         </div>
+       </div> <!-- End of left column -->
+
+       <div class="unit-30 annotation">
+           <!-- Right hand column for small images, popup sketches and annotations. -->
+           <img src="https://www.notion.so/cdn-cgi/image/w=200,q=100/https://images.ctfassets.net/spoqsaf9291f/59pwajkZivZw28kkjUlYUo/55f9dc0c7623470f87b7b72381276c82/STU-11.jpeg" width="200"/>
+           <p class="figCaption">
+             Stu Card with an early mouse.<br/>What a great way to interact with a computer!<br/>
+             Source: <a href="https://www.notion.so/blog/stu-card">Notion Labs, Inc.</a>
+           </p>
+       </div> <!-- end of right column -->
+   </div> <!-- End of row -->
+
+   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+   <div class="units-row">
+       <div class="unit-70">
+           <!-- Left column -->
+         <p>
+           I'm lucky enough to have met Stu, who really is one of the great innovators in 20th Century Computing.</p>
+           <p> I presented him with a much deserved <a href="http://ieeevis.org/year/2017/info/awards/test-of-time-awards">Test of Time Award </a> at the IEEE VIS conference in 2017 in Phoenix, Arizona.<br/>He gave a <a href="https://www.gicentre.net/jsndyks/infovistestoftime1997">fantastic speech</a> too, which wasn't about 🐁 at all. It was about 🐢s and 🐇s.<br/>It was a great honour.</p>
+
+        <p>Nowadays, we have <i>trackpads</i> and <i>touch</i> and all sorts of other ways of identifying coordinates and parts of the screen as we interact with computers. But most of these derive fom ideas first captured in the mouse.</p>
+        <p>Most mouse actions are about identifying areas of the screen, and _Processing_ some excellent features for capturing where on the screen we are focusing as we use a mouse or similar device.</p>
+        <p>These methods and variables are in some ways similar to those used with the keyboard. Let's start with a summary table.</p>
+
+        <table>
+            <tr>
+              <td rowspan="4"><b>Variables</b></td>
+                <td><a href="https://processing.org/reference/mouseX.html" target="_blank">mouseX</a></td>
+                <td>A global float variable that holds the x coordinate of the mouse pointer.</td>
+            </tr>
+            <tr>
+                <td><a href="https://processing.org/reference/mouseY.html" target="_blank">mouseY</a></td>
+                <td>A global float variable that holds the y coordinate of the mouse pointer.</td>
+            </tr>
+            <tr>
+                <td><a href="https://processing.org/reference/mousePressed.html"
+                        target="_blank">mousePressed</a></td>
+                <td>A global Boolean variable that is true while the mouse left button is pressed.</td>
+            </tr>
+            <tr>
+                <td><a href="https://processing.org/reference/mouseButton.html" target="_blank">mouseButton</a>
+                </td>
+                <td>A global variable that is equal the constant <code>LEFT</code> when the left button is
+                    pressed and <code>RIGHT</code> when the right button is pressed.</td>
+            </tr>
+            <tr>
+              <td rowspan="5"><b>Methods</b></td>
+                <td><a href="https://processing.org/reference/mouseClicked_.html"
+                        target="_blank">mouseClicked()</a></td>
+                <td>A method that is called in response to the mouse left button being pressed and released.
+                </td>
+            </tr>
+            <tr>
+                <td><a href="https://processing.org/reference/mousePressed_.html"
+                        target="_blank">mousePressed()</a></td>
+                <td>A method that is called in response to the mouse left button being pressed.</td>
+            </tr>
+            <tr>
+                <td><a href="https://processing.org/reference/mouseReleased_.html"
+                        target="_blank">mouseReleased()</a></td>
+                <td>A method that is called in response to the mouse left button being released.</td>
+            </tr>
+            <tr>
+                <td><a href="https://processing.org/reference/mouseMoved_.html" target="_blank">mouseMoved()</a>
+                </td>
+                <td>A method that is called in response to the mouse being moved with no buttons being pressed.
+                </td>
+            </tr>
+            <tr>
+                <td><a href="https://processing.org/reference/mouseDragged_.html"
+                        target="_blank">mouseDragged()</a></td>
+                <td>A method that is called in response to the mouse being moved while the left button is
+                    pressed.</td>
+            </tr>
+        </table>
+
+        <p>You already know the global variables <code>mouseX</code> and <code>mouseY</code>.
+        These tell you something about how your sketch is being interacted with.</p>
+        <p>Then we get to the <i>methods</i>, which are called whenever we  <i>click</i>, <i>press</i>, <i>release</i>, <i>move</i> or <i>drag</i> the mouse. Or whatever peripheral we are using to control <i>where</i> on the screen we want to focus.</p>
+        <p>
+        _Processing_ supplies special methods for all of these events.
+        For example, <a href="https://processing.org/reference/mouseClicked_.html"
+            target="_blank">mouseClicked()</a>. _Processing_ detects a click of the mouse and calls this method whenever that happens.
+            So, if the mouse is clicked in a sketch, _Processing_ looks for a method called <a href="https://processing.org/reference/mouseClicked_.html"
+                target="_blank">mouseClicked()</a>, and if it finds one in the sketch, it runs it.
+        Code in this method can do anything - <code>println()</code>, <code>background(255,0,0)</code>, whatever. Try these!</p>
+
+        <!--p>So, what does this give us? Well, plenty! Let's have a play with them by trying them in use.</p-->
+
+      </div> <!-- End of left column -->
+
+      <div class="unit-30 annotation">
+          <!-- Right hand column for small images, popup sketches and annotations. -->
+          <img src="https://jsndyks.github.io/cityBootCamp/images/interaction/stuCard.171003.small.jpg" width="200"/>
+          <p class="figCaption">
+            A photo of Stu Card taking a photo of the 'data trophy' that we made for him at IEEE VIS in 2017.
+            This was taken shortly after his <a href="https://www.gicentre.net/jsndyks/infovistestoftime1997">wonderfully inspiring acceptance speech</a> about 🐢s &amp; 🐇s<br/>
+            Source: Jason Dykes.
+          </p>
+      </div> <!-- end of right column -->
+  </div> <!-- End of row -->
+
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <div class="units-row">
+      <div class="unit-70">
+          <!-- Left column -->
+
+        <div class="task">
+          <p>
+          Improve your <code>keyPressed()</code> sketch - the rudimentary WordProcessor - so that:</p>
+
+          <ul><li>rather than having a key clear the screen, this happens <i>when a mouse click occurs</i>.</li>
+            <li>when a key is pressed the letter is positioned <i>wherever the mouse is pointing</i></li>
+          </ul>
+          <p>Remember to save the sketch with a meaningful new name.</p>
+          <p>This code snippet gives you what you need in <code>mouseClicked()</code> but you'll need to take some code out of <code>keyPressed</code> as well to enable you to use the space key:</p>
+          <pre class="brush: processing; gutter: false; toolbar: false; ">
+void mouseClicked() {
+    // -- clear the screen:
+    background(220);
+}</pre>
+        </div>
+        <div class="challenge">
+          <p>
+            The sketch to the right clears the screen if you click the right mouse button, but selects a position for new text if you click the left buttom.<br/>
+            Can you do this?
+        </p>
+        <p>
+          You'll need two global variables for text position <code>textX, textY</code>, and you'll need to set these to <code>mouseX</code> and <code>mouseY</code> when the mouse button is clicked.</p>
+          <p>This code snippet shows how to use the value of <code>mouseButton</code> to vary what happens depending upon which mouse button has been clicked.</p>
+          <pre class="brush: processing; gutter: false; toolbar: false; ">
+if (mouseButton == LEFT) {
+    // -- left button - update text position:
+    textX = mouseX;
+    textY = mouseY;
+  } else {
+    // -- right button - clear the screen:
+    background(220);
+  }</pre>
+        </div>
+    </div> <!-- End of left column -->
+
+    <div class="unit-30 annotation">
+      <!-- Right hand column for small images, popup sketches and annotations. -->
+      <br/>
+      <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedMouse/", 200, 200, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyPressedMouse.png");</script>
+      <p>KeyPressed Click Sketch<br/>Click to activate and press keys on the keyboard.
+        <br/>Left click to reposition subsequent text.
+        <br/>Right click to clear the text.</p>
+    </div> <!-- end of right column -->
+</div> <!-- End of row -->
+
+
+
+<hr/>
+<hr/>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div class="units-row">
+    <div class="unit-70">
+        <!-- Left column -->
+
+      </div> <!-- End of left column -->
+
+
+            <div class="unit-30 annotation">
+                <!-- Right hand column for small images, popup sketches and annotations. -->
+                <br/>
+                <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedClick/", 200, 200, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyPressedClick.png");</script>
+                <p>KeyPressed Click Sketch<br/>Click to activate and press keys on the keyboard.
+                  <br/>Left click to reposition subsequent text.
+                  <br/>Right click to clear the text.</p>
+            </div> <!-- end of right column -->
+        </div> <!-- End of row -->
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <div class="units-row">
+            <div class="unit-70">
+                <!-- Left column -->
+
+          </div> <!-- End of left column -->
+
+          <div class="unit-30 annotation">
+              <!-- Right hand column for small images, popup sketches and annotations. -->
+          </div> <!-- end of right column -->
+      </div> <!-- End of row -->
+
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+      <div class="units-row">
+          <div class="unit-70">
+              <!-- Left column -->
+
+        </div> <!-- End of left column -->
+
+        <div class="unit-30 annotation">
+        </div> <!-- end of right column -->
+    </div> <!-- End of row -->
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="units-row">
+        <div class="unit-70">
+        <h4>The Mouse</h4>
+
+     <!-- https://www.notion.so/blog/stu-card -->
+      </div>
+        <div class="unit-30 annotation">
+            <!-- Right hand column for small images, popup sketches and annotations. -->
+        </div> <!-- end of right column -->
+    </div> <!-- End of row -->
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="units-row">
+        <div class="unit-70">
+            <!-- Left column -->
+
+    </div> <!-- End of left column -->
+
+    <div class="unit-30 annotation">
+        <!-- Right hand column for small images, popup sketches and annotations. -->
+
+    </div> <!-- end of right column -->
+</div> <!-- End of row -->
+
+
+
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <div class="units-row">
             <div class="unit-70">
                 <!-- Left column -->
                 <h3>1. Mouse Input</h3>
                 <p>
-                    You already know the global variables <code>mouseX</code> and <code>mouseY</code>.
-                    These tell you something about how your sketch is beign interacted with.
-                    Processing supplies a special method called <a href="https://processing.org/reference/mouseClicked_.html"
-                        target="_blank">mouseClicked()</a>. Processing detects a click of the mouse and calls this method whenever that happens.
-                        So, if the mouse is clicked in a sketch, Processing looks for a method called <a href="https://processing.org/reference/mouseClicked_.html"
-                            target="_blank">mouseClicked()</a>, and if it finds one in the sketch, it runs it.
-                    Code in this method can do anything - <code>println()</code>, <code>background(255,0,0)</code>, whatever. Try these!<br/>
                     However, it is usually best used to record the <i>state of your sketch</i> - esentially to update the values of global variables that describe what is currently going on.
                 </p>
 
@@ -786,55 +898,6 @@ void mouseClicked()
                 <!-- Left column -->
                 <h4>Event handling methods: mouse</h4>
 
-                <table>
-                    <tr>
-                        <td><a href="https://processing.org/reference/mouseX.html" target="_blank">mouseX</a></td>
-                        <td>A global float variable that holds the x coordinate of the mouse pointer.</td>
-                    </tr>
-                    <tr>
-                        <td><a href="https://processing.org/reference/mouseY.html" target="_blank">mouseY</a></td>
-                        <td>A global float variable that holds the y coordinate of the mouse pointer.</td>
-                    </tr>
-                    <tr>
-                        <td><a href="https://processing.org/reference/mousePressed.html"
-                                target="_blank">mousePressed</a></td>
-                        <td>A global Boolean variable that is true while the mouse left button is pressed.</td>
-                    </tr>
-                    <tr>
-                        <td><a href="https://processing.org/reference/mouseButton.html" target="_blank">mouseButton</a>
-                        </td>
-                        <td>A global variable that is equal the constant <code>LEFT</code> when the left button is
-                            pressed and <code>RIGHT</code> when the right button is pressed.</td>
-                    </tr>
-                    <tr>
-                        <td><a href="https://processing.org/reference/mouseClicked_.html"
-                                target="_blank">mouseClicked()</a></td>
-                        <td>A method that is called in response to the mouse left button being pressed and released.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="https://processing.org/reference/mousePressed_.html"
-                                target="_blank">mousePressed()</a></td>
-                        <td>A method that is called in response to the mouse left button being pressed.</td>
-                    </tr>
-                    <tr>
-                        <td><a href="https://processing.org/reference/mouseReleased_.html"
-                                target="_blank">mouseReleased()</a></td>
-                        <td>A method that is called in response to the mouse left button being released.</td>
-                    </tr>
-                    <tr>
-                        <td><a href="https://processing.org/reference/mouseMoved_.html" target="_blank">mouseMoved()</a>
-                        </td>
-                        <td>A method that is called in response to the mouse being moved with no buttons being pressed.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="https://processing.org/reference/mouseDragged_.html"
-                                target="_blank">mouseDragged()</a></td>
-                        <td>A method that is called in response to the mouse being moved while the left button is
-                            pressed.</td>
-                    </tr>
-                </table>
 
             </div> <!-- End of left column -->
 
