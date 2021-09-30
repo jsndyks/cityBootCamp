@@ -39,7 +39,7 @@ function draw()
     rect(x+size*0.25, y+size*0.25, size*0.5, size*0.5);
     text("Remember to turn me off before you leave ...", 5, height-10);
     text("On", x+size*1.5, 15+height/4);
-  text("🐁", x ,height/4-12);
+    text("🐁", x ,height/4-12);
   } else {
     text("Off", x+size*1.5, 15+height/4);
   }
