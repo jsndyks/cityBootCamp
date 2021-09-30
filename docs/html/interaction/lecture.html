@@ -33,7 +33,7 @@
     <script src="https://www.staff.city.ac.uk/~jwo/moodle/js/master.js"></script>
 
     <!-- JD Extras! -->
-    <script src="https://jsndyks.github.io/cityBootCamp/css/bootCamp.css"></script>
+    <link rel="stylesheet" href="https://jsndyks.github.io/cityBootCamp/css/bootCamp.css"type="text/css" />
 </head>
 
 <body>
@@ -49,7 +49,7 @@
             A computer isn't much good without <b>interaction</b>!
             </p>
             <p>
-            Luckily (actually, there is careful planning and sophisticated functionality involved) <i>Processing</i> has rich and straightforward capabilites for detecting input from mouse, keyboard and elsewhere and using this to allow us to interact rapidly and consistently with sketches.
+            Luckily (actually, there is careful planning and sophisticated functionality involved) <i>Processing</i> has rich and straightforward capabilities for detecting input from mouse, keyboard and elsewhere and using this to allow us to interact rapidly and consistently with sketches.
             </p>
             <p>
               And we're going to play with the basics today.<br/>
@@ -157,7 +157,7 @@ void draw() {
                 <div class="unit-30 annotation">
                   <!-- Right hand column for small images, popup sketches and annotations. -->
                   <br/>
-                  <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyBig/", 200, 200, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyBig.png");</script>
+                  <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyBig/", 400, 400, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyBig.png");</script>
                   <p>Key sketch<br/>(click to activate and press keys on the keyboard to see how the value of <b>key</b> changes).</p>
                 </div> <!-- end of right column -->
             </div> <!-- End of row -->
@@ -279,7 +279,7 @@ void keyPressed() {
 <div class="unit-30 annotation">
     <!-- Right hand column for small images, popup sketches and annotations. -->
     <br/>
-    <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedRandom/", 200, 200, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyPressedRand.png");</script>
+    <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedRandom/", 400, 400, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyPressedRand.png");</script>
     <p>KeyPressed sketch.<br/>Click to activate and press keys on the keyboard for endless fun.</p>
 </div> <!-- end of right column -->
 </div> <!-- End of row -->
@@ -325,7 +325,7 @@ void keyPressed() {
 <div class="unit-30 annotation">
     <!-- Right hand column for small images, popup sketches and annotations. -->
     <br/>
-    <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedX/", 200, 200, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyPressedX.png");</script>
+    <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedX/", 400, 400, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyPressedX.png");</script>
     <p>KeyPressed sketch with Ordered Characters.<br/>Click to activate and press keys on the keyboard. Keep typing keys until you get beyond the right hand side. Then stop.</p>
 </div> <!-- end of right column -->
 </div> <!-- End of row -->
@@ -365,7 +365,7 @@ void keyPressed() {
 <div class="unit-30 annotation">
     <!-- Right hand column for small images, popup sketches and annotations. -->
     <br/>
-    <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedSpace/", 200, 200, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyPressedSpace.png");</script>
+    <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedSpace/", 400, 400, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyPressedSpace.png");</script>
     <p>KeyPressed sketch with Condition to Control Flow.<br/>Click to activate, and be sure to make the window big enough to see all of the sketch.
       Interact with the sketch by pressing keys on the keyboard. Try pressing the space-bar to clear the screen.</p>
 
@@ -454,7 +454,7 @@ void draw() {
 
     <div class="unit-30 annotation">
         <!-- Right hand column for small images, popup sketches and annotations. -->
-        <script>loadSketch("https://www.staff.city.ac.uk/~jwo/bootcamp2021/p5js/colourKey", 200, 200, "https://www.staff.city.ac.uk/~jwo/bootcamp2021/lecture04/images/colourKey.png");</script>
+        <script>loadSketch("https://www.staff.city.ac.uk/~jwo/bootcamp2021/p5js/colourKey", 400, 400, "https://www.staff.city.ac.uk/~jwo/bootcamp2021/lecture04/images/colourKey.png");</script>
         <p>ColourKey sketch.<br/>Click to activate and try pressing the 'R', 'G' and 'B' keys).</p>
     </div> <!-- end of right column -->
 </div> <!-- End of row -->
@@ -604,7 +604,7 @@ void draw() {
         <p>Nowadays, we have <i>trackpads</i> and <i>touch</i> and all sorts of other ways of identifying coordinates and parts of the screen as we interact with computers. But most of these derive fom ideas first captured in the mouse.</p>
         <p>Most mouse actions are about identifying areas of the screen, and <i>Processing</i> some excellent features for capturing where on the screen we are focusing as we use a mouse or similar device.</p>
         <p>These methods and variables are in some ways similar to those used with the keyboard. Let's start with a summary table.</p>
-
+        <h4>Event handling : mouse</h4>
         <table>
             <tr>
               <td rowspan="4"><b>Variables</b></td>
@@ -663,10 +663,10 @@ void draw() {
         <p>
         <i>Processing</i> supplies special methods for all of these events.
         For example, <a href="https://processing.org/reference/mouseClicked_.html"
-            target="_blank">mouseClicked()</a>. <i>Processing</i> detects a click of the mouse and calls this method whenever that happens.
+            target="_blank">mouseClicked()</a>. <i>Processing</i> automatically detects a click of the mouse and calls this method whenever that happens.
             So, if the mouse is clicked in a sketch, <i>Processing</i> looks for a method called <a href="https://processing.org/reference/mouseClicked_.html"
                 target="_blank">mouseClicked()</a>, and if it finds one in the sketch, it runs it.
-        Code in this method can do anything - <code>println()</code>, <code>background(255,0,0)</code>, whatever. Try these!</p>
+        Code in this method can do anything - <code>println()</code>, <code>background(255,0,0)</code>, whatever. You decide what happens. Try these ideas! And others!</p>
 
         <!--p>So, what does this give us? Well, plenty! Let's have a play with them by trying them in use.</p-->
 
@@ -708,7 +708,7 @@ void mouseClicked() {
     <div class="unit-30 annotation">
       <!-- Right hand column for small images, popup sketches and annotations. -->
       <br/>
-      <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedMouse/", 200, 200, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyPressedMouse.png");</script>
+      <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedMouse/", 400, 400, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyPressedMouse.png");</script>
       <p>KeyPressed Move Sketch<br/>Click to activate and press keys on the keyboard.
         <br/>Move mouse to position subsequent text.
         <br/>Click to clear the text.</p>
@@ -722,12 +722,12 @@ void mouseClicked() {
         <!-- Left column -->
         <div class="challenge">
           <p>
-            The sketch to the right clears the screen if you click the right mouse button, but selects a position for new text if you click the left buttom.<br/>
+            The sketch to the right clears the screen if you click the right mouse button, but selects a position for new text if you click the left button.<br/>
             Can you do this?
         </p>
         <p>
           You'll need two global variables for text position <code>textX, textY</code>, and you'll need to set these to <code>mouseX</code> and <code>mouseY</code> when the mouse button is clicked.</p>
-          <p>This code snippet shows how to use the value of <code>mouseButton</code> to vary what happens depending upon which mouse button has been clicked.</p>
+          <p>This code snippet shows how to use the value of <code>mouseButton</code> to vary what happens depending upon which mouse button has been clicked.</p><br/>
           <pre class="brush: processing; gutter: false; toolbar: false; ">
 if (mouseButton == LEFT) {
     // -- left button - update text position:
@@ -745,7 +745,7 @@ if (mouseButton == LEFT) {
             <div class="unit-30 annotation">
                 <!-- Right hand column for small images, popup sketches and annotations. -->
                 <br/><br/>
-                <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedClick/", 200, 200, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyPressedClick.png");</script>
+                <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedClick/", 400, 400, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyPressedClick.png");</script>
                 <p>KeyPressed Click Sketch<br/>Click to activate and press keys on the keyboard.
                   <br/>Left click to reposition subsequent text.
                   <br/>Right click to clear the text.</p>
@@ -880,7 +880,7 @@ void mouseClicked() {
         <div class="unit-30 annotation">
           <!-- Right hand column for small images, popup sketches and annotations. -->
           <br/>
-          <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedMouseState/", 200, 200, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyPressedMouseState.png");</script>
+          <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedMouseState/", 400, 400, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyPressedMouseState.png");</script>
           <p>KeyPressed Mouse State<br/>Click to activate and press keys on the keyboard.
             <br/>Move the mouse to position subsequent text.
             <br/>Left click to clear the text.
@@ -916,7 +916,7 @@ void mouseClicked() {
         <div class="unit-30 annotation">
             <!-- Right hand column for small images, popup sketches and annotations. -->
             <br/>
-            <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedMouseStateExercise/", 200, 200, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyPressedMouseStateExercise.png");</script>
+            <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedMouseStateExercise/", 400, 400, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyPressedMouseStateExercise.png");</script>
             <p>KeyPressed Mouse State Exercise<br/>Click to activate and press keys on the keyboard.
               <br/>Move mouse to reposition subsequent text.
               <br/>Click to clear the text:<br/> - grey if the mouse is in<br/>&nbsp;&nbsp;&nbsp;the left half of the screen<br/> -yellow otherwise.</p>
@@ -972,7 +972,7 @@ void draw(){
     <div class="unit-30 annotation">
         <!-- Right hand column for small images, popup sketches and annotations. -->
         <br/>
-        <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/clickCount/", 200, 200, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.clickCount.png");</script>
+        <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/clickCount/", 400, 400, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.clickCount.png");</script>
         <p>ClickCount Exercise<br/>Click to activate and click in the sketch.
           <br/>This sketch achieves some of what we ask for ... but we'd like you to extend it further!</p>
     </div> <!-- end of right column -->
@@ -1118,7 +1118,7 @@ void mouseClicked()
             <div class="unit-30 annotation">
                 <!-- Right hand column for small images, popup sketches and annotations. -->
                 <br/>
-                <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/checkButtonV0/", 200, 200, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.checkButtonV0.png");</script>
+                <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/checkButtonV0/", 400, 400, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.checkButtonV0.png");</script>
                 <p>CheckButton Exercise<br/>Click to activate and click in the sketch.
                   <br/>A lonely checkButton.<br/>Click it!</p>
             </div> <!-- end of right column -->
@@ -1141,7 +1141,7 @@ void mouseClicked()
             <div class="unit-30 annotation">
                 <!-- Right hand column for small images, popup sketches and annotations. -->
                 <br/>
-                <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/checkButtonCrazy/", 200, 200, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.checkButtonCrazy.png");</script>
+                <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/checkButtonCrazy/", 400, 400, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.checkButtonCrazy.png");</script>
                 <p>CheckButton Example<br/>Click to activate and click in the sketch.
                   <br/>Here's an example of a dynamic sketch that responds to mouse interaction!</p>
             </div> <!-- end of right column -->
