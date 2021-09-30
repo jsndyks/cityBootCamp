@@ -790,6 +790,8 @@ void mouseClicked() {
   // --   based upon interactions and input.
   // -- These will be acted on in the draw() loop.
 }</pre>
+<p>Here is a refactoring of the <code>keyPressed</code> sketches that does just this.</p>
+  <p>It's a little longer than the other examples, but should be readable.</p>
           </div> <!-- End of left column -->
 
           <div class="unit-30 annotation">
@@ -801,7 +803,6 @@ void mouseClicked() {
       <div class="units-row">
           <div class="unit-70">
               <!-- Left column -->
-              <p>Here is a refactoring of the <code>keyPressed</code> sketches that does just this.<p>
 <pre class="brush: processing; gutter: false; toolbar: false; ">
 // -- GLOBALS : declare and initialise global variables
 // --   that describe system state - false before interaction:
@@ -860,6 +861,16 @@ void mouseClicked() {
   // -- set variable to record current state:
   clearScreen = true;
 }</pre>
+
+<p>One of the reasons we didn't organise the other examples in this way was to keep them short and sweet as we introduced concepts.</p>
+  <p>But we need you to understand how to</p>
+  <ul>
+    <li>detect and capture interaction</li>
+    <li>use it to set variables that describe the state of your system (sketch)</li>
+    <li>check these in the <code>draw()</code> loop to control flow based upon inputs acquired through interaction</li>
+  </ul>
+  <p>This gives you plenty of scope for producing exciting, imaginative, quick, interactive sketches.</p>
+  <p>So let's try to add something to this skeletomn sketch!</p>
         </div> <!-- End of left column -->
 
         <div class="unit-30 annotation">
@@ -875,12 +886,29 @@ void mouseClicked() {
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="units-row">
         <div class="unit-70">
-        <h4>The Mouse</h4>
+        <div class="task">
+          <p>Create a sketch using the skeleton code provided above.<br/>Run it and experiment a little.</p>
+          <p>Then add a global variable, an event handling method and a control statement to :</p>
+          <ul>
+            <li>make the screen clear in yellow if the mouse is in the right half of the screen, grey otherwise</li>
+          </ul>
+          <p>Helpful information:</p>
+          <ol>
+            <li>the <code>mouseMoved()</code> method is called every time the mouse is moved and these are the times when you need to check where the mouse is</li>
+            <li>the mouse is in the right half of the screen when <code>mouseX &gt; width/2</code></li>
+            <li>a good global variable name and initial value might be something like: <code>boolean isYellow = false;</code>
+          </ol>
+        </div>
 
      <!-- https://www.notion.so/blog/stu-card -->
       </div>
         <div class="unit-30 annotation">
             <!-- Right hand column for small images, popup sketches and annotations. -->
+            <br/>
+            <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedMouseStateExercise/", 200, 200, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyPressedMouseStateExercise.png");</script>
+            <p>KeyPressed Mouse State Exercise<br/>Click to activate and press keys on the keyboard.
+              <br/>Move mouse to reposition subsequent text.
+              <br/>Click to clear the text - grey if the mouse is in the left half of the screen, yellow otherwise.</p>
         </div> <!-- end of right column -->
     </div> <!-- End of row -->
 
