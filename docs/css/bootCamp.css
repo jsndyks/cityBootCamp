@@ -1,0 +1,13 @@
+/*
+ * Extra CSS for Moodle : Bootcamp
+ * JD : 2021
+ *
+ */
+
+  pre {margin-left:2em; padding-top:8px; padding-bottom:8px; padding-left:2em;}
+
+  .key {font-weight:bold; padding:6px; margin:2px; padding-top:2px; padding-bottom:2px; background-color:#e0e0e0; border:1px solid #c0c0c0; border-right:2px solid #909090; border-bottom:2px solid #909090; }
+
+  .todo {margin:2em; background-color:#fffff0}
+
+  .figCaption {margin:1em; color:#606060; font-style:italic; font-size: 90%}

@@ -31,12 +31,9 @@
     <script src="https://www.staff.city.ac.uk/~jwo/moodle/js/highslide-with-html.packed.js"></script>
     <script src="https://www.staff.city.ac.uk/~jwo/moodle/js/highslide-cfg.js"></script>
     <script src="https://www.staff.city.ac.uk/~jwo/moodle/js/master.js"></script>
-    <style type="text/css">
-      .key {font-weight:bold; padding:6px; margin:2px; padding-top:2px; padding-bottom:2px; background-color:#e0e0e0; border:1px solid #c0c0c0; border-right:2px solid #909090; border-bottom:2px solid #909090; }
-      pre {margin-left:2em; padding-top:8px; padding-bottom:8px; padding-left:2em;}
-      .todo {margin:2em; background-color:#fffff0}
-      .figCaption {margin:1em; color:#606060; font-style:italic; font-size: 90%}
-    </style>
+
+    <!-- JD Extras! -->
+    <script src="https://jsndyks.github.io/cityBootCamp/css/bootCamp.css"></script>
 </head>
 
 <body>
@@ -148,24 +145,18 @@ void draw() {
                 <p>Make a few changes as suggested in the comments and check that they have the effects that you expect.</p>
               </div>
 
-              <p>There you go - interaction!</p>
+              <p>There you go - <b>interaction</b>!</p>
               <p>But of course we can do more, and <i>Processing</i> has some useful features that help with this.</p>
 
                 </div> <!-- End of left column -->
 
                 <div class="unit-30 annotation">
                   <!-- Right hand column for small images, popup sketches and annotations. -->
+                  <br/>
                   <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyBig/", 200, 200, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyBig.png");</script>
                   <p>Key sketch<br/>(click to activate and press keys on the keyboard to see how the value of <b>key</b> changes).</p>
                 </div> <!-- end of right column -->
             </div> <!-- End of row -->
-
-
-
-  <hr/>
-  <hr/>
-
-
 
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <div class="units-row">
@@ -228,6 +219,8 @@ void keyPressed() {
 <p>As usual, you should make a few changes and check that they have the effects that you expect.</p>
 <p>If they don't - discuss!</p>
 </div>
+
+<h4>Ordered Characters Sketch</h4>
 
 <p>This is pretty, but we might want to do something a bit more structured with the input, like arrange it in a way that shows sequence.<br/>
   To do this we'll need to store information about where we put each piece of <code>text()</code> that we generate in response to a key press being detected in <code>keyPressed()</code>.
@@ -295,6 +288,8 @@ void keyPressed() {
           <p>What will happen if you make the number <b>24</b> bigger or smaller? Try it!<br/>Were you correct?</p>
         </div>
 
+        <h4>KeyPressed Sketch with Control Flow</h4>
+
 <p>This is a good start, but we are likely want to <i>control program flow</i> from the keyboard.</p>
 <p>With any luck, you'll be thinking about <code>if</code> statements already, and how we might add them into <code>keyPressed()</code> to respond to interaction from the keyboard.</p>
 <p>Here's how we might use one in <code>keyPressed()</code> to do things in a sketch depending upon keyboard input - to clear the screen in this case.</p>
@@ -315,13 +310,28 @@ void keyPressed() {
 </pre>
 
 <p>This code says ...</p>
-<blockquote>When a key is pressed, if the key is 'space', then fill the canvas with a light grey, otherwise add 12 to p and then put the value of key on the canvas at a position that depends on p.</blockquote>
+<blockquote>When a key is pressed, if the key is 'space', then fill the canvas with a light grey,<br/>otherwise add 12 to p and then put the value of key on the canvas at a position depending on the value of p.</blockquote>
 <p>It's useful to be able to express you code like this - do practice!</p>
 
+</div> <!-- End of left column -->
+
+<div class="unit-30 annotation">
+    <!-- Right hand column for small images, popup sketches and annotations. -->
+    <br/>
+    <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedX/", 200, 200, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyPressedX.png");</script>
+    <p>KeyPressed sketch with Ordered Characters.<br/>Click to activate and press keys on the keyboard. Keep typing keys until you get beyond the right hand side. Then stop.</p>
+</div> <!-- end of right column -->
+</div> <!-- End of row -->
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div class="units-row">
+<div class="unit-70">
+    <!-- Left column -->
 <div class="task">
-<p>But for now, copy the code from above to add this condition to the <code>keyPressed()</code> method in your sketch.<br/>
+<p>But for now, try the sketch shown to the right.</p>
+<p>Then implement this yourself by copying the code from above to add this condition to the <code>keyPressed()</code> method in your sketch.
   Remember to save the sketch with it with a meaningful new name.</p>
-<p>The comments in the code suggest three changes that you should make.<br/>Try these out<br/>In each case ...</p>
+<p>The comments in the code suggest <b>three changes</b> that you should make.<br/>Try these out.<br/>In each case ...</p>
 <ul>
   <li>Be brave - have a think - <b>predict</b> that you think will happen</li>
   <li>Make the <b>change</b> as requested</li>
@@ -331,7 +341,17 @@ void keyPressed() {
 </ul>
 </div>
 
+<div class="aside">
+  <h5>Important Aside!</h5>
 <p>Learning to <b>predict</b>, <b>change</b>, <b>observe</b> (behaviour, bug reports, etc.), <b>think</b> (and discuss), <b>learn</b>, <b>confirm</b> will really help you in BootCamp, and throughout your studies. It's what we all do to try to develop knowledge ans skills. Remember that your teachers are herre to help you with this!</p>
+</div>
+
+<div class="challenge">
+  <p>If you want an extra challenge then see whether you can edit your sketch to add features so that...</p>
+  <ol><li>the text starts at the left hand side every time you press the space bar?</li>
+  <li>the text runs from right to left and bottom to top as you type keys?</li>
+</ol>
+</div>
 
 </div> <!-- End of left column -->
 
@@ -339,32 +359,133 @@ void keyPressed() {
     <!-- Right hand column for small images, popup sketches and annotations. -->
     <br/>
     <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedSpace/", 200, 200, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyPressedSpace.png");</script>
+    <p>KeyPressed sketch with Condition to Control Flow.<br/>Click to activate, and be sure to make the window big enough to see all of the sketch.
+      Interact with the sketch by pressing keys on the keyboard. Try pressing the space-bar to clear the screen.</p>
+
 </div> <!-- end of right column -->
 </div> <!-- End of row -->
 
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div class="units-row">
+    <div class="unit-70">
+        <!-- Left column -->
+
+        <h4>ColourKey Sketch</h4>
+        <p>So far, our interaction has resulted in a <i>truly terrible</i> world processing package. Shocking. Awful.</p>
+        <p>But we have been messing about like this to make sure you understand how to:</p>
+        <ul>
+          <li>Relate a key press to the <code>key</code> variable</li>
+          <li>Check which key has been pressed</li>
+          <li>See how we can detect and act on a key press with <code>keyPressed()</code></li>
+          <li>Combine interactions with stuff you have learned before to do useful things - controlling the flow in your sketch</li>
+        </ul>
+        <p>Hopefully you understand all of this and can do some of it, which makes it all worth it.</p>
+        <p>However, it's <b>very important</b> that you don't get mixed up and think that <code>key</code> and <code>keyPressed()</code> only enable us to do things with text. That's not the case - we can do much more interesting things by responding to interaction through the keyboard.</p>
+        <p>
+            You can use the <code>keyPressed()</code> method to modify the contents of variables in your sketch that do all sorts of things.
+            By combining void <code>keyPressed()</code> with the conditional code from the previous session, and as we have seen above, you can modify any type of variable depending on the value of the input.
+        </p>
+
+        <p>
+            In the sketch below, a rectangle is drawn using the the <a
+                href="https://processing.org/reference/rect_.html" target="_blank">rect()</a> method. The
+            rectangle is filled with colour (by a call to <a href="https://processing.org/reference/fill_.html"
+                target="_blank">fill</a>) using a global variables called <code>r</code>, <code>g</code> and
+            <code>b</code> (representing the red, green and blue components of colour).
+            Initially, amount of red in the fill is 0 out of 255, the amount of green in the is 0 out of 255 and likewise the amount of blue in the fill is 0 out of 255 so the overall colour given by <code>fill(r, g, b)</code> is made of no red, no green and no blue. That's deep dark nightly <b>black</b>.
+        </p>
+
+        <pre class="brush: processing; gutter: false; toolbar: false; ">int r, g, b;
+
+void setup() {
+  size(200, 200);
+  r = 0;
+  g = 0;
+  b = 0;
+}
+
+void draw() {
+  background(254, 232, 134);
+  fill(r, g, b);
+  rect(50, 50, 100, 100);
+}</pre>
+
+<p>But we can do something about this!<br/>We can make our sombre rectangle 🙁 much more cheery 😁 with some keyboard interaction.</p>
+
+    </div> <!-- End of left column -->
+
+    <div class="unit-30 annotation">
+        <!-- Right hand column for small images, popup sketches and annotations. -->
+    </div> <!-- end of right column -->
+</div> <!-- End of row -->
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div class="units-row">
+    <div class="unit-70">
+        <!-- Left column -->
+        <div class="task">Add a <code>keyPressed()</code> method with code that changes the rectangle's
+            fill color to green if the <span class="key">g</span> key is pressed and blue if the
+            <span class="key">b</span> key is pressed and <span class="key">r</span> if the red key is pressed.
+            <br /><br />
+            This code snippet is likely to be useful:
+            <br /><br />
+            <pre class="brush: processing; gutter: false; toolbar: false; ">if (key == 'r')
+{
+  // Change the value of r
+}</pre>
+</div>
+
+<div class="challenge">
+  <h5>Colour Key Challenge</h5>
+<p>If you have done that and want to try a little more, well you now have a structure in  <code>keyPressed()</code> that will allow you to make more subtle changes to each colour component.</p>
+<p>Try using the <span class="key">G</span> and the <span class="key">g</span> keys to <i>increase</i> and <i>decrease</i> the amount of green in the colour by some increment.</p>
+<p>You might want to try this for the other colour components too with the <span class="key">B</span>, <span class="key">b</span>, <span class="key">R</span> and <span class="key">r</span> keys.</p>
+</div>
+
+    </div> <!-- End of left column -->
+
+    <div class="unit-30 annotation">
+        <!-- Right hand column for small images, popup sketches and annotations. -->
+        <script>loadSketch("https://www.staff.city.ac.uk/~jwo/bootcamp2021/p5js/colourKey", 200, 200, "https://www.staff.city.ac.uk/~jwo/bootcamp2021/lecture04/images/colourKey.png");</script>
+        <p>ColourKey sketch.<br/>Click to activate and try pressing the 'R', 'G' and 'B' keys).</p>
+    </div> <!-- end of right column -->
+</div> <!-- End of row -->
+
+
+<hr/>
 <hr/>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 <div class="units-row">
     <div class="unit-70">
         <!-- Left column -->
-        <h3>1. Title</h3>
-        <p>
-        </p>
+        <pre class="brush: processing; gutter: false; toolbar: false; ">
+void setup() {
+size(400, 400);
+background(220);
+fill(64);
+textSize(18);
+}
 
-        <h4>SubTitle</h4>
-        <p>
-        </p>
+function draw() {
+}
+
+function keyPressed() {
+text(key,random(20,width-20),random(20,height-20));
+}
+
+void mouseClicked() {
+background(220);
+}
+</pre>
+
       </div> <!-- End of left column -->
-<script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedX/", 200, 200, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyPressedX.png");</script>
-<p>KeyPressed sketch with order (click to activate and press keys on the keyboard, keep typing keys until you get beyond the right hand side).</p>
 
 
             <div class="unit-30 annotation">
                 <!-- Right hand column for small images, popup sketches and annotations. -->
                 <br/>
-                <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedX/", 200, 200, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyPressedX.png");</script>
-                <p>KeyPressed sketch with order.<br/>Click to activate and press keys on the keyboard, keep typing keys until you get beyond the right hand side. Then stop.</p>
             </div> <!-- end of right column -->
         </div> <!-- End of row -->
 
@@ -524,95 +645,6 @@ void mouseClicked() {
     </div> <!-- end of right column -->
 </div> <!-- End of row -->
 
-        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-        <div class="units-row">
-            <div class="unit-70">
-                <!-- Left column -->
-
-                <h4>ColourKey Sketch</h4>
-                <p>
-                    You can use the <code>keyPressed()</code> method to modify the contents of variables in your sketch.
-                    By combining void <code>keyPressed()</code> with the conditional code from the previous session, you
-                    can modify any type of variable depending on the value of the input.
-                </p>
-
-                <p>
-                    In the sketch below, a rectangle is drawn using the the <a
-                        href="https://processing.org/reference/rect_.html" target="_blank">rect()</a> method. The
-                    rectangle is filled with colour (by a call to <a href="https://processing.org/reference/fill_.html"
-                        target="_blank">fill</a>) using a global set of values called <code>r</code>, <code>g</code> and
-                    <code>b</code> (representing red, green and blue). Initially, amount of red in the fill is 0 out of
-                    255, the amount of green in the is 0 out of 255 and likewise the amount of blue in the fill is 0 out
-                    of 255 so the overall colour given by <code>fill(r, g, b)</code> is made of no red, no green and no
-                    blue and is black.
-                </p>
-
-                <pre class="brush: processing; gutter: false; toolbar: false; ">int r, g, b;
-
-void setup() {
-  size(200, 200);
-  r = 0;
-  g = 0;
-  b = 0;
-}
-
-void draw() {
-  background(254, 232, 134);
-  fill(r, g, b);
-  rect(50, 50, 100, 100);
-}</pre>
-
-
-            </div> <!-- End of left column -->
-
-            <div class="unit-30 annotation">
-                <!-- Right hand column for small images, popup sketches and annotations. -->
-            </div> <!-- end of right column -->
-        </div> <!-- End of row -->
-
-
-        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-        <div class="units-row">
-            <div class="unit-70">
-                <!-- Left column -->
-                <div class="task">Add a void <code>keyPressed()</code> method with code that changes the rectangle's
-                    fill color to green if the key 'g' is pressed and blue if the key 'b' is pressed.
-                    <br /><br />
-                    You may find the following code useful:
-                    <br /><br />
-                    <pre class="brush: processing; gutter: false; toolbar: false; ">if (key == 'r')
-{
-  // Change the value of r
-}</pre>
-                </div>
-
-                <pre class="brush: processing; gutter: false; toolbar: false; ">
-void setup() {
-  size(400, 400);
-  background(220);
-  fill(64);
-  textSize(18);
-}
-
-function draw() {
-}
-
-function keyPressed() {
-  text(key,random(20,width-20),random(20,height-20));
-}
-
-void mouseClicked() {
-  background(220);
-}
-</pre>
-            </div> <!-- End of left column -->
-
-            <div class="unit-30 annotation">
-                <!-- Right hand column for small images, popup sketches and annotations. -->
-                <script>loadSketch("https://www.staff.city.ac.uk/~jwo/bootcamp2021/p5js/colourKey", 200, 200, "https://www.staff.city.ac.uk/~jwo/bootcamp2021/lecture04/images/colourKey.png");</script>
-                <p>ColourKey sketch (click to activate and try pressing the 'R', 'G' and 'B' keys).</p>
-            </div> <!-- end of right column -->
-        </div> <!-- End of row -->
 
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <div class="units-row">
