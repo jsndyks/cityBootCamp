@@ -763,6 +763,8 @@ if (mouseButton == LEFT) {
               <p>You should by now have your sketches working in all sorts of ways based upon your keyboard and mouse interactions. That's great. But in explaining how to do things we have led you into bad habits. That's not so great! So let's unpick things a little.
               </p>
 
+              <h4>Detecting, Recording and Doing - How to Structure a Sketch for Interaction</h4>
+
               <p>The key thing is that empty <code>draw()</code> loop!</p>
               <p>The <code>draw()</code> loop is the place to draw and do things.<br/>
               These event handling methods are not.<br/>
@@ -790,8 +792,9 @@ void mouseClicked() {
   // --   based upon interactions and input.
   // -- These will be acted on in the draw() loop.
 }</pre>
-<p>Here is a refactoring of the <code>keyPressed</code> sketches that does just this.</p>
-  <p>It's a little longer than the other examples, but should be readable.</p>
+<p>So ... even more bluntly ... <b>Don't draw things in the event handling methods!</b>.</p>
+<p>Here is a refactoring of the <code>keyPressed</code> sketches that structures things as we advise above.</p>
+  <p>It's a little longer than the other examples, but should be readable. Take your time.</p>
           </div> <!-- End of left column -->
 
           <div class="unit-30 annotation">
@@ -863,14 +866,14 @@ void mouseClicked() {
 }</pre>
 
 <p>One of the reasons we didn't organise the other examples in this way was to keep them short and sweet as we introduced concepts.</p>
-  <p>But we need you to understand how to</p>
+  <p>But we need you to understand how to ...</p>
   <ul>
     <li>detect and capture interaction</li>
     <li>use it to set variables that describe the state of your system (sketch)</li>
     <li>check these in the <code>draw()</code> loop to control flow based upon inputs acquired through interaction</li>
   </ul>
   <p>This gives you plenty of scope for producing exciting, imaginative, quick, interactive sketches.</p>
-  <p>So let's try to add something to this skeletomn sketch!</p>
+  <p>So let's try to add something to this skeleton sketch!</p>
         </div> <!-- End of left column -->
 
         <div class="unit-30 annotation">
@@ -887,8 +890,9 @@ void mouseClicked() {
     <div class="units-row">
         <div class="unit-70">
         <div class="task">
-          <p>Create a sketch using the skeleton code provided above.<br/>Run it and experiment a little.</p>
-          <p>Then add a global variable, an event handling method and a control statement to :</p>
+          <p>Create a sketch using the skeleton code provided above.<br/>Run it and experiment a little.<br/>
+            Can you see how <code>isRed</code> works?</p>
+          <p>Then <b>extend it</b> by adding a global variable, an event handling method and a control statement to :</p>
           <ul>
             <li>make the screen clear in yellow if the mouse is in the right half of the screen, grey otherwise</li>
           </ul>
@@ -896,9 +900,14 @@ void mouseClicked() {
           <ol>
             <li>the <code>mouseMoved()</code> method is called every time the mouse is moved and these are the times when you need to check where the mouse is</li>
             <li>the mouse is in the right half of the screen when <code>mouseX &gt; width/2</code></li>
-            <li>a good global variable name and initial value might be something like: <code>boolean isYellow = false;</code>
+            <li>a good global variable name and initial value might be something like:<br>&nbsp;&nbsp;<code>boolean isYellow = false;</code> or perhaps<br/>&nbsp;&nbsp;<code>boolean mouseIsRight = false;</code></li>
           </ol>
-        </div>
+
+                  </div>
+          <div class="aside">
+            <h5>Important Reminder!</h5>
+          <p>Remember that learning to <b>predict</b>, <b>change</b>, <b>observe</b> (behaviour, bug reports, etc.), <b>think</b> (and discuss), <b>learn</b>, <b>confirm</b> will really help you make progress.<br/>Remember that your teachers are herre to help you with this!</p>
+          </div>
 
      <!-- https://www.notion.so/blog/stu-card -->
       </div>
@@ -916,35 +925,34 @@ void mouseClicked() {
     <div class="units-row">
         <div class="unit-70">
             <!-- Left column -->
+            <h4>Persistent Record of Interaction</h4>
 
-    </div> <!-- End of left column -->
+            <p>These little examples are intended to show you what is possible, and we haven't really worked with examples where interactions persist and accumulate. Also let's try an example that will challenge you a little an help you see how this can be achieved.</p>
+            <p>We're going to count the number of times a sketch is clicked. Remember that <code>mouseClicked()</code> is called, if you have defined it, every time that happens. This is a great start!</p>
 
-    <div class="unit-30 annotation">
-        <!-- Right hand column for small images, popup sketches and annotations. -->
+            <div class="task">
+                <p>Using the code below as a start point get <code>clickCount</code> to increment every time the mouse is clicked.<br/>
+                This variable records the number of times the canvas has been clicked in your sketch.</p>
+            </div>
+          </div> <!-- End of left column -->
 
-    </div> <!-- end of right column -->
-</div> <!-- End of row -->
+          <div class="unit-30 annotation">
+              <!-- Right hand column for small images, popup sketches and annotations. -->
+          </div> <!-- end of right column -->
+      </div> <!-- End of row -->
 
+      <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+      <div class="units-row">
+          <div class="unit-70">
+              <!-- Left column -->
 
-<hr/><hr/>
-
-        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-        <div class="units-row">
-            <div class="unit-70">
-                <!-- Left column -->
-                <h3>1. Mouse Input</h3>
-
-                <div class="task">
-                    Using the code below as a start point get <code>clickCount</code> to increment every time the mouse is clicked.
-                    This variable records the number of times the canvas has been clicked in your sketch.
-                </div>
-
-                <pre class="brush: processing; gutter: false; toolbar: false; ">int clickCount = 0;
+            <pre class="brush: processing; gutter: false; toolbar: false; ">
+int clickCount = 0;
 
 void setup()
 {
   size(300,300);
-  fontSize(36)
+  fontSize(72);
   fill(200);
 }
 
@@ -954,60 +962,158 @@ void draw(){
   text(clickCount, width/2, height/2);
 }</pre>
 
+<p>We'd like you to try some of the following extensions to this task.<br/>
+  They all vary the way your sketch looks based upon accumulating interactions.</p>
+
+    </div> <!-- End of left column -->
+
+    <div class="unit-30 annotation">
+        <!-- Right hand column for small images, popup sketches and annotations. -->
+        <br/>
+        <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/clickCount/", 200, 200, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.clickCount.png");</script>
+        <p>ClickCount Exercise<br/>Click to activate and click in the sketch.
+          <br/>This sketch achieves some oof what we ask for ... but we'd like you to extend it further!</p>
+    </div> <!-- end of right column -->
+</div> <!-- End of row -->
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <div class="units-row">
+            <div class="unit-70">
+                <!-- Left column -->
                 <div class="task">
+                  <p>
+                    <b>Extension 1</b>: Make the background colour different when more than 10 clicks have occurred<br/>
+                    and, or when the number ends in 2 (the <a href="https://processing.org/reference/modulo.html">modulo operator</a> <code>%</code> will be useful here).
+                    </p>
                     <p>
-                      <b>Extension 1</b>: Add a <code>rect()</code> at the centre of the canvas that increases in size each time the mouse is clicked.<br/>
+                      <b>Extension 2</b>: Add a <code>rect()</code> at the centre of the canvas that increases in size each time the mouse is clicked.<br/>
                       <code><a href="https://processing.org/reference/rectMode_.html">rectMode(CENTER)</a></code> should help here.
                       </p>
                     <p>
-                    <b>Extension 2</b>: In the previous session you were introduced to the <a href="https://processing.org/reference/random_.html" target="_blank">random()</a> method. Modify your code to add and display a second variable <code>randomNum</code>, the contains a different random value between 0 and 99 each time the mouse is clicked.
+                    <b>Extension 3</b>: In the previous session you were introduced to the <a href="https://processing.org/reference/random_.html" target="_blank">random()</a> method. Modify your code to add and display a second variable <code>randomNum</code>, the contains a different random value between 0 and 99 each time the mouse is clicked.
                     </p>
                     <p>
-                    <b>Extension 3</b>: Now see whether you can show the <b>average</b> of all the random numbers produced on each click.
-                    This will require a third variable that contains the <code>runningTotal</code> of all the random numbers generated during the various clicks.
+                    <b>Extension 4</b>: Now see whether you can show the <b>average</b> of all the random numbers produced on each click.
+                    This will require a third variable that contains the <code>runningTotal</code> of all the random numbers generated during the various clicks.<br/>
+                    It should be apparent that <code>runningTotal/clickCount</code> will give you the average.<br/>
+                    But watch out - dividing any number by zero results in an error, so you will need a condition to make sure that you only calculate the average <code>if (clickCount &gt;0)</code>.
+                    </p>
+                </div>
+                <div class="challenge">
+                    <p>
+                    <b>Challenge - Extension 5</b>: If you enjoyed that and want to do more, then try showing how the average varies as clicks increase <i>with a graphic</i>.<br/>
+                    Plot a small circle, with the x position showing the number of clicks - this needs to increase as the number of clicks increases.<br/>
+                    The y position of the circle should depend on the <b>average</b> that you have calculated.<br/>
+                    What happens to this average over time?<br/>
                     </p>
                 </div>
 
-                <h4>Clicking a button</h4>
-                <pre class="brush: processing; gutter: false; toolbar: false; ">int x, y, w, h;
+                <h4>Hang on, that's not an interface!</h4>
+                <p>You are now equipped with many ways of interacting with sketches and should be able to produce wonderfully interactive work. All it requires is a bit of practice and a lot of imagination.</p>
+                <p>We have deliberately <b>not</b> focussed on some of the standard windows style interface elements here - we're getting under the bonnet of these interfaces to give you scope for making more interesting, innovative and inspiring interactions!<br/>But maybe we should show you how you can use what you know to make them!</p>
+                <p>Here's a basic example:</p>
+                <pre class="brush: processing; gutter: false; toolbar: false; ">int x, y, size;
+boolean isIn = false;    // -- is the mouse in the rect()?
+boolean isOn = false;    // -- is the checkbutton on?
 
 void setup()
 {
-  size(240, 120);
-  x = 80;
-  y = 30;
-  w = 80;
-  h = 60;
+  size(400, 400);
+  x = width/4;
+  y = height/4;
+  size = width/15;
 }
 
+// -- The draw() loop - here is where we control flow and draw things!
 void draw()
 {
-  rect(x, y, w, h);
+  if (isOn) {
+    // -- yellow if on!
+    background(255, 255, 140);
+  } else {
+    // -- white if not!
+    background(255);
+  }
+
+  // -- change colour to be used in rect based on status:
+  if (isIn) {
+    fill(255, 128, 64);
+  } else if (isOn) {
+    fill(255, 0, 0);
+  } else {
+    fill(240);
+  }
+
+  // -- the main rectangle - always shown :
+  rect(x, y, size, size);
+
+  fill(64, 200);
+  // -- things to show based on status!
+  if (isOn) {
+    // -- middle rectangle and reminder text :
+    rect(x+size*0.25, y+size*0.25, size*0.5, size*0.5);
+    text("Remember to turn me off before you leave ...", 120, height-10);
+    text("On", x+size*1.5, 15+height/4);
+  } else {
+    text("Off", x+size*1.5, 15+height/4);
+  }
+}
+
+
+// -- Event handling methods - here is where we detect interactions and capture them in variables:
+
+void mouseMoved()
+{
+  // -- is mouse position inside the rectangle?
+  if  ((mouseX &gt; x/2) && (mouseY &gt;y) && (mouseX &lt; x+size) && (mouseY &lt; y+size))
+  {
+    isIn = true;
+  } else {
+    isIn = false;
+  }
 }
 
 void mouseClicked()
 {
-  if  ((mouseX &gt; x) && (mouseY &gt; y) && (mouseX &lt; x+w) && (mouseY &lt; y+h))
+  // -- is mouse position inside the rectangle?
+  if  ((mouseX &gt; x/2) && (mouseY &gt;y) && (mouseX &lt; x+size) && (mouseY &lt; y+size))
   {
-    println("clicked");
+    // -- switch isON to whatever it is not - shorthand follows on the next line (try it):
+    // -- isOn = !isOn
+    if (isOn) {
+      isOn = false;
+    } else {
+      isOn = true;
+    }
   }
-}
-</pre>
+}</pre>
 
-<div class="challenge">
-    <p>
-    <b>Challenge</b>: If you found that straightforward, try showing how the average varies as clicks increase.<br/>
-    Plot a small circle, with the x position showign the number of clicks - this needs to increase as the number of clicks increases.<br/>
-    The y position should depend on the <b>average</b> that you have calculated. What happens to this average over time?<br/>
-    </p>
+<p>The key thing to see here is the way that we check whether the mouse is in the rectangle or not with some basic comparisons of the mouse position with the extent of the rectangle.</p>
+</div> <!-- End of left column -->
+
+<div class="unit-30 annotation">
+    <!-- Right hand column for small images, popup sketches and annotations. -->
+</div> <!-- end of right column -->
+</div> <!-- End of row -->
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ New row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div class="units-row">
+<div class="unit-70">
+    <!-- Left column -->
+
+<div class="task">
+  <p>Run the example sketch to the right and then copy the code from above into _Processing_.</p>
+  <p>Work through the code to understand how we know whether the mous is in the rectangle or not.</p>
+  <p>This allows us to interact with the mouse and other peripherals to identify spaces and shapes on screen.</p>
+  <p>Can you edit the code so that you are <i>in</i> the rectangle when you are 10 poixels away from it?</p>
 </div>
-
 
             </div> <!-- End of left column -->
 
             <div class="unit-30 annotation">
                 <!-- Right hand column for small images, popup sketches and annotations. -->
-                <br />
+                <br/>
+                <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/checkButtonV0/", 200, 200, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.checkButtonV0.png");</script>
             </div> <!-- end of right column -->
         </div> <!-- End of row -->
 
