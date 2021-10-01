@@ -14,25 +14,34 @@ let pig = "🐖";
 let squid = "🦑";
 
 let animal;
+let click = true;
 
 function setup () {
   createCanvas(200, 200);
   fill(32);
   textAlign(CENTER);
-  animal=rabbit;
+  animal=mouse;
 }
 
 function draw () {
   if (drawIt) {
     background(240);
+    fill(32);
     textSize(txtSz);
     text(animal, mouseX, mouseY);
   }
+  if (click) {
+    fill(32,64);
+    textSize(12);
+    text("click in here first ...", width/2, height-10);
+  }
   drawIt = false;
+  noLoop();
 }
 
 function mouseMoved () {
   drawIt=true;
+  loop();
 }
 
 function keyPressed() {
@@ -48,6 +57,7 @@ function keyPressed() {
   if (key == 't') animal = turtle;
   if (key == 'm') animal = mouse;
   drawIt=true;
+  loop();
 }
 
 function mouseClicked () {
@@ -56,5 +66,7 @@ function mouseClicked () {
   } else {
     txtSz = max(txtSz+2, 6);
   }
+  click = false;
   drawIt=true;
+  loop();
 }
