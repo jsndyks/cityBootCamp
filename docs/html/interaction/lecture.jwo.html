@@ -44,7 +44,18 @@
         <!-- Add summary sentence or two below, which will act as an easy introduction -->
 
         <div class="intro">
+
             <p>
+                A computer isn't much good without <b>interaction</b>!
+            </p>
+            <p>
+                Luckily (actually, there is careful planning and sophisticated functionality involved) <i>Processing</i>
+                has rich and straightforward capabilities for detecting input from mouse, keyboard and elsewhere and
+                using this to allow us to interact rapidly and consistently with sketches.
+            </p>
+            <p>
+                And we're going to play with the basics today.<br />
+
                 This session introduces ways in which you can collect and use <b>input</b> from somebody who is using
                 your <b>Processing</b> application through their <b>interactions</b> with the keyboard and mouse.
                 We'll use these <i>key presses</i> or <i>mouse events</i> to control what happens in our sketches.
@@ -71,17 +82,7 @@
                 <!-- Left column -->
                 <h3>1. Interaction</h3>
                 <p>
-                    A computer isn't much good without <b>interaction</b>!
-                </p>
-                <p>
-                    Luckily (<i>actually, there is careful planning and sophisticated functionality involved</i>) <i>Processing</i>
-                    has rich and straightforward capabilities for detecting input from mouse, keyboard and elsewhere and
-                    for using this to allow us to interact rapidly and consistently with sketches.
-                </p>
-                <p>
-                    And we're going to play with the basics today.<br />
-                <p>
-                    First up ... let's think about how we interact with computers:
+                    Think about how we interact with computers:
                 </p>
                 <ul>
                     <li>we talk to them</li>
@@ -171,8 +172,8 @@ void draw() {
                 <!-- Right hand column for small images, popup sketches and annotations. -->
                 <br />
                 <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyBig/", 400, 400, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyBig.png");</script>
-                <p>Key sketch<br />Click the image go activate the sketch.</br>Then <b>click again</b> inside the popup window to get the keyboard focussed on the sketch.<br/>Now press keys on the keyboard to see how the value of <b>key</b>
-                    changes based upon your interaction through the keyboard.</p>
+                <p>Key sketch<br />(click to activate and press keys on the keyboard to see how the value of <b>key</b>
+                    changes).</p>
             </div> <!-- end of right column -->
         </div> <!-- End of row -->
 
@@ -188,7 +189,7 @@ void draw() {
                 <p>This is called by a <i>Processing</i> sketch every time a key is pressed.
                 </p>
                 <p>You simply create a new method called <code>keyPressed()</code> as shown below, and <i>Processing</i>
-                    will call this method every time it detects a <i>key press</i> interaction. Let's try it!</p>
+                    will run it every time it detects a key press. Let's try it!</p>
             </div> <!-- End of left column -->
 
             <div class="unit-30 annotation">
