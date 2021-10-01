@@ -141,7 +141,7 @@ if (key == 'w') {
           </p>
 
           <h5>Report!</h5>
-          <p>We probably want to know sometrhing about what is going on in the sketch ...</p>
+          <p>We probably want to know something about what is going on in the sketch ...</p>
             <p>
             <b>Extension 2a:</b> Add code to the <code>draw()</code> method that displays the <code>x</code> and <code>y</code> position of the
             rectangle in the bottom corner of the sketch.<br/>
@@ -156,11 +156,12 @@ if (key == 'w') {
             <p>Add an interaction that changes the status of the sketch, and the behaviour of the sketch as a result ...</p>
               <p>
               <b>Extension 3a:</b> Add a boolean global variable called <code>isSquare</code> with <code>isSquare = true;</code><br/>.
-              This will store information about the status of your sketch: is the shape a square or not? Well, at the moment it is, but we can add an interaction that enables ius to vary this.
+              This will store information about the status of your sketch: is the shape a square or not? Well, at the moment it is, but we can add an interaction that enables us to vary this.
               <br/><br/>
               <b>Extension 3b:</b> Add a condition to the <code>keyPressed()</code> method changes <code>isSquare</code> to <code>false</code> if you click a particular key.<br/><br/>
-              <b>Extension 3c:</b> Now add a condition in the <code>draw()</code> loop that checks whether <code>isSquare</code> is <code>true</code> and draws a <code>rect()</code> or an <code>ellipse()</code> dependent upon this.<br/><br/>
+              <b>Extension 3c:</b> Now add a condition in the <code>draw()</code> loop that checks whether <code>isSquare</code> is <code>true</code> and draws a <code>rect()</code> (a square one) or an <code>ellipse()</code> dependent upon this.<br/><br/>
               <b>Extension 3d:</b> You have probably figured out by now that you'll need another condition in <code>keyPressed()</code> that enables you to make <code>isSquare</code> <code>true</code> again - so add one of these!<br/><br/>
+              <b>Extension 3e:</b> So how would you add an option to make the shape a <code><a href="https://processing.org/reference/triangle_.html">triangle()</a></code>?<br/><br/>
               </p>
 
         </div>
@@ -194,7 +195,7 @@ void draw()
           </p>
         </div>
 
-        <p>That's pretty good, but wiht a few more commands and a little more creatice thinking you can create a RGB colour selector!</p>
+        <p>That's pretty good, but with a few more commands and a little more creatice thinking you can create a full <i>RGB colour selector</i>!</p>
 
         <div class="challenge">
             <h4>2+. Red Green Blue Selector.</h4>
@@ -295,7 +296,7 @@ ellipse(circleX,circleY,radius,radius);</pre>
             <p>Add a <code>draw()</code> method that draws a circle with your favourite <code>fill()</code> wherever the mouse is positioned.</p>
             <p>The circle should have no outline -  <code><a href="https://processing.org/reference/noStroke_.html">noStroke()</a></code></p>
             <p>It should move as the mouse moves, and leave a trail - so make sure you have no <code><a href="https://processing.org/reference/background_.html">background()</a></code> command in <code>draw()</code>. This would wipe the background clear in every <code>draw()</code> loop.</p>
-            <p>Now update the colour of the circle depending on the position of the mouse - so that there is more <b>red</b> in the colour as the mouse moves right and more <code>blue</code> in the colour as the mouse moves down.<br/>This should look quite cool and colourful.</p>
+            <p>Now update the colour of the circle depending on the position of the mouse - so that there is more <b>red</b> in the colour as the mouse moves right and more <code>blue</code> in the colour as the mouse moves down.<br/>This should look quite cool and colourful. Just use <code>mouseX</code> and <code>mouseY</code> somewhere in the RGB colour definition.</p>
             <p>But it gets better!<br/>
               Now vary the colour depending upon whether the <span class="key">r</span>, <span class="key">g</span> or <span class="key">b</span> keys were most recently pressed.<br/>
               <ul>
@@ -303,7 +304,7 @@ ellipse(circleX,circleY,radius,radius);</pre>
                   <li><span class="key">g</span> - <b>green</b> varies with <code>x</code>, <b>blue</b> varies with <code>y</code></li>
                     <li><span class="key">b</span> - <b>blue</b> varies with <code>x</code>, <b>red</b> varies with <code>y</code></li>
               </ul>
-              This will involve a condition that depends upon what is held in <code>key</code> and you'll need <code><a href="https://processing.org/reference/else.html">if</a></code> and <code><a href="https://processing.org/reference/else.html">else if</a></code> <br/>
+              This will involve a condition that depends upon what is held in <code>key</code> and you'll need <code><a href="https://processing.org/reference/else.html">if</a></code> and <code><a href="https://processing.org/reference/else.html">else if</a></code> to control what happens dependent upon this interaction.<br/>
             </p>
             <p>Have a play and then decide whether you want to really go for it by ... <br/>
               Varying the colour in three additonal ways depending upon whether the <span class="key">R</span>, <span class="key">G</span> or <span class="key">B</span> keys were most recently pressed.<br/>
@@ -317,8 +318,8 @@ ellipse(circleX,circleY,radius,radius);</pre>
             <p>Then think about some other things you might do here ... <br/>
               <ol>
                 <li>Vary the opacity of the colour depending on a mouse click - this is the fourth argument given to a <code><a href="https://processing.org/reference/fill_.html">fill()</a></code> command - the <i>alpha</i> channel.</li>
-                <li>Change the size of the circle depending upon some mouse or keyboard interaction</li>
-                <li>Add a <code><a href="https://processing.org/reference/random_.html">random()</a></code> element that positions the circle <i>around the mouse position</i> rather than directly on it. This should emulate a spray can. Ofd course, the amount of randomness could be determined by a interaction through mouse or keyBoard.</li>
+                <li>Change the size of the circle depending upon some mouse or keyboard interaction - you may want to <code><a href="https://processing.org/reference/constrain_.html">constrain()</a></code> this to a sensible range!</li>
+                <li>Add a <code><a href="https://processing.org/reference/random_.html">random()</a></code> element that positions the circle <i>around the mouse position</i> rather than directly on it.<br/>If you get this right, it should emulate a spray can. Of course, the amount of randomness could be determined by a interaction through mouse or keyBoard.</li>
                 <li>Add some other randomness!</li>
               </ol>
               There really are lots of possibilities, even given the limited commands we have explored already.<br/>
@@ -341,11 +342,9 @@ ellipse(circleX,circleY,radius,radius);</pre>
         <hr/>
 
         <h2>Check on Progress</h2>
-        <div class="task">
-            To ensure that you have achieved the outcomes associated with this session, consider the following, which
-            allow you to evaluate your progress.
-            <br /><br />
+        <p>To ensure that you have achieved the outcomes associated with this session, consider the following questions, which allow you to evaluate your progress.</p>
 
+        <div class="task">
             <div class="checkOutcomes">
                 <input type="checkbox" id="sa1"> <label for="sa1">Can I get a sketch to do something (anything!) based upon the key that was last pressed?<br /></label>&nbsp;
             </div>
@@ -362,10 +361,10 @@ ellipse(circleX,circleY,radius,radius);</pre>
                 <input type="checkbox" id="sa5"> <label for="sa5">Can I organise my code so that detected <i>Events</i> change variables that describe the state of a sketch, and these <i>Control Flow</i> in the main <code>draw()</code> loop?<br /></label>&nbsp;
             </div>
             <div class="checkOutcomes">
-                <input type="checkbox" id="sa6"> <label for="sa6">Can I use the <i>Processing</i> <a href="https://processing.org/reference/">reference pages</a> to search for functionality and understand the methods that exist, the arguments that they take and the options that they offer?<br /></label>&nbsp;
+                <input type="checkbox" id="sa6"> <label for="sa6">Can I use the <i>Processing</i> <a href="https://processing.org/reference/">reference pages</a> to search for functionality and understand the methods that exist, the arguments that they take and the options that they offer?<span style="padding-left:12em">🐁</span>
+<br /></label>&nbsp;
             </div>
 
-            <p style="padding-left:32em">🐁</p>
 
         </div> <!-- End of task -->
 
