@@ -172,8 +172,7 @@ void draw() {
                 <!-- Right hand column for small images, popup sketches and annotations. -->
                 <br />
                 <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyBig/", 400, 400, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyBig.png");</script>
-                <p>Key sketch<br />Click the image go activate the sketch.<br/>Then <b>click again</b> inside the popup window to get the keyboard focussed on the sketch.<br/>Now press keys on the keyboard to see how the value of <b>key</b>
-                    changes based upon your interaction through the keyboard.</p>
+                <p>Key sketch<br />Click the image to activate the sketch.<br/>Then <b>click again</b> inside the popup window. This will get the keyboard focussed on the sketch.<br/>Now you can press keys on the keyboard to see how the value of <b>key</b> changes based upon your interaction with the sketch through the keyboard.</p>
             </div> <!-- end of right column -->
         </div> <!-- End of row -->
 
@@ -1309,7 +1308,7 @@ void mouseClicked()
                 <br />
                 <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/checkButtonV0/", 400, 400, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.checkButtonV0.png");</script>
                 <p>CheckButton Exercise<br />Click to activate and click in the sketch.
-                    <br />A lonely checkButton.<br />Click it!
+                    <br />A lonely checkButton.<br />It's just a rectangle that changes colour when you interact with it.<br/>Give it a try!
                 </p>
             </div> <!-- end of right column -->
         </div> <!-- End of row -->
@@ -1320,14 +1319,14 @@ void mouseClicked()
             <div class="unit-70">
                 <!-- Left column -->
                 <p>Of course we could extend things a little ... we want you to be creative in BootCamp!</p>
-                <p>You don't need checkboxes and check-buttons and conventions. Be creative and daring! </p>
+                <p>You don't need checkboxes and check-buttons and conventions.<br/>Be creative and daring! </p>
                 <p>Think outside the (check) box!</p>
-                <p>And if you do use them - make sure they do something interesting, dynamic and creative!</p>
-                <p>And make sure all of your sentences end with exclamation marks! 😉</p>
+                <p>And if you do use them - make sure they do something interesting, exciting, dynamic and creative!</p>
+                <p>Oh, and make sure all of your sentences end with exclamation marks! 😉</p>
                 <div class="task">
-                    Where was I?<br/>Oh yeah, try the checkbutton to the right.
+                    Where was I?<br/>Oh yeah, try the <i>CheckButton example</i> to the right.
                 </div>
-                To make good use of a homegrown button like this, we often use our own 'methods' that allow us to collect functionality and call on it whenever we need it - like when a button is pressed.
+                To make good use of a homegrown button like this, we often use our own 'methods' - collections of <i>Processing</i> code and capability that allow us to define and call on functionality whenever we need it - like when a button is pressed.
                 We will cover methods in the next session.
 
             </div> <!-- End of left column -->
@@ -1382,9 +1381,40 @@ void mouseClicked()
 
             <div class="unit-30 annotation">
                 <!-- Right column -->
-                <p style="padding-top:32em">
-                🐁
-              </p>
+                  <div class="unit-30 annotation">
+                      <!-- Right hand column for small images, popup sketches and annotations. -->
+                      <br />
+                      <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/moveMouse/", 400, 400, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.moveMouse.png");</script>
+                      <p>Mouse Move Example<br />Here's one final sketch that responds to the  🐁.
+                        <br/>Try keyboard interaction (<span class="key">t</span>, <span class="key">r</span>, etc.) and mouse clicks.
+                      </p>
+                  </div> <!-- end of right column -->
+                  <p style="padding-top:32em">🐁</p>
+                  <!--
+                  char mouse = '🐁';
+                  let mouse = "🐁";
+                  let turtle = "🐢";
+                  let rabbit = "🐇";
+                  let duck = "🦆";
+                  let lobster = "🦞";
+                  let crab = "🦀";
+                  let badger = "🦡";
+                  let squirrel = "🐿";
+                  let hedgehog = "🦔";
+                  let pig = "🐖";
+                  let squid = "🦑";
+                  if (key == 'q') animal = squid;
+                  if (key == 'p') animal = pig;
+                  if (key == 'h') animal = hedgehog;
+                  if (key == 'b') animal = badger;
+                  if (key == 's') animal = squirrel;
+                  if (key == 'c') animal = crab;
+                  if (key == 'l') animal = lobster;
+                  if (key == 'd') animal = duck;
+                  if (key == 'r') animal = rabbit;
+                  if (key == 't') animal = turtle;
+                  if (key == 'm') animal = mouse;
+                   -->
             </div> <!-- end of right column -->
         </div> <!-- End of row -->
         <hr />
