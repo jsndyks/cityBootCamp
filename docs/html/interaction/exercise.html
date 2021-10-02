@@ -84,13 +84,13 @@
 
         <hr/>
 
-        <h4>1. Moving Shape</h4>
+        <h4>1. Move</h4>
         <p>The whole idea of studying <i>Interaction</i> is that it enables you (or others) to control a sketch with your mouse and keyboard once it is running. We can control colours, positions, behaviours ... pretty much anything really. And that's what many sophisticated sketches do.</p>
         <p>Let's start by making something move.</p>
         <img src="https://jsndyks.github.io/cityBootCamp/images/interaction/movingShape.png"/>
 
         <div class="coreTask">
-            <h5>Moving Shape Task</h5>
+            <h5>Move Task</h5>
             <p>
                 Create a new sketch that draws a square in the centre of a square window sized 400 by 400.<br/>
                 Use two global variables <code>float x</code> and <code>float y</code> to specify the position of the square - at <code>width/2, height/2</code>:
@@ -129,19 +129,19 @@ if (key == 'w') {
           <p style="margin-top:2em">
             This is pretty cool - you have an interactive sketch!<br/>Show your friends, show your tutor.<br/>Celebrate!</p>
           <p>But not too much ... because there are a few more features and tricks that you should try later in the <b>challenges</b> section - they will serve you well.
-          <br/>So carry on with these <b>CORE Tasks</b> for now and we can try the <b>Moving Shape</b> challenges later.</p>
+          <br/>So carry on with these <b>CORE Tasks</b> for now and we can try the <b>Move</b> challenges later.</p>
 
         <hr/>
 
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-        <h4>2. Red Range</h4>
+        <h4>2. Colour</h4>
         <p>This kind of interaction can be used to control almost anything in your sketch: shapes, positions, colours, sizes ... all sorts of behaviours.<br/>Let's change the <i>colour</i> of a shape according to input from the keyboard for starters.</p>
 
         <img src="https://jsndyks.github.io/cityBootCamp/images/interaction/redGreyBlue.png"/>
 
         <div class="coreTask">
-            <h5>Red Range Task</h5>
+            <h5>Colour Task</h5>
             <p>
                 Start a new sketch with a <code>void setup()</code> method that sets the size of the sketch canvas to 400 by 400.
                 <br /><br />
@@ -173,7 +173,7 @@ void draw()
 
         <hr/>
 
-<h4>3. Colour Splash.</h4>
+<h4>3. Splash</h4>
 <p>This is a really nice one to try - it's not too difficult, and is pretty open ended. There's lots of room for creative ideas.</p>
 <p>Let's use what we have learned to add some interactions that allow you to rapidly change a dynamic display ... and perhaps even get a little creative!</p>
 <br/><br/>
@@ -181,7 +181,7 @@ void draw()
 <img src="https://jsndyks.github.io/cityBootCamp/images/interaction/colourPic.png"/>
 
 <div class="coreTask">
-    <h5>Colour Splash Task</h5>
+    <h5>Splash Task</h5>
     <p>Make a big canvas in <code>setup()</code> and give it a white <code><a href="https://processing.org/reference/background_.html">background()</a></code>.</p>
     <p>Add a <code>draw()</code> method that draws a circle with your favourite <code>fill()</code> wherever the mouse is positioned.</p>
     <p>The circle should have no outline -  <code><a href="https://processing.org/reference/noStroke_.html">noStroke()</a></code></p>
@@ -198,8 +198,8 @@ void draw()
     But for now ... we're <i>hunting</i> ...</p>
   <hr/>
 
-<h4>4. Target Hunter.</h4>
-<p>We can use the detection of events, and the creation of shapes on screen to produce simple games.</p>
+<h4>4. Target</h4>
+<p>We can use the detection of events, and the creation of shapes on screen to produce simple games - like a <i>target hunter</i>.</p>
 <p>One very useful method is <code><a href="https://processing.org/reference/dist_.html">dist()</a></code> - which calculates the distance between two points.  The <a href="https://processing.org/examples/distance2d.html">Distance2D sketch</a> shows how nicely this can be tied to interactions.</p>
 <img src="https://jsndyks.github.io/cityBootCamp/images/interaction/distance2D.png"/>
 <p>But let's not get ahead of ourselves! For now, rather handily, <code><a href="https://processing.org/reference/dist_.html">dist()</a></code> allows us to calculate the distance between the mouse position and the centre of a circle. This tells us whether the mouse is either:</p>
@@ -223,7 +223,7 @@ if (dist(circleX,circleY,mouseX,mouseY) &lt; radius) {
 ellipse(circleX,circleY,radius,radius);</pre>
 
         <div class="coreTask">
-            <h5>Target Hunter Task</h5>
+            <h5>Target Task</h5>
 
             <p>
                 Write code that produces a circle in your favourite <code>fill()</code> colour at a random position on the screen.<br/>
@@ -265,15 +265,15 @@ ellipse(circleX,circleY,radius,radius);</pre>
         <p>If you managed to complete the four tasks and the day isn't over then this is the place for you - we're in the <b>CHALLENGE</b> zone.</p>
         <p>Actually <b>CHALLENGE</b> may not be the right term here - as these are all pretty straightforward <b>enhancements</b> to the sketches that you produced above. It should be fun to try to complete them and doing this will certainly help you learn. You may want to try them with a colleague - there is no harm in discussing approaches and coming up with a collective plan.</p>
 
-        <h4>1+. Super Moving Shape.</h4>
+        <h4>1+. Super Move.</h4>
 
-        <p>If you managed the <b>Moving Shape</b> exercise, you can try a few more useful extensions to add to your sketch.</p>
+        <p>If you managed the <b>Move</b> exercise, you can try a few more useful extensions to add to your sketch.</p>
         <p>This exercise is not obligatory, but we recommend that you give it a try and expect most of you to be able to do it.</p>
         <p>Don't forget to document your code with explanatory comments, save progress regularly and ask for help and show your teachers how you are doing.</p>
 
 
         <div class="challenge">
-            <h5>Super Moving Shape Challenge</h5>
+            <h5>Super Move Challenge</h5>
             <p>If you want to push things a bit, and learn a little more, by enhancing this interactive sketch then tty this <b>challenge</b> that will extend the sketch to  <b>constrain!</b>, <b>report!</b> and <b>change!</b>:</p>
 
             <h5>Constrain!</h5>
@@ -317,12 +317,12 @@ ellipse(circleX,circleY,radius,radius);</pre>
       <br /><br />
       <hr/>
 
-      <h4>2+. Red Green Blue Selector</h4>
+      <h4>2+. Colour Selector</h4>
 
       <p>Can you extend the colour specification functionality a little to produce something much more useful.</p>
 
       <div class="challenge">
-          <h5>Red Green Blue Selector Challenge</h5>
+          <h5>Colour Selector Challenge</h5>
         <p><b>Extension 1:</b> Add statements that prevent the value of red becoming less than 0 or more than 255.</p>
         <p><b>Extension 2:</b> Add statements that change the <b>green</b> and <b>blue</b> colour components with <span class="key">G</span>/<span class="key">g</span> and <span class="key">B</span>/<span class="key">b</span>.</p>
         <p><b>Extension 3:</b> Add statements that show the currently selected colour by adding <code>text()</code> that contains a <code>String</code> that shows all three colours - e.g.</p>
@@ -342,12 +342,12 @@ text(colourDefinition,width/2,2*height/3);"
       </div>
 
       <hr/>
-      <h4>3+. Colourier Spray Splash</h4>
+      <h4>3+. Spray Splash</h4>
 
       <p>You have the basics, but we can do loads more with this sketch with a few more commands!</p>
 
       <div class="challenge">
-        <h5>Colourier Spray Splash Challenge</h5>
+        <h5>Spray Splash Challenge</h5>
 
         <p>Enhance the sketch by varying the colour depending upon whether the <span class="key">r</span>, <span class="key">g</span> or <span class="key">b</span> keys were most recently pressed.<br/>
           <ul>
