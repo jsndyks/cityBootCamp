@@ -15,4 +15,5 @@
 
   .checkOutcomes {padding:1em; margin-left:3em}
 
-  .lecture {float:left; margin:-20; background-color:#ff8; color:#922; text-align:right; clear:both}
+  .focusON {float:left; padding:1em; color:#229; background-color:#fff; text-align:right; clear:both; border-right:2px solid #229}
+  .focusOFF {display:none; padding:0px; color:#229; background-color:#fff; }
