@@ -74,7 +74,7 @@
                 <p>
                     A computer isn't much good without <b>interaction</b>!
                 </p>
-                <p class="focusOff">&gt;&gt;1</p>
+                <p class="focusOFF">&gt;&gt;1</p>
                 <p>
                     Luckily (<i>actually, there is careful planning and sophisticated functionality involved</i>) <i>Processing</i>
                     has rich and straightforward capabilities for detecting input from mouse, keyboard and elsewhere and
@@ -123,7 +123,7 @@
                 <img src="https://jsndyks.github.io/cityBootCamp/images/interaction/keyboard.png" />
 
                 <h4>Key Sketch</h4>
-                <p class="focusOff">&gt;&gt;2</p>
+                <p class="focusOFF">&gt;&gt;2</p>
                 <p>
                     Here's a sketch that takes advantage of the way that <code>key</code> is updated from the keyboard
                     to show interactions made through the keyboard on the canvas.
@@ -192,7 +192,7 @@ void draw() {
                 <!-- Left column -->
 
                 <h4>KeyPressed Sketch</h4>
-                <p class="focusOff">&gt;&gt;3</p>
+                <p class="focusOFF">&gt;&gt;3</p>
                 <p>
                     One of the most useful functions for interaction is the <a
                         href="https://processing.org/reference/keyPressed_.html"><code>keyPressed</code></a> method.</p>
@@ -355,7 +355,7 @@ void keyPressed() {
                 </div>
 
                 <h4>KeyPressed Sketch with Control Flow</h4>
-                <p class="focusOff">&gt;&gt;4</p>
+                <p class="focusOFF">&gt;&gt;4</p>
                 <p>This is a good start, but we are likely want to <i>control program flow</i> from the keyboard.</p>
                 <p>With any luck, you'll be thinking about <code>if</code> statements already, and how we might add them
                     into <code>keyPressed()</code> to respond to interaction from the keyboard.</p>
@@ -381,7 +381,7 @@ void keyPressed() {
                 <blockquote>When a key is pressed, if the key is 'space', then fill the canvas with a light
                     grey,<br />otherwise add 12 to p and then put the value of key on the canvas at a position depending
                     on the value of p.</blockquote>
-                    <p class="focusOff">&gt;&gt;5</p>
+                    <p class="focusOFF">&gt;&gt;5</p>
                 <p>It's useful to be able to express your code like this - do practice!</p>
 
             </div> <!-- End of left column -->
@@ -493,7 +493,7 @@ void keyPressed() {
                     <code>fill(r, g, b)</code> is made of no red, no green and no blue. That's deep dark nightly
                     <b>black</b>.
                 </p>
-                <p class="focusOff">&gt;&gt;6</p>
+                <p class="focusOFF">&gt;&gt;6</p>
                 <pre class="brush: processing; gutter: false; toolbar: false; ">int r, g, b;
 
 void setup() {
@@ -569,7 +569,7 @@ void draw() {
                 <p>So far so good. We can click keys on the keyboard and get our sketches to do things in
                     response.<br />
                     This is the fundamental thing with interaction.</p>
-                    <p class="focusOff">&gt;&gt;7</p>
+                    <p class="focusOFF">&gt;&gt;7</p>
                 <p>But here is a summary of the event handling methods
                     and variables that are available. You'll not that we haven't covered everything, so you should
                     follow up on this in your own time.</p>
@@ -748,7 +748,7 @@ void draw() {
                 <p>Most mouse actions are about identifying areas of the screen, and <i>Processing</i> has some
                     excellent features for capturing where on the screen we are focusing as we use a mouse or similar
                     device.</p>
-                    <p class="focusOff">&gt;&gt;8</p>
+                    <p class="focusOFF">&gt;&gt;8</p>
                 <p>These methods and variables are in some ways similar to those used with the keyboard. Let's start
                     with a summary table.</p>
                 <h4>Event handling : mouse</h4>
@@ -810,7 +810,7 @@ void draw() {
                     <i>release</i>, <i>move</i> or <i>drag</i> the mouse. Or whatever peripheral we are using to control
                     <i>where</i> on the screen we want to focus.
                 </p>
-                <p class="focusOff">&gt;&gt;9</p>
+                <p class="focusOFF">&gt;&gt;9</p>
                 <p>
                     <i>Processing</i> supplies special methods for all of these events.
                     For example, <a href="https://processing.org/reference/mouseClicked_.html"
@@ -933,7 +933,7 @@ if (mouseButton == LEFT) {
                     That's not so great! So let's unpick things a little.
                 </p>
 
-                <p class="focusOff">&gt;&gt;10</p>
+                <p class="focusOFF">&gt;&gt;10</p>
                 <h4>Detecting, Recording and Doing - How to Structure a Sketch for Interaction</h4>
 
                 <p>The key thing is that empty <code>draw()</code> loop!</p>
@@ -1113,7 +1113,7 @@ void mouseClicked() {
         <div class="units-row">
             <div class="unit-70">
                 <!-- Left column -->
-                <p class="focusOff">&gt;&gt;11</p>
+                <p class="focusOFF">&gt;&gt;11</p>
                 <h4>Persistent Record of Interaction</h4>
 
                 <p>These little examples are intended to show you what is possible, and we haven't really worked with
@@ -1231,7 +1231,7 @@ void draw(){
                     here - we're getting under the bonnet of these interfaces to give you scope for making more
                     interesting, innovative and inspiring interactions!<br />But maybe we should show you how you can
                     use what you know to make them!</p>
-                    <p class="focusOff">&gt;&gt;12</p>
+                    <p class="focusOFF">&gt;&gt;12</p>
                 <p>Here's a basic example:</p>
                 <pre class="brush: processing; gutter: false; toolbar: false; ">int x, y, size;
 boolean isIn = false;    // -- is the mouse in the rect()?
@@ -1387,7 +1387,7 @@ void mouseClicked()
                 <hr />
                 <h3>5. Summary </h3>
 
-                <p class="focusOff">&gt;&gt;13</p>
+                <p class="focusOFF">&gt;&gt;13</p>
                 <ul>
                     <li style="padding-top;1em; padding-bottom:1em">
                         <i>Processing</i> provides some useful capability for interaction - see the <b>Event handling : keyboard
