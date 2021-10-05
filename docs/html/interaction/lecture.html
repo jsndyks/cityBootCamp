@@ -71,8 +71,10 @@
             <div class="unit-70">
                 <!-- Left column -->
                 <h3>1. Interaction</h3>
-                <p>
-                    A computer isn't much good without <b>interaction</b>!
+                <p> We've looked at how to <a href="https://moodle.city.ac.uk/mod/page/view.php?id=2058681">code programs that adapt to context</a> with constructs that allow us to write code that makes choices as it executes<br/>.
+                  <br/>But how do we code programs that adapt to people?
+
+                    A computer isn't much good without <b>interaction</b>!<br/>
                 </p>
                 <p class="focusON">&gt;&gt;1</p>
                 <p>
@@ -1281,8 +1283,10 @@ void draw()
 }
 
 
-// -- Event handling methods - here is where we detect interactions and capture them in variables:
+// -- Event handling methods:
+// --   here is where we detect interactions and capture them in variables...
 
+// -- Processing will call this method whenever the mouse is moved:
 void mouseMoved()
 {
   // -- is mouse position inside the rectangle?
@@ -1294,6 +1298,7 @@ void mouseMoved()
   }
 }
 
+// -- Processing will call this method whenever the mouse is clicked:
 void mouseClicked()
 {
   // -- is mouse position inside the rectangle?
