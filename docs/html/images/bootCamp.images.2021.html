@@ -53,7 +53,7 @@
             </p>
 
             <ul>
-                <li>describe the information structure of a digital image including terms like __pixel___ and __resolution___</li>
+                <li>describe the information structure of a digital image including terms like </i>pixel<i> and </i>resolution<i></li>
                 <li>load and display an image in <i>Processing</i></li>
                 <li>apply digital effects to an image</li>
                 <li>retrieve the colour value(s) of a given pixel</li>
@@ -432,7 +432,7 @@ void keyPressed () {
                 </p>
 
                 <p>We don't refer to these individually coloured elements of the image as tiles though.
-                    We refer to them as picture elements - or <b>__pixels___</b> for short.
+                    We refer to them as picture elements - or <b></i>pixels<i></b> for short.
 
                 </p>
                 <!--h4>Aside - Image compression</h4-->
@@ -1359,7 +1359,7 @@ void draw() {
                     We can <code>get</code> and <code>set</code> pixels of an image and use these to select colours that
                     we apply to other shapes in our sketch.
                 </p>
-                <p>Note that we __never actually draw___ the image with <code>img()</code> in the following sketch, but as we have
+                <p>Note that we </i>never actually draw<i> the image with <code>img()</code> in the following sketch, but as we have
                     loaded it with <code>loadImage()</code> we can access its colours, which we can then use to
                     <code>fill()</code> other shapes.<br/>Specifically ...
                 </p>
@@ -1387,7 +1387,7 @@ void setup() {
 void draw() {                            // -- Get the colour of the PImage
   color c = img.get(mouseX, mouseY);   // -- called 'img' at cell mouseX,mouseY.
   fill(c);                              // -- Set fill to this colour.
-  rect(mouseX, mouseY, s, s);         // -- Then draw a rectangle at
+  rect(mouseX, mouseY, s, s);          // -- Then draw a rectangle at
 }                                       // -- the mouse position.
 </pre>
 <p>Or more randomly ...</p>
@@ -1416,9 +1416,9 @@ void setup() {
   noStroke();
 }
 
-void draw() {                           // -- Get the colour of the PImage
-  int rX = int(random(-25, 25));        // -- integer from -25 to 25 : x offset
-  int rY = int(random(-25, 25));        // -- integer from -25 to 25 : y offset
+void draw() {                            // -- Get the colour of the PImage
+  int rX = int(random(-25, 25));       // -- integer from -25 to 25 : x offset
+  int rY = int(random(-25, 25));       // -- integer from -25 to 25 : y offset
   int mX = mouseX+rX;                   // -- Add some randomness around mouse X position.
   int mY = mouseY+rY;                   // -- Add some randomness around mouse Y position.
   color c = img.get(mX, mY);            // -- Get colour from 'img' at cell mX, mY.
@@ -1460,7 +1460,7 @@ float thisLight = brightness(myOrange);
 println("The lightness in that colour is: "+thisLight);
 </pre>
                 <div class="codeTask">
-                    <p>Copy the code and run the sketch from the top of this section - the one that uses <code>get()</code>.</p>
+                    <p>Copy the code and run the sketch from the first example at the top of this section - the one that uses <code>get()</code>.</p>
                     <p>Play with the sketch and use what you have learned (and the code provided above, and the
                         documentation on <code>brightness()</code> that you have consulted) to adapt the code so that
                         the size of the rectangles varies:</p>
@@ -1499,7 +1499,7 @@ println("The lightness in that colour is: "+thisLight);
 
         <hr>
         <h4>4.6 - The Data : Changing pixel and colour values</h4>
-        <p>We can use <code>set()</code> to change the colours being shown in the pixels on the canvas.<br />
+        <p>Just as we can <code>get()</code> a colour from a loaded image, we can use <code>set()</code> to change the colours being shown in the pixels on the canvas.<br />
             These may have been created by loading and drawing an image, or through other means.</p>
         <p>Here's an example taken from the <i>Processing</i> Documentation that you can adapt:</p>
         <div class="units-row">
@@ -1559,7 +1559,7 @@ void draw() {
 
                 <div class="challenge">
                     <p><b>Challenge - Interactive Plasma</b><br />
-                        Vary the parameters and see whether you can make the sketch interactive by adding a dependency
+                        Vary the parameters and see whether you can make the sketch <i>interactive</i> by adding a dependency
                         on <code>mouseX</code> and / or <code>mouseY</code>.</p>
                 </div>
 
@@ -1591,7 +1591,7 @@ void draw() {
 
             <div class="checkOutcomes" style="padding-left:2em">
                 <input type="checkbox" id="sa1">
-                <label for="sa1">&nbsp;&nbsp;I understand the terms pixel and resolution a can use them to describe
+                <label for="sa1">&nbsp;&nbsp;I understand the terms <i>pixel</i> and <i>resolution</i> a can use them to describe
                     image characteristics<br /></label><br />
 
                 <input type="checkbox" id="sa2">
