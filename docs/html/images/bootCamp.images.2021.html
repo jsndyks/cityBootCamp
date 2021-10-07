@@ -1070,7 +1070,7 @@ void setup() {
 }
 
 void draw() {
-  int tint_value = constrain(round(mouseX*255 / width), 32,255);
+  int tint_value = round(mouseX*255 / width);
   background(255);
 
   tint(tint_value);
