@@ -672,7 +672,7 @@ void keyPressed () {
                 </table>
             </div>
             <div class="unit-30 annotation">
-                Here we have images showing the same photo on a 600x600 grid, so the resolution here is much higher with
+                Here we have images showing the same photo on a 600x600 grid, so the resolution here is much higher, with
                 360,000 pixels in each image.<br /><br />
                 On the left we see the full colour image once again.
             </div>
@@ -829,7 +829,7 @@ void keyPressed () {
 
           color darkBlue = color(0, 0, 100);
     </pre>
-                <p>Remember that combining the three primary colours in different proportions, each with possible 255
+                <p>Remember that combining the three primary colours in different proportions, each with 256 possible
                     levels, allows us to differentiate between more than 16 million composite colours.</p>
             </div>
             <div class="unit-30 annotation">
@@ -922,6 +922,7 @@ void draw() {
   fill(0);
   textSize(16);
   text("alpha = " + alpha, 120, 220);
+  text("rgb(0,0,255," + alpha +")", 120, 230);
 }
 </pre>
                 <div class="codeTask">

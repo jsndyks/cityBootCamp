@@ -14,4 +14,5 @@ function draw() {
   textAlign(CENTER);
 
   text("alpha = " + (mouseX < 255 ? mouseX : 255), width/2, height-30);
+  text("rgb(0,0,255," + alpha +")", 120, 230);
 }
