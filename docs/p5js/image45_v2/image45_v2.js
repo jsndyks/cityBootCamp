@@ -1,5 +1,4 @@
 let img;
-
 let s = 5;
 
 function preload() {

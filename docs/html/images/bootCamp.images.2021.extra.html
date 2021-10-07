@@ -119,7 +119,7 @@
                     of integers, floating point numbers and Strings. Each image can be indexed by its position in the
                     array as shown in the following code snippet.</p>
 
-                <pre class="brush: processing; gutter: false; toolbar: false; ">// -- Create and array of eight PImages called 'sprite'.
+                <pre class="brush: processing; gutter: false; toolbar: false; ">      // -- Create an array of eight PImages called 'sprite'.
       PImage [] sprite = new PImage[8];
 
       // -- Use a loop to load a different image into each array element.
@@ -151,8 +151,9 @@
                             <br />&nbsp;&nbsp;&nbsp;- just <code>println()</code> this to the console at first if you
                             don't see what it does
                         </li>
-                        <li>vary the speed at which the animated runner runs<br />&nbsp;&nbsp;&nbsp;- try varying the
+                        <li>vary the speed at which the animated runner moves through his running action<br />&nbsp;&nbsp;&nbsp;- try varying the
                             denominator that you use to divide <code>millis()</code></li>
+                            <li>Move the runner along the screen as the sketch progresses</li><
                     </ol>
                 </div>
             </div>
@@ -165,7 +166,7 @@
                 </p>
                 <ol>
                     <li>Load images</li>
-                    <li>Draw the background, scrolling left (image position moves to left each frame)</li>
+                    <li>Draw the background, scrolling left (background image position moves a little to the left in each frame)</li>
                     <li>Check input and update character position - jump?</li>
                     <li>Draw the current sprite frame (the image of the character)</li>
                     <li>Check for collisions</li>
@@ -180,7 +181,7 @@
             <div class="unit-70">
                 <div class="coreTask">
                     <p>The simple game on the right is an example.<br />Try it out!<br />Hit 'space' to protect your
-                        toes and to engage in some very dodgy physics.</p>
+                        toes and to engage in some <i>very dodgy physics</i>.<br/>You can do better!</p>
                 </div>
             </div>
             <div class="unit-30 annotation" style="padding-top:-14em">
@@ -220,7 +221,7 @@
             that some of you might enjoy developing it a little.</p>
         <hr>
         <p>OK, just so you know, this task is much harder than the rest and we only expect a few of you who are
-            experienced programmers to take it on. But some of you seem keen to develop games, so here is a start!</p>
+            experienced programmers to take it on.<br/>But some of you seem keen to develop games, so here is a start!</p>
         <p>It's also quite open ended and open to interpretation, so discuss your ideas with your class tutor and be
             creative.</p>
 
@@ -316,9 +317,9 @@
 
         <!-- End of content -->
         <hr />
-        <div style="float:right; padding-right:4em">
+        <div class="sig">
             <b>Jason DYKES</b><br />
-            <i>01 Oct 2020</i>
+            <i>07 Oct 2021</i>
         </div>
         <div style="padding-bottom:2em;clear:both"></div>
 
