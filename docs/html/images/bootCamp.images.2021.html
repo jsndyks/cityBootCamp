@@ -1374,7 +1374,7 @@ void draw() {
           <div class="units-row">
               <div class="unit-70">
                 <pre class="brush: processing; gutter: false; toolbar: false; ">PImage img;
-int s = 5;
+int s = 25;
 
 void setup() {
   size(640, 480);
@@ -1384,12 +1384,10 @@ void setup() {
 }
 
 void draw() {                           // -- Get the colour of the PImage
-  int rx = int(random(-25,25));       // -- integer from -25 to 25 : x offset
-  int ry = int(random(-25,25));       // -- integer from -25 to 25 : y offset
   color c = img.get(mouseX, mouseY);  // -- called 'img' at cell mouseX,mouseY.
-  fill(c);                          // -- Set fill to this colour.
-  rect(mouseX+rx, mouseY+ry, s, s);         // -- Then draw a rectangle at
-}                                       // -- the mouse position.
+  fill(c);                             // -- Set fill to this colour.
+  rect(mouseX, mouseY, s, s);         // -- Then draw a rectangle at
+}                                              // -- the mouse position.
 </pre>
 <p>Or more randomly ...</p>
 </div> <!-- End of left column -->
@@ -1410,18 +1408,18 @@ void draw() {                           // -- Get the colour of the PImage
 int s = 5;
 
 void setup() {
-size(640, 480);
-img = loadImage("Holiday.png");
-rectMode(CENTER);
-background(127);
+  size(640, 480);
+  img = loadImage("Holiday.png");
+  rectMode(CENTER);
+  background(127);
 }
 
 void draw() {                           // -- Get the colour of the PImage
-int rx = int(random(-25,25));       // -- integer from -25 to 25 : x offset
-int ry = int(random(-25,25));       // -- integer from -25 to 25 : y offset
-color c = img.get(mouseX, mouseY);  // -- called 'img' at cell mouseX,mouseY.
-fill(c);                          // -- Set fill to this colour.
-rect(mouseX+rx, mouseY+ry, s, s);         // -- Then draw a rectangle at
+  int rx = int(random(-25,25));          // -- integer from -25 to 25 : x offset
+  int ry = int(random(-25,25));          // -- integer from -25 to 25 : y offset
+  color c = img.get(mouseX, mouseY);    // -- called 'img' at cell mouseX,mouseY.
+  fill(c);                                // -- Set fill to this colour.
+  rect(mouseX+rx, mouseY+ry, s, s);     // -- Then draw a rectangle at
 }                                       // -- the mouse position.
 </pre>
 </div> <!-- End of left column -->
@@ -1431,7 +1429,7 @@ rect(mouseX+rx, mouseY+ry, s, s);         // -- Then draw a rectangle at
     <script>
         loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/Squarism", 400, 400, "https://jsndyks.github.io/cityBootCamp/images/cabin-samples.png");
     </script>
-    <p>With added randomness we have a less precise, more <b>spray paint</b> <alternative class=""></alternative></p>
+    <p>With added randomness we have a less precise, more <b>spray paint</b> alternative.</p>
 </div> <!-- end of right column -->
 </div> <!-- End of row -->
 
@@ -1489,10 +1487,10 @@ println("The lightness in that colour is: "+thisLight);
         </div-->
             </div>
             <div class="unit-30">
-                <script>
+                <!-- <script>
                     loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/Squarism", 400, 400, "https://jsndyks.github.io/cityBootCamp/images/cabin-samples.png");
                 </script>
-                <p>Click to play!</p>
+                <p>Click to play!</p> -->
             </div>
         </div>
 
