@@ -53,7 +53,7 @@
             </p>
 
             <ul>
-                <li>describe the information structure of a digital image including terms like pixel and resolution</li>
+                <li>describe the information structure of a digital image including terms like __pixel___ and __resolution___</li>
                 <li>load and display an image in <i>Processing</i></li>
                 <li>apply digital effects to an image</li>
                 <li>retrieve the colour value(s) of a given pixel</li>
@@ -68,8 +68,8 @@
         <hr>
         <h3>1. All Kinds of Images</h3>
 
-        <p>Images allow us to record information, communicate, express ourselves and much more.
-            But let's have a think about images, Computer Science and <i>Processing</i>, which is what we are using as
+        <p>Images allow us to record information, communicate, express ourselves and much more.<br/>
+            So let's kick of by having a think about images, Computer Science and <i>Processing</i>, which is what we are using as
             an enabling technology in <code><b>#BootCamp</b></code>.
         </p>
 
@@ -83,14 +83,15 @@
                     there?</p>
 
                 <p>Lots.<br />
-                    With the influential <a href="https://www.bondcap.com/report/itr19/#view/77">Meeker Report</a> on
-                    <i>Internet Trends</i> suggesting that well over a billion images are shared every month, and over a
+                    The influential <a href="https://www.bondcap.com/report/itr19/#view/77">Meeker Report</a> on
+                    <i>Internet Trends</i> suggested that in 2019 well over a billion images were shared every month, and over a
                     trillion photos taken each year.
                 </p>
                 <p>It's an increasing trend, as shown by the image to the right.</p>
 
                 <p>
-                    Many of these are taken with digital cameras.
+                    Many of these are taken with digital cameras.<br/>
+                    Quite a few of these involve me and my selfies.<br/>
                     Unsurprisingly, this is also an increasing trend.<br />
                     Here's an image from <a href="https://www.statista.com/chartoftheday/">Statista</a> that shows this
                     nicely.<br />
@@ -132,7 +133,12 @@
                     People are taking and making images all over the place.
                     Indeed digital imaging industry experts <a
                         href="https://focus.mylio.com/tech-today/how-many-photos-will-be-taken-in-2020">Keypoint
-                        Intelligence</a> predict that "<i>humanity will take 1,436,300,000,000 photos in 2020</i>".</p>
+                        Intelligence</a> predicted that "<i>humanity will take 1,436,300,000,000 photos in 2020</i>".<br/>
+                      They didn't predict the pandemic though. Hmmmm ... did we take and make more or fewer images during the pandemic thsat during <i>normal</i> times?</p>
+
+                <div class="aside">
+                  Have a think - how did you use (take, make, read, seek) images differently during lockdown?
+                </div>
 
             </div>
 
@@ -140,7 +146,7 @@
                 <a href="https://www.staff.city.ac.uk/~jad7/bootCamp/img/internetTrends2019.imageSharing.png"><img
                         src="https://jsndyks.github.io/cityBootCamp/images/internetTrends2019.imageSharing.png"
                         width="600" height="450" /></a>
-                <p>An <i>image</i> - showing the number of images shared and taken globally.</p>
+                <p>An <i>image</i> - showing the number of images shared and taken globally (in 2019).</p>
                 <p>Source: <a href="https://www.bondcap.com/report/itr19/#view/77">Meeker Report 2019</a>.</p>
 
             </div>
@@ -163,7 +169,7 @@
                     year?<br /><br />
 
                     We know that at least 1 trillion photos are taken per year.
-                    If we printed them at 6x4 inches then laying them out, so that they don't overlap would cover 155
+                    If we printed them at 6x4 inches then laying them out so that they don't overlap would cover 155
                     trillion cm&sup2.<br />
 
                     This is <a
@@ -265,7 +271,7 @@
                             (cosmology, cancer detection, high energy physics).</p>
                         <p><i>We won't be doing this in the lecture today, but what you learn should give you some
                                 grounding that will help you understand how this might be achieved. There is an example
-                                from Carlos' work to the right, where he is performing image analysis to identify cancer
+                                from Cefa's work to the right, where he is performing image analysis to identify cancer
                                 cells in images produced by an Electron Microscope.</i>
                         </p>
                     </dd>
@@ -426,7 +432,7 @@ void keyPressed () {
                 </p>
 
                 <p>We don't refer to these individually coloured elements of the image as tiles though.
-                    We refer to them as picture elements - or <b>pixels</b>.
+                    We refer to them as picture elements - or <b>__pixels___</b> for short.
 
                 </p>
                 <!--h4>Aside - Image compression</h4-->
@@ -492,7 +498,7 @@ void keyPressed () {
                 </p>
 
                 <div class="coreTask">
-                    Download the image and save it to your Desktop.<br />
+                    Download the image to the right and save it to your Desktop.<br />
                     Find the resolution by examining the properties of the image file in a file manager.
                 </div>
             </div>
@@ -545,6 +551,12 @@ void keyPressed () {
                 <p>I spent a good part of my teens interacting with <a
                         href="https://en.wikipedia.org/wiki/Space_Invaders">11x11 pixel grids containing just a couple
                         of colours</a>.<br />Remember these guys?</p>
+                        <p>By varying the distribution of dark and light pixels, we can create many different images, with
+                            different resolutions.</p>
+                        <p>Let's start with another image consisting of a 9x9 grid, but with a different pattern of light and
+                            dark.<br />
+                            As we increase the resolution of the image - from 9x9 to 30x30 to 100x100 to 300x300 pixels -- we can show more detail and eventually interpret this as
+                            a picture of something familiar.<br/>Just about!<br/>Even with just two variations of shade - light and dark.</p>
             </div>
             <div class="unit-30 annotation">
                 <img src="https://jsndyks.github.io/cityBootCamp/images/invader11.down.png" width="100" height="100"
@@ -558,12 +570,6 @@ void keyPressed () {
 
         <div class="units-row">
             <div class="unit-70">
-                <p>By varying the distribution of dark and light pixels, we can create many different images, with
-                    different resolutions.</p>
-                <p>Let's start with another image consisting of a 9x9 grid, but with a different pattern of light and
-                    dark.<br />
-                    As we increase the resolution of the image we can show more detail and eventually interpret this as
-                    a picture of something familiar.</p>
 
                 <table cellspacing="4" cellpadding="4" border="0">
                     <tr>
