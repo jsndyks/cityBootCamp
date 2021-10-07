@@ -1386,7 +1386,7 @@ void setup() {
 
 void draw() {                            // -- Get the colour of the PImage
   color c = img.get(mouseX, mouseY);   // -- called 'img' at cell mouseX,mouseY.
-  fill(c);                               // -- Set fill to this colour.
+  fill(c);                              // -- Set fill to this colour.
   rect(mouseX, mouseY, s, s);          // -- Then draw a rectangle at
 }                                        // -- the mouse position.
 </pre>
@@ -1416,9 +1416,9 @@ void setup() {
   noStroke();
 ?
 
-void draw() {                           // -- Get the colour of the PImage
-  int rX = int(random(-25, 25));        // -- integer from -25 to 25 : x offset
-  int rY = int(random(-25, 25));        // -- integer from -25 to 25 : y offset
+void draw() {                            // -- Get the colour of the PImage
+  int rX = int(random(-25, 25));       // -- integer from -25 to 25 : x offset
+  int rY = int(random(-25, 25));       // -- integer from -25 to 25 : y offset
   int mX = mouseX+rX;                   // -- Add some randomness around mouse X position.
   int mY = mouseY+rY;                   // -- Add some randomness around mouse Y position.
   color c = img.get(mX, mY);            // -- Get colour from 'img' at cell mX, mY.
