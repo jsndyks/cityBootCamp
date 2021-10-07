@@ -1104,27 +1104,7 @@ void draw() {
                 <p>If <code>tint</code> receives three arguments, the brightness is affected separately in each of the
                     colour components.</p>
                 <p>Can you work out what happens when we apply the following <code>tint()</code> to an image like the
-                    holiday snap shown on the right?</p>
-                <pre class="brush: processing; gutter: false; toolbar: false; ">tint(255, 0, 0);
-image(img, 0, 0);
-</pre>
-            </div>
-        </div>
-
-        <div class="units-row">
-
-            <div class="unit-70">
-
-                <img src="https://jsndyks.github.io/cityBootCamp/images/cabin-violet.png" width="200" />&nbsp;&nbsp;
-                <img src="https://jsndyks.github.io/cityBootCamp/images/cabin-red.png" width="200" />&nbsp;&nbsp;
-                <img src="https://jsndyks.github.io/cityBootCamp/images/cabin-green.png" width="200" />
-
-                <p>How would the canvas look following this processing of the image?</p>
-                <div class="coreTask">
-                    <p>Check the code and the possible outputs and decide which of the three tinted images shown above
-                        would result from this image processing of the image to the right?</p>
-                </div>
-
+                    full colour image shown on the right?</p>
             </div>
 
             <div class="unit-30 annotation">
@@ -1147,6 +1127,26 @@ image(img, 0, 0);
         <div class="units-row">
 
             <div class="unit-70">
+              <pre class="brush: processing; gutter: false; toolbar: false; ">tint(255, 0, 0);
+image(img, 0, 0);
+</pre>
+          </div>
+      </div>
+
+      <div class="units-row">
+
+          <div class="unit-70">
+
+              <img src="https://jsndyks.github.io/cityBootCamp/images/cabin-violet.png" width="200" />&nbsp;&nbsp;
+              <img src="https://jsndyks.github.io/cityBootCamp/images/cabin-red.png" width="200" />&nbsp;&nbsp;
+              <img src="https://jsndyks.github.io/cityBootCamp/images/cabin-green.png" width="200" />
+
+              <p>How would the canvas look following this processing of the image shown to the right?</p>
+              <div class="coreTask">
+                  <p>Check the code and the possible outputs and decide which of the three tinted images shown above
+                      would result from this image processing of the image to the right?</p>
+              </div>
+
 
                 <img src="https://jsndyks.github.io/cityBootCamp/images/cabin-violet.png" width="200" />&nbsp;&nbsp;
                 <img src="https://jsndyks.github.io/cityBootCamp/images/cabin-red.png" width="200" />&nbsp;&nbsp;
@@ -1204,11 +1204,11 @@ image(img, 0, 0);
                     Can you use your <i>Processing</i> skills to do the same?
                 </p>
                 <p>This allows us to emphasize an important point. The <code>PImage</code> that you create is different
-                    to the drawing of the you <code>PImage</code> on the canvas. You can draw a single
+                    to the drawing of the <code>PImage</code> that you position on the canvas. You can draw a single
                     <code>PImage</code> multiple times with the <code>image()</code> method, at different locations,
                     with different tints, and different sizes.
                     The information (data) that you are using to draw it, comes from the <code>PImage</code> that you
-                    have created, which comes from the file that you loaded into it with <code>loadImage()</code>.
+                    have created, which comes from the file full of pixel colour values that you loaded into it with <code>loadImage()</code>.
                     So really, you are being asked to draw a single image - the <code>PImage</code> that you created -
                     many times here.
                 </p>
@@ -1344,7 +1344,7 @@ void draw() {
             </div>
             <div class="unit-30">
                 <script>
-                    loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/Blur", 640, 400, "https://jsndyks.github.io/cityBootCamp/images/cabin-blur.png");
+                    loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/Blur", 400, 400, "https://jsndyks.github.io/cityBootCamp/images/cabin-blur.png");
                 </script>
             </div>
         </div>
@@ -1359,7 +1359,7 @@ void draw() {
                     We can <code>get</code> and <code>set</code> pixels of an image and use these to select colours that
                     we apply to other shapes in our sketch.
                 </p>
-                <p>Note that we do not draw the image with <code>img()</code> in the following sketch, but as we have
+                <p>Note that we __never actually draw___ the image with <code>img()</code> in the following sketch, but as we have
                     loaded it with <code>loadImage()</code> we can access its colours, which we can then use to
                     <code>fill()</code> other shapes.
                 </p>
@@ -1399,7 +1399,7 @@ float thisLight = brightness(myOrange);
 println("The lightness in that colour is: "+thisLight);
 </pre>
                 <div class="codeTask">
-                    <p>Copy the code and run the sketch that uses <code>get()</code>.</p>
+                    <p>Copy the code and run the sketch from the top of this seciton - the one that uses <code>get()</code>.</p>
                     <p>Play with the sketch and use what you have learned (and the code provided above, and the
                         documentation on <code>brightness()</code> that you have consulted) to adapt the code so that
                         the size of the rectangles varies:</p>
@@ -1430,7 +1430,7 @@ println("The lightness in that colour is: "+thisLight);
             </div>
             <div class="unit-30">
                 <script>
-                    loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/Squarism", 640, 400, "https://jsndyks.github.io/cityBootCamp/images/cabin-samples.png");
+                    loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/Squarism", 400, 400, "https://jsndyks.github.io/cityBootCamp/images/cabin-samples.png");
                 </script>
                 <p>Click to play!</p>
             </div>
