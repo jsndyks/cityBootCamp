@@ -1414,7 +1414,7 @@ void setup() {
   rectMode(CENTER);
   background(127);
   noStroke();
-?
+}
 
 void draw() {                            // -- Get the colour of the PImage
   int rX = int(random(-25, 25));       // -- integer from -25 to 25 : x offset
@@ -1424,6 +1424,7 @@ void draw() {                            // -- Get the colour of the PImage
   color c = img.get(mX, mY);            // -- Get colour from 'img' at cell mX, mY.
   fill(c);                              // -- Set fill to this colour.
   rect(mX, mY, s, s);                   // -- Then draw a rectangle at mX,mY.
+}
 </pre>
 </div> <!-- End of left column -->
 
