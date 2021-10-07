@@ -1383,11 +1383,11 @@ void setup() {
   background(127);
 }
 
-void draw() {                           // -- Get the colour of the PImage
+void draw() {                             // -- Get the colour of the PImage
   color c = img.get(mouseX, mouseY);  // -- called 'img' at cell mouseX,mouseY.
   fill(c);                             // -- Set fill to this colour.
   rect(mouseX, mouseY, s, s);         // -- Then draw a rectangle at
-}                                              // -- the mouse position.
+}                                       // -- the mouse position.
 </pre>
 <p>Or more randomly ...</p>
 </div> <!-- End of left column -->
@@ -1395,7 +1395,7 @@ void draw() {                           // -- Get the colour of the PImage
 <div class="unit-30 annotation">
     <!-- Right hand column for small images, popup sketches and annotations. -->
     <script>
-        loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/Squarism", 400, 400, "https://jsndyks.github.io/cityBootCamp/images/cabin-samples.png");
+        loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/Squarism", 400, 400, "https://jsndyks.github.io/cityBootCamp/images/image45_v1.png");
     </script>
     <p>Click, stretch the window and click positions to add a square that is the colour of the image.</p>
 </div> <!-- end of right column -->
@@ -1412,22 +1412,25 @@ void setup() {
   img = loadImage("Holiday.png");
   rectMode(CENTER);
   background(127);
+  noStroke();
 }
 
 void draw() {                           // -- Get the colour of the PImage
-  int rx = int(random(-25,25));          // -- integer from -25 to 25 : x offset
-  int ry = int(random(-25,25));          // -- integer from -25 to 25 : y offset
-  color c = img.get(mouseX, mouseY);    // -- called 'img' at cell mouseX,mouseY.
+  int rX = int(random(-25, 25));          // -- integer from -25 to 25 : x offset
+  int rY = int(random(-25, 25));          // -- integer from -25 to 25 : y offset
+  int mX = mouseX+rX;          // -- Add some randomness around mouse position.
+  int mY = mouseY+rY;          // -- Add some randomness around mouse position.
+  color c = img.get(mX, mY);    // -- called 'img' at cell mX, mY.
   fill(c);                                // -- Set fill to this colour.
-  rect(mouseX+rx, mouseY+ry, s, s);     // -- Then draw a rectangle at
-}                                       // -- the mouse position.
+  rect(mX, mY, s, s);     // -- Then draw a rectangle at random
+}                          // --  position around mouse.
 </pre>
 </div> <!-- End of left column -->
 
 <div class="unit-30 annotation">
     <!-- Right hand column for small images, popup sketches and annotations. -->
     <script>
-        loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/Squarism", 400, 400, "https://jsndyks.github.io/cityBootCamp/images/cabin-samples.png");
+        loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/image45_v2", 400, 400, "https://jsndyks.github.io/cityBootCamp/images/image45_v2.png");
     </script>
     <p>With added randomness we have a less precise, more <b>spray paint</b> alternative.</p>
 </div> <!-- end of right column -->
