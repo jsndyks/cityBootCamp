@@ -1044,8 +1044,9 @@ println("The bar needs to be 20/25 wide, which is",barLength,"pixels");</pre>
                         ones downwards from a midpoint representing 0<sup>o</sup>C ?
                     </p>
                     <p>
-                        Try it out with this weirdly varying sequence of daily temperatures over the kind of fortnight when nobody knew what to wear each day:<br />
-                        <code>textLine = "4,3,1,-2,-3,-5,2,4,7,9,12,13,16"</code>
+                        Try it out with this weirdly varying sequence of average daily temperatures over the kind of fortnight when nobody knew what to wear each day - 2D
+                         the UKL we call this <i>April</i>:<br />
+                        <code>textLine = "4,3,1,-2,-3,-5,2,4,7,9,24,18,16"</code>
                     </p>
                 </div>
 
@@ -1205,20 +1206,20 @@ void setup()
 
   String[] textLines = loadStrings("bikeShare.txt");
 
-  // Create arrays for the data (ignoring header line - textLines[0]).
+  // Create arrays for the data sized according to number of lines (we will ignore the header line - textLines[0]).
   stations       = new String[textLines.length];
   availableBikes = new int[textLines.length];
   capacities     = new int[textLines.length];
 
-  // Iterate and store station name, capacity and number of bikes for each station.
+  // Iterate and store station name, capacity and number of bikes for each station: ignores header line
   for (int i=1; i&lt;textLines.length; i=i+1)
   {
-    // Split the line into values separated by a comma
+    // Split the line into 'values' array separated by a comma
     String[] values = split(textLines[i], ",");
 
-    stations[i]       = values[1];
-    availableBikes[i] = int(values[23]); // Column no. 23 is 9am
-    capacities[i]     = int(values[4]);
+    stations[i]       = values[1]; // -- item 1 is the station name
+    availableBikes[i] = int(values[23]); // -- column no. 23 in the data file is 9am
+    capacities[i]     = int(values[4]);  // -- column no. 4 in the data file is station capacity
   }
 }
 
@@ -1228,7 +1229,7 @@ void draw()
   background(255);
   float yPos= 2;
 
-  // Show the first 25 stations with number of bikes at 9:00am
+  // Show the first 25 stations with number of bikes at 9:00am: ignores header line
   for (int i=1; i&lt;=25; i=i+1)
   {
     fill(0);
@@ -1277,7 +1278,7 @@ void draw()
                     Rather than visualizing this information as a series of bars, we could use the location data for
                     each docking station to produce a simple map.
                     All we do here is plot a symbol for each station at a position on the canvas that is based upon the
-                    geographic information that we have read from the file.
+                    <i>geographic information</i> that we have read from the file - this is in columns 2 and 3.
                     For example, we might show each station as a circle.
                     We could make the size of the circle relate to the number of bikes that the station is capable of
                     storing (its capacity):
@@ -1317,7 +1318,7 @@ void setup()
 
     stations[i-1]   = values[1];
     capacities[i-1] = int(values[4]);
-    locations[i-1]  = new PVector(int(values[2]),int(values[3]));
+    locations[i-1]  = new PVector(int(values[2]),int(values[3])); // &lt;-- coordinates are in cols 2 and 3.
   }
 }
 
@@ -1348,7 +1349,7 @@ void draw()
                     geographic range of
                     our data is. Here we store this in the variables <code>NORTH</code>, <code>SOUTH</code>,
                     <code>EAST</code>
-                    and <code>WEST</code>. These are the geographic extents of our data.
+                    and <code>WEST</code>. These are the geographic extents of our data - the boundaries of our map.
                 </p>
 
                 <div class="codeTask">
@@ -1376,7 +1377,7 @@ void draw()
                             <em>Hint: You'll have to record the station name as a <code>String</code> when you read
                                 values from the lines of text.</em>
                         </li>
-                        <li>Use squares or bars in the map instead of circles;</li>
+                        <li>Use squares or bars in the map instead of circles - you could use multiple bars to show a series of times concurrently;</li>
                         <li>Scale the circles (or squares or bars) differently, to make them bigger or smaller;</li>
                     </ol>
                 </div>
@@ -1408,9 +1409,9 @@ void draw()
                             You could do this for the graph or the map.<br />
                             <em>Hint: You will need to read in one or more of the columns containing the number of bikes
                                 docked at the station.
-                                If you wish to be show more than one time of day in the same sketch, you will probably
+                                If you wish to show more than one time of day in the same sketch, you will probably
                                 need to store the bike numbers
-                                in a 2d array where 1 dimension is the docking station and the other is the time of
+                                in a 2D array where 1 dimension is the docking station and the other is the time of
                                 day.</em>
                         </li>
                     </ol>
