@@ -652,16 +652,18 @@ void draw()
                 <h3>3. Extracting tokens from a line of text</h3>
                 <p>
                     The text that we have loaded so far is largely <i>unstructured</i>.
-                    While each line in the file is a line or paragraph of the book, and they are in the order in which
+                    While each line in the file is a sentence or paragraph of the book, and they are in the order in which
                     they should be read, the text within the lines does not have any specific structure.
-                    But data are often, and most usefully, stored in text text files with more explicit structure.</p>
+                    But data are often, and most usefully, stored in text text files with more explicit structure.
+                  Our early examples in <a href="https://jsndyks.github.io/cityBootCamp/data/names.txt"
+                          target="_blank">names.txt</a> were like this - data values separated by <b>commas</b>.</p>
                 <p>
                     For example, each line may be a <em>record</em> about a thing that we are interested in, such as a
                     day of the week.
                     It may contain multiple pieces of information about the thing, such as your maximum heart rate as
                     recorded by an activity tracker.
                     Here is an example text file that might be the basis of the <em>Year of NikeFuel</em> data
-                    visualization we saw above - <a href="https://jsndyks.github.io/cityBootCamp/data/hourlyBPM.txt"
+                    visualization we saw earlier - <a href="https://jsndyks.github.io/cityBootCamp/data/hourlyBPM.txt"
                         target="_blank">hourlyBPM.txt</a>. Each row is a day. Each line contains the name of the day and
                     then 24 numbers that show maximum heart rate for each hour of the day:
                 </p>
@@ -684,6 +686,11 @@ Sunday,55,51,49,62,65,62,127,75,77,140,85,89,105,77,61,66,74,71,73,121,86,114,70
                     These elements are often referred to as <i>tokens</i> and the process of extracting them as
                     <i>parsing</i>.
                 </p>
+                <ul>
+                    <li><b>token</b> - part of a longer string that relates to a particular data value;</li>
+                    <li><b>separator</b> - a character or String that separates tokens in longer strings;</li>
+                    <li><b>parsing</b> - the process of extracting tokens from a String - usually involving splitting Strings at separators;</li>
+                </ul>
 
                 <p>
                     <em>Processing</em> provides a useful command to help with parsing tokens — <a
@@ -700,7 +707,7 @@ Sunday,55,51,49,62,65,62,127,75,77,140,85,89,105,77,61,66,74,71,73,121,86,114,70
                     characters that are separated by a <i>separator</i> (such as a comma), then <a
                         href="http://processing.org/reference/split_.html" target="_blank">split()</a> will convert the
                     <i>String</i> into an array containing each of the parts of the <i>String</i> that are separated by
-                    the <i>separator</i>.
+                    the <i>separator</i>. These are the tokens!
                 </p>
 
                 <div class="codeTask">
@@ -807,7 +814,7 @@ for (int i=0; i&lt;splitText.length; i++) {
                     </p>
                     <p>
                         <em>Hint: you will need to use a variable as the <i>separator</i> in <code>split()</code> -
-                            <em>Processing</em> creates one that could be useful when <code>keyPressed()</code> is
+                            remember that <em>Processing</em> <a href="https://processing.org/reference/key.html">creates one that could be useful</a> when a key is pressed and <code>keyPressed()</code> is
                             called.</em>
                     </p>
                 </div>
@@ -879,7 +886,7 @@ void draw()
 
   for (String token : tokens)
   {
-    float temperature = float(token);    // Convert text into a number.
+    float temperature = float(token);    // Convert text into a number with float().
     rect(xPos, 100, 65, temperature);
     xPos = xPos + 70;
   }
@@ -994,6 +1001,13 @@ void draw()
 line(x,0, x,height);</pre>
                 </div>
 
+                <p>So, if you scored 20/25 in a test and want to know what this works out as as a percentage, you could use:</p>
+                <pre class="brush: processing; gutter: false; toolbar: false;">float mark = map(20, 0,25, 0,100);
+println("I scored 20/25, which is",mark,"%");</pre>
+<p>Or, if you have a data item that is 20/25 and want a bar that takes up 20/25 of the widfth of the screen then, you could use:</p>
+<pre class="brush: processing; gutter: false; toolbar: false;">float barLength = map(20, 0,25, 0,width);
+println("The bar needs to be 20/25 wide, which is",barLength,"pixels");</pre>
+
 
                 <div class="codeTask">
                     <b>Temperature Chart:</b>
@@ -1005,7 +1019,7 @@ line(x,0, x,height);</pre>
                         <li>change the ranges of the <em>value</em> and the <em>target</em> used in the
                             <a href="https://processing.org/reference/map_.html" target="_blank"><code>map()</code></a>
                             command - experiment with different ranges<br />
-                            Remember : <code>map(value, sourceMin, sourceMax, targetMin, targetMax)</code>
+                            Remember : <code>map(value, sourceRangeMin, sourceRangeMax, targetRangeMin, targetRangeMax)</code>
                             <br /><i>You should get different sized bars</i>
                         </li>
                         <li>add data values that are beyond the current source range - try negative values in
@@ -1030,7 +1044,7 @@ line(x,0, x,height);</pre>
                         ones downwards from a midpoint representing 0<sup>o</sup>C ?
                     </p>
                     <p>
-                        Try it out with this weirdly varying sequence of daily temperatures over a fortnight:<br />
+                        Try it out with this weirdly varying sequence of daily temperatures over the kind of fortnight when nobody knew what to wear each day:<br />
                         <code>textLine = "4,3,1,-2,-3,-5,2,4,7,9,12,13,16"</code>
                     </p>
                 </div>
