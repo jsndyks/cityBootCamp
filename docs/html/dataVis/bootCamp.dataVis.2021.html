@@ -255,7 +255,7 @@
                     more
                     <b>scientific representations</b> that help investigate scientific questions in by assisting
                     scientists in
-                    finding patterns in data and relationships between datasets.</ul>
+                    finding patterns in data and relationships between datasets.</li></ul>
                     <p>Each of these will have different
                     implications
                     for visual design, but they all follow the same general pattern of transforming some form of dataset
@@ -407,8 +407,7 @@
                     Perhaps the easiest to use is the <a href="http://processing.org/reference/loadStrings_.html"
                         target="_blank">loadStrings()</a>
                     method that reads in a text file into an array of <code>String</code>s. To see how it works, lets
-                    adapt the
-                    sketch from a few days ago that displays some names stored in an array:
+                    adapt a sketch we have seene before that displays some names stored in an array:
                 </p>
 
             </div>
@@ -441,8 +440,9 @@ void draw()
                 <p>
                     Notice that nowhere in the code is there any list of the actual names to display. Instead the
                     <code>loadStrings()</code>
-                    method looks for a data file called <code>names.txt</code> that contains the actual names. Each line
-                    from this
+                    method looks for a data file called <code>names.txt</code> that contains the data - the text containing the names.
+                    Each line
+                    from this data
                     file is read into a separate element in an array that we've called <code>names</code> in this
                     example.
                     The <code>draw()</code> method then uses a for-each loop to iterate through this array, displaying
@@ -453,7 +453,7 @@ void draw()
                 <p>
                     In order for <em>Processing</em> to know where to look to find the file <code>names.txt</code>, it
                     needs to be created somewhere and then dragged into the <em>Processing</em> window.
-                    This will make a copy of the file in the <em>Processing</em> sketch.
+                    This will make a copy of the file in the <em>Processing</em> sketch that <em>Processing</em> can access and read from.
                 </p>
                 <!--  -->
                 <div class="codeTask">
@@ -464,13 +464,13 @@ void draw()
                         code window.</p>
                     <p>Change things around as suggested by the comments.</p>
                     <pre
-                        class="brush: processing; gutter: false; toolbar: false;">// -- try things out that are written like this!</pre>
+                        class="brush: processing; gutter: false; toolbar: false;">// -- try things out that are written in comments like this!</pre>
                     <p>Additionally, are you able to adapt the sketch to:</p>
                     <ol>
                         <li>shift each successive line a little to the right</li>
                         <li>use variables for <code>textSize</code> and the offset added to <code>yPos</code> so that
                             the two are related</li>
-                        <li>change the size and spacing of the text <i>interactively</i> with the 'z' and 'x' keys using
+                        <li>change the size and spacing of the text <i>interactively</i> with the <span class="key">z</span> and <span class="key">x</span> keys using
                             <code>keyPressed()</code>
                         </li>
                     </ol>
@@ -522,7 +522,8 @@ void draw()
                         target="_blank">stored in a text file</a>.
                 </p>
                 <p>Each line of text in the file contains a whole paragraph and one line is displayed in the sketch at a
-                    time. You can change the line that is displayed interactively - use the '&lt;' and '&gt;' keys to
+                    time. You can change the line that is displayed interactively - use the <span class="key">&lt;</span> and
+                    <span class="key">&gt;</span> keys to
                     display the book, one paragraph at a time. Clicking the 'space bar' will display line 10 - this is
                     the first line of the content of the book - the title:
                 </p>
@@ -547,7 +548,7 @@ void draw()
             {
               size(600,400);
               textLines = loadStrings("https://jsndyks.github.io/cityBootCamp/data/theTimeMachine.txt");
-              lineToDisplay = 142;    // See above that loadStrings() will load from an online file
+              lineToDisplay = 142;    // -- See above that loadStrings() will load from an online file
 
               textSize(14);
               fill(0);
@@ -579,7 +580,7 @@ void draw()
                 <p>
                     The only element of this sketch that may be new is that we are using a slightly different version of
                     <em>Processing</em>'s
-                    <a href="https://processing.org/reference/text_.html"><code>text()</code></a> method that takes 5
+                    <code><a href="https://processing.org/reference/text_.html">text()</a></code> method that takes 5
                     parameters — the text string to display, the position of the
                     top-left of the text area and the width and height of the text area. When specified like this (i.e.
                     as a rectangle),
@@ -589,8 +590,8 @@ void draw()
                 </p>
 
                 <p>
-                    The <code>keyPressed()</code> method handles skipping forward and backward using the '&lt;' and
-                    '&gt;' keys by
+                    The <code>keyPressed()</code> method handles skipping forward and backward using the <span class="key">&lt;</span> and
+                    <span class="key">&gt;</span> keys by
                     updating the variable <code>lineToDisplay</code> with the array index corresponding to the
                     currently displayed line.
                 </p>
@@ -636,7 +637,7 @@ void draw()
             <div class="unit-30 annotation">
                 <p style="padding-top:8em">Well done - you have just created a rudimentary digital book reader.<br />
                     It should work for any book stored as a text file.<br />
-                    As long as the title is on line 10!</p>
+                    As long as the title is on line 10!<br/>Maybe we need a <code>titleLine</code> global variable?</p>
             </div> <!-- End of left column -->
         </div> <!-- End of row -->
 
@@ -801,7 +802,7 @@ for (int i=0; i&lt;splitText.length; i++) {
 
                         Can you add an interaction so that the text is split by a particular letter whenever you press
                         that key?<br />
-                        So, pressing 'a' on the keyboard will split by the letter <b>a</b>, pressing 'b' will split by
+                        So, pressing <span class="key">a</span> on the keyboard will split by the letter <b>a</b>, pressing <span class="key">b</span> will split by
                         the letter <b>b</b>, etc.
                     </p>
                     <p>
