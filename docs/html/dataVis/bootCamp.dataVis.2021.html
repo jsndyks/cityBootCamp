@@ -46,10 +46,10 @@
         <div class="intro">
 
             <p>
-                This session introduces the idea of <b>data visualization</b> — turning data into graphics. In
-                particular it focusses on how to read text from files into <em>Processing</em> and how to <i>parse</i>
-                the text to extract words and numbers that you can use as variables in your sketches. This means that
-                you can read data and use it to position, shape and colour elements in your sketch.</p>
+                This session introduces the idea of <b>data visualization</b> — turning data into graphics.<br/>
+                In particular it focusses on how to <b>read</b> text that contains data from files into <em>Processing</em>
+                and how to <b>parse</b> the text to extract words and numbers that you can use as variables in your sketches.
+                This means that you can use <i>data</i> to position, shape and colour and control elements in your sketch.</p>
             <p>
                 In doing so it may give you ideas about ways in which you can use data visualization in your project.
                 The various challenges are designed to help you develop project ideas.
@@ -68,7 +68,7 @@
                 <li>Create a sketch to read a text file using <code>loadStrings()</code>;</li>
                 <li>Split a line of text into <i>tokens</i> representing individual words or numbers;</li>
                 <li>Rescale a number from one range to another using the <code>map()</code> command;</li>
-                <li>Use data that you have read from a file and rescaled to change the colour, size or appearance of
+                <li>Use data that you have read from a file to change the colour, size or appearance of
                     graphics in your sketch.</li>
             </ul>
 
@@ -82,8 +82,8 @@
             </p>
             <div class="challenge">try some of the <b>challenges</b> to test yourself and learn a little more.
                 <br /><br />But also, know that you can come back to these later and that we don't expect everybody to
-                try them - these are to challenge the students in the group who have some previous experience of
-                programming.
+                try them - these tasks are to <b>challenge</b> the students in the group who are moving quickly and who probably
+                have some previous experience of programming.
             </div>
 
             <p>If you have completed all the work on this page and want to learn more, the try the optional <b><a
@@ -107,7 +107,7 @@
                 <p>Before we get going, you'll need some data and to know a key method - <code>loadStrings()</code>.
                     <br />
                     So be sure to complete these two tasks first of all.<br />
-                    They will ensure that you know how to use <code>loadStrings()</code>.
+                    They will ensure that you know how to use <code>loadStrings()</code> to load Strings from a file and into your sketch.
                 </p>
 
                 <div class="codeTask">
@@ -116,7 +116,7 @@
                         We will be using a simple data file when live coding in the lecture - <a
                             href="https://jsndyks.github.io/cityBootCamp/data/namesData.txt"
                             target="_blank">namesData.txt</a><br />
-                        So please <strong>download this data file in advance</strong>.
+                        So please <strong>download this data file in advance</strong>.<br/>
                         You should right-click the link above to download and save a copy.<br />
                         It's important that you <strong>make sure you know where the file has been saved</strong> on
                         your laptop.
@@ -128,8 +128,12 @@
                     </p>
                     <p>
                         When you have done so, open a new sketch and use <code>loadStrings("namesData.txt")</code> to
-                        load the contents of the file into an array of <code>Strings</code>s.<br />
+                        load the contents of the file into an array of <code>String</code>s.<br />
                         Each line of the file will be loaded into an element of the array, in turn.</p>
+                        <p>
+                          So, <code>lines[0]</code> will contain ...<br/><code>Nora Gigg,1,4,851,1995,Female,3XL,#b002f7,ngigg0@telenet.co</code>.</p>
+                          <p>And, <code>lines[1]</code> will contain ...<br/><code>Bobby Montague,0,3,2758,1967,Male,XL,#45ac24,bobbymont@skype.com</code>.</p>
+                          <p>And, <code>lines[9]</code> will contain ...<br/><code>Jason Daouze,0,2,1113,2006,Male,S,#0230cc,jdaouze9@xrea.com</code>, etc.</p>
                     <p style="padding-bottom:1em">
                         Try the following two-line sketch.
                         It will load the file and print two of the array elements that have been loaded into the
@@ -154,7 +158,7 @@
                 </div>
                 <div class="challenge">
                     <p><b>Challenge - Update the Text File</b><br />
-                        If you know how to edit a text file, then make some changes to the names, save the file and
+                        If you know how to edit a text file, then make some changes to the <b>names</b> and other data, save the file and
                         re-run the sketch, just to prove to yourself that the sketch is reading from a file on your
                         computer.</p>
                 </div>
@@ -177,22 +181,22 @@
                 <!-- Left column -->
                 <div class="codeTask">
                     <p>Download the code provided to the right as the basis of your sketch.</p>
-                    <p>Now you need to extend the skeleton sketch that reads data to ...</p>
+                    <p>Now run the sketch and then extend it so that it will...</p>
                     <ol>
-                        <li>Print each line of the data file from top to bottom;</li>
-                        <li>Print each line of the data file from bottom to top;</li>
-                        <li>Use <code>text()</code> the put each line of text on the canvas;
+                        <li>print every other line of the data file from top to bottom;</li>
+                        <li>print each line of the data file from bottom to top;</li>
+                        <!-- <li>use <code>text()</code> the put each line of text on the canvas;
                             <br />&nbsp;&nbsp;&nbsp;&nbsp;(<i>You'll need to increase the <b>y position</b> of the text
                                 each time the loop is executed</i>)
-                        </li>
+                        </li> -->
                     </ol>
                 </div>
                 <p>Everything else that we do in this session will build upon this basic idea, that you should now have
                     got the hang of.</p>
                 <ol>
                     <li>load text from a file into an array of strings</li>
-                    <li>access line of text from element of array</li>
-                    <li>use line of text in sketch</li>
+                    <li>access lines of text from the elements of the array</li>
+                    <li>use the line of text in your sketch</li>
                 </ol>
                 <p>We will <b>soon</b> learn to ...</p>
                 <ol start="4">
@@ -201,8 +205,7 @@
                     <li>transform these numbers into positions on the canvas</li>
                 </ol>
                 <p>This will enable us to load data from a file somewhere on our computers, and then process this data
-                    to effect what we display in our sketches.<br />That's (a good part of) <b>data
-                        visualization</b>.<br />
+                    to effect what we display in our sketches.<br />That's (a good part of) <b>data visualization</b>.<br />
                     So let's look at some!</p>
             </div>
             <div class="unit-30 annotation">
@@ -235,25 +238,25 @@
                 </p>
 
                 <p>
-                    Data visualization is all about making graphical representations of data. These data are usually
-                    created
-                    externally, outside your program, and you write code to read those data into your program and show
-                    them
-                    graphically. The data can be of all sorts of things - daily temperatures, Twitter messages, Moodle
-                    usage stats, code commits, data generated in real time by sensors in the City or complex model
+                    Data visualization is all about making meaningful, informative, readable, graphical representations of <b>data</b>.
+                    These data are usually created
+                    externally, outside your program, and you write code to read those data into your program and show them
+                    graphically. The data can be of all sorts of things - daily temperatures, Twitter messages, player performance in football matches, Moodle usage statistics, code commits, data generated in real time by sensors in the City or complex model
                     outputs that might, for example, be predicting patterns of disease.
                 </p>
 
                 <p>
                     Data can be turned into graphics in very different ways and for many different purposes. These range
-                    from
-                    more <b>artistic representations</b> with more focus on the visual and interactive design than the
+                    from</p>
+                    <ul>
+                    <li>more <b>artistic representations</b> with more focus on the visual and interactive design than the
                     data that
-                    underlie them; more <b>communicative representations</b> where a story is be told using data; or
+                    underlie them;</li><li>more <b>communicative representations</b> where a story is beinf told using data; or</li><li>
                     more
                     <b>scientific representations</b> that help investigate scientific questions in by assisting
                     scientists in
-                    finding patterns in data and relationships between datasets. Each of these will have different
+                    finding patterns in data and relationships between datasets.</ul>
+                    <p>Each of these will have different
                     implications
                     for visual design, but they all follow the same general pattern of transforming some form of dataset
                     into
@@ -347,13 +350,13 @@
                     webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
                 <p>
                     <i>London Hire Bikes animation</i> by <a href="http://vimeo.com/sociablephysics"
-                        target="_blank">Sociable Physics</a>.
+                        target="_blank">Martin Austwick</a> at Sociable Physics.
                 </p>
 
                 <iframe src="https://player.vimeo.com/video/66477874" width="690" height="387" frameborder="0"
                     webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
                 <p>
-                    <i>We are the city</i> by <a href="http://vimeo.com/jowood" target="_blank">Jo Wood</a>.
+                    <i>We are the city</i> by <a href="http://vimeo.com/jowood" target="_blank">Jo Wood</a> here at the <a href="http://gicentre.org">giCentre</a>.
                 </p>
 
                 <h4>Other Examples - Visual Complexity</h4>
@@ -368,8 +371,7 @@
                         <li><a href="http://www.visualcomplexity.com/vc/search.cfm?input=processing"
                                 target="_blank">http://www.visualcomplexity.com/</a></li>
                     </ul>
-                    <p>Can you begin to see which methods might be used and what kind of data might be required in each
-                        case?</p>
+                    <p>Can you begin to see which <i>methods</i> might be used and what kind of <i>data</i> might be required to create sketches like this in each case?</p>
                 </div>
 
 
