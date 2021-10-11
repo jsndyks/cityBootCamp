@@ -1118,19 +1118,15 @@
               <div class="unit-70">
                   <p>&nbsp;</p>
                   <p>Now consider this <code>tint()</code> ...</p>
-                  <pre class="brush: processing; gutter: false; toolbar: false; ">tint(255, 0, 255);
-  image(img, 0, 0);
+                  <pre class="brush: processing; gutter: false; toolbar: false; ">tint(255, 0, 0);
+image(img, 0, 0);
     </pre>
               </div>
           </div>
 
           <div class="units-row">
 
-              <div class="unit-70">
-                <pre class="brush: processing; gutter: false; toolbar: false; ">tint(255, 0, 0);
-  image(img, 0, 0);
-  </pre>
-            </div>
+
         </div>
 
         <div class="units-row">
@@ -1141,23 +1137,26 @@
                 <img src="https://jsndyks.github.io/cityBootCamp/images/cabin-red.png" width="200" />&nbsp;&nbsp;
                 <img src="https://jsndyks.github.io/cityBootCamp/images/cabin-green.png" width="200" />
 
-                <p>How would the canvas look following this processing of the image shown to the right?</p>
+                <p>Which of these images would the canvas look like following this processing of the image shown to the right?</p>
                 <div class="coreTask">
-                    <p>Check the code and the possible outputs and decide which of the three tinted images shown above
-                        would result from this image processing of the image to the right?</p>
+                <p>Check the code and the possible outputs and decide which of the three tinted images shown above would result from this image processing of the image to the right?</p>
                 </div>
 
+
+                <p>Now consider this second <code>tint()</code> ...</p>
+                    <pre class="brush: processing; gutter: false; toolbar: false; ">tint(255, 0, 255);
+image(img, 0, 0);
+      </pre>
 
                   <img src="https://jsndyks.github.io/cityBootCamp/images/cabin-violet.png" width="200" />&nbsp;&nbsp;
                   <img src="https://jsndyks.github.io/cityBootCamp/images/cabin-red.png" width="200" />&nbsp;&nbsp;
                   <img src="https://jsndyks.github.io/cityBootCamp/images/cabin-green.png" width="200" />
 
-                  <p>How would the canvas look following this processing of the image to the right?</p>
+                  <p>How would the canvas look following this processing of the original image (above and to the right?) - which if these three canvases would result?</p>
 
                   <div class="coreTask">
-                      <p>Check the code and the possible outputs again and decide how you think the canvas would look
-                          following this alternative processing of the image?</p>
-                      <p>Which of the three outputs shown above would result use of <code>tint()</code>?</p>
+                      <p>Check the code and the possible outputs again and decide how you think the canvas would look following this alternative processing of the image?</p>
+                      <p>Which of the three outputs shown above would result from this use of <code>tint()</code>?</p>
                   </div>
 
               </div>
@@ -1359,7 +1358,7 @@
                       We can <code>get</code> and <code>set</code> pixels of an image and use these to select colours that
                       we apply to other shapes in our sketch.
                   </p>
-                  <p>Note that we <i>never actually draw</i> the image with <code>img()</code> in the following sketch, but as we have
+                  <p>Note that we <i>never actually draw</i> the image with <code>image()</code> in the following sketch, but as we have
                       loaded it with <code>loadImage()</code> we can access its colours, which we can then use to
                       <code>fill()</code> other shapes.<br/>Specifically ...
                   </p>
@@ -1650,7 +1649,7 @@
           <hr />
           <div class="sig">
               <b>Jason DYKES</b><br />
-              <i>10 Oct 2021</i>
+              <i>11 Oct 2021</i>
           </div>
           <div style="padding-bottom:2em;clear:both" />
 
