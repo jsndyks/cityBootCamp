@@ -522,10 +522,7 @@ void draw()
                         target="_blank">stored in a text file</a>.
                 </p>
                 <p>Each line of text in the file contains a whole paragraph and one line is displayed in the sketch at a
-                    time. You can change the line that is displayed interactively - use the <span class="key">&lt;</span> and
-                    <span class="key">&gt;</span> keys to
-                    display the book, one paragraph at a time. Clicking the 'space bar' will display line 10 - this is
-                    the first line of the content of the book - the title:
+                    time.
                 </p>
                 <!--- http://staff.city.ac.uk/~jwo/bootcamp2016/lecture10/pde/gulliver/data/gulliversTravels.txt --->
 
@@ -571,12 +568,14 @@ void draw()
                     us having to update
                     the position of each line as we did in the first example.
                 </p>
-
                 <p>
-                    Add this <code>keyPressed()</code> method to handle handles skipping forward and backward using the <span class="key">&lt;</span> and <span class="key">&gt;</span> keys by
+                    Add this <code>keyPressed()</code> method to handle skipping forward and backward using the <span class="key">&lt;</span> and <span class="key">&gt;</span> keys by
                     updating the variable <code>lineToDisplay</code> with the array index corresponding to the
                     currently displayed line.
                 </p>
+                <p>You can then change the line that is displayed interactively - use the <span class="key">&lt;</span> and
+                <span class="key">&gt;</span> keys to display the book, one paragraph at a time.<br/>
+                Clicking the 'space bar' will display line 10 - this is the first line of the content of the book - the title.</p>
 <pre class="brush: processing; gutter: false; toolbar: false;">                void keyPressed()
                 {
                   if ((key == '&lt;') &amp;&amp; (lineToDisplay &gt; 0))
@@ -616,7 +615,7 @@ void draw()
                                 file containing the book</a>, and drag it into the sketch, or</li>
                         <li>read the file in from the remote URL</li>
                     </ul>
-                    <p>Now copy the code from the example above into your <em>Processing Sketch</em> and try out the
+                    <p>Now copy the two sections of code from the example above into your <em>Processing Sketch</em> and try out the
                         interactions specified in <code>keyPressed()</code>.</p>
                     <p>What do the <code>&amp;&amp; (lineToDisplay &gt; 0)</code> and
                         <code>&amp;&amp; (lineToDisplay &lt; textLines.length-1)</code>
