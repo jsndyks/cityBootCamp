@@ -558,23 +558,6 @@ void draw()
             {
               background(255);
               text(textLines[lineToDisplay],5,5,width-10,height-10);
-            }
-
-            void keyPressed()
-            {
-              if ((key == '&lt;') &amp;&amp; (lineToDisplay &gt; 0))
-              {
-                lineToDisplay = lineToDisplay-1;
-              }
-              else if ((key == '&gt;') &amp;&amp; (lineToDisplay &lt; textLines.length-1))
-              {
-                lineToDisplay = lineToDisplay+1;
-              }
-              else if (key == ' ')
-              {
-                // Line 10 is the first line of the book - it contains the title
-                lineToDisplay = 10;
-              }
             }</pre>
 
                 <p>
@@ -590,12 +573,26 @@ void draw()
                 </p>
 
                 <p>
-                    The <code>keyPressed()</code> method handles skipping forward and backward using the <span class="key">&lt;</span> and
-                    <span class="key">&gt;</span> keys by
+                    Add this <code>keyPressed()</code> method to handle handles skipping forward and backward using the <span class="key">&lt;</span> and <span class="key">&gt;</span> keys by
                     updating the variable <code>lineToDisplay</code> with the array index corresponding to the
                     currently displayed line.
                 </p>
-
+<pre class="brush: processing; gutter: false; toolbar: false;">                void keyPressed()
+                {
+                  if ((key == '&lt;') &amp;&amp; (lineToDisplay &gt; 0))
+                  {
+                    lineToDisplay = lineToDisplay-1;
+                  }
+                  else if ((key == '&gt;') &amp;&amp; (lineToDisplay &lt; textLines.length-1))
+                  {
+                    lineToDisplay = lineToDisplay+1;
+                  }
+                  else if (key == ' ')
+                  {
+                    // Line 10 is the first line of the book - it contains the title
+                    lineToDisplay = 10;
+                  }
+                }</pre>
             </div> <!-- End of left column -->
 
             <div class="unit-30 annotation">
