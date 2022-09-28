@@ -54,8 +54,8 @@
             <p><strong>By the end of this session you should be able to:</strong></p>
 
             <ul>
-                <li>collect and use input that comes from interactions with <b>the mouse</b>b>;</li>
-                <li>collect and use input that comes from interactions with <b>the keyboard</b>;</li>
+                <li>collect and use input that comes from interactions with the mouse;</li>
+                <li>collect and use input that comes from interactions with the keyboard;</li>
                 <li>display the nature of this input;</li>
                 <li>use this input to control flow and behaviour in a sketch;</li>
                 <li>structure a sketch to react to and develop through interaction;</li>
@@ -72,7 +72,7 @@
                 <!-- Left column -->
                 <h3>1. Interaction</h3>
                 <p class="focusOFF">&gt;&gt;1</p>
-                <p> We've looked at how to <a href="https://moodle.city.ac.uk/mod/page/view.php?id=2443734">code programs that adapt to context</a> with constructs that allow us to write code that makes choices as it executes: <a href="https://moodle.city.ac.uk/course/view.php?id=47596#section-4">DECISIONS</a><br/>
+                <p> We've looked at how to <a href="https://moodle.city.ac.uk/mod/page/view.php?id=2058681">code programs that adapt to context</a> with constructs that allow us to write code that makes choices as it executes.<br/>
                   <br/>But how do we code programs that adapt to people?<br/>
 
                     A computer isn't much good without <b>interaction</b>!<br/>
@@ -127,8 +127,8 @@
                 <h4>Key Sketch</h4>
                 <p class="focusOFF">&gt;&gt;2</p>
                 <p>
-                    Here's a sketch that takes advantage of the way that <code>key</code> is updated from the keyboard.
-                    It shows interactions made through the keyboard on the canvas.
+                    Here's a sketch that takes advantage of the way that <code>key</code> is updated from the keyboard
+                    to show interactions made through the keyboard on the canvas.
                 </p>
                 <pre class="brush: processing; gutter: false; toolbar: false; ">// -- set up the things that don't change ...
 void setup() {
@@ -165,7 +165,7 @@ void draw() {
                         <code>key</code> changes.
                     </p>
                     <p>Then copy the above code in <i>Processing</i> and see what happens!</p>
-                    <p>Make a few changes as suggested in the '<code>try</code>' comments and check that they have the effects that you
+                    <p>Make a few changes as suggested in the comments and check that they have the effects that you
                         expect:</p>
                         <ul>
                           <li>change text size</li>
@@ -183,7 +183,7 @@ void draw() {
                 <!-- Right hand column for small images, popup sketches and annotations. -->
                 <br />
                 <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyBig/", 250, 250, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyBig.png");</script>
-                <p><b>Key Example</b><br />Click the image to activate the sketch.<br/>Then <b>click again</b> inside the popup window. This will get the keyboard focussed on the sketch.<br/>Now you can press keys on the keyboard to see how the value of <b>key</b> changes based upon your interaction with the sketch through the keyboard.<br/>Voila! Interaction!</p>
+                <p><b>Key Example</b><br />Click the image to activate the sketch.<br/>Then <b>click again</b> inside the popup window. This will get the keyboard focussed on the sketch.<br/>Now you can press keys on the keyboard to see how the value of <b>key</b> changes based upon your interaction with the sketch through the keyboard.</p>
             </div> <!-- end of right column -->
         </div> <!-- End of row -->
 
@@ -196,13 +196,11 @@ void draw() {
                 <p class="focusOFF">&gt;&gt;3</p>
                 <p>
                     One of the most useful functions for interaction is the <a
-                        href="https://processing.org/reference/keyPressed_.html"><code>keyPressed()</code></a> method.</p>
-                        <p>This method is called and run by a <i>Processing</i> sketch every time a key is pressed.
-                        </p>
-                        <p>This is important so let's say it again: any method that you specify in a sketch called <code>keyPressed()</code> will be run by your sketch every time you press any key.
-                        </p>
-                        <p>You simply create a new method called <code>keyPressed()</code> as shown below, and <i>Processing</i>
-                    will call this method every time it detects a <i>key press</i> interaction.</p>br>Let's try it!</p>
+                        href="https://processing.org/reference/keyPressed_.html"><code>keyPressed</code></a> method.</p>
+                <p>This is called by a <i>Processing</i> sketch every time a key is pressed.
+                </p>
+                <p>You simply create a new method called <code>keyPressed()</code> as shown below, and <i>Processing</i>
+                    will call this method every time it detects a <i>key press</i> interaction. Let's try it!</p>
             </div> <!-- End of left column -->
 
             <div class="unit-30 annotation">
@@ -272,8 +270,9 @@ void keyPressed() {
                     <br />
                     Hopefully you'll be thinking <i>global variables</i> as you are reading this?
                 </p>
-                <p>We'll use a <i>global variable</i> called <b>p</b> to store this positional information about how far along the canvas we want to plot ouir letter and increment it by a few pixels each time a key is pressed - in the <code>keyPressed()</code> method.</p>
-                <p>This should move each successive letter to the right and is fine while <b>p</b> is less than <b>width</b>.
+                <p>We'll use a <i>global variable</i> called <b>p</b> to store this positional information and increment
+                    it by a few pixels each time a key is pressed - in the <code>keyPressed()</code> method.</p>
+                <p>This is fine while <b>p</b> is less than <b>width</b>.
                     But our letters will plot off the right hand side of the canvas as we type more keys unless we do
                     something about this!</p>
                 <p>A little bit of simple maths will work out where we put each successive value of <b>key</b> to the
@@ -281,14 +280,14 @@ void keyPressed() {
                     back to the left and down a line.</p>
                 <p>It's pretty straightforward ...</p>
                 <ul>
-                    <li style="padding-bottom:0.75em"><code>p%width</code> - uses the <a href="https://processing.org/reference/modulo.html">modulo
+                    <li><code>p%width</code> - uses the <a href="https://processing.org/reference/modulo.html">modulo
                             operator</a> <code>%</code>.<br />
                         This calculates the <i>remainder when one number is divided by another</i>. So 110%100 is 10. As
                         is 210%100.
                         This is handy as any number <code>%width</code> gives us a position between 0 and width. When we
                         get a number that is just more than width, this gives us a position back on the left hand side
                         of the canvas as <code>(width+1)%width</code> is 1! </li>
-                    <li style="padding-bottom:0.75em"><code>24*int(p/width)</code> - firstly <a
+                    <li><code>24*int(p/width)</code> - <a
                             href="https://processing.org/reference/divide.html">divide</a>s <b>p</b> by <b>width</b>. It
                         also uses the <code><a href="https://processing.org/reference/intconvert_.html">int()</a></code>
                         operator to convert the result to an integer. This means that we get a whole number - the number
@@ -299,10 +298,9 @@ void keyPressed() {
                         through this part of the calculation. Which tells us how many <i>lines</i> of length
                         <b>width</b> the characters have taken up. If we then multiply through by a number that is
                         bigger than our current letter height, like <b>24</b> or something, this will position text that
-                        has a <b>p</b> value that is greater than <b>width</b> down the screen so that it does not
-                        overlap.
-                        I have added another <b>100</b> on in the script that follows so that the text does not start at the very top of
-                        the screen.
+                        has an <b>p</b> value that is greater than <b>width</b> down the screen so that it does not
+                        overlap. I have added another <b>100</b> on so that the text does not start at the very top of
+                        the screen!
                     </li>
                 </ul>
                 <p>Here's some code that should do the job!</p>
@@ -410,13 +408,13 @@ void keyPressed() {
                     <p>The comments in the code suggest <b>three changes</b> that you should make.<br />Try these
                         out.<br />In each case ...</p>
                     <ul>
-                        <li><b>PREDICT</b>: Be brave - have a think - <b>predict</b> that you think will happen</li>
-                        <li><b>CHANGE</b>: Make the <b>change</b> as requested</li>
-                        <li><b>OBSERVE</b>: Run the sketch and <b>observe</b> what happens</li>
-                        <li><b>THINK</b>: Have a <b>think</b>, and maybe discuss this with a friend</li>
-                        <li><b>LEARN</b>: OK, so what have you managed to <b>learn</b> either through a correct or incorrect prediction and your observations and thinking?
+                        <li>Be brave - have a think - <b>predict</b> that you think will happen</li>
+                        <li>Make the <b>change</b> as requested</li>
+                        <li>Run the sketch and <b>observe</b> what happens</li>
+                        <li>Have a <b>think</b>, and maybe discuss this with a friend - what have you managed to
+                            <b>learn</b> either through a correct or incorrect prediction?
                         </li>
-                        <li><b>CONFIRM</b>: Make a different change to <b>confirm</b> your thoughts and go through the <b>predict</b>,
+                        <li>Make a different change to <b>confirm</b> your thoughts and go through the <b>predict</b>,
                             <b>change</b>, <b>observe</b>, <b>think</b>, <b>learn</b>, <b>confirm</b> cycle again!
                         </li>
                     </ul>
@@ -426,8 +424,8 @@ void keyPressed() {
                     <h5>Important Aside!</h5>
                     <p>Learning to <b>predict</b>, <b>change</b>, <b>observe</b> (behaviour, bug reports, etc.),
                         <b>think</b> (and discuss), <b>learn</b>, <b>confirm</b> will really help you in BootCamp, and
-                        throughout your studies. It's what we all do to try to develop knowledge and skills.
-                        Remember that your teachers are here to help you with this - and they use the same approach to programme, debug, and develop their reserch and teaching knowledge and skills.
+                        throughout your studies. It's what we all do to try to develop knowledge and skills. Remember
+                        that your teachers are here to help you with this!
                     </p>
                 </div>
 
@@ -467,7 +465,7 @@ void keyPressed() {
                 <ul>
                     <li>Relate a key press to the <code>key</code> variable</li>
                     <li>Check which key has been pressed</li>
-                    <li>See how we can detect and act on a key press with the <code>keyPressed()</code> method</li>
+                    <li>See how we can detect and act on a key press with <code>keyPressed()</code></li>
                     <li>Combine interactions with stuff you have learned before to do useful things - controlling the
                         flow in your sketch</li>
                 </ul>
@@ -486,14 +484,14 @@ void keyPressed() {
                 <p class="focusOFF">&gt;&gt;4</p>
                 <p>
                     In the sketch below, a rectangle is drawn using the the <a
-                        href="https://processing.org/reference/rect_.html" target="_blank"><code>rect()</code></a> method. The
+                        href="https://processing.org/reference/rect_.html" target="_blank">rect()</a> method. The
                     rectangle is filled with colour (by a call to <a href="https://processing.org/reference/fill_.html"
-                        target="_blank"><code>fill()</code></a>) using three global variables called <code>r</code>, <code>g</code> and
-                    <code>b</code>. These represent the red, green and blue components of the colour.
-                    Initially, amount of red in the colour is 0 out of 255, the amount of green is 0 out of 255 and
-                    likewise the amount of blue in the colour is 0 out of 255. So the overall colour given by
-                    <code>fill(r, g, b)</code> is made of no red, no green and no blue.
-                    That's a deep dark nightly new-moon <b>black</b>.
+                        target="_blank">fill</a>) using a global variables called <code>r</code>, <code>g</code> and
+                    <code>b</code> (representing the red, green and blue components of colour).
+                    Initially, amount of red in the fill is 0 out of 255, the amount of green in the is 0 out of 255 and
+                    likewise the amount of blue in the fill is 0 out of 255 so the overall colour given by
+                    <code>fill(r, g, b)</code> is made of no red, no green and no blue. That's deep dark nightly
+                    <b>black</b>.
                 </p>
                 <pre class="brush: processing; gutter: false; toolbar: false; ">int r, g, b;
 
@@ -528,7 +526,7 @@ void draw() {
                 <div class="coreTask">
                   <b>Colour Key</b>
                   <p>Add a <code>keyPressed()</code> method with code that changes the rectangle's
-                    fill colour to green if the <span class="key">g</span> key is pressed and blue if the
+                    fill color to green if the <span class="key">g</span> key is pressed and blue if the
                     <span class="key">b</span> key is pressed and <span class="key">r</span> if the red key is pressed.
                     <br /><br />
                     This code snippet is likely to be useful:
@@ -546,12 +544,11 @@ void draw() {
                         component.
                     </p>
                     <p>Try using the <span class="key">G</span> and the <span class="key">g</span> keys to
-                        <i>increase</i> and <i>decrease</i> the amount of green in the colour by some increment respectively.
+                        <i>increase</i> and <i>decrease</i> the amount of green in the colour by some increment.
                     </p>
                     <p>You might want to try this for the other colour components too with the <span
                             class="key">B</span>, <span class="key">b</span>, <span class="key">R</span> and <span
                             class="key">r</span> keys.</p>
-                    <p>See if you can use <a href="https://processing.org/reference/constrain_.html"><code>constrain()</code></a> to limit the red, green and blue component values to the range 0-255.</p>
                 </div>
 
             </div> <!-- End of left column -->
@@ -573,8 +570,8 @@ void draw() {
                     This is the fundamental thing with interaction.</p>
                     <p class="focusOFF">&gt;&gt;5</p>
                 <p>But here is a summary of the event handling methods
-                    and variables that are available.
-                    You'll note that we haven't covered everything, so you should follow up on this in your own time.</p>
+                    and variables that are available. You'll not that we haven't covered everything, so you should
+                    follow up on this in your own time.</p>
                 <p>For example, <code><a href="https://processing.org/reference/keyCode.html">keyCode</a></code> is a
                     useful variable that enables us to use keys other than the character keys.</p>
                 <h4>Event handling : keyboard</h4>
@@ -594,9 +591,9 @@ void draw() {
                     <tr>
                         <td><a href="https://processing.org/reference/keyCode.html" target="_blank">keyCode</a>
                         </td>
-                        <td>A global variable that holds the value of the most recently pressed key if this was a special
-                            non-character key, such as the arrow keys or ALT, CONTROL, SHIFT, etc.
-                            The key variable is set to "CODED" if this is the case.<br /><code>if (key == CODED) {}</code>
+                        <td>A global variable that holds the value of the most recently pressed key was a special
+                            non-character key, such as the arrow keys or ALT, CONTROL, SHIFT, etc. The key variable is
+                            set to "CODED".<br /><code>if (key == CODED) {}</code>
                         </td>
                     </tr>
                     <tr>
@@ -634,8 +631,8 @@ void draw() {
                 <p>
                     So, we have a useful series of variables and methods to enable us to interact with and through the
                     keyboard.
-                    But that only gets us so far - we can only specify a limited set of things as defined by the keys.<br/>
-                    What if we want to identify locations on the screen.<br/>Quickly.<br/>With precision?<br />
+                    But that only gets us so far - we can only specify a limited set of things as defined by the keys.
+                    What if we want to identify locations on the screen. Quickly. With precision?<br />
                     I think you know where this is going, right?<br />
                 </p>
 
@@ -663,7 +660,7 @@ void draw() {
                 <!-- Left column -->
 
                 <p>It's hard to imagine just how innovative this mode of interaction was back then, and the kind of
-                    computing and interaction it has enabled.</p>
+                    computing and interaction is has enabled.</p>
                 <p>One of these innovators was <b><a href="https://dl.acm.org/profile/81406592524">Stuart K.
                             Card</a></b>, who worked in and subsequently led a hugely creative and productive team at
                     Xerox PARC from the mid 1970s until 2010.
@@ -676,22 +673,22 @@ void draw() {
                     sometimes), that reliably allowed a computer user to specify positions on a desk, that could in turn
                     be converted into positions on a screen.
                     This gives us an effective flexible and efficient new means of interacting with computers.</p>
-                <p>Here are some prototypes, taken from a nice article and interview in <a
-                        href="https://www.notion.so/fr-fr/blog/stu-card">Notion</a>: <a
-                        href="https://www.notion.so/fr-fr/blog/stu-card">Stu Card on inventing the future</a>.
+                <p>Here are some prototypes, taken from a nice article and interview on <a
+                        href="https://www.notion.so/blog/stu-card">Notion</a>: <a
+                        href="https://www.notion.so/blog/stu-card">Stu Card on inventing the future</a>.
                 </p>
 
                 <table cellspacing="4" cellpadding="4" border="0">
                     <tr>
                         <td>
-                            <a href="https://www.notion.so/fr-fr/blog/stu-card"
+                            <a href="https://www.notion.so/blog/stu-card"
                                 title="The outside of an early mouse prototype."><img
                                     src="https://www.notion.so/cdn-cgi/image/w=3840,q=100/https://images.ctfassets.net/spoqsaf9291f/4Sm2xHEXWftLIrPqrLBaV9/122d64ee43eb3f2b7cf69db345a28b42/STU-17.jpeg"
                                     alt="The outside of an early mouse prototype" width="100%" height="auto"
                                     style="width: 100%;" /></a>
                         </td>
                         <td>
-                            <a href="https://www.notion.so/fr-fr/blog/stu-card"
+                            <a href="https://www.notion.so/blog/stu-card"
                                 title="The inside of an early mouse prototype."><img
                                     src="https://www.notion.so/cdn-cgi/image/w=3840,q=100/https://images.ctfassets.net/spoqsaf9291f/7hPCU6DqHLUf9I8qtMQEoE/6f7aad8a785bfc1fd9f572bce594046e/STU-15.jpeg"
                                     alt="The inside of an early mouse prototype." width="100%" height="auto"
@@ -702,11 +699,11 @@ void draw() {
                     <tr>
                         <td class="figCaption">
                             The outside of an early mouse prototype.<br />
-                            Source: <a href="https://www.notion.so/fr-fr/blog/stu-card">Notion Labs, Inc.</a>
+                            Source: <a href="https://www.notion.so/blog/stu-card">Notion Labs, Inc.</a>
                         </td>
                         <td class="figCaption">
                             The inside of an early mouse prototype.<br />
-                            Source: <a href="https://www.notion.so/fr-fr/blog/stu-card">Notion Labs, Inc.</a>
+                            Source: <a href="https://www.notion.so/blog/stu-card">Notion Labs, Inc.</a>
                         </td>
                     </tr>
                 </table>
@@ -714,11 +711,10 @@ void draw() {
 
                 <div class="aside">
                     <p>
-                        The article '<a href="https://www.notion.so/fr-fr/blog/stu-card">Stu Card on inventing the future</a>'
+                        The article '<a href="https://www.notion.so/blog/stu-card">Stu Card on inventing the future</a>'
                         is a half hour read.<br /> It is full of wisdom from one of the pioneers of the subject you are
                         now focussing on for a few years.<br /> It's inspiring stuff.<br />
-                        <b>I recommend you take time to read it</b>.<br/>
-                    Doing some background reading about the subjects, technologies and people you are learning with and about will help you greatly in your time as a student. It's informative, and fun. Remember to find time to do it.</p>
+                        I recommend you have a look.</p>
                 </div>
             </div> <!-- End of left column -->
 
@@ -728,7 +724,7 @@ void draw() {
                     width="200" />
                 <p class="figCaption">
                     Stu Card with an early mouse.<br />What a great way to interact with a computer!<br />
-                    Source: <a href="https://www.notion.so/fr-fr/blog/stu-card">Notion Labs, Inc.</a>
+                    Source: <a href="https://www.notion.so/blog/stu-card">Notion Labs, Inc.</a>
                 </p>
             </div> <!-- end of right column -->
         </div> <!-- End of row -->
@@ -747,17 +743,9 @@ void draw() {
                     too, which was full of wisdom.<br />It wasn't about 🐁 at all.<br />It was about 🐢s and
                     🐇s.<br />It was a great honour to meet Stu and learn from him.</p>
 
-                    <div class="aside">
-                        <p>
-                            I strongly suggest you read that <a
-                        href="https://www.gicentre.net/jsndyks/infovistestoftime1997">fantastic acceptance speech</a>
-                    too.<br/>It really is full of wisdom and might teach you a few things about learning ... which you will be doing a lot of in the next 3 years!
-                        </p>
-                    </div>
-
                 <p>Nowadays, we have <i>trackpads</i> and <i>touch</i> and all sorts of other ways of identifying
-                    coordinates and parts of the screen as we interact with computers.
-                    But most of these derive from ideas first captured in the mouse by Stu and the Xerox pioneers   .</p>
+                    coordinates and parts of the screen as we interact with computers. But most of these derive fom
+                    ideas first captured in the mouse.</p>
                 <p>Most mouse actions are about identifying areas of the screen, and <i>Processing</i> has some
                     excellent features for capturing where on the screen we are focusing as we use a mouse or similar
                     device.</p>
@@ -825,15 +813,15 @@ void draw() {
                 </p>
                 <p class="focusOFF">&gt;&gt;7</p>
                 <p>
-                    <i>Processing</i> supplies special methods for all of these events.<br/>
+                    <i>Processing</i> supplies special methods for all of these events.
                     For example, <a href="https://processing.org/reference/mouseClicked_.html"
-                        target="_blank">mouseClicked()</a> - <i>Processing</i> automatically detects a click of the mouse
+                        target="_blank">mouseClicked()</a>. <i>Processing</i> automatically detects a click of the mouse
                     and calls this method whenever that happens.
-                    So, if the mouse is clicked in a sketch, <i>Processing</i> looks for a method in the sketch called <a
+                    So, if the mouse is clicked in a sketch, <i>Processing</i> looks for a method called <a
                         href="https://processing.org/reference/mouseClicked_.html" target="_blank">mouseClicked()</a>,
-                    and if it finds that you have defined one in your sketch, it runs it.
+                    and if it finds one in the sketch, it runs it.
                     Code in this method can do anything - <code>println()</code>, <code>background(255,0,0)</code>,
-                    whatever. You decide what happens. Try these ideas! And others! Be creative!
+                    whatever. You decide what happens. Try these ideas! And others!
                 </p>
 
                 <!--p>So, what does this give us? Well, plenty! Let's have a play with them by trying them in use.</p-->
@@ -864,11 +852,11 @@ void draw() {
                     <p>
                         Improve your <code>keyPressed()</code> sketch - <i>the rudimentary unusable frustrating 'WordProcessor'</i> - so that:</p>
 
-                    <ol>
+                    <ul>
                         <li>rather than having a key clear the screen, this happens <i>when a mouse click occurs</i>.
                         </li>
                         <li>when a key is pressed the letter is positioned <i>wherever the mouse is pointing</i></li>
-                    </ol>
+                    </ul>
                     <p>Remember to save the sketch with a meaningful new name.</p>
                     <p>This code snippet gives you what you need in <code>mouseClicked()</code> but you'll need to take
                         some code out of <code>keyPressed</code> as well to enable you to use the space key:</p>
@@ -884,7 +872,7 @@ void mouseClicked() {
                 <!-- Right hand column for small images, popup sketches and annotations. -->
                 <br />
                 <script>loadSketch("https://jsndyks.github.io/cityBootCamp/p5js/keyPressedMouse/", 250, 250, "https://jsndyks.github.io/cityBootCamp/images/interaction/p5js.keyPressedMouse.png");</script>
-                <p><b>KeyPressed Move Example</b><br />Click to activate, click to focus in the sketch and then press keys on the keyboard.
+                <p><b>KeyPressed Move Example</b><br />Click to activate and press keys on the keyboard.
                     <br />Move mouse to position subsequent text.
                     <br />Click to clear the text.
                 </p>
@@ -900,7 +888,6 @@ void mouseClicked() {
                     <p>
                         The sketch to the right clears the screen if you click the right mouse button, but selects a
                         position for new text if you click the left button.<br />
-                        Try it<br/>
                         Can you do this?
                     </p>
                     <p>
@@ -946,23 +933,17 @@ if (mouseButton == LEFT) {
                     interactions. That's great.</p>
 
                     <p class="focusOFF">&gt;&gt;8</p>
-                    <p>But in explaining how to do things we have led you into <b>bad habits</b>.<br/>
-                    That's not so great!<br/>So let's unpick things a little.
+                    <p>But in explaining how to do things we have led you into <b>bad habits</b>.
+                    That's not so great! So let's unpick things a little.
                 </p>
-
-                <p>This next section is an important bit, so make sure you have read it and understood it.<br/>
-                Be a good friend - make sure your friends and neighbours have read it and understood it too.<br/>
-                It will save you and them a lot of time (and perhaps some programming pain).</p>
 
                 <h4>Detecting, Recording and Doing - How to Structure a Sketch for Interaction</h4>
 
-                <p>Often people don't read those big red titles 👆.<br/>So I am going to write it again in black here.<br/>This section is about: "<b>How to Structure a Sketch for Interaction</b>".<br/>And you need to know this in order to make reliable interactive sketches.
-                </p>
-
                 <p>The key thing is that empty <code>draw()</code> loop!</p>
                 <p>The <code>draw()</code> loop is the place to draw and do things.<br />
-                    The event handling methods like <code>keyPressed()</code> and <code>mouseClicked()</code> are not.<br />
-                    They are best for changing and recording <i>system state</i> - the way the sketch is configured at any time.<br />
+                    These event handling methods are not.<br />
+                    They are best for changing and recording <i>system state</i> - the way the sketch is
+                    configured.<br />
                     The <code>draw()</code> loop is then the place to act on that state.</p>
                 <p>In summary ...</p>
                 <pre class="brush: processing; gutter: false; toolbar: false; ">
@@ -970,8 +951,7 @@ if (mouseButton == LEFT) {
 
 void draw() {
   // -- Do things in here
-  // --   based upon variables set in the event handling methods
-  // --   that describe the system state.
+  // --   based upon variables set in the event handling methods.
 }
 
 // -- THE EVENT HANDLING METHODS!
@@ -990,7 +970,7 @@ void mouseClicked() {
                 <p>So ... even more bluntly ... <b>Don't draw things in the event handling methods!</b>.</p>
                 <p>Here is a refactoring of the <code>keyPressed</code> sketches that structures things as we advise
                     above.</p>
-                <p>It's a little longer than the other examples, but should be readable.<br/>Take your time to read it through.</p>
+                <p>It's a little longer than the other examples, but should be readable. Take your time.</p>
             </div> <!-- End of left column -->
 
             <div class="unit-30 annotation">
@@ -1093,10 +1073,12 @@ void mouseClicked() {
                 <b>Mouse Interaction - Controlling Flow</b>
                     <p>Create a sketch using the skeleton code provided above.<br />Run it and experiment a
                         little.<br />
-                        Can you see how <code>isRed</code> works?<br/>Can you see how we make decisions based upon its value and how we interact to change that?</p>
-                    <p>Then <b>extend it</b> by adding a global variable, an event handling method and a control statement to :</p>
+                        Can you see how <code>isRed</code> works?</p>
+                    <p>Then <b>extend it</b> by adding a global variable, an event handling method and a control
+                        statement to :</p>
                     <ul>
-                        <li>make the screen clear in yellow if the mouse is in the right half of the screen, but grey otherwise</li>
+                        <li>make the screen clear in yellow if the mouse is in the right half of the screen, grey
+                            otherwise</li>
                     </ul>
                     <p>Helpful information:</p>
                     <ol>
@@ -1116,7 +1098,7 @@ void mouseClicked() {
                         progress.<br />Remember that your teachers are here to help you with this!</p>
                 </div>
 
-                <!-- https://www.notion.so/fr-fr/blog/stu-card -->
+                <!-- https://www.notion.so/blog/stu-card -->
             </div>
             <div class="unit-30 annotation">
                 <!-- Right hand column for small images, popup sketches and annotations. -->
@@ -1150,7 +1132,7 @@ void mouseClicked() {
                     <p>Using the code below as a start point get <code>clickCount</code> to increment every time the
                         mouse is clicked.<br />
                         This variable records the number of times the canvas has been clicked in your sketch.</p>
-                        <p>You'll need to write code to increment <code>clickCount</code> in a <code>mouseClicked()</code> method.</p>
+                        <p>You'll need to increment <code>clickCound</code> in a <code>mouseClicked()</code> method.</p>
                 </div>
             </div> <!-- End of left column -->
 
@@ -1219,15 +1201,14 @@ void draw(){
                     <b>Interaction - More Persistence Freestyling</b>
                     <p>Here are some more interesting things you could try with your newfound coding capability!</p>
                     <p>
-                        <b>Extension 3</b>: You should have already used the <a
-                            href="https://processing.org/reference/random_.html" target="_blank">random()</a> method.<br/>
-                            If not, don't worry, it's easy - check here <a
-                            href="https://processing.org/reference/random_.html" target="_blank">random()</a><br/>
+                        <b>Extension 3</b>: In the previous session you were introduced to the <a
+                            href="https://processing.org/reference/random_.html" target="_blank">random()</a> method.
                         Modify your code to add and display a second variable <code>randomNum</code>, that contains a
                         different random value between 0 and 99 each time the mouse is clicked.
                     </p>
                     <p>
-                        <b>Extension 4</b>: Now see whether you can show the <b>average</b> of all the random numbers that have been produced by your sketch on each click.
+                        <b>Extension 4</b>: Now see whether you can show the <b>average</b> of all the random numbers
+                        produced on each click.
                         This will require a third variable that contains the <code>runningTotal</code> of all the random
                         numbers generated during the various clicks.<br />
                         It should be apparent that <code>runningTotal/clickCount</code> will give you the average.<br />
@@ -1352,13 +1333,13 @@ void mouseClicked()
                   <b>Building an 'Interface'</b>
                     <p>Run the example sketch to the right - click the check-button to see what happens!</p>
                     <p>Then copy the code from above into <i>Processing</i> and run the sketch to see how it works.</p>
-                    <p>Work through the code to understand how we know whether the mouse (cursor) is in the rectangle or not.</p>
+                    <p>Work through the code to understand how we know whether the mouse is in the rectangle or not.</p>
                     <p>This allows us to interact with the mouse and other peripherals to identify and select spaces and
                         shapes on screen.<br />
                         It's quite clever really - all invented by the folks at Xerox in the 1970s!</p>
                     <p>But what we do with this capability is down to us as programmers.<br />
-                        Can you edit the code that checks whether the mouse (cursor) is <i>in</i> the rectangle, so that it responds as though you
-                        are in it, when you are actually 10 pixels away from it?</p>
+                        Can you edit the code so that you are <i>in</i> the rectangle, so what it responds as though you
+                        are touching it, when you are 10 pixels away from it?</p>
                 </div>
 
             </div> <!-- End of left column -->
@@ -1381,7 +1362,7 @@ void mouseClicked()
                 <p>Of course we could extend things a little ... we want you to be creative in BootCamp!</p>
                 <p>You don't need checkboxes and check-buttons and conventions.<br/>Be creative and daring! </p>
                 <p>Think outside the (check) box!</p>
-                <p>And if you do use familiar interface forms like buttoins and checkboxes  - make sure they do something interesting, exciting, dynamic and creative!</p>
+                <p>And if you do use them - make sure they do something interesting, exciting, dynamic and creative!</p>
                 <p>Oh, and make sure all of your sentences end with exclamation marks! 😉</p>
                 <div class="coreTask">
                   <b>Be Creative! Don't be constrained by the 'Interface's you see!</b>
@@ -1389,7 +1370,7 @@ void mouseClicked()
                     Where was I?<br/>Oh yeah, try the <i>CheckButton example</i> to the right.
                   </p>
                 </div>
-                To make good use of a homegrown interface element like this, we often use our own 'methods' - collections of <i>Processing</i> code and capability that allow us to define and call on functionality whenever we need it - like when a button is pressed.
+                To make good use of a homegrown button like this, we often use our own 'methods' - collections of <i>Processing</i> code and capability that allow us to define and call on functionality whenever we need it - like when a button is pressed.
                 We will cover methods in the next session.
 
             </div> <!-- End of left column -->
@@ -1416,18 +1397,16 @@ void mouseClicked()
                 <ul>
                     <li style="padding-top:1em; padding-bottom:1em">
                         <i>Processing</i> provides some useful capability for interaction - see the <b>Event handling : keyboard
-</b> and <b>Event handling : mouse</b> tables and follow the links to the <a href="https://processing.org/reference/">Processing Reference</a> materials for explanations and examples.<br/><b>Really - try the examples out and experiment with them</b>. There is great stuff in there that will help you understand and inspire you to do creative things.
+</b> and <b>Event handling : mouse</b> tables and follow the links to the <a href="https://processing.org/reference/">Processing Reference</a> materials for explanations and examples. Really - try the examples, there is great stuff in there that will help you understand and inspire you to do creative things.
                     </li>
 
                     <li style="padding-top:1em; padding-bottom:1em">
                         Structure your sketches to differentiate methods that detect interaction and collect and store
                         this input, from the <code>draw()</code> method, that uses this information to control flow and
-                        behaviours.<br/>
-                        You change the state in the event detection methods like <code>keyPressed()</code> and <code>mouseMoved()</code>.
-                        You actually do things in <code>draw()</code>.
+                        behaviours and actually do things.
                     </li>
                     <li style="padding-top:1em; padding-bottom:1em">
-                        We'd like you to use this knowledge <b>creatively</b> in designing interesting interactive sketches - and enjoy doing so as you progress through BootCamp.
+                        We'd like you to use this knowledge <b>creatively</b> in designing interesting interactive sketches - andenjoy doing so as you progress through BootCamp.
                     </li>
                     <li style="padding-top:1em; padding-bottom:1em">
                         Begin by working through these notes, examples and tasks ... then move on to the <a
@@ -1436,7 +1415,7 @@ void mouseClicked()
                             Use the <a href="https://processing.org/reference/">Processing Reference</a> materials to help, and remember to <b>predict</b>, <b>change</b>, <b>observe</b>
                                 <b>think</b> (and discuss), <b>learn</b>, <b>confirm</b> as you go.
                                 Your colleagues and teachers will be important sounding boards in this process.
-                                Chat to them and help others as you go through this process multiple times.
+                                Chat to them and help others.
                     </li>
                     <li style="padding-top:1em; padding-bottom:1em">
                         You should be able to figure out how this sketch on the right works: <b>can you</b>?

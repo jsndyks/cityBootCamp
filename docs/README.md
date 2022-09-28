@@ -2,4 +2,4 @@
 
 Docs folder
 
-2022 - testing Git
+2022 - testing Git: All OK!
