@@ -4,7 +4,7 @@ function setup() {
 
 function draw() {
   
-  let alpha = round(mouseX*255 / width);
+  var alpha = round(mouseX*255 / width);
 
   background(255);
   noStroke();
