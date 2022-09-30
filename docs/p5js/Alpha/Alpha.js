@@ -3,7 +3,8 @@ function setup() {
 }
 
 function draw() {
-  int alpha = round(mouseX*255 / width);
+  
+  let alpha = round(mouseX*255 / width);
 
   background(255);
   noStroke();
