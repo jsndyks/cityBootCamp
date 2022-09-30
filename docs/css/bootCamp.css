@@ -17,7 +17,7 @@
   .checkOutcomes {padding:1em; margin-left:3em}
 
   .focusON_orig {float:left; padding:0.75em; margin-right:1em; margin-top:0.25em;margin-bottom:1.5em;  color:#b44; background-color:#f84; text-align:right; clear:both; border-right:4px solid #b44; font-size:150%;}
-  .focusON {float:right; padding:0.75em; margin-left:1em; margin-top:2.5em;margin-bottom:0.5em;  color:#eee; background-color:#444; text-align:left; clear:both; border-left:4px solid #f84; font-size:150%; width:90%}
+  .focusON {float:right; padding:0.75em; margin-left:1em; margin-top:2.5em;margin-bottom:0.5em;  color:#eee; background-color:#444; text-align:left; clear:both; border-left:4px solid #f84; font-size:150%; width:60%}
 
   .focusOFF {display:none; padding:0px; color:#229; background-color:#fff; }
 
