@@ -47,13 +47,15 @@
 
             <p>
                 This session introduces the idea of <b>data visualization</b> — turning data into graphics.<br/>
-                In particular it focusses on how to <b>read</b> text that contains data from files into <em>Processing</em>
-                and how to <b>parse</b> the text to extract words and numbers that you can use as variables in your sketches.
-                This means that you can use <i>data</i> to position, shape and colour and control elements in your sketch.</p>
+                In particular it focusses on how to ...</p>
+                <ul><li><b>read</b> text that contains data from files into <em>Processing</em>,
+                and how to</li>
+                <li><b>parse</b> the text to extract words and numbers that you can use as variables in your sketches.</li></ul>
+                <p>In combination, this enables you to use <i>data</i> to position, shape and colour and control elements in your sketch.</p>
             <p>
-                In doing so it may give you ideas about ways in which you can use data visualization in your project.
-                The various challenges are designed to help you develop project ideas.
-                We'd love to see some <b>data</b> in your projects!
+                In doing so it may give you ideas about ways in which you can use data visualization in your demo.
+                The various challenges are designed to help you develop demo ideas.
+                We'd love to see some <b>data</b> in your demos!
             </p>
         </div> <!-- End of intro section -->
 
@@ -64,8 +66,9 @@
                     that we have made available, then by the end of this session you should be able to:</strong></p>
 
             <ul>
-                <li>Drag and drop data files into your <em>Processing</em> code window;</li>
-                <li>Create a sketch to read a text file using <code>loadStrings()</code>;</li>
+                <li>Drag and drop data files into your <em>Processing</em> code window to make them accessible to your sketches;</li>
+                <li>Create a sketch to read a text file using <code><a href="http://processing.org/reference/loadStrings_.html"
+                    target="_blank">loadStrings()</a></code>;</li>
                 <li>Split a line of text into <i>tokens</i> representing individual words or numbers;</li>
                 <li>Rescale a number from one range to another using the <code>map()</code> command;</li>
                 <li>Use data that you have read from a file to change the colour, size or appearance of
@@ -90,7 +93,7 @@
                         href="https://moodle.city.ac.uk/mod/page/view.php?id=2058783">Extra Challenges</a></b> on
                 <i>Live Data</i>, <i>Bikes</i> and <i>Books</i>.
                 This could well be fun for some of you and may give you ideas for using data visualization in your
-                <b><code>#BootCamp</code></b>projects.
+                <b><code>#BootCamp</code></b> demos.
             </p>
 
 
@@ -104,14 +107,17 @@
             <div class="unit-70">
                 <!-- Left column -->
                 <h3>0. Before we start</h3>
-                <p>Before we get going, you'll need some data and to know a key method - <code>loadStrings()</code>.
+                <p>Before we get going, you'll need some data and to know about an important new method - <code><a href="http://processing.org/reference/loadStrings_.html"
+                    target="_blank">loadStrings()</a></code>.
                     <br />
                     So be sure to complete these two tasks first of all.<br />
-                    They will ensure that you know how to use <code>loadStrings()</code> to load Strings from a file and into your sketch.
+                    They will ensure that you know how to use <code><a href="http://processing.org/reference/loadStrings_.html"
+                        target="_blank">loadStrings()</a></code> to load Strings from a file and into your sketch.
                 </p>
 
                 <div class="codeTask">
-                    <p><b>loadStrings() Example:</b></p>
+                    <p><b><code><a href="http://processing.org/reference/loadStrings_.html"
+                        target="_blank">loadStrings()</a></code> Example:</b></p>
                     <p>
                         We will be using a simple data file when live coding in the lecture - <a
                             href="https://jsndyks.github.io/cityBootCamp/data/namesData.txt"
@@ -123,19 +129,23 @@
                         <br />
                         You can add the file to a <em>Processing</em> sketch by dragging it into the sketch code
                         window.<br />
-                        Data were generated through the <a href="https://www.mockaroo.com">mockaroo</a> Random Data
+                        The data were created with the <a href="https://www.mockaroo.com">mockaroo</a> Random Data
                         Generator.
                     </p>
                     <p>
                         When you have done so, open a new sketch and use <code>loadStrings("namesData.txt")</code> to
-                        load the contents of the file into an array of <code>String</code>s.<br />
+                        load the contents of the file into an array of <code>String</code>s.<br /></p>
+                        <pre class="brush: processing; gutter: false; toolbar: false;">
+                            // Read a text file into an array names 'lines' with loadStrings()
+                            String[] lines = loadStrings("namesData.txt");</pre>
+                        <p>
                         Each line of the file will be loaded into an element of the array, in turn.</p>
                         <p>
                           So, <code>lines[0]</code> will contain ...<br/><code>Nora Gigg,1,4,851,1995,Female,3XL,#b002f7,ngigg0@telenet.co</code>.</p>
                           <p>And, <code>lines[1]</code> will contain ...<br/><code>Bobby Montague,0,3,2758,1967,Male,XL,#45ac24,bobbymont@skype.com</code>.</p>
                           <p>And, <code>lines[9]</code> will contain ...<br/><code>Jason Daouze,0,2,1113,2006,Male,S,#0230cc,jdaouze9@xrea.com</code>, etc.</p>
                     <p style="padding-bottom:1em">
-                        Try the following two-line sketch.
+                        Try the following simple sketch.<br/>
                         It will load the file and print two of the array elements that have been loaded into the
                         <code>lines</code> array.
                     </p>
@@ -183,8 +193,8 @@
                     <p>Download the code provided to the right as the basis of your sketch.</p>
                     <p>Now run the sketch and then extend it so that it will...</p>
                     <ol>
-                        <li>print every other line of the data file from top to bottom;</li>
-                        <li>print each line of the data file from bottom to top;</li>
+                        <li>print <i>every other line</i> of the data file from top to bottom;</li>
+                        <li>print each line of the data file <i>from bottom to top</i>;</li>
                         <!-- <li>use <code>text()</code> the put each line of text on the canvas;
                             <br />&nbsp;&nbsp;&nbsp;&nbsp;(<i>You'll need to increase the <b>y position</b> of the text
                                 each time the loop is executed</i>)
@@ -205,7 +215,9 @@
                     <li>transform these numbers into positions on the canvas</li>
                 </ol>
                 <p>This will enable us to load data from a file somewhere on our computers, and then process this data
-                    to effect what we display in our sketches.<br />That's (a good part of) <b>data visualization</b>.<br />
+                    to effect what we display in our sketches.<br />
+                    That's <b>data visualization</b>.<br />
+                    Well, a good part of it anyway!<br/> 
                     So let's look at some!</p>
             </div>
             <div class="unit-30 annotation">
@@ -251,16 +263,13 @@
                     <ul>
                     <li>more <b>artistic representations</b> with more focus on the visual and interactive design than the
                     data that
-                    underlie them;</li><li>more <b>communicative representations</b> where a story is beinf told using data; or</li><li>
+                    underlie them;</li><li>more <b>communicative representations</b> where a particular story is being told using data; or</li><li>
                     more
-                    <b>scientific representations</b> that help investigate scientific questions in by assisting
-                    scientists in
-                    finding patterns in data and relationships between datasets.</li></ul>
-                    <p>Each of these will have different
-                    implications
+                    <b>scientific representations</b> that help investigate scientific questions by assisting
+                    scientists in finding patterns in data and relationships between datasets.</li></ul>
+                    <p>Each of these will have different implications
                     for visual design, but they all follow the same general pattern of transforming some form of dataset
-                    into
-                    some form of graphical depiction.
+                    into some form of graphical depiction.
                 </p>
 
                 <h4>Examples</h4>
@@ -269,7 +278,7 @@
                     The web has many, many creative visual representations of data. This is in part due to the
                     popularity and
                     importance of <a href="http://en.wikipedia.org/wiki/Open_data" target="_blank">Open Data</a> and
-                    because
+                    also because
                     many of the various technologies that enable people to process this data - such as
                     <em>Processing</em>.
                     Other languages and programming frameworks are also common.
@@ -302,8 +311,8 @@
                     which is helping <a target="_blank" href="https://fathom.info/projects/">a whole host of clients in
                         government and industry</a> make sense of their data through <em>visualization</em>.<br />
                     Have a look at <em>Fathom</em>'s <a href="https://fathom.info/yearinnikefuel/">Year in Nike Fuel</a>
-                    to see how personal data from activity trackers have been transformed into meaningful and revealing
-                    graphics through data visualization.
+                    to see how data from activity trackers have been transformed into meaningful and revealing
+                    personal graphics through data visualization.
                 </p>
                 <iframe src="https://player.vimeo.com/video/151097197" width="690" height="387" frameborder="0"
                     webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
@@ -331,7 +340,7 @@
                 <h4>Example 2 - Code Development by a Community</h4>
 
                 <p>
-                    Animation showing 10 years of software development of the Eclipse open source project.
+                    Animation showing 10 years of software development of the Eclipse open source project by visualizing the commits made by developers.
                 </p>
                 <iframe src="https://player.vimeo.com/video/1130828" width="690" height="387" frameborder="0"
                     webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
@@ -343,7 +352,7 @@
                 <h4>Examples 3 - London Bikeshare Scheme</h4>
 
                 <p>
-                    'Boris bike' movement data represented in two different ways:
+                   Movement data captured through London's cycle hire scheme represented in two different ways:
                 </p>
 
                 <iframe src="https://player.vimeo.com/video/19486470" width="690" height="387" frameborder="0"
@@ -361,7 +370,7 @@
 
                 <h4>Other Examples - Visual Complexity</h4>
                 <p>There are many other interesting examples online.
-                    You should spend some time interpreting these - they may inspire you with project ideas.</p>
+                    You should spend some time interpreting these - they may inspire you with demo ideas and should get you thinking about how you can apply what you are able to do with <em>Processing</em> to data in interesting ways.</em>.</p>
                 <br /><br />
                 <div class="coreTask">
                     <p>Find two interesting examples that use <em>Processing</em> on the <em>Visual Complexity</em>
@@ -371,7 +380,7 @@
                         <li><a href="http://www.visualcomplexity.com/vc/search.cfm?input=processing"
                                 target="_blank">http://www.visualcomplexity.com/</a></li>
                     </ul>
-                    <p>Can you begin to see which <i>methods</i> might be used and what kind of <i>data</i> might be required to create sketches like this in each case?</p>
+                    <p>Can you begin to think about which <i>Processing</i> <i>methods</i> might have been used (or might have been useful) and what kind of <i>data</i> might be required to create sketches like this in each case?</p>
                 </div>
 
 
@@ -404,10 +413,10 @@
                 </p>
 
                 <p>
-                    Perhaps the easiest to use is the <a href="http://processing.org/reference/loadStrings_.html"
-                        target="_blank">loadStrings()</a>
-                    method that reads in a text file into an array of <code>String</code>s. To see how it works, lets
-                    adapt a sketch we have seene before that displays some names stored in an array:
+                    Perhaps the easiest to use is the <code><a href="http://processing.org/reference/loadStrings_.html"
+                        target="_blank">loadStrings()</a></code>
+                    method that reads in a text file into an array of <code>String</code>s.</p>
+                    <p>To see how it works, lets adapt a sketch we have seen before that displays some names stored in an array:
                 </p>
 
             </div>
@@ -429,17 +438,18 @@ void setup()
 void draw()
 {
   background(255);
-  float yPos = 25;  // -- try changing the starting position on the Y axis
+  float yPos = 25;  // -- try changing the starting position on the Y axis (25)
 
   for (String name : names)
   {
     text(name,20,yPos);
-    yPos = yPos+28; // -- try changing the line by line vertical offset
+    yPos = yPos+28; // -- try changing the line by line vertical offset (28)
   }
 }</pre>
                 <p>
                     Notice that nowhere in the code is there any list of the actual names to display. Instead the
-                    <code>loadStrings()</code>
+                    <code><a href="http://processing.org/reference/loadStrings_.html"
+                        target="_blank">loadStrings()</a></code>
                     method looks for a data file called <code>names.txt</code> that contains the data - the text containing the names.
                     Each line
                     from this data
@@ -453,7 +463,7 @@ void draw()
                 <p>
                     In order for <em>Processing</em> to know where to look to find the file <code>names.txt</code>, it
                     needs to be created somewhere and then dragged into the <em>Processing</em> window.
-                    This will make a copy of the file in the <em>Processing</em> sketch that <em>Processing</em> can access and read from.
+                    This will make a copy of the file in the <em>Processing</em> sketch folder, from which <em>Processing</em> can access and read the lines of text.
                 </p>
                 <!--  -->
                 <div class="codeTask">
@@ -488,8 +498,8 @@ void draw()
                             number it items in the list?<br /><i>You'll need to edit and save the text file a few times
                                 to check this</i><br />
                             <i>Hint:</i> You can find out how many names are in the list by using
-                            <code>names.length</code> that will report the
-                            size of the array holding all the names once the file has been read using
+                            <code>names.length</code>.<br/>This will return the
+                            size of the array holding all the names once the file has been read into it using
                             <code>loadStrings()</code>.
                         </li>
                     </ol>
@@ -516,8 +526,10 @@ void draw()
                 <p>
                     Instead of a simple list of names, we can use the same approach to read in a larger text file. For
                     example, <a href="http://www.gutenberg.org" target="_blank">Project Gutenberg</a> provides a
-                    repository for free electronic copies of thousands of books. We can use this repository as a source
-                    of data for our sketches. Below is a sketch that displays the contents of H.G. Wells' classic book
+                    repository for free electronic copies of thousands of books.
+                    The content of all sorts of interesting books is available as text files.
+                    We can use this repository as a source of data for our sketches.
+                    Below is a sketch that displays the contents of H.G. Wells' classic book
                     '<em>The Time Machine</em>' <a href="https://jsndyks.github.io/cityBootCamp/data/theTimeMachine.txt"
                         target="_blank">stored in a text file</a>.
                 </p>
@@ -613,7 +625,7 @@ void draw()
                     <ul>
                         <li>download <a href="https://jsndyks.github.io/cityBootCamp/data/theTimeMachine.txt">the text
                                 file containing the book</a>, and drag it into the sketch, or</li>
-                        <li>read the file in from the remote URL</li>
+                        <li>read the file in from the remote URL shown above</li>
                     </ul>
                     <p>Now copy the two sections of code from the example above into your <em>Processing Sketch</em> and try out the
                         interactions specified in <code>keyPressed()</code>.</p>
@@ -625,9 +637,9 @@ void draw()
                 </div>
 
                 <div class="aside">
-                    You will learn how to apply more sophisticated processing of arrays in the Java module. This will
-                    allow you, for example, to sort elements of the array into alphabetical order, or to count the
-                    number of occurrences of each word.
+                    <p>You will learn how to apply more sophisticated processing of arrays in the Java module.</p>
+                    <p>This will enable you, for example, to sort elements of the array into alphabetical order, or to count the
+                    number of occurrences of each word.</p>
                 </div>
             </div> <!-- end of right column -->
             <div class="unit-30 annotation">
@@ -689,8 +701,8 @@ Sunday,55,51,49,62,65,62,127,75,77,140,85,89,105,77,61,66,74,71,73,121,86,114,70
                 </ul>
 
                 <p>
-                    <em>Processing</em> provides a useful command to help with parsing tokens — <a
-                        href="http://processing.org/reference/split_.html" target="_blank">split()</a>.
+                    <em>Processing</em> provides a useful command to help with parsing tokens — <code><a
+                        href="http://processing.org/reference/split_.html" target="_blank">split()</a></code>.
                     This method will take a string and a <i>separator</i> as parameters and split the text up into an
                     array of
                     smaller strings, using the separator character to divide the text.
@@ -700,8 +712,8 @@ Sunday,55,51,49,62,65,62,127,75,77,140,85,89,105,77,61,66,74,71,73,121,86,114,70
 
                 <p>Let's say that again and take it slowly ...<br />
                     If a <i>String</i> (such as one that you load from a line of a text file) contains a series of
-                    characters that are separated by a <i>separator</i> (such as a comma), then <a
-                        href="http://processing.org/reference/split_.html" target="_blank">split()</a> will convert the
+                    characters that are separated by a <i>separator</i> (such as a comma), then <code><a
+                        href="http://processing.org/reference/split_.html" target="_blank">split()</a></code> will convert the
                     <i>String</i> into an array containing each of the parts of the <i>String</i> that are separated by
                     the <i>separator</i>. These are the tokens!
                 </p>
@@ -711,8 +723,7 @@ Sunday,55,51,49,62,65,62,127,75,77,140,85,89,105,77,61,66,74,71,73,121,86,114,70
                         Load the following code into a new sketch and check the console to see the output from
                         <code>println()</code>.
                     </p>
-                    <p>Use the suggestions in the two <code>IDEA</code> comments to experiment and make sure you
-                        understand.</p>
+                    <p>Use the suggestions in the two <code>IDEA</code> comments to experiment a little and make sure you understand what is going on.</p>
                 </div>
                 <pre class="brush: processing; gutter: false; toolbar: false; highlight:[15];">// -- create a String:
 String someText = "BootCamp is a fantastic experience";
@@ -932,8 +943,8 @@ void draw()
                     <code>temperature</code> variable
                     above) by some value, say 4, so that 19 Celsius becomes 19*4 = 76 pixels tall. But a more general
                     approach
-                    would be to use <em>Processing</em>'s <a href="http://processing.org/reference/map_.html"
-                        target="_blank">map()</a> command that rescales any number from one
+                    would be to use <em>Processing</em>'s <code><a href="http://processing.org/reference/map_.html"
+                        target="_blank">map()</a></code> command that rescales any number from one
                     range to another:
                 </p>
 
@@ -985,7 +996,7 @@ void draw()
                 </p>
                 <div class="codeTask">
                     <b>Map Basics:</b>
-                    <p><code>map()</code> is a method that returns a float, based upon 5 input arguments :<br />
+                    <p><code><a href="http://processing.org/reference/map_.html" target="_blank">map()</a></code> is a method that returns a float, based upon 5 input arguments :<br />
                         <code>map(value, sourceMin, sourceMax, targetMin, targetMax)</code>
                     </p>
                     <p style="padding-bottom:1em">Copy these two lines of code into a new new <em>Processing</em> sketch
@@ -1000,7 +1011,7 @@ line(x,0, x,height);</pre>
                 <p>So, if you scored 20/25 in a test and want to know what this works out as as a percentage, you could use:</p>
                 <pre class="brush: processing; gutter: false; toolbar: false;">float mark = map(20, 0,25, 0,100);
 println("I scored 20/25, which is",mark,"%");</pre>
-<p>Or, if you have a data item that is 20/25 and want a bar that takes up 20/25 of the widfth of the screen then, you could use:</p>
+<p>Or, if you have a data item that is 20/25 and want a bar that takes up 20/25 of the width of the screen then, you could use:</p>
 <pre class="brush: processing; gutter: false; toolbar: false;">float barLength = map(20, 0,25, 0,width);
 println("The bar needs to be 20/25 wide, which is",barLength,"pixels");</pre>
 
@@ -1380,7 +1391,7 @@ void draw()
 
                 <p>
                     There is plenty more you could do with these data, and you should chat with your colleagues and the
-                    teaching staff about possibilities for trying some of these and using data in your projects.
+                    teaching staff about possibilities for trying some of these and using data in your demos.
                     The examples above should give you a good starting point for using data to determine the position
                     and style of shapes in your sketch.
                     This is fundamental to <em>data visualization</em>.
