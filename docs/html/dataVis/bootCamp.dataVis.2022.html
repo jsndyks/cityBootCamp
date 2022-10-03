@@ -661,28 +661,28 @@ void draw()
                 <p>
                     The text that we have loaded so far is largely <i>unstructured</i>.
                     While each line in the file is a sentence or paragraph of the book, and they are in the order in which
-                    they should be read, the text within the lines does not have any specific structure.
-                    But data are often, and most usefully, stored in text text files with more explicit structure.
+                    they should be read, the text within the lines does not have any specific structure.</p>
+                    <p>But data are often, and most usefully, stored in text text files with more explicit structure.
                   Our early examples in <a href="https://jsndyks.github.io/cityBootCamp/data/names.txt"
                           target="_blank">names.txt</a> were like this - data values separated by <b>commas</b>.</p>
                 <p>
                     For example, each line may be a <em>record</em> about a thing that we are interested in, such as a
                     day of the week.
-                    It may contain multiple pieces of information about the thing, such as your maximum heart rate as
-                    recorded by an activity tracker.
-                    Here is an example text file that might be the basis of the <em>Year of NikeFuel</em> data
+                    It may contain multiple pieces of information about the thing, such the thing's maximum heart rate as
+                    recorded by an activity tracker for each hour of the day. And if these pieces of information about multiple things aere in a consistent order then we can compare the things (people, days, whatever).</p>
+                    <p>Here is an example text file that might be the basis of the <em>Year of NikeFuel</em> data
                     visualization we saw earlier - <a href="https://jsndyks.github.io/cityBootCamp/data/hourlyBPM.txt"
                         target="_blank">hourlyBPM.txt</a>. Each row is a day. Each line contains the name of the day and
                     then 24 numbers that show maximum heart rate for each hour of the day:
                 </p>
                 <!--p>&nbsp;</p-->
-                <pre>Monday,54,52,52,54,55,54,120,77,135,72,62,62,75,82,58,62,66,75,121,66,82,120,66,54
-Tuesday,56,53,54,52,58,63,121,79,137,71,59,64,75,82,55,64,71,75,119,69,85,120,65,57
-Wednesday,62,52,51,53,59,65,122,77,139,68,62,62,76,79,57,63,69,73,121,66,84,118,68,59
-Thursday,62,50,50,56,56,67,125,77,140,71,59,61,79,76,60,63,69,71,118,69,84,117,71,59
-Friday,61,50,49,59,56,65,128,74,139,67,56,60,77,79,62,60,69,73,117,68,86,118,69,59
-Saturday,58,53,46,59,55,65,130,75,80,137,88,92,106,76,62,68,72,72,71,118,86,116,72,56
-Sunday,55,51,49,62,65,62,127,75,77,140,85,89,105,77,61,66,74,71,73,121,86,114,70,55</pre>
+                <pre>Monday,54,52,52,54,55,54,120,77,135,72,62,62,75,82,58,62,66,75,121,66,82,120,66,54 
+Tuesday,56,53,54,52,58,63,121,79,137,71,59,64,75,82,55,64,71,75,119,69,85,120,65,57 
+Wednesday,62,52,51,53,59,65,122,77,139,68,62,62,76,79,57,63,69,73,121,66,84,118,68,59 
+Thursday,62,50,50,56,56,67,125,77,140,71,59,61,79,76,60,63,69,71,118,69,84,117,71,59 
+Friday,61,50,49,59,56,65,128,74,139,67,56,60,77,79,62,60,69,73,117,68,86,118,69,59 
+Saturday,58,53,46,59,55,65,130,75,80,137,88,92,106,76,62,68,72,72,71,118,86,116,72,56 
+Sunday,55,51,49,62,65,62,127,75,77,140,85,89,105,77,61,66,74,71,73,121,86,114,70,55 </pre>
                 <p></p>
                 <p>
                     We have seen that the <code>loadStrings()</code> method is very useful when you wish to read in
@@ -702,8 +702,8 @@ Sunday,55,51,49,62,65,62,127,75,77,140,85,89,105,77,61,66,74,71,73,121,86,114,70
 
                 <p>
                     <em>Processing</em> provides a useful command to help with parsing tokens — <code><a
-                        href="http://processing.org/reference/split_.html" target="_blank">split()</a></code>.
-                    This method will take a string and a <i>separator</i> as parameters and split the text up into an
+                        href="http://processing.org/reference/split_.html" target="_blank">split()</a></code>.</p>
+                    <p>This method will take a string and a <i>separator</i> as parameters and split the text up into an
                     array of
                     smaller strings, using the separator character to divide the text.
                 </p>
@@ -726,7 +726,7 @@ Sunday,55,51,49,62,65,62,127,75,77,140,85,89,105,77,61,66,74,71,73,121,86,114,70
                     <p>Use the suggestions in the two <code>IDEA</code> comments to experiment a little and make sure you understand what is going on.</p>
                 </div>
                 <pre class="brush: processing; gutter: false; toolbar: false; highlight:[15];">// -- create a String:
-String someText = "BootCamp is a fantastic experience";
+String someText = "BootCamp is a fantastic teaching experience";
 // -- IDEA - try changing the String to contain different text ...
 
 // -- Create an array containing the Strings that are the result of
@@ -742,9 +742,9 @@ for (int i=0; i&lt;splitText.length; i++) {
 
                 <p>
                     Now we can read lines of text from a file and split each line up into arrays we can use the contents
-                    of files to inform our sketches. So we have an array or lines, and an array of <i>tokens</i> for
+                    of files to inform our sketches. So we have an array of lines, and an array of <i>tokens</i> for
                     each line that splits the line contents according to a particular <i>separator</i>.</p>
-                <p>Let's think about unstructured text first.
+                <p>Let's think about unstructured text first.<br/>
                     As an example, suppose we wished to display each of the words of a sentence in different colours:
                 </p>
 
@@ -785,15 +785,14 @@ for (int i=0; i&lt;splitText.length; i++) {
                     <code>String</code>s,
                     which in this example we have named as the array variable <code>tokens</code>. We then use a
                     'for-each' loop to iterate through
-                    that array, displaying each word in turn in a different random colour at a different vertical
-                    position.
+                    that array, displaying each word in turn in a different random colour at a vertical position that increments by 12 in each loop iteration - meaning that each successive toekn is 12 pixels below the previous one. 
                 </p>
 
                 <div class="codeTask">
                     <p>Create a new <em>Processing</em> sketch and copy in the code from the example above.<br />
                         See whether you can explain the code - talk to a colleague, or talk to yourself out
                         loud!<br /><i>Don't worry, nobody is listening!</i></p>
-                    <p>Why is the <code>noLoop()</code> command used in the example?</p>
+                    <p>Why is the <code><a href="https://processing.org/reference/noLoop_.html">noLoop()</a></code> command used in the example?</p>
                     <p>Can you predict what would happen if you removed it?<br />
                         Have a think, and then give it a try to see whether you were correct.</p>
                 </div>
