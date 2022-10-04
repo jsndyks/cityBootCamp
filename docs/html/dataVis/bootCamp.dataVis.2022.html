@@ -5,6 +5,7 @@
     <title>Programming Bootcamp Lecture: Data Visualization</title>
 
     <!-- Header, 16th September, 2021 -->
+    <!-- Header, 4th October, 2022 -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -785,7 +786,7 @@ for (int i=0; i&lt;splitText.length; i++) {
                     <code>String</code>s,
                     which in this example we have named as the array variable <code>tokens</code>. We then use a
                     'for-each' loop to iterate through
-                    that array, displaying each word in turn in a different random colour at a vertical position that increments by 12 in each loop iteration - meaning that each successive toekn is 12 pixels below the previous one. 
+                    that array, displaying each word in turn in a different random colour at a vertical position that increments by 12 in each loop iteration - meaning that each successive token is 12 pixels below the previous one. 
                 </p>
 
                 <div class="codeTask">
@@ -853,7 +854,7 @@ for (int i=0; i&lt;splitText.length; i++) {
                     As we have seen, numbers
                     in a text file might be separated by commas rather than spaces, so it becomes a simple matter of
                     passing a comma <code>","</code>
-                    rather than a space <code>" "</code> to the <code>split()</code> method.
+                    rather than a space <code>" "</code> as the separator to the <code>split()</code> method.
                 </p>
 
                 <p>
@@ -864,7 +865,7 @@ for (int i=0; i&lt;splitText.length; i++) {
                     above) we are assigning the value of the <code>textLine</code> variable explicitly within our code,
                     but a
                     real data visualization application is likely to read these values from a file using the approaches
-                    that we have already learned about.
+                    that we have learned about above 👆.
                 </p>
                 <!--p>One important difference is that we have to convert the <code>String</code> into a floating point number, with <code>float()</code>.</p-->
 
@@ -901,8 +902,8 @@ void draw()
                 <p>
                     The only command that may be new to you in this example is the use of a method called
                     <code>float()</code>
-                    that converts the text of a number parsed from the <code>String</code> into an actual numeric
-                    <code>float</code> variable.
+                    that converts the text of a number parsed from the <code>String</code> into a numeric
+                    <code>float</code> variable so that we can use it as a number and do some maths with it.
                 </p>
 
             </div> <!-- End of left column -->
@@ -942,9 +943,8 @@ void draw()
                     <code>temperature</code> variable
                     above) by some value, say 4, so that 19 Celsius becomes 19*4 = 76 pixels tall. But a more general
                     approach
-                    would be to use <em>Processing</em>'s <code><a href="http://processing.org/reference/map_.html"
-                        target="_blank">map()</a></code> command that rescales any number from one
-                    range to another:
+                    would be to use <em>Processing</em>'s <code><a href="http://processing.org/reference/map_.html" target="_blank">map()</a></code> command that rescales any number from a
+                    range to the equivalent point on another range:
                 </p>
 
             </div>
@@ -979,11 +979,9 @@ void draw()
 }</pre>
 
                 <p>
-                    <code>map()</code> requires 5 parameters to be specified. The first is the number we wish to
-                    rescale. In the example above it
-                    is the value held in the <code>temperature</code> variable. The next pair of parameters are the
-                    minimum
-                    and maximum data values we can expect our data value to fall between.
+                    <code><a href="http://processing.org/reference/map_.html" target="_blank">map()</a></code> requires 5 parameters to be specified.
+                    The first is the number we wish to rescale. In the example above it
+                    is the value held in the <code>temperature</code> variable. The next pair of parameters are the minimum and maximum data values we can expect our data value to fall between.
                     This is the <i>range</i> that we <i>map <b>from</b></i> or the <i>source</i> range.
                     With UK temperatures, we will work
                     on the assumption that our temperature range is between 0 and 30 degrees Celsius.
@@ -996,12 +994,11 @@ void draw()
                 <div class="codeTask">
                     <b>Map Basics:</b>
                     <p><code><a href="http://processing.org/reference/map_.html" target="_blank">map()</a></code> is a method that returns a float, based upon 5 input arguments :<br />
-                        <code>map(value, sourceMin, sourceMax, targetMin, targetMax)</code>
+                        <code>map(value, sourceRangeMin, sourceRangeMax, targetRangeMin, targetRangeMax)</code>
                     </p>
                     <p style="padding-bottom:1em">Copy these two lines of code into a new new <em>Processing</em> sketch
                         and vary the <em>first three arguments</em> to see how the <code>value</code> on the range
-                        <code>sourceMin</code>-<code>sourceMax</code> looks on the target range from <code>0</code> to
-                        <code>width</code>.
+                        <code>sourceRangeMin</code>-<code>sourceRangeMax</code> looks on the target range from <code>0</code> to <code>width</code>.
                     </p>
                     <pre class="brush: processing; gutter: false; toolbar: false; highlight:[21]">float x = map(10, 0,100, 0,width);
 line(x,0, x,height);</pre>
@@ -1050,8 +1047,7 @@ println("The bar needs to be 20/25 wide, which is",barLength,"pixels");</pre>
                         ones downwards from a midpoint representing 0<sup>o</sup>C ?
                     </p>
                     <p>
-                        Try it out with this weirdly varying sequence of average daily temperatures over the kind of fortnight when nobody knew what to wear each day - 2D
-                         the UKL we call this <i>April</i>:<br />
+                        Try it out with this weirdly varying sequence of average daily temperatures over the kind of fortnight when nobody knew what to wear each day:<br />
                         <code>textLine = "4,3,1,-2,-3,-5,2,4,7,9,24,18,16"</code>
                     </p>
                 </div>
@@ -1081,12 +1077,11 @@ println("The bar needs to be 20/25 wide, which is",barLength,"pixels");</pre>
                     <p>
                         Use <code>rect()</code> to create bars, or explore
                         <code><a href="https://processing.org/reference/beginShape_.html" target="_blank">beginShape()</a></code>,
-                        <code>endShape()</code> and <code>vertex()</code> for shapes that show hourly rates in a
+                        <code><a href="https://processing.org/reference/endShape_.html">endShape()</a></code> and <code>vertex()</code> for shapes that show hourly rates in a
                         continuous curve.<br />
                         Remember to use transparent <code>fill()</code> colours by adding a fourth argument to
                         <code>color(red, green, blue, opacity)</code>.<br />
-                        This <em>alpha</em> channel specifies the <i>opacity</i>, and a transparent colour has a low
-                        alpha number.<br />
+                        This <em>alpha</em> channel specifies the <i>opacity</i>, and a transparent colour has a low alpha number.<br />
                         You will need to vary the colour for each day of the week (each line of the data file).
                     </p>
                 </div>
@@ -1135,9 +1130,9 @@ println("The bar needs to be 20/25 wide, which is",barLength,"pixels");</pre>
                 </p>
                 <p>
                     Transport for London release some very large datasets that include the <a
-                        href="http://cycling.data.tfl.gov.uk/" target="_blank">times and places of all journeys
-                        made using the bikes</a>. This could be great source of data and ideas for your
-                    <code><b>#BootCamp</b></code> project.
+                        href="http://cycling.data.tfl.gov.uk/" target="_blank">times and places of all journeys made using the bikes</a>.
+                    This could be great source of data and ideas for your
+                    <code><b>#BootCamp</b></code> demo.
                     But for now we are going to use a simpler dataset that records how many bikes
                     are docked at a series of docking stations at various points in time.
                     The first few rows and columns of this table of data look like this:
@@ -1146,15 +1141,8 @@ println("The bar needs to be 20/25 wide, which is",barLength,"pixels");</pre>
                     height="427">
 
                 <p style="padding-top:2em">
-                    Each row (apart from the first 'header' row) contains data about a particular bicycle docking
-                    station. It
-                    has its own unique numeric identifier, or ID (column 0); a name (column 1); a geographic location
-                    specified as a pair of
-                    Ordnance Survey map coordinates (columns 2 and 3); the number of bikes capable of being docked at
-                    the station
-                    (column 4); and then the number of bikes actually docked at the station at 30 minute intervals from
-                    midnight
-                    to midnight (columns 5 to the end).
+                    Each row (apart from the first 'header' row) contains data about a particular bicycle docking station. It has its own unique numeric identifier, or ID (column 0); a name (column 1); a geographic location specified as a pair of
+                    Ordnance Survey map coordinates (columns 2 and 3); the number of bikes capable of being docked at the station (column 4); and then the number of bikes actually docked at the station at 30 minute intervals from midnight to midnight (columns 5 to the end).
                 </p>
 
                 <p>
@@ -1163,9 +1151,7 @@ println("The bar needs to be 20/25 wide, which is",barLength,"pixels");</pre>
                         target="_blank">bikeShare.txt</a>
                     (right-click to download).
                     Each bike station has its own line in the file and each value in every row is separated
-                    with a comma. This makes it an ideal format for reading with <code>loadStrings()</code> and parsing
-                    with
-                    <code>split()</code>.
+                    with a comma. This makes it an ideal format for reading with <code>loadStrings()</code> and then parsing with <code>split()</code>.
                 </p>
 
 
@@ -1189,9 +1175,7 @@ println("The bar needs to be 20/25 wide, which is",barLength,"pixels");</pre>
                 <!-- Row break ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
                 <h5>Bike Bar Graph</h5>
                 <p>
-                    The following sketch shows how we might read the data file, store the numbers in a series of arrays
-                    and use them to display how many bikes were docked at the
-                    first 25 stations in the table at 9:00am in the morning.
+                    The following sketch shows how we might read the data file, store the numbers in a series of arrays and use them to display how many bikes were docked at the first 25 stations in the table at 9:00am in the morning.
                 </p>
             </div>
         </div>
@@ -1253,6 +1237,17 @@ void draw()
   }
 }</pre>
 
+<div class="codeTask">
+    <p>Copy the code from the <i>Bike Station Bar Graph Sketch</i> and get it to run in
+        <em>Processing</em>.
+    </p>
+    <p>Run the sketch and then adapt it to ...</p>
+    <ol>
+        <li>Show data for 50 stations</li>
+        <li>Show the data for 5pm</li>
+        <li>Colour bars in red if there are fewer than 3 bikes available for a station at the particular time.</li>
+    </ol>
+</div>
 
             </div> <!-- End of left column -->
 
@@ -1359,14 +1354,15 @@ void draw()
                 </p>
 
                 <div class="codeTask">
-                    <p>Copy the code from the <i>Bike Station Bar Graph Sketch</i> and get it to run in
+                    <p>Copy the code from the <i>Bike Station Map Sketch</i> and get it to run in
                         <em>Processing</em>.
                     </p>
                     <p>Run the sketch and then adapt it to ...</p>
                     <ol>
                         <li>Show data for 50 stations</li>
                         <li>Show the data for 5pm</li>
-                        <li>Colour bars in red if there are fewer than 3 bikes available</li>
+                        <li>Colour circles in orange if there are fewer than 3 bikes available for a station at the particular time.</li>
+                        <li>Colour circles in red if there the station is at its <code><a href="">max()</a></code> capacity for the day.</li>
                     </ol>
                 </div>
                 <div class="challenge">
@@ -1463,9 +1459,7 @@ void draw()
                 the <code>split()</code> method.
             </li>
             <li>
-                We can use <code>map()</code> to re-scale our data from the original numeric range of the data set to a
-                range that allows us to create graphics by plotting shapes that represent the numbers in screen
-                coordinates.
+                We can use <code>map()</code> to re-scale our data from the original numeric range of the data set to a range that allows us position shapes in ways that that represent the numbers in screen coordinates.
             </li>
         </ul>
         <p>If you do know these things, and you can use these methods and understand how to draw shapes with variables,
@@ -1556,7 +1550,8 @@ void draw()
         <hr />
         <div class="sig">
             <b>Jason DYKES</b><br />
-            <i>08 Oct 2021</i>
+            <!-- <i>08 Oct 2021</i> -->
+            <i>03 Oct 2022</i>
         </div>
         <div style="padding-bottom:2em;clear:both" />
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
