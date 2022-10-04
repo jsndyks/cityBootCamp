@@ -5,6 +5,7 @@
     <title>Programming Bootcamp Exercises: Interaction</title>
 
     <!-- Header, 16th September, 2021 -->
+    <!-- Header, 4th October, 2022 -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -247,14 +248,14 @@ ellipse(circleX,circleY,radius,radius);</pre>
 
             <i>Hints:</i>
             <ul>
-                <li>To detect whether the click is within the circle you can use Processing's <a
-                        href="https://processing.org/reference/dist_.html" target="_blank">dist()</a> method.</li>
+                <li>To detect whether the click is within the circle you can use Processing's <code><a
+                        href="https://processing.org/reference/dist_.html" target="_blank">dist()</a></code> method.</li>
                         <li>To test whether the mouse is in the circle consider printing "inside" to the console when it is.</li>
                         <li>To test for the click detection consider printing "Click" to the console when you click the mouse button.</li>
                 <li>To test whether the click is inside the circle consider printing "Hit" or "Miss" to the console.</li>
-                <li>To set the position of the circle to a random position you can use Processing's <a
-                        href="https://processing.org/reference/random_.html" target="_blank">random()</a> method.</li>
-                <li>Make sure you <a href="https://processing.org/reference/constrain_.html">constrain</a> the positions and the circle size so the circle stays within the sketch and is big enough to see and click!</li>
+                <li>To set the position of the circle to a random position you can use Processing's <code><a
+                        href="https://processing.org/reference/random_.html" target="_blank">random()</a></code> method.</li>
+                <li>Make sure you <code><a href="https://processing.org/reference/constrain_.html">constrain</a></code> the positions and the circle size so the circle stays within the sketch and is big enough to see and click!</li>
             </ul>
 
         </div>
@@ -281,7 +282,7 @@ ellipse(circleX,circleY,radius,radius);</pre>
             <h5>Constrain!</h5>
             <p>It's pretty easy to keep the shape on the canvas ...</p>
             <p>
-          <b>Extension 1a:</b> Add <code>if</code> statements to prevent the values of <code>x</code> and <code>y</code> becoming less than 0 or more than 400. Use <code>width</code> and <code>height</code> so that things still work if the sketch changes size!
+          <b>Extension 1a:</b> Add <code>if</code> statements to prevent the values of <code>x</code> and <code>y</code> becoming less than 0 or more than 400. Use <code>width</code> and <code>height</code> (rather than 400) so that things still work if the sketch changes size!
           <br /><br />
           <b>Extension 1b: </b> Add <code>if</code> statements to allow the square to go up to, but not past, the bounds of the sketch.
           <br /><br />

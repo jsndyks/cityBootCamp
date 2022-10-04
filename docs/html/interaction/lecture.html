@@ -120,8 +120,9 @@
                     Firstly, <i>Processing</i> retains a global variable (like <code>mouseX</code> and
                     <code>mouseY</code>) called <a href="https://processing.org/reference/key.html"
                         target="_blank">key</a>.
-                    This is a <i>character</i> variable holds the value of the most recently pressed key on the
+                    This is a <i>character</i> variable that holds the value of the most recently pressed key on the
                     keyboard.
+                    It updates whenever a key on the keyboard is pressed - you don't have to ask it to do so, <i>Processing</i> just takes care of it!
                     Useful!
                 </p>
                 <img src="https://jsndyks.github.io/cityBootCamp/images/interaction/keyboard.png" />
@@ -130,7 +131,7 @@
                 <p class="focusOFF"><code><span class="focusHash">#</span><span class="focusNum">2</span> - <b>key</b> : a variable that contains the last key pressed</code></p>
                 <p>
                     Here's a sketch that takes advantage of the way that <code>key</code> is updated from the keyboard.
-                    It shows interactions made through the keyboard on the canvas.
+                    It shows any interactions made through the keyboard on the canvas.
                 </p>
                 <pre class="brush: processing; gutter: false; toolbar: false; ">// -- set up the things that don't change ...
 void setup() {
@@ -200,10 +201,9 @@ void draw() {
                         href="https://processing.org/reference/keyPressed_.html"><code>keyPressed()</code></a> method.</p>
                         <p>This method is called and run by a <i>Processing</i> sketch every time a key is pressed.
                         </p>
-                        <p>This is important so let's say it again: any method that you specify in a sketch called <code>keyPressed()</code> will be run by your sketch every time you press any key.
+                        <p>This is important so let's say it again: any method that you specify in a sketch, that you give the name <code>keyPressed()</code>, will be run by your sketch every time you press any key on the keyboard.
                         </p>
-                        <p>You simply create a new method called <code>keyPressed()</code> as shown below, and <i>Processing</i>
-                    will call this method every time it detects a <i>key press</i> interaction.</br>Let's try it!</p>
+                        <p>You simply create a new method called <code>keyPressed()</code> as shown below, and <i>Processing</i> will automatically call this method every time it detects a <i>key press</i> interaction.</br>Let's try it!</p>
             </div> <!-- End of left column -->
 
             <div class="unit-30 annotation">
@@ -273,8 +273,8 @@ void keyPressed() {
                     <br />
                     Hopefully you'll be thinking <i>global variables</i> as you are reading this?
                 </p>
-                <p>We'll use a <i>global variable</i> called <b>p</b> to store this positional information about how far along the canvas we want to plot ouir letter and increment it by a few pixels each time a key is pressed - in the <code>keyPressed()</code> method.</p>
-                <p>This should move each successive letter to the right and is fine while <b>p</b> is less than <b>width</b>.
+                <p>We'll use a <i>global variable</i> called <b>p</b> to store this positional information about how far along the canvas we want to plot our first letter and increment it by a few pixels each time a key is pressed - in the <code>keyPressed()</code> method so that subsequent letters are printed a bit further along.</p>
+                <p>This should move each successive letter to the right. That is fine while <b>p</b> is less than <b>width</b>.
                     But our letters will plot off the right hand side of the canvas as we type more keys unless we do
                     something about this!</p>
                 <p>A little bit of simple maths will work out where we put each successive value of <b>key</b> to the
@@ -472,7 +472,7 @@ void keyPressed() {
                     <li>Combine interactions with stuff you have learned before to do useful things - controlling the
                         flow in your sketch</li>
                 </ul>
-                <p>Hopefully you understand all of this and can do some of it, which makes it all worth it.</p>
+                <p>Hopefully you understand all of this and can do some of it, which makes it all worthwhile.</p>
                 <p>However, it's <b>very important</b> that you don't get mixed up and think that <code>key</code> and
                     <code>keyPressed()</code> only enable us to do things with text. That's not the case - we can do
                     much more interesting things by responding to interaction through the keyboard.
@@ -573,8 +573,8 @@ void draw() {
                     response.<br />
                     This is the fundamental thing with interaction.</p>
                     <p class="focusOFF"><code><span class="focusHash">#</span><span class="focusNum">4</span> - <b>Summary</b> : keyboard variables &amp; methods in Processing</code></p>
-                <p>But here is a summary of the event handling methods
-                    and variables that are available.
+                <p>Here is a summary of the keyboard event handling methods
+                    and variables that are available in <i>Processing</i>.
                     You'll note that we haven't covered everything, so you should follow up on this in your own time.</p>
                 <p>For example, <code><a href="https://processing.org/reference/keyCode.html">keyCode</a></code> is a
                     useful variable that enables us to use keys other than the character keys.</p>
@@ -763,8 +763,9 @@ void draw() {
                     excellent features for capturing where on the screen we are focusing as we use a mouse or similar
                     device.</p>
                     <p class="focusOFF"><code><span class="focusHash">#</span><span class="focusNum">5</span> - <b>Summary</b> : mouse (cursor) variables &amp; methods in Processing</code></p>
-                <p>These methods and variables are in some ways similar to those used with the keyboard. Let's start
-                    with a summary table.</p>
+                <p>These methods and variables are in some ways similar to those used with the keyboard. 
+                    And you know some of them and have already used themm in somew of your sketches.
+                    Let's start with a summary table.</p>
                 <h4>Event handling : mouse</h4>
                 <table>
                     <tr>
@@ -818,7 +819,7 @@ void draw() {
                     </tr>
                 </table>
 
-                <p>You already know the global variables <code>mouseX</code> and <code>mouseY</code>.
+                <p>OK, so you already know the global variables <code>mouseX</code> and <code>mouseY</code>.
                     These tell you something about how your sketch is being interacted with.</p>
                 <p>Then we get to the <i>methods</i>, which are called whenever we <i>click</i>, <i>press</i>,
                     <i>release</i>, <i>move</i> or <i>drag</i> the mouse. Or whatever peripheral we are using to control
@@ -829,12 +830,14 @@ void draw() {
                     <i>Processing</i> supplies special methods for all of these events.<br/>
                     For example, <a href="https://processing.org/reference/mouseClicked_.html"
                         target="_blank">mouseClicked()</a> - <i>Processing</i> automatically detects a click of the mouse
-                    and calls this method whenever that happens.
+                    and calls any method that you add to your sketch with this name whenever that happens.
                     So, if the mouse is clicked in a sketch, <i>Processing</i> looks for a method in the sketch called <a
                         href="https://processing.org/reference/mouseClicked_.html" target="_blank">mouseClicked()</a>,
-                    and if it finds that you have defined one in your sketch, it runs it.
-                    Code in this method can do anything - <code>println()</code>, <code>background(255,0,0)</code>,
-                    whatever. You decide what happens. Try these ideas! And others! Be creative!
+                    and if it finds that you have defined one in your sketch, then it runs it.
+                    Code in this method can do anything - <code>println()</code>, <code>background(255,0,0)</code>, whatever.
+                    You decide what happens when the mouse is clicked.
+                    You decide what happens upon the detected interaction.
+                    Try these ideas! And others! Be creative!
                 </p>
 
                 <!--p>So, what does this give us? Well, plenty! Let's have a play with them by trying them in use.</p-->
@@ -943,8 +946,8 @@ if (mouseButton == LEFT) {
                 <hr />
                 <h3>4. Interaction and State?</h3>
 
-                <p>You should by now have your sketches working in all sorts of ways based upon your keyboard and mouse
-                    interactions. That's great.</p>
+                <p>You should by now have your sketches working in all sorts of ways in response to interactions made through your keyboard and mouse.
+                    That's great.</p>
 
                     <p class="focusOFF"><code><span class="focusHash">#</span><span class="focusNum">7</span> - <b>State</b> : recording what is going on in your sketch</code></p>
                     <p>But in explaining how to do things we have led you into <b>bad habits</b>.<br/>
@@ -967,6 +970,12 @@ if (mouseButton == LEFT) {
                     The <code>draw()</code> loop is then the place to act on that state.</p>
                 <p>In summary ...</p>
                 <pre class="brush: processing; gutter: false; toolbar: false; ">
+// -- GLOBAL VARIABLES
+// -- Declare and initialsie variables that describe
+// --   the initial state of your system, here.
+// -- You will vary these to record the way that the state
+// --   of your system varies over time in response to interactions.
+
 // -- THE MAIN DRAW LOOP!
 
 void draw() {
@@ -1383,7 +1392,7 @@ void mouseClicked()
                 <p>Of course we could extend things a little ... we want you to be creative in BootCamp!</p>
                 <p>You don't need checkboxes and check-buttons and conventions.<br/>Be creative and daring! </p>
                 <p>Think outside the (check) box!</p>
-                <p>And if you do use familiar interface forms like buttoins and checkboxes  - make sure they do something interesting, exciting, dynamic and creative!</p>
+                <p>And if you do use familiar interface forms like buttons and checkboxes  - make sure they do something interesting, exciting, dynamic and creative!</p>
                 <p>Oh, and make sure all of your sentences end with exclamation marks! 😉</p>
                 <div class="coreTask">
                   <b>Be Creative! Don't be constrained by the 'Interface's you see!</b>
@@ -1392,7 +1401,7 @@ void mouseClicked()
                   </p>
                 </div>
                 To make good use of a homegrown interface element like this, we often use our own 'methods' - collections of <i>Processing</i> code and capability that allow us to define and call on functionality whenever we need it - like when a button is pressed.
-                We will cover methods in the next session.
+                We will cover methods very soon.
 
             </div> <!-- End of left column -->
 
@@ -1483,6 +1492,14 @@ void mouseClicked()
             </div> <!-- end of right column -->
         </div> <!-- End of row -->
         <hr />
+        <hr />
+        <div class="sig">
+            <b>Jason DYKES</b><br />
+            <!-- <i>08 Oct 2021</i> -->
+            <i>04 Oct 2022</i>
+        </div>
+        <div style="padding-bottom:2em;clear:both" />
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     </div> <!-- End of page div -->
     <script type="text/javascript">SyntaxHighlighter.all()</script>
