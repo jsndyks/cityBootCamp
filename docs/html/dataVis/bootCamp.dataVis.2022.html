@@ -174,21 +174,23 @@
                         computer.</p>
                 </div>
 
-                <p>
-                  Now let's use <code>split()</code> to split a line from the <code>lines</code> array into a new array of tokens, each separated by a comma.<br/>
-                  This enables us to <em>get at</em>em> the data.   
+                <div class="codeTask">
+                    <p><b><code><a href="http://processing.org/reference/split_.html"
+                        target="_blank">split()</a></code> Example:</b></p>                <p>
+                  Now let's use <code><a href="http://processing.org/reference/split_.html">split()</a></code> to split a line from the <code>lines</code> array into a new array of tokens, each separated by a comma.<br/>
+                  This enables us to <em>get at</em> the data.   
                 </p>
                 <pre class="brush: processing; gutter: false; toolbar: false;">
-    // Split this String at each comma, into an array of strings :
+    // Split the second String at each comma, into a new array of strings, or tokens :
     String [] tokens = split(lines[1],",");
     
-    // Print the array :
+    // Print the array of tokens:
     printArray(tokens);
     
-    // Print the 5th element in this array :
+    // Print the 5th element in this array of tokens :
     println(tokens[4]);
 
-</pre>
+</pre></div>
 
             </div>
         </div>
