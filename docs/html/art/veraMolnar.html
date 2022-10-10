@@ -58,6 +58,10 @@
   
     <hr/>
 
+    <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
+      <img src="images/vera.01.png" width=125/>
+    </div>
+
     <h3>1. Draw a Square</h3>
     <p>Use the <code><a href="https://processing.org/reference/quad_.html">quad()</a></code> method to do so - it takes eight parameters that specify four coordinate pairs (x,y), one for each corner, clockwise from top left.</p>
     <p>Your quad should be square, centred on <code>xPos</code>,<code>yPos</code> and <code>sSize</code> by <code>sSize</code> in dimensions.</p>
@@ -85,7 +89,7 @@
 </pre>
 
         <!-- Hidden code button -->
-        <span><a href="#" class="link-show-code">Show Solution Code</a></span>
+        <span><a href="#" class="link-show-code">Click to Show Solution (try first!)</a></span>
         <div class="prettyprint" style="display: none;">
           <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
             quad(
@@ -99,6 +103,10 @@
           </div>
 
 <hr/>
+
+<div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
+  <img src="images/vera.02.png" width=125/>
+</div> 
 
     <h3>2. Create a Method to Draw a vQuad</h3>
     <p>Use <code><a href="https://processing.org/reference/quad_.html">quad()</a></code> in the method, which should take three arguments, as shown.</p>
@@ -124,7 +132,7 @@
       }</pre>
 
         <!-- Hidden code button -->
-        <span><a href="#" class="link-show-code">Show Solution Code</a></span>
+        <span><a href="#" class="link-show-code">Click to Show Solution (try first!)</a></span>
         <div class="prettyprint" style="display: none;">
           <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
             void vQuad (float x, float y, float s) {
@@ -141,6 +149,10 @@
           </pre>
           </div>
  <hr/>
+
+ <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
+  <img src="images/vera.03.png" width=125/>
+</div>
 
     <h3>3. Give the vQuad some Randomness</h3>
     <p>Adapt the <code><a href="https://processing.org/reference/quad_.html">quad()</a></code> method to take a 4th parameter that adds some randomness to the quad coordinates.</p>
@@ -167,7 +179,7 @@
       </pre>
 
         <!-- Hidden code button -->
-        <span><a href="#" class="link-show-code">Show Solution Code</a></span>
+        <span><a href="#" class="link-show-code">Click to Show Solution (try first!)</a></span>
         <div class="prettyprint" style="display: none;">
           <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
             void vQuad (float x, float y, float s, float r) {
@@ -185,6 +197,10 @@
           </div>
 
 <hr/>
+
+<div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
+  <img src="images/vera.04.png" width=125/>
+</div>
 
     <h3>4. Create a Method to Draw vQuads within a vQuad</h3>
     <p>Now we need a new method <code>vQuads</code> that calls the <code>vQuad</code> method multiple times, each time creating a <code>vQuad</code> in the same position, but of a decreasing size.</p>
@@ -212,7 +228,7 @@
     </pre>
       
       <!-- Hidden code button -->
-        <span><a href="#" class="link-show-code">Show Solution Code</a></span>
+        <span><a href="#" class="link-show-code">Click to Show Solution (try first!)</a></span>
         <div class="prettyprint" style="display: none;">
     <pre class="brush: processing; gutter: false; toolbar: false; highlight: [8]">
       void vQuads (float x, float y, float s, float r, int n) {
@@ -225,6 +241,10 @@
         </div>
 
         <hr/>
+
+        <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
+          <img src="images/vera.05.png" width=125/>
+        </div>
 
     <h3>5. Randomly Omit Some of the Quads</h3>
     <p>Add a 6th argument to <code>vQuads</code> that can vary from 0-1, and is the likelihood that each <code>vQuad</code> will be drawn.</p>
@@ -259,7 +279,7 @@ void draw()
 </pre>
 
       <!-- Hidden code button -->
-      <span><a href="#" class="link-show-code">Show Solution Code</a></span>
+      <span><a href="#" class="link-show-code">Click to Show Solution (try first!)</a></span>
       <div class="prettyprint" style="display: none;">
   <pre class="brush: processing; gutter: false; toolbar: false; highlight: [8]">
     void vQuads (float x, float y, float s, float r, int n, float p) {
@@ -274,6 +294,10 @@ void draw()
       </div>
 
       <hr/>
+
+      <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
+        <img src="images/vera.06.png" width=125/>
+      </div>
 
       <h3>6. Create a Square Grid of vQuads</h3>
       <p>Your <code>draw()</code> loop only draws one set of <code>vQuads</code>.</p>
@@ -297,7 +321,7 @@ void draw()
   </pre>
   
         <!-- Hidden code button -->
-        <span><a href="#" class="link-show-code">Show Solution Code</a></span>
+        <span><a href="#" class="link-show-code">Click to Show Solution (try first!)</a></span>
         <div class="prettyprint" style="display: none;">
           <p>This should work!</p>
     <pre class="brush: processing; gutter: false; toolbar: false; highlight: [8,9,11,12,13,14,16,17]">
@@ -324,6 +348,10 @@ void draw()
 
         <hr/>
 
+        <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
+          <img src="images/vera.07.png" width=125/>
+        </div>
+
         <h3>7. Finishing Off - Space and More Randonmess</h3>
         <p>What we have, looks quite a lot like <a href="https://dam.org/museum/artists_ui/artists/molnar-vera/des-ordres/">Des Ordres</a>, but still a little too ordered and a bit squished up.</p>
         <p>Can you adapt the <code>vQuads</code> to :</p>
@@ -333,7 +361,7 @@ void draw()
         </ul>
     
             <!-- Hidden code button -->
-            <span><a href="#" class="link-show-code">Show Solution Code</a></span>
+            <span><a href="#" class="link-show-code">Click to Show Solution (try first!)</a></span>
             <div class="prettyprint" style="display: none;">
               <pre class="brush: processing; gutter: false; toolbar: false; highlight: [3,7]">    
                 void vQuads (float x, float y, float s, float r, int n, float p) {
@@ -349,7 +377,29 @@ void draw()
               </pre>
             </div>
 <hr/>
-<h3>8. Go Further</h3>
+
+<div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
+  <img src="images/vera.08.png" width=125/>
+</div>
+
+<h3>8. Go Further - Explain \&amp; Explore</h3>
+
+<h4>Explain</h4>
+<p>Can you tweak the various parameters and assess the results to try to work out what Vera Molnár was varying when she generated some of the patterns used in <a href="https://dam.org/museum/artists_ui/artists/molnar-vera/des-ordres/">Des Ordres</a>?</p>
+<p>You can vary ...</p>
+<ul>
+  <li>grid resolution</li>
+  <li>quad size</li>
+  <li>numbers of quads within quads</li>
+  <li>randomness of quad corner coordinate variation</li>
+  <li>randomness of inter-quad spacing</li>
+  <li>randomness of quad omission</li>
+  <li>line width anbd colour</li>
+  <li>variation of line width anbd colour</li>
+  <li>other things?</li>
+</ul>
+
+<h4>Explore</h4>
 <p>Uses your imagination and creative talent to add different twists to these designs.<br/>
 Can you ...</p>
 <ul>
@@ -361,10 +411,11 @@ Can you ...</p>
   <li>do something even more interesting and imaginitive?</li> 
 </ul>
     <!-- Hidden code button -->
-    <span><a href="#" class="link-show-code">Show Solution Code</a></span>
+    <span><a href="#" class="link-show-code">Click to Show Solution (try first!)</a></span>
     <div class="prettyprint" style="display: none;">
       <p>There are no answers here - you are on your own.</p>
       <p>Surprise us.</p>
+      <p>Inform us.</p>
       <p>Enjoy yourself.</p>
       <p>Show us what you have in your demo.</p>
       </div>
