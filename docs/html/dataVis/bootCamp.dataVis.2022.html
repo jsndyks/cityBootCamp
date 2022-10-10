@@ -145,15 +145,25 @@
                           So, <code>lines[0]</code> will contain ...<br/><code>Nora Gigg,1,4,851,1995,Female,3XL,#b002f7,ngigg0@telenet.co</code>.</p>
                           <p>And, <code>lines[1]</code> will contain ...<br/><code>Bobby Montague,0,3,2758,1967,Male,XL,#45ac24,bobbymont@skype.com</code>.</p>
                           <p>And, <code>lines[9]</code> will contain ...<br/><code>Jason Daouze,0,2,1113,2006,Male,S,#0230cc,jdaouze9@xrea.com</code>, etc.</p>
-                    <p style="padding-bottom:1em">
-                        Try the following simple sketch.<br/>
-                        It will load the file and print two of the array elements that have been loaded into the
-                        <code>lines</code> array.
-                    </p>
-                    <pre class="brush: processing; gutter: false; toolbar: false;">
-          // Read a text file into an array names 'lines' with loadStrings()
-          String[] lines = loadStrings("namesData.txt");
+                          <p style="padding-bottom:1em">
+                            We can use <code><a href="https://processing.org/reference/printArray_.html">printArray()</a></code> to see the contetxs of our new array of data.
+                          </p>
+                            <pre class="brush: processing; gutter: false; toolbar: false;">
+          // Let's see what is in our array of data 'lines' with printArray()
+          printArray(lines);</pre>
 
+                          <p style="padding-bottom:1em">
+                        Try this 👆 and also the following 👇 in a simple sketch that uses <b>the 3 code snippets</b> provided here (<em>you will need all 3</em> to read data from a text file.<br/>
+                        It will load the file and :</p>
+                        <ul>
+                            <li>👆 show the contetxs of the entire <code>lines</code> array, adding</li>
+                            <li>👇 print two specific array elements that have been loaded into <code>lines</code> from the text file.</li>
+                        </ul>
+                        
+                    </p>
+                    <!-- // Read a text file into an array names 'lines' with loadStrings()
+                    String[] lines = loadStrings("namesData.txt"); -->
+                              <pre class="brush: processing; gutter: false; toolbar: false;">
           // Print the number of lines loaded from namesData.txt into the lines array :
           println(lines.length);
 
@@ -162,8 +172,8 @@
 
           // Print the second String in the array to the console :
           println(lines[1]);    </pre>
-                    <p>You should see this, and should be able to figure out how to show the other lines in the data
-                        file.</p>
+                    <p>The final three lines should show you this,
+                        and you should be able to figure out how to show the other lines in the data file from the array.</p>
                     <img src="https://jsndyks.github.io/cityBootCamp/images/loadStringsOutput.png" width="720"
                         height="80" />
                 </div>
@@ -1568,7 +1578,8 @@ void draw()
             <b>Jason DYKES</b><br />
             <!-- <i>08 Oct 2021</i> -->
             <!-- <i>04 Oct 2022</i> -->
-            <i>09 Oct 2022</i>
+            <!-- <i>09 Oct 2022</i> -->
+            <i>10 Oct 2022</i>
         </div>
         <div style="padding-bottom:2em;clear:both" />
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
