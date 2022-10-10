@@ -204,7 +204,8 @@
 
     <h3>4. Create a Method to Draw vQuads within a vQuad</h3>
     <p>Now we need a new method <code>vQuads</code> that calls the <code>vQuad</code> method multiple times, each time creating a <code>vQuad</code> in the same position, but of a decreasing size.</p>
-    <p>So <code>vQuads</code> will need to take parameters that specify its position in x and y, size (of the outer <code>vQuad</code>), randomness and the number of <code>vQuad</code>s to be drawn.</p>
+    <p>So <code>vQuads</code> will need to take <b>five</b>parameters that specify:
+      <br/>the central position in x and y, the size (of the outer <code>vQuad</code>), the randomness to use and the number of <code>vQuad</code>s to be drawn.</p>
 
     <pre class="brush: processing; gutter: false; toolbar: false; highlight: [17]">
       void setup()
@@ -250,12 +251,7 @@
     <p>Add a 6th argument to <code>vQuads</code> that can vary from 0-1, and is the likelihood that each <code>vQuad</code> will be drawn.</p>
     <p>A value of <code>1</code> will mean that every <code>vQuad</code> is drawn, and have no effect.
       A value of <code>0.1</code> will result in very sparse <code>vQuads</code> with only one in ten calls to <code>vQuad</code> resulting in a <code>quad()</code> being drawn.</p>
-    <p>If you pass an argument <code>p</code> to <code>vQuads</code>, that is between 0 and 1, then this may come in handy in the update to <code>vQuads</code>:</p>
-    <pre class="brush: processing; gutter: false; toolbar: false; highlight: [2]">
-      if (random(0,1) &lt;p) {
-        // -- call to vQuad();
-      }
-    </pre>
+
       <p>Here is the code that calls <code>vQuads</code>, with the new parameter.</p>
       <pre class="brush: processing; gutter: false; toolbar: false; highlight: [17]">
 void setup()
@@ -276,6 +272,13 @@ void draw()
 
   vQuads(xPos, yPos, sSize, 5, 6, 0.5); // <-- half of the calls to vQuad will draw a quad in this case
 }
+</pre>
+
+<p>If you pass an argument <code>p</code> to <code>vQuads</code>, that is between 0 and 1, then this may come in handy in the update to <code>vQuads</code>:</p>
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [2]">
+  if (random(0,1) &lt;p) {
+    // -- call to vQuad();
+  }
 </pre>
 
       <!-- Hidden code button -->
