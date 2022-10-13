@@ -140,17 +140,17 @@
             </ul>
 
             <h2>Example</h2>
-            <p>I have put together a quick example sketch that uses <a href="https://www.freepik.com/serie/31630108">a series images that provide animated character sequences</a> from <a href="https://www.freepik.com">Freepik</a>.</p>
+            <p>I have put together a siumple example sketch that uses <a href="https://www.freepik.com/serie/31630108">a series images that provide animated character sequences</a> from <a href="https://www.freepik.com">Freepik</a>.<br/>The sketch also shows how you might use these media and acknowledge the sources in line with the rights under which we are allowed to do so.</p>
 
-            <div style="padding:1em;padding-left:4em; float:right;"><img width=400 height=640 src="https://jsndyks.github.io/cityBootCamp/images/freepik/freepikSprites.480.mov"/>
-              <br/><b>Processing sketch animates images</b>
-              <em>Images by <a href="https://www.freepik.com/serie/31630108">Freepik</a>, acquired from their <a href="https://www.freepik.com/serie/31630108">Flat design animation frames element collection</a>.</em>
+            <div style="padding:1em;padding-left:4em;  float:left;"><img width=200 src="https://jsndyks.github.io/cityBootCamp/images/freepik/freepikSprites.png"/>
+              <br/><b>Images cut from the composite in Processing sketch</b><br/>
+              <em>Images by <a href="https://www.freepik.com/serie/31630108">Freepik</a>, acquired from their<br/><a href="https://www.freepik.com/serie/31630108">Flat design animation frames element collection</a>.</em>
+            </div>
+            <div style="padding:1em;padding-left:4em; float:left;"><img width=267 src="https://jsndyks.github.io/cityBootCamp/images/freepik/freepikSprites.480.mov"/>
+              <br/><b>Processing sketch animates images</b><br/>
+              <em>Images by <a href="https://www.freepik.com/serie/31630108">Freepik</a>, acquired from their<br/><a href="https://www.freepik.com/serie/31630108">Flat design animation frames element collection</a>.</em>
             </div>
 
-            <div style="padding:1em;padding-left:4em; float:left;"><img width=360 src="https://jsndyks.github.io/cityBootCamp/images/freepik/freepikSprites.png"/>
-              <br/><b>Images cut from the composite in Processing sketch</b>
-              <em>Images by <a href="https://www.freepik.com/serie/31630108">Freepik</a>, acquired from their <a href="https://www.freepik.com/serie/31630108">Flat design animation frames element collection</a>.</em>
-            </div>
             <div style="clear:both"/>
 
 
@@ -414,11 +414,35 @@
   }</pre>
 </div>
 
+  <h4>Images</h4>
+
+  <p>You'll need <b>some images</b> to make the code work!</p>
+  <p>But you know where to get these, and how to use them. Just drag/save composite images into your sketch folder and list them in the <code>imageFiles</code> and <code>imageRights</code> arrays as I have here. The image file names must match those that you use to name your files.</p>
+  <div class="prettyprint" style="display: block;">
+    <pre class="brush: processing; gutter: false; toolbar: false; highlight: [0]">  
+  String []   imageFiles   = {
+    "roll7842533.jpg", // -- an array with the names of the composite image files I have downloaded:
+    "jump7849353.jpg",
+    "ball7842745.jpg",
+    "long7836915.jpg",
+    "pack7837076.jpg"
+  };
+  String []   imageRights  = {
+    // -- an array with details of the image rights and sources:
+    "Image by Freepik,https://www.freepik.com/free-vector/flat-design-animation-frames-element-collection_31630110.htm",
+    "Image by Freepik,https://www.freepik.com/free-vector/flat-design-animation-frames-element-collection_31630040.htm",
+    "Image by Freepik,https://www.freepik.com/free-vector/flat-design-animation-frames-element-collection_31630041.htm",
+    "Image by Freepik,https://www.freepik.com/free-vector/flat-design-animation-frames-element-collection_31630108.htm",
+    "Image by Freepik,https://www.freepik.com/free-vector/flat-design-animation-frames-element-collection_31630042.htm"
+  };</pre></div>
+
+  <p>Use Teams to discuss any issues that arise.<br/>🤞</p>
+
     <!-- End of content -->
             <hr />
             <div class="sig">
                 <b>Jason DYKES</b><br />
-                <i>12 Oct 2022</i>
+                <i>13 Oct 2022</i>
             </div>
             <div style="padding-bottom:2em;clear:both" />
 
