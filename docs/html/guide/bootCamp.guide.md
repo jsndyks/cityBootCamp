@@ -12,6 +12,27 @@ _If you are leading one of the BootCamp lectures and need to update materials on
 
 - tidy up your 'section' in Moodle - _lecture_, _exercises_ and any other _resources_
 - check that all the _links_ work, that _images_ show and that _clickable examples_ work
+- check for all links to pages in the module - these will link out tot he old Moodle (!) <code>moodle.city.ac.uk/whatever</code> ... you will need to change these tot he new moodle <code>moodle4.city.ac.uk/somethingDifferent</code> - _what a pain_
+
+### Exercises and Priorities
+
+Have a look at the top of [Lecture: Introduction to Processing](https://moodle4.city.ac.uk/mod/page/view.php?id=420841)
+
+We use <code>&lt;div&gt;&nbsp;&lt;/div&gt;</code> tags to differentiate (visually and in terms of content) between :
+
+- <code>codeTask</code> - do this bit of coding as you read.
+- <code>coreTask</code> - essential. It is very important that you complete these tasks.<br/>During the labs, you should prioritise completion of the core tasks before others.
+- <code>challenge</code> - optional. Have a go if you have finished everything else and have some spare time.<br/>Things to do if it all seems a bit easy.
+- <code>aside</code> - non-essential context: you may find this interesting or helpful.
+- <code>tip</code> - brief tips or common mistakes.<br/>Watch out for them as they could save you much time and effort.
+
+These are tagged with ...
+
+ <pre>
+    &lt;div class="codeTask"&gt; content &lt;/div&gt;
+</pre>
+
+Make sure that you are tagging the right things with the right tags - this is important differentiation that messages for students and staff who advise them and _we need to be consistent_.
 
 ### Edit in HTML
 
