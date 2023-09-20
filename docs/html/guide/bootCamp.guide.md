@@ -8,6 +8,11 @@
 
 _If you are leading one of the BootCamp lectures and need to update materials on Moodle ... here are some **top tips** ..._
 
+### Things to Do
+
+- tidy up your 'section' in Moodle - _lecture_, _exercises_ and any other _resources_
+- check that all the _links_ work, that _images_ show and that _clickable examples_ work
+
 ### Edit in HTML
 
 The fancy Moodle editor messes our _BootCamp_ pages up, so edit in HTML:
