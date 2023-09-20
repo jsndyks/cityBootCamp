@@ -11,8 +11,8 @@ _If you are leading one of the BootCamp lectures and need to update materials on
 ### Things to Do
 
 - tidy up your 'section' in Moodle - _lecture_, _exercises_ and any other _resources_
-- check that all the _links_ work, that _images_ show and that _clickable examples_ work
-- check for all links to pages in the module - these will link out tot he old Moodle (!) <code>moodle.city.ac.uk/whatever</code> ... you will need to change these tot he new moodle <code>moodle4.city.ac.uk/somethingDifferent</code> - _what a pain_
+- check that all the _links_ work, that _images_ show and that _clickable examples_ work - a tough job but we need to check and update!
+- check for all links to pages in the module - these will link out to the _old Moodle_ (!) <code>moodle.city.ac.uk/whatever</code> ... you will need to change these to the new moodle <code>moodle4.city.ac.uk/somethingDifferent</code> - _what a pain_
 
 ### Exercises and Priorities
 
