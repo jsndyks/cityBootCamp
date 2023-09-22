@@ -12,6 +12,8 @@ let squirrel = "🐿";
 let hedgehog = "🦔";
 let pig = "🐖";
 let squid = "🦑";
+let cat = "🐈‍⬛";
+let kangaroo = "🦘";
 
 let animal;
 let click = true;
@@ -56,7 +58,9 @@ function keyPressed() {
   if (key == 'r') animal = rabbit;
   if (key == 't') animal = turtle;
   if (key == 'm') animal = mouse;
-  drawIt=true;
+  if (key == 'f') animal = cat;
+  if (key == 'k') animal = kangaroo;
+drawIt=true;
   loop();
 }
 
