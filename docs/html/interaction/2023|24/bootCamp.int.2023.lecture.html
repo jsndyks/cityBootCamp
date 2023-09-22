@@ -307,16 +307,18 @@ void keyPressed() {
                             href="https://processing.org/reference/divide.html">divide</a>s <code>p</code> by <code>width</code>. It
                         also uses the <code><a href="https://processing.org/reference/intconvert_.html">int()</a></code>
                         operator to convert the result to an integer. This means that we get a whole number - the number
-                        of times <code>width</code> completely fits into <b>p</b>. So <code>int((width+1)/width)</code> is 1!
-                        and <code>int((5*width+1)/width)</code> is 5.
+                        of times <code>width</code> completely fits into <code>p</code>.
+                        <br/>
+                        So <code>int((width+1)/width)</code> is 1!<br/>
+                        And <code>int((5*width+1)/width)</code> is 5.<br/>
                         It follows that int(110/100) is 1. And int(210/100) is 2.
-                        If you think about it, this means we find out how may times <b>p</b> has filled our <b>width</b>
+                        If you think about it, this means we find out how may times <code>p</code> has filled our <code>width</code>
                         through this part of the calculation. Which tells us how many <i>lines</i> of length
-                        <b>width</b> the characters have taken up. If we then multiply through by a number that is
+                        <code>width</code> the characters have taken up. If we then multiply through by a number that is
                         bigger than our current letter height, like <b>24</b> or something, this will position text that
-                        has a <b>p</b> value that is greater than <b>width</b> down the screen so that it does not
+                        has a <code>p</code> value that is greater than <code>width</code> down the screen so that it does not
                         overlap.
-                        I have added another <b>100</b> on in the script that follows so that the text does not start at the very top of
+                        I have added another <code>100</code> on in the script that follows so that the text does not start at the very top of
                         the screen.
                     </li>
                 </ul>
@@ -364,12 +366,11 @@ void keyPressed() {
                 <div class="task">
                   <b>Keyboard Interaction - adding some order</b>
                     <p>Check the code and comments, and look at the way the position of the text varies according to the
-                        global variable <b>p</b>.</p>
-                    <p>Then run the sketch on the right - see what happens as you press more keys and get to the end of
-                        the canvas!</p>
+                        global variable <code>p</code>.</p>
+                    <p>Then run the sketch on the right - see what happens as you press more keys and get to the end of the canvas!</p>
                     <p>Make the changes suggested in the comments to make sure that you understand what's going on.</p>
-                    <p>What will happen if you make the number <b>24</b> bigger or smaller? Try it!<br />Were you
-                        correct?</p>
+                    <p>What will happen if you make the number <code>24</code> bigger or smaller?<br/>Try it!<br />
+                        Were you correct?</p>
                 </div>
 
                 <h4>KeyPressed Sketch with Control Flow</h4>
@@ -398,7 +399,8 @@ void keyPressed() {
                 <blockquote>When a key is pressed, if the key is 'space', then fill the canvas with a light
                     grey,<br />otherwise add 12 to p and then put the value of key on the canvas at a position depending
                     on the value of p.</blockquote>
-                <p>It's useful to be able to express your code like this - do practice!</p>
+                <p>It's useful to be able to express your code like this - do practice!<br/>
+                This is all we need you to be able to do at the end of <code><b>#BootCamp</b></code>: write a little bit of code that does something that you were unable to do previously - and <i>explain what it does</i>.</p>
 
             </div> <!-- End of left column -->
 
@@ -425,11 +427,11 @@ void keyPressed() {
                     <p>The comments in the code suggest <b>three changes</b> that you should make.<br />Try these
                         out.<br />In each case ...</p>
                     <ul>
-                        <li><b>PREDICT</b>: Be brave - have a think - <b>predict</b> that you think will happen</li>
-                        <li><b>CHANGE</b>: Make the <b>change</b> as requested</li>
-                        <li><b>OBSERVE</b>: Run the sketch and <b>observe</b> what happens</li>
-                        <li><b>THINK</b>: Have a <b>think</b>, and maybe discuss this with a friend</li>
-                        <li><b>LEARN</b>: OK, so what have you managed to <b>learn</b> either through a correct or incorrect prediction and your observations and thinking?
+                        <li><b>PREDICT</b>: Be brave - have a think - <b>predict</b> that you think will happen - this is a great way to learn;</li>
+                        <li><b>CHANGE</b>: Make the <b>change</b> as requested;</li>
+                        <li><b>OBSERVE</b>: Run the sketch and <b>observe</b> what happens;</li>
+                        <li><b>THINK</b>: Have a <b>think</b>, about the prediction and the observation, and maybe discuss this with a friend (or an enemy - they can be useful people to get onside);</li>
+                        <li><b>LEARN</b>: OK, so what have you managed to <b>learn</b> either through a correct or incorrect prediction and your observations and thinking and discussion?
                         </li>
                         <li><b>CONFIRM</b>: Make a different change to <b>confirm</b> your thoughts and go through the <b>predict</b>,
                             <b>change</b>, <b>observe</b>, <b>think</b>, <b>learn</b>, <b>confirm</b> cycle again!
@@ -442,7 +444,10 @@ void keyPressed() {
                     <p>Learning to <b>predict</b>, <b>change</b>, <b>observe</b> (behaviour, bug reports, etc.),
                         <b>think</b> (and discuss), <b>learn</b>, <b>confirm</b> will really help you in BootCamp, and
                         throughout your studies. It's what we all do to try to develop knowledge and skills.
-                        Remember that your teachers are here to help you with this - and they use the same approach to programme, debug, and develop their research and teaching knowledge and skills.
+                        Remember that your teachers are here to help you with this - and they use the same approach to programme, debug, and develop their research and teaching knowledge and skills.<br/>
+                        We get things wrong. We are continually learning. We learn by teaching an observing and interacting with you.<br/>
+                        We love learning so much that we have dedicated our careers to it!<br/>
+                        And our job is to teach you to learn. Let us know how we are doing!
                     </p>
                 </div>
 
@@ -505,10 +510,10 @@ void keyPressed() {
                     rectangle is filled with colour (by a call to <a href="https://processing.org/reference/fill_.html"
                         target="_blank"><code>fill()</code></a>) using three global variables called <code>r</code>, <code>g</code> and
                     <code>b</code>. These represent the red, green and blue components of the colour.
-                    Initially, amount of red in the colour is 0 out of 255, the amount of green is 0 out of 255 and
+                    Initially, the amount of red in the colour is 0 out of 255, the amount of green is 0 out of 255 and
                     likewise the amount of blue in the colour is 0 out of 255. So the overall colour given by
                     <code>fill(r, g, b)</code> is made of no red, no green and no blue.
-                    That's a deep dark nightly new-moon <b>black</b>.
+                    That's a deep dark nightly new-moon <b>black</b>: <span style="background-color:#000">&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 </p>
                 <pre class="brush: processing; gutter: false; toolbar: false; ">int r, g, b;
 
