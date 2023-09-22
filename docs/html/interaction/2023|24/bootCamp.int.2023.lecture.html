@@ -85,10 +85,10 @@
                 <!-- Left column -->
                 <h3>1. Interaction</h3>
                 <p class="focusOFF"><code><span class="focusHash">#</span><span class="focusNum">1</span> - <b>Interaction</b> : how do we interact with computers?</code></p>
-                <p> We've looked at how to <a href="https://moodle4.city.ac.uk/mod/page/view.php?id=420864">code programs that adapt to context</a> with constructs that allow us to write code that makes choices as it executes: <a href="https://moodle4.city.ac.uk/course/view.php?id=6081#section-4">DECISIONS</a><br/>
+                <p> We've looked at how to <a href="https://moodle4.city.ac.uk/mod/page/view.php?id=420864">code programs that adapt to context</a> with constructs that allow us to write code that makes choices as it executes: <a href="https://moodle4.city.ac.uk/course/view.php?id=6081#section-5">DECISIONS</a><br/>
                   <br/>But how do we code programs that adapt to people?<br/>
 
-                    A computer isn't much good without <b>interaction</b>!<br/>
+                    A computer isn't much use without us being able to tell it what to do - without <b>interaction</b>!<br/>
                 </p>
                 <p>
                     Luckily (<i>actually, there is careful planning and sophisticated functionality involved</i>) <i>Processing</i>
@@ -111,14 +111,13 @@
                 <div class="coreTask">
                     <b>Interacting with Computers</b>
                     <p>Is that it?<br />Can you think of other ways you interact with computers?<br />You should be able
-                        to come up with at least a few. <br /> Chat with a friend if you're stuck.<br />A chat can usually get you thinking and discussing things with them will often help
-                        out.</p>
+                        to come up with at least a few. <br /> Chat with a friend if you're stuck.<br />A chat can usually get you thinking and discussing things with them and will often help out.</p>
                     <!-- guitar, bike -->
                 </div>
                 <p>Interaction is how we get computers to do things that are useful to us, and how they know what we're
                     up to and what we want.</p>
                 <p>So, if we're going to make interesting applications we need to know how to collect information about
-                    interactions, how to detect what people doing are make our programs and sketches respond.</p>
+                    interactions, how to detect what people are doing, and how to make our programs and sketches respond.</p>
                 <p>Let's start with the keyboard - a handy device that you may have used from time to time - that
                     enables us to select from a series of letters, that are detected by the computer and used as input
                     to various programmes and apps that it runs!</p>
@@ -214,7 +213,9 @@ void draw() {
                         </p>
                         <p>This is important so let's say it again: any method that you specify in a sketch, that you give the name <code>keyPressed()</code>, will be run by your sketch every time you press any key on the keyboard.
                         </p>
-                        <p>You simply create a new method called <code>keyPressed()</code> as shown below, and <i>Processing</i> will automatically call this method every time it detects a <i>key press</i> interaction.</br>Let's try it!</p>
+                        <p>This is important so I am going to say it again in bold: <b></b>any method that you specify in a sketch, that you give the name <code>keyPressed()</code>, will be run by your sketch every time you press any key on the keyboard.</b>
+                        </p>
+                        <p>You simply create a new method called <code>keyPressed()</code> as shown below, and <i>Processing</i> will automatically call this method every time it detects a <i>key press</i> interaction: every time a key is pressed on the keyboard</br>Let's try it!</p>
             </div> <!-- End of left column -->
 
             <div class="unit-30 annotation">
@@ -284,27 +285,29 @@ void keyPressed() {
                     <br />
                     Hopefully you'll be thinking <i>global variables</i> as you are reading this?
                 </p>
-                <p>We'll use a <i>global variable</i> called <b>p</b> to store this positional information about how far along the canvas we want to plot our first letter and increment it by a few pixels each time a key is pressed - in the <code>keyPressed()</code> method so that subsequent letters are printed a bit further along.</p>
-                <p>This should move each successive letter to the right. That is fine while <b>p</b> is less than <b>width</b>.
+                <p>We'll use a <i>global variable</i> called <code>p</code> to store this positional information about how far along the canvas we want to plot our first letter and increment it by a few pixels each time a key is pressed - in the <code>keyPressed()</code> method so that subsequent letters are printed a bit further along.</p>
+                <p>This should move each successive letter to the right. That is fine while <code>p</code> is less than <code>width</code>.
                     But our letters will plot off the right hand side of the canvas as we type more keys unless we do
                     something about this!</p>
-                <p>A little bit of simple maths will work out where we put each successive value of <b>key</b> to the
+                <p>A little bit of simple maths will work out where we put each successive value of <code>key</code> to the
                     right of the next ... until we get to the end of the screen canvas, at which point we need to head
                     back to the left and down a line.</p>
                 <p>It's pretty straightforward ...</p>
                 <ul>
                     <li style="padding-bottom:0.75em"><code>p%width</code> - uses the <a href="https://processing.org/reference/modulo.html">modulo
                             operator</a> <code>%</code>.<br />
-                        This calculates the <i>remainder when one number is divided by another</i>. So 110%100 is 10. As
-                        is 210%100.
-                        This is handy as any number <code>%width</code> gives us a position between 0 and width. When we
+                        This calculates the <i>remainder when one number is divided by another</i>.<br/>
+                        So 110%100 is 10.<br/>
+                        As is 210%100.<br/>
+                        This is handy as any number <code>%width</code> gives us a position between <code>0</code> and <code>width</code>.
+                        When we
                         get a number that is just more than width, this gives us a position back on the left hand side
-                        of the canvas as <code>(width+1)%width</code> is 1! </li>
+                        of the canvas as <code>(width+1)%width</code> is <code>1</code>>! </li>
                     <li style="padding-bottom:0.75em"><code>24*int(p/width)</code> - firstly <a
-                            href="https://processing.org/reference/divide.html">divide</a>s <b>p</b> by <b>width</b>. It
+                            href="https://processing.org/reference/divide.html">divide</a>s <code>p</code> by <code>width</code>. It
                         also uses the <code><a href="https://processing.org/reference/intconvert_.html">int()</a></code>
                         operator to convert the result to an integer. This means that we get a whole number - the number
-                        of times <b>width</b> completely fits into <b>p</b>. So <code>int((width+1)/width)</code> is 1!
+                        of times <code>width</code> completely fits into <b>p</b>. So <code>int((width+1)/width)</code> is 1!
                         and <code>int((5*width+1)/width)</code> is 5.
                         It follows that int(110/100) is 1. And int(210/100) is 2.
                         If you think about it, this means we find out how may times <b>p</b> has filled our <b>width</b>
