@@ -549,7 +549,7 @@ void draw() {
                   <b>Colour Key</b>
                   <p>Add a <code>keyPressed()</code> method with code that changes the rectangle's
                     fill colour to green if the <span class="key">g</span> key is pressed and blue if the
-                    <span class="key">b</span> key is pressed and <span class="key">r</span> if the red key is pressed.
+                    <span class="key">b</span> key is pressed and red if the <span class="key">r</span> key is pressed.
                     <br /><br />
                     This code snippet is likely to be useful:
                     <br /><br /></p>
@@ -695,7 +695,7 @@ void draw() {
                     sometimes), that reliably allowed a computer user to specify positions on a desk, that could in turn
                     be converted into positions on a screen.
                     This gives us an effective flexible and efficient new means of interacting with computers.</p>
-                <p>Here are some prototypes, taken from a nice article and interview in <a
+                <p>Here are some prototypes, taken from a fascinating article and interview in <a
                         href="https://web.archive.org/web/20210323215123/https://www.notion.so/blog/stu-card">Notion</a>: <a
                         href="https://web.archive.org/web/20210323215123/https://www.notion.so/blog/stu-card">Stu Card on inventing the future</a>.
                 </p>
@@ -736,8 +736,17 @@ void draw() {
                         The article '<a href="https://web.archive.org/web/20210323215123/https://www.notion.so/blog/stu-card">Stu Card on inventing the future</a>'
                         is a half hour read.<br /> It is full of wisdom from one of the pioneers of the subject you are
                         now focussing on for a few years.<br /> It's inspiring stuff.<br />
-                        <b>I recommend you take time to read it</b>.<br/>
-                    Doing some background reading about the subjects, technologies and people you are learning with and about will help you greatly in your time as a student. It's informative, and fun. Remember to find time to do it.</p>
+                        <b>I recommend you take time to read it</b>.</p>
+                        <p>You might ask ...<br>
+                            &nbsp;&nbsp;Do I have to read it? Well, no.<br/>
+                            &nbsp;&nbsp;Do I need to read it? Well, no, you don't.<br/>
+                            &nbsp;&nbsp;Do I get any credit or points if I read it? Nope - no direct credit related benefits at all.<br/>
+                            &nbsp;&nbsp;So why should I read it?
+                        </p>
+                    Wll, doing some background reading about the subjects, technologies and people you are learning with and about will help you greatly in your time as a student. It's informative, and fun. It gives you context and grounds your learning.
+                    You are at University to learn - and you are learning from experts.
+                    Embrace this, and learn as much as you can.
+                    Remember to find time to do it.</p>
                 </div>
             </div> <!-- End of left column -->
 
@@ -771,6 +780,7 @@ void draw() {
                             I strongly suggest you read that <a
                         href="https://www.gicentre.net/jsndyks/infovistestoftime1997">fantastic acceptance speech</a>
                     too.<br/>It really is full of wisdom and might teach you a few things about learning ... which you will be doing a lot of in the next 3 years!
+                    <br/> 🐢 🐇
                         </p>
                     </div>
 
@@ -851,10 +861,12 @@ void draw() {
                     and calls any method that you add to your sketch with this name whenever that happens.
                     So, if the mouse is clicked in a sketch, <i>Processing</i> looks for a method in the sketch called <a
                         href="https://processing.org/reference/mouseClicked_.html" target="_blank">mouseClicked()</a>,
-                    and if it finds that you have defined one in your sketch, then it runs it.
-                    Code in this method can do anything - <code>println()</code>, <code>background(255,0,0)</code>, whatever.
-                    You decide what happens when the mouse is clicked.
-                    You decide what happens upon the detected interaction.
+                    and if it finds that you have defined one in your sketch, then it runs it.<br/>
+                    This is, of course, a bit like <a
+                    href="https://processing.org/reference/keyPressed_.html"><code>keyPressed()</code></a>, and works in much the same way.<br/>
+                    Code in this method can do anything - <code>println()</code>, <code>background(255,0,0)</code>, whatever.<br/>
+                    You decide what happens when the mouse is clicked.<br/>
+                    You decide what happens upon the detected interaction.<br/>
                     Try these ideas! And others! Be creative!
                 </p>
 
@@ -922,8 +934,8 @@ void mouseClicked() {
                     <p>
                         The sketch to the right clears the screen if you click the right mouse button, but selects a
                         position for new text if you click the left button.<br />
-                        Try it<br/>
-                        Can you do this?
+                        Try it!<br/>
+                        Can you make a sketch to do this?
                     </p>
                     <p>
                         You'll need two global variables for text position <code>textX, textY</code>, and you'll need to
@@ -983,10 +995,11 @@ if (mouseButton == LEFT) {
 
                 <p>The key thing is that empty <code>draw()</code> loop!</p>
                 <p>The <code>draw()</code> loop is the place to draw and do things.<br />
-                    The event handling methods like <code>keyPressed()</code> and <code>mouseClicked()</code> are not.<br />
-                    They are best for changing and recording <i>system state</i> - the way the sketch is configured at any time.<br />
-                    The <code>draw()</code> loop is then the place to act on that state.</p>
-                <p>In summary ...</p>
+                    The event handling methods like <code>keyPressed()</code> and <code>mouseClicked()</code> are not the place for this.<br />
+                    <b>Do not draw or do things in event handling methods like <code>keyPressed()</code> and <code>mouseClicked()</code><br/></b>
+                    These methods are best for changing and recording <i>system state</i> - the way the sketch is configured at any time.<br />
+                    The <code>draw()</code> loop is then the place to act on that state - to do the things requires by the interaction.</p>
+                <p>In summary ... (actually read through this code 👇) ...</p>
                 <pre class="brush: processing; gutter: false; toolbar: false; ">
 // -- GLOBAL VARIABLES
 // -- Declare and initialise variables that describe
@@ -1018,7 +1031,8 @@ void mouseClicked() {
                 <p>So ... even more bluntly ... <b>Don't draw things in the event handling methods!</b>.</p>
                 <p>Here is a refactoring of the <code>keyPressed</code> sketches that structures things as we advise
                     above.</p>
-                <p>It's a little longer than the other examples, but should be readable.<br/>Take your time to read it through.</p>
+                <p>It's a little longer than the other examples, but should be readable.<br/>
+                    Take your time to read it through and see how we have refactored things in line with this new advice.</p>
             </div> <!-- End of left column -->
 
             <div class="unit-30 annotation">
@@ -1122,7 +1136,7 @@ void mouseClicked() {
                     <p>Create a sketch using the skeleton code provided above.<br />Run it and experiment a
                         little.<br />
                         Can you see how <code>isRed</code> works?<br/>Can you see how we make decisions based upon its value and how we interact to change that?</p>
-                    <p>Then <b>extend it</b> by adding a global variable, an event handling method and a control statement to :</p>
+                    <p>Then <b>extend the sketch</b> by adding a global variable, an event handling method and a control statement to :</p>
                     <ul>
                         <li>make the screen clear in yellow if the mouse is in the right half of the screen, but grey otherwise</li>
                     </ul>
@@ -1166,18 +1180,18 @@ void mouseClicked() {
                 <h4>Persistent Record of Interaction</h4>
 
                 <p>These little examples are intended to show you what is possible, and we haven't really worked with
-                    examples where interactions persist and accumulate. Also let's try an example that will challenge
-                    you a little an help you see how this can be achieved.</p>
-                <p>We're going to count the number of times a sketch is clicked. Remember that
-                    <code>mouseClicked()</code> is called, if you have defined it, every time that happens. This is a
-                    great start!
+                    examples where interactions persist and accumulate.
+                    So, let's try an example that will challenge you a little and help you see how this can be achieved.</p>
+                <p>We're going to count the number of times a sketch is clicked.
+                    Remember that <code>mouseClicked()</code> is called, if you have defined it, every time the mouse is clicked.
+                    This is a great start!
                 </p>
 
                 <div class="coreTask">
                   <b>Interaction - Persistence</b>
                     <p>Using the code below as a start point get <code>clickCount</code> to increment every time the
                         mouse is clicked.<br />
-                        This variable records the number of times the canvas has been clicked in your sketch.</p>
+                        This variable should record the number of times the canvas has been clicked in your sketch.</p>
                         <p>You'll need to write code to increment <code>clickCount</code> in a <code>mouseClicked()</code> method.</p>
                 </div>
             </div> <!-- End of left column -->
@@ -1247,10 +1261,10 @@ void draw(){
                     <b>Interaction - More Persistence Freestyling</b>
                     <p>Here are some more interesting things you could try with your newfound coding capability!</p>
                     <p>
-                        <b>Extension 3</b>: You should have already used the <a
-                            href="https://processing.org/reference/random_.html" target="_blank">random()</a> method.<br/>
-                            If not, don't worry, it's easy - check here <a
-                            href="https://processing.org/reference/random_.html" target="_blank">random()</a><br/>
+                        <b>Extension 3</b>: You should have already used the <code><a
+                            href="https://processing.org/reference/random_.html" target="_blank">random()</a></code> method.<br/>
+                            If not, don't worry, it's easy - check here <code><a
+                            href="https://processing.org/reference/random_.html" target="_blank">random()</a></code><br/>
                         Modify your code to add and display a second variable <code>randomNum</code>, that contains a
                         different random value between 0 and 99 each time the mouse is clicked.
                     </p>
@@ -1276,7 +1290,9 @@ void draw(){
 
                 <h4>Hang on, that's not an interface!</h4>
                 <p>You are now equipped with many ways of interacting with sketches and should be able to produce
-                    wonderfully interactive work. All it requires is a bit of practice and a lot of imagination.</p>
+                    wonderfully interactive work. All it requires is a bit of practice and a lot of imagination.
+                    And a few of those <b>predict</b>, <b>change</b>, <b>observe</b>, <b>think</b> (and discuss), <b>learn</b>, <b>confirm</b> loops ...
+                    that Stu Card and his Xerox Research Centre colleagues would have used when they were designing their interface devices back in the 1970s.</p>
 
                 <p class="focusOFF"><code><span class="focusHash">#</span><span class="focusNum">9</span> - <b>HUH?</b> : that's not a graphical user interface?</code></p>
                 <p>We have deliberately <b>not</b> focussed on some of the standard windows style interface elements
@@ -1407,8 +1423,8 @@ void mouseClicked()
         <div class="units-row">
             <div class="unit-70">
                 <!-- Left column -->
-                <p>Of course we could extend things a little ... we want you to be creative in BootCamp!</p>
-                <p>You don't need checkboxes and check-buttons and conventions.<br/>Be creative and daring! </p>
+                <p>Of course we could extend things a little ... we want you to be creative in <code>#BootCamp</code>!</p>
+                <p>You don't need checkboxes and check-buttons and conventions.<br/>Be creative and daring! Surprise us!</p>
                 <p>Think outside the (check) box!</p>
                 <p>And if you do use familiar interface forms like buttons and checkboxes  - make sure they do something interesting, exciting, dynamic and creative!</p>
                 <p>Oh, and make sure all of your sentences end with exclamation marks! 😉</p>
@@ -1452,18 +1468,18 @@ void mouseClicked()
                         Structure your sketches to differentiate methods that detect interaction and collect and store
                         this input, from the <code>draw()</code> method, that uses this information to control flow and
                         behaviours.<br/>
-                        You change the state in the event detection methods like <code>keyPressed()</code> and <code>mouseMoved()</code>.
+                        You change the state of your scripts in the event detection methods like <code>keyPressed()</code> and <code>mouseMoved()</code>.<br/>
                         You actually do things in <code>draw()</code>.
                     </li>
                     <li style="padding-top:1em; padding-bottom:1em">
-                        We'd like you to use this knowledge <b>creatively</b> in designing interesting interactive sketches - and enjoy doing so as you progress through BootCamp.
+                        We'd like you to use this knowledge <b>creatively</b> in designing interesting interactive sketches - and enjoy doing so as you progress through <code>#BootCamp</code>.
                     </li>
                     <li style="padding-top:1em; padding-bottom:1em">
                         Begin by working through these notes, examples and tasks ... then move on to the <a
                             href="https://moodle4.city.ac.uk/mod/page/view.php?id=420875">practical exercises</a>.
                             <br/>
-                            Use the <a href="https://processing.org/reference/">Processing Reference</a> materials to help, and remember to <b>predict</b>, <b>change</b>, <b>observe</b>
-                                <b>think</b> (and discuss), <b>learn</b>, <b>confirm</b> as you go.
+                            Use the <a href="https://processing.org/reference/">Processing Reference</a> materials to help, and remember to
+                            <b>predict</b>, <b>change</b>, <b>observe</b>, <b>think</b> (and discuss), <b>learn</b>, <b>confirm</b> as you go.
                                 Your colleagues and teachers will be important sounding boards in this process.
                                 Chat to them and help others as you go through this process multiple times.
                     </li>
