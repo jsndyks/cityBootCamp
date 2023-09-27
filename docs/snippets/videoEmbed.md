@@ -1,3 +1,6 @@
+## HTML Snippet - video embed
+
+ <pre>
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <!--- HTML example : row that links to a video on Stream / OneDrive -->
     <div class="units-row">
@@ -22,3 +25,8 @@
     <!-- end of right column -->
     </div>
     <!-- End of row -->
+</pre>
+
+--
+Jason DYKES<br/>
+27/9/23
