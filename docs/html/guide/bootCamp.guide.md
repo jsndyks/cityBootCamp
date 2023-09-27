@@ -161,11 +161,11 @@ Here's how to do it ...
 
 ### Videos
 
-Videos are a bit of a nightmare now Stream is dead.
+Videos are a bit of a nightmare now _MS Stream_ is dead.
 
 After tonnes of messing about (thanks Olivia and others), here is how to do it :
 
-1. put your Movie somewhere in a folder on the One Drive - try <code>Movies/BootCamp</code> or something.
+1. put your Movie somewhere in a folder on the **One Drive** - try <code>Movies/BootCamp</code> or something.
 2. use the 3 dot menu <code>...</code> on file manager, select <code>share</code>
 3. click the <b>cog icon</b> (sharing settings)
 4. Choose <code>people in City</code>, and <b>can view</b>, and <b>block download</b>
@@ -173,13 +173,18 @@ After tonnes of messing about (thanks Olivia and others), here is how to do it :
 6. then copy the link with <code>Copy link</code>
 7. click the <code>X</code> to close the window (don't send an email to anyone).
 
-Then use this link <b>with all of the long letters and things</b> in Moodle with :
+![OneDrive sharing details](img/oneDrive.sharing.png)
 
-1. In whichever section requires a video, in _Edit Mode_, <code>Add activity or resource</code>
-2. From this mass of options, choose <code>Url</code>
-3. Add the long URL that you have copied above from the _One Drive_ permissions shenanigans as the <code>External URL</code>
-4. set <code>Appearance</code> to <code>Open</code> - it won't work otherwise
-5. make yourself a mojito
+Then use this link <b>with all of the long letters and things</b> in **Moodle** with :
+
+1. Switch on _Edit Mode_
+1. In whichever section requires a video, click <code>Add activity or resource</code>
+1. From this mass of options, choose <code>Url</code>
+1. Add the long URL that you have copied above from the _One Drive_ permissions shenanigans as the <code>External URL</code>
+1. In <code>Appearance</code> set <code>Display</code> to <code>Open</code> - it won't work otherwise
+1. make yourself a mojito
+
+![OneDrive sharing details](img/moodle.urlToVideo.png)
 
 I hope that works for you.
 
