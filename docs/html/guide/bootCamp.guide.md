@@ -159,7 +159,7 @@ Here's how to do it ...
           &lt;/div&gt;
 </pre>
 
-### Videos
+### Adding Videos to Moodle
 
 Videos are a bit of a nightmare now _MS Stream_ is dead.
 
