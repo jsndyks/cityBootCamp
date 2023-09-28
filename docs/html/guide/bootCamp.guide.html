@@ -307,26 +307,34 @@ pre[data-line] .line-highlight[data-end]:after {
 <p>External editors will make sure that your HTML is valid and this is important in the BootCamp pages as they use <code>&lt;div&gt;&#xA0;&lt;/div&gt;</code> tags to format and structure things.</p>
 <h3 class="mume-header" id="load-from-external-url-into-page-with-iframe">Load from External URL into Page with iframe</h3>
 
-<p>Moodle doesn't do a good job of keeping versions, so I strongly advise you to use some kind of <em>versioning and revision control</em> system to develop and keep a record of materials.</p>
+<p>Moodle doesn&apos;t do a good job of keeping versions, so I strongly advise you to use some kind of <em>versioning and revision control</em> system to develop and keep a record of materials.</p>
 <p>You can then either :</p>
 <ul>
 <li>copy and paste your HTML into a Moodle page</li>
 </ul>
-<p>or, much more efficiently, and my strong recommendation :</p>
+<p>or, much more efficiently, <b>and my strong recommendation</b> :</p>
 <ul>
-<li>load pages directly from your external SVN into an <code>&lt;iframe&gt;</code></li>
+<li>load pages directly from your external SVN / site into an <code>&lt;iframe&gt;</code></li>
 </ul>
-<pre>&lt;iframe id=&quot;myIframe&quot;
-  src=&quot;https://jsndyks.github.io/cityBootCamp/html/interaction/2023%7C24/bootCamp.int.2023.lecture.html&quot; width=&quot;100%&quot;
-  height=&quot;21750px&quot;
-  frameborder=&quot;0&quot;
-  scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
-</pre>
 <p>The <a href="https://moodle4.city.ac.uk/mod/page/view.php?id=420874">Interaction Lecture</a> uses this approach by way of example - have a look.</p>
 <p>It loads from this <a href="https://jsndyks.github.io/cityBootCamp/html/interaction/2023%7C24/bootCamp.int.2023.lecture.html">GitHub Page</a>, which I also mak reference to at the top of the document so that students can access it <em>outside of Moodle</em>.</p>
 <p>You need to use <a href="https://pages.github.com/">GitHub Pages</a> (<em>so easy that even I can do it</em>) and it is <strong>smooth</strong>, <strong>simple</strong>, <strong>quick</strong>, <strong>reliable</strong> and <strong>generally lovely</strong> &#x2764;&#xFE0F;.</p>
-<p>The <code>height</code> thing is a problem at the moment - I am getting guidance on how to fix this!</p>
-<p>But working in this way is my <strong>strong recommendation</strong>.</p>
+<p>We have set up a script that will make the <code>&lt;iframe&gt;</code> resize reliably and responsively.</p>
+<p>Your HTML must make reference to this CSS with this exact URL:</p>
+<pre>    &lt;!-- iFrame --&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;https://jsndyks.github.io/cityBootCamp/js/iframe.js&quot;&gt;&lt;/script&gt;
+</pre>
+<p>You then add your <code>&lt;iframe&gt;</code> with this, remembering to replace the <code>src</code> URL with the link to your content:</p>
+<pre>&lt;script src=&quot;/theme/cul_moove/js/iframeResizer.min.js&quot;&gt;&lt;/script&gt;
+&lt;iframe id=&quot;myIframe&quot; style=&quot;width: 1px; min-width:100%;&quot; src=&quot;https://jsndyks.github.io/cityBootCamp/html/art/2023%7C24/bootCamp.art.2023.lecture.html&quot;&gt;&lt;/iframe&gt;
+&lt;script&gt;
+    iFrameResize({log: true}, &apos;#myIframe&apos;)
+&lt;/script&gt;
+</pre>
+<p>Working in this way is my <strong>strong recommendation</strong>.</p>
+<p>It should look something like this.</p>
+<p><img src="img/moodle.iFrame.png" alt="Moodle iframe configuration for content"></p>
+<p>Shout if you need a hand.</p>
 <h3 class="mume-header" id="watch-out-for-div">Watch out for DIV!</h3>
 
 <p>Jo set things up in BootCamp to structure lecture content with <code>&lt;div&gt;&#xA0;&lt;/div&gt;</code> tags.</p>
@@ -406,7 +414,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <li>then copy the link with <code>Copy link</code></li>
 <li>click the <code>X</code> to close the window (don&apos;t send an email to anyone).</li>
 </ol>
-<p><img src="img/oneDrive.sharing.png" width=300 alt="OneDrive sharing details"></p>
+<img src="img/oneDrive.sharing.png" alt="OneDrive sharing details" style="width:30%">
 <p>Then use this link <b>with all of the long letters and things</b> in <strong>Moodle</strong> with :</p>
 <ol>
 <li>Switch on <em>Edit Mode</em></li>
@@ -416,7 +424,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <li>In <code>Appearance</code> set <code>Display</code> to <code>Open</code> - it won&apos;t work otherwise</li>
 <li>make yourself a mojito</li>
 </ol>
-<p><img src="img/moodle.urlToVideo.png" alt="OneDrive sharing details"></p>
+<p><img src="img/moodle.urlToVideo.png" alt="Moodle video URL configuration"></p>
 <p>I hope that works for you.</p>
 <hr>
 <div style="text-align:right; padding-right:5em">
