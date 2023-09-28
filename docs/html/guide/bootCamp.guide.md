@@ -184,7 +184,8 @@ Then use this link <b>with all of the long letters and things</b> in **Moodle** 
 1. In <code>Appearance</code> set <code>Display</code> to <code>Open</code> - it won't work otherwise
 1. make yourself a mojito
 
-![OneDrive sharing details](img/moodle.urlToVideo.png)
+<img src="img/moodle.urlToVideo.png" alt="OneDrive sharing details" width=30%/>
+<!-- ![OneDrive sharing details](img/moodle.urlToVideo.png) -->
 
 I hope that works for you.
 
