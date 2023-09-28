@@ -173,7 +173,8 @@ After tonnes of messing about (thanks Olivia and others), here is how to do it :
 6. then copy the link with <code>Copy link</code>
 7. click the <code>X</code> to close the window (don't send an email to anyone).
 
-![OneDrive sharing details](img/oneDrive.sharing.png)
+<img src="img/oneDrive.sharing.png" alt="OneDrive sharing details" style="width:30%"/>
+<!-- ![OneDrive sharing details](img/oneDrive.sharing.png) -->
 
 Then use this link <b>with all of the long letters and things</b> in **Moodle** with :
 
@@ -184,8 +185,9 @@ Then use this link <b>with all of the long letters and things</b> in **Moodle** 
 1. In <code>Appearance</code> set <code>Display</code> to <code>Open</code> - it won't work otherwise
 1. make yourself a mojito
 
-<img src="img/moodle.urlToVideo.png" alt="OneDrive sharing details" width=30%/>
-<!-- ![OneDrive sharing details](img/moodle.urlToVideo.png) -->
+<!-- <img src="img/moodle.urlToVideo.png" alt="OneDrive sharing details" width=30%/> -->
+
+![Moodle video URL configuration](img/moodle.urlToVideo.png)
 
 I hope that works for you.
 
