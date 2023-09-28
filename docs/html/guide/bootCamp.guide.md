@@ -64,7 +64,7 @@ You can then either :
 
 - copy and paste your HTML into a Moodle page
 
-or, much more efficiently, and my strong recommendation :
+or, much more efficiently, <b>and my strong recommendation</b> :
 
 - load pages directly from your external SVN / site into an <code>&lt;iframe&gt;</code>
 
@@ -84,7 +84,7 @@ You need to use [GitHub Pages](https://pages.github.com/) (_so easy that even I 
 
 We have set up a script that will make the <code>&lt;iframe&gt;</code> resize reliably and responsively.
 
-Your HTML must make reference to this CSS:
+Your HTML must make reference to this CSS with this exact URL:
 
 <pre>
     &lt;!-- iFrame --&gt;
