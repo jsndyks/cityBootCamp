@@ -103,6 +103,10 @@ You then add your <code>&lt;iframe&gt;</code> with this, remembering to replace 
 
 Working in this way is my **strong recommendation**.
 
+It should look something like this.
+
+![Moodle iframe configuration for content](img/moodle.iFrame.png)
+
 Shout if you need a hand.
 
 ### Watch out for DIV!
