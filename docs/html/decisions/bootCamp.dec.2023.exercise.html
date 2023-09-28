@@ -33,7 +33,7 @@
     <script src="https://www.staff.city.ac.uk/~jwo/moodle/js/master.js"></script>
 
     <!-- iFrame -->
-    <script type="text/javascript" src="https://jsndyks.github.io/cityBootCamp/js/iframe.js"></script>
+    <script type="text/javascript" src="https://jsndyks.github.io/cityBootCamp/js/iframeResizer.contentWindow.min.js"></script>
 </head>
 
 <body>
@@ -51,7 +51,14 @@
   height="5500px"
   frameborder="0"
   scrolling="no"></iframe>
-    -->
+
+<script src="/theme/cul_moove/js/iframeResizer.min.js"></script>
+<iframe id="myIframe" style="width: 1px; min-width:100%;" src="https://jsndyks.github.io/cityBootCamp/html/decisions/bootCamp.dec.2023.exercise.html"></iframe>
+<script>
+    iFrameResize({log: true}, '#myIframe')
+</script>
+
+-->
 
     <p>
             These exercises develop your ability to use if-statements in your code.

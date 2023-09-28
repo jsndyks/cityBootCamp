@@ -66,15 +66,15 @@ You can then either :
 
 or, much more efficiently, and my strong recommendation :
 
-- load pages directly from your external SVN into an <code>&lt;iframe&gt;</code>
+- load pages directly from your external SVN / site into an <code>&lt;iframe&gt;</code>
 
-<pre>
+<!--pre>
 &lt;iframe id="myIframe"
   src="https://jsndyks.github.io/cityBootCamp/html/interaction/2023%7C24/bootCamp.int.2023.lecture.html" width="100%"
   height="21750px"
   frameborder="0"
   scrolling="no"&gt;&lt;/iframe&gt;
-</pre>
+</pre-->
 
 The [Interaction Lecture](https://moodle4.city.ac.uk/mod/page/view.php?id=420874) uses this approach by way of example - have a look.
 
@@ -82,9 +82,28 @@ It loads from this [GitHub Page](https://jsndyks.github.io/cityBootCamp/html/int
 
 You need to use [GitHub Pages](https://pages.github.com/) (_so easy that even I can do it_) and it is **smooth**, **simple**, **quick**, **reliable** and **generally lovely** ❤️.
 
-The <code>height</code> thing is a problem at the moment - I am getting guidance on how to fix this!
+We have set up a script that will make the <code>&lt;iframe&gt;</code> resize reliably and responsively.
 
-But working in this way is my **strong recommendation**.
+Your HTML must make reference to this CSS:
+
+<pre>
+    &lt;!-- iFrame --&gt;
+    &lt;script type="text/javascript" src="https://jsndyks.github.io/cityBootCamp/js/iframe.js"&gt;&lt;/script&gt;
+</pre>
+
+You then add your <code>&lt;iframe&gt;</code> with this, remembering to replace the <code>src</code> URL with the link to your content:
+
+<pre>
+&lt;script src="/theme/cul_moove/js/iframeResizer.min.js"&gt;&lt;/script&gt;
+&lt;iframe id="myIframe" style="width: 1px; min-width:100%;" src="https://jsndyks.github.io/cityBootCamp/html/art/2023%7C24/bootCamp.art.2023.lecture.html"&gt;&lt;/iframe&gt;
+&lt;script&gt;
+    iFrameResize({log: true}, '#myIframe')
+&lt;/script&gt;
+</pre>
+
+Working in this way is my **strong recommendation**.
+
+Shout if you need a hand.
 
 ### Watch out for DIV!
 
