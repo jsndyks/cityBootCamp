@@ -84,18 +84,29 @@ You need to use [GitHub Pages](https://pages.github.com/) (_so easy that even I 
 
 We have set up a script that will make the <code>&lt;iframe&gt;</code> resize reliably and responsively.
 
-Your HTML must make reference to this CSS with this exact URL:
+Your HTML must make reference to this CSS with this code and exact URL in the <code>head</code> tag at the top of the HTML file:
 
 <pre>
     &lt;!-- iFrame --&gt;
     &lt;script type="text/javascript" src="https://jsndyks.github.io/cityBootCamp/js/iframe.js"&gt;&lt;/script&gt;
 </pre>
 
+I also recommend adding a blank paragraph at the bottom of your HTML just to be on the safe side. Put this after <code>End of row</code> just inside the final <code>/div</code>:
+
+<pre>
+    &lt;!-- End of row --&gt;
+
+            &lt;!--- spacer for iFrame --&gt;
+            &lt;p style="padding-top:1em"&gt;&lt;hr/&gt;&lt;/p&gt;
+</pre>
+
 You then add your <code>&lt;iframe&gt;</code> with this, remembering to replace the <code>src</code> URL with the link to your content:
 
 <pre>
 &lt;script src="/theme/cul_moove/js/iframeResizer.min.js"&gt;&lt;/script&gt;
-&lt;iframe id="myIframe" style="width: 1px; min-width:100%;" src="https://jsndyks.github.io/cityBootCamp/html/art/2023%7C24/bootCamp.art.2023.lecture.html"&gt;&lt;/iframe&gt;
+&lt;iframe id="myIframe" style="width: 1px; min-width:100%; border:none;"
+ src="https://jsndyks.github.io/cityBootCamp/html/art/2023%7C24/bootCamp.art.2023.lecture.html"&gt;
+ &lt;/iframe&gt;
 &lt;script&gt;
     iFrameResize({log: true}, '#myIframe')
 &lt;/script&gt;
@@ -103,7 +114,7 @@ You then add your <code>&lt;iframe&gt;</code> with this, remembering to replace 
 
 Working in this way is my **strong recommendation**.
 
-It should look something like this.
+It should look something like this - but I added <code>border:none;</code> 👆 to the <code>iFrame</code> styling after making the screen dump as it's tidier!
 
 ![Moodle iframe configuration for content](img/moodle.iFrame.png)
 
@@ -220,4 +231,5 @@ I hope that works for you.
 <b>Jason Dykes</b><br/>
 20/09/2023<br/>
 27/09/2023<br/>
+29/09/2023<br/>
 </div>
