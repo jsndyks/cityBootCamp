@@ -320,19 +320,27 @@ pre[data-line] .line-highlight[data-end]:after {
 <p>It loads from this <a href="https://jsndyks.github.io/cityBootCamp/html/interaction/2023%7C24/bootCamp.int.2023.lecture.html">GitHub Page</a>, which I also mak reference to at the top of the document so that students can access it <em>outside of Moodle</em>.</p>
 <p>You need to use <a href="https://pages.github.com/">GitHub Pages</a> (<em>so easy that even I can do it</em>) and it is <strong>smooth</strong>, <strong>simple</strong>, <strong>quick</strong>, <strong>reliable</strong> and <strong>generally lovely</strong> &#x2764;&#xFE0F;.</p>
 <p>We have set up a script that will make the <code>&lt;iframe&gt;</code> resize reliably and responsively.</p>
-<p>Your HTML must make reference to this CSS with this exact URL:</p>
+<p>Your HTML must make reference to this CSS with this code and exact URL in the <code>head</code> tag at the top of the HTML file:</p>
 <pre>    &lt;!-- iFrame --&gt;
     &lt;script type=&quot;text/javascript&quot; src=&quot;https://jsndyks.github.io/cityBootCamp/js/iframe.js&quot;&gt;&lt;/script&gt;
 </pre>
+<p>I also recommend adding a blank paragraph at the bottom of your HTML just to be on the safe side. Put this after <code>End of row</code> just inside the final <code>/div</code>:</p>
+<pre>    &lt;!-- End of row --&gt;
+
+            &lt;!--- spacer for iFrame --&gt;
+            &lt;p style=&quot;padding-top:1em&quot;&gt;&lt;hr/&gt;&lt;/p&gt;
+</pre>
 <p>You then add your <code>&lt;iframe&gt;</code> with this, remembering to replace the <code>src</code> URL with the link to your content:</p>
 <pre>&lt;script src=&quot;/theme/cul_moove/js/iframeResizer.min.js&quot;&gt;&lt;/script&gt;
-&lt;iframe id=&quot;myIframe&quot; style=&quot;width: 1px; min-width:100%;&quot; src=&quot;https://jsndyks.github.io/cityBootCamp/html/art/2023%7C24/bootCamp.art.2023.lecture.html&quot;&gt;&lt;/iframe&gt;
+&lt;iframe id=&quot;myIframe&quot; style=&quot;width: 1px; min-width:100%; border:none;&quot;
+ src=&quot;https://jsndyks.github.io/cityBootCamp/html/art/2023%7C24/bootCamp.art.2023.lecture.html&quot;&gt;
+ &lt;/iframe&gt;
 &lt;script&gt;
     iFrameResize({log: true}, &apos;#myIframe&apos;)
 &lt;/script&gt;
 </pre>
 <p>Working in this way is my <strong>strong recommendation</strong>.</p>
-<p>It should look something like this.</p>
+<p>It should look something like this - but I added <code>border:none;</code> &#x1F446; to the <code>iFrame</code> styling after making the screen dump as it&apos;s tidier!</p>
 <p><img src="img/moodle.iFrame.png" alt="Moodle iframe configuration for content"></p>
 <p>Shout if you need a hand.</p>
 <h3 class="mume-header" id="watch-out-for-div">Watch out for DIV!</h3>
@@ -431,6 +439,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <b>Jason Dykes</b><br>
 20/09/2023<br>
 27/09/2023<br>
+29/09/2023<br>
 </div>
 
       </div>
