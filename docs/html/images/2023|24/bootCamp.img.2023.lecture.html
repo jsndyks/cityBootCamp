@@ -228,7 +228,7 @@
                             <code><a href="https://processing.org/reference/save_.html">save("image.jpg")</a></code>.
                         </p>
                         <p><i>During <code><b>#BootCamp</b></code> you'll be making plenty of images with
-                                <i>Processing</i> and may create an image as your project output.</i>
+                                <i>Processing</i> and may create an image to share with others on the final Friday.</i>
                         </p>
                     </dd>
                 </dl>
@@ -285,7 +285,8 @@
                             (cosmology, cancer detection, high energy physics).</p>
                         <p><i>We won't be doing this in the lecture today, but what you learn should give you some
                                 grounding that will help you understand how this might be achieved. There is an example
-                                from Cefa's work to the right, where he is performing image analysis to identify cancer
+                                from City Compute Science PhD <i>Cefa Karabag</i>'s work to the right,
+                                where he is performing image analysis to identify cancer
                                 cells in images produced by an Electron Microscope.</i>
                         </p>
                     </dd>
@@ -300,7 +301,7 @@
                     Working towards cancer cell detection through <a
                         href="https://github.com/reyesaldasoro/HeLa-Cell-Segmentation">Segmentation, Measurement and
                         Visualisation of Nuclear Envelope of HeLa Cells observed with Electron Microscope</a>.
-                </p>
+                </p><p>research by Carlos Reyes-Aldasoro and Cefa Karabag at City.</p>
             </div>
 
         </div>
@@ -345,13 +346,15 @@
                 </div>
             </div>
             <div class="unit-30" id="annotation" style="padding-top:12em">
+                <p>
                 I'd really like you to find an image online, or on your computer.<br />
                 Any <i>PNG</i> or <i>JPG</i> or <i>GIF</i> should do.<br />
                 But if you really can't find one of the (more than) one trillion images that are kicking about the place
                 ... then try this one:<br />
                 <!--code
                     style="font-size:40%"><a href="https://en.wikipedia.org/wiki/Invader_(artist)#/media/File:Pacman_Guggenheim.jpg">https://upload.wikimedia.org/wikipedia/commons/9/92/Pacman_Guggenheim.jpg</a></code-->
-                    <code style="font-size:40%"><a href="https://upload.wikimedia.org/wikipedia/commons/0/05/Pacman_Guggenheim_%28cropped%29.jpg">https://upload.wikimedia.org/wikipedia/commons/0/05/<br/>Pacman_Guggenheim_%28cropped%29.jpg</a></code>
+                    <code style="font-size:60%"><a href="https://upload.wikimedia.org/wikipedia/commons/0/05/Pacman_Guggenheim_%28cropped%29.jpg">https://upload.wikimedia.org/<br/>wikipedia/commons/0/05/<br/>Pacman_Guggenheim_%28cropped%29.jpg</a></code>
+                </p>
             </div>
         </div>
 
@@ -428,7 +431,7 @@ void keyPressed () {
                         href="https://en.wikipedia.org/wiki/Invader_(artist)">Invader</a> and various others who have
                     followed this idea.
                 </p>
-                <p><a href="https://www.bachor.com/">Jim Bachor</a>'s <a href="https://www.bachor.com/pothole-installations-c1g1y">pothole</a> mosaics are gaining some traction too, though these tend not to use regular grids.</p>
+
             </div>
             <div class="unit-30 annotation">
                 <a href="https://jsndyks.github.io/cityBootCamp/images/spaceInvader.jpg"><img
@@ -438,18 +441,35 @@ void keyPressed () {
                 </p>
             </div>
         </div>
+
+        <div class="units-row">
+            <div class="unit-70">
+
+        <p><a href="https://www.bachor.com/">Jim Bachor</a>'s <a href="https://www.bachor.com/pothole-installations-c1g1y">pothole</a> mosaics are gaining some traction too, though these tend not to use regular grids.</p>
+    </div>
+    <div class="unit-30 annotation">
+        <a href="https://www.bachor.com/this-is-not-a-pothole-anymore"><img
+                src="        https://static.wixstatic.com/media/23bea2_d5f84fde92c94a4088047c63367d5e09~mv2_d_2448_2448_s_4_2.jpg/v1/fill/w_1156,h_1174,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/23bea2_d5f84fde92c94a4088047c63367d5e09~mv2_d_2448_2448_s_4_2.jpg
+                "></a>
+        <p style="padding-bottom:0.5em">Literal Street Art, using mosaics, by <a
+                href="https://www.bachor.com/this-is-not-a-pothole-anymore">Jim Bachor</a>.
+        </p>
+    </div>
+</div>
+
         <div class="units-row">
             <div class="unit-70">
 
                 <p>
                     To store regular grid mosaics digitally, we record information about the colour in each tile, and where each tile is positioned in the grid.
-                    The more tiles, the more detail.
+                    The more tiles, the more detail. 
                 </p>
 
                 <p>We don't refer to these individually coloured elements of the image as tiles though.
                     We refer to them as picture elements - or <b><i>pixels</i></b> for short.
 
                 </p>
+                <p>And you will already have some ideas about how we specify colours digitally.</p>
                 <!--h4>Aside - Image compression</h4-->
                 <!--p><a href="http://www.g2cs.org/media/interactives/image-compression/00.html">http://www.g2cs.org/media/interactives/image-compression/00.html</a>
       </p-->
@@ -513,8 +533,11 @@ void keyPressed () {
                 </p>
 
                 <div class="coreTask">
+                    <p>
                     Download the image to the right and save it to your Desktop.<br />
                     Find the resolution by examining the properties of the image file in a file manager.
+                </p>
+                <p>How many pixels are used to store this information?<br/>Can you open the image and zoom in and see the individual pixels?</p>
                 </div>
             </div>
             <div class="unit-30 annotation">
@@ -545,7 +568,7 @@ void keyPressed () {
 
             <div class="unit-70">
                 <p>You can't really tell that it's using a 9x9 grid like this.</p>
-                <p>So let's show the edges of the grid cells.</p>
+                <p>So let's show the edges of the grid cells - we will add some grey lines again.</p>
                 <p>This reveals the mosaic.</p>
 
                 <p>Now we can see the gaps between the 81 small mosaic-like tiles - the <i>pixels</i> that make up the
@@ -566,8 +589,8 @@ void keyPressed () {
             <div class="unit-70">
 
                 <p>I spent a good part of my teens interacting with <a
-                        href="https://en.wikipedia.org/wiki/Space_Invaders">11x11 pixel grids containing just a couple
-                        of colours</a>.<br />Remember these guys?<br/>👾</p>
+                        href="https://en.wikipedia.org/wiki/Space_Invaders">11x11 pixel grids containing just a couple of colours</a>.<br />
+                        Remember these guys?<br/>👾</p>
                         <p>By varying the distribution (pattern, arrangement) of dark and light pixels, we can create many different images, with
                             different resolutions.</p>
                         <p>Let's start with another image consisting of a 9x9 grid, but with a different pattern of light and
@@ -610,7 +633,7 @@ void keyPressed () {
         <hr>
         <h4>2.3 - 256 Shades of grey</h4>
 
-        <p>Extending the range of shades that we use, from a binary light | dark distinction to a range of greys, also
+        <p>Extending the <i>range of shades</i> that we use, from a binary light | dark distinction to a sequence of greys, also
             allows us to increase the amount of information in the image.</p>
 
             <p>Here we have the same numbers of pixels as in the two-shade images above, but use 256 different shades of grey, rather than two.</p>
