@@ -1152,6 +1152,7 @@ void draw() {
                     <div class="codeTask">
                 <p>Can you work out what happens when we apply the following <code>tint()</code> to an image like the
                     full colour image shown on the right?</p>
+                    <pre class="brush: processing; gutter: false; toolbar: false; ">tint(32);</pre>
                     <p>Have a think and then use the code above and below to see whether you were correct.<br/>
                     If so, see whether you can explain this effect.<br/>
                     If not - chat to somebody about what happened.</p>
@@ -1267,6 +1268,7 @@ image(img, 0, 0);
                         the canvas, each differing in the colour, as shown here.</p>
                     <p>Remember that <code>image()</code> allows you to position and size images with arguments 2, 3, 4
                         and 5.</p>
+                        <p>Check the <i>Processing</i> documentation for a reminder: <a href="https://processing.org/reference/image_.html"><code>image()</code></a></p>
                 </div>
                 <div class="challenge">
                     <p><b>Challenge - Animated Tint</b><br />
@@ -1279,6 +1281,10 @@ image(img, 0, 0);
             </div>
             <div class="unit-30">
                 <img src="https://jsndyks.github.io/cityBootCamp/images/warhol.png">
+                <p>
+                    Sometimes, in the <code>#BootCamp</code> practical labs, we could do with 4x Charlie Watson.
+                </p>
+
             </div>
         </div>
 
@@ -1500,7 +1506,6 @@ void draw() {                            // -- Adds a bit of randomness!
                         methods.</p>
                     <p>Make sure you understand how these can be used - try using them, this is often the best way to
                         learn.</p>
-                </div>
 
                 <p>For example, to find out the brightness of this lovely orange colour that we might be tempted to use
                     somewhere ...</p>
@@ -1510,7 +1515,9 @@ float thisLight = brightness(myOrange);
 // -- Remember that println() is great for debugging and helping us understand things!
 println("The lightness in that colour is: "+thisLight);
 </pre>
-                <div class="codeTask">
+</div>
+
+<div class="codeTask">
                     <p>Copy the code and run the sketch from the first example at the top of this section - the one that uses <code>get()</code>.</p>
                     <p>Play with the sketch and use what you have learned (and the code provided above, and the
                         documentation on <code>brightness()</code> that you have consulted) to adapt the code so that
@@ -1571,6 +1578,8 @@ println("The lightness in that colour is: "+thisLight);
             </div>
 
             <div class="unit-30 annotation">
+                <img src="https://jsndyks.github.io/cityBootCamp/images/bootCamp.colorGrid.100.png" width="200">
+                
                 <p>Copy, paste, run and adapt this code.<br />Use the <a
                         href="https://processing.org/reference/set_.html">Processing Reference Documentation</a> to find
                     out more.</p>
