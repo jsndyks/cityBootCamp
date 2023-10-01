@@ -451,7 +451,7 @@ void keyPressed () {
         <a href="https://www.bachor.com/this-is-not-a-pothole-anymore"><img
                 src="        https://static.wixstatic.com/media/23bea2_d5f84fde92c94a4088047c63367d5e09~mv2_d_2448_2448_s_4_2.jpg/v1/fill/w_1156,h_1174,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/23bea2_d5f84fde92c94a4088047c63367d5e09~mv2_d_2448_2448_s_4_2.jpg
                 "></a>
-        <p style="padding-bottom:0.5em">Literal Street Art, using mosaics, by <a
+        <p style="padding-bottom:0.5em">Literal Street Art, using mosaics,<br/>by <a
                 href="https://www.bachor.com/this-is-not-a-pothole-anymore">Jim Bachor</a>.
         </p>
     </div>
@@ -1037,6 +1037,7 @@ void setup() {
                 <img src="https://jsndyks.github.io/cityBootCamp/images/Holiday.png">
                 <p>In most browsers you can right click an image such as this and save it to your local computer.<br />
                     Then drag it into your sketch so that you can use it in your <i>Processing</i> work.</p>
+                    <p>Give it a try!</p>
             </div>
         </div>
 
@@ -1053,7 +1054,7 @@ void setup() {
             <div class="unit-70">
                 <div class="codeTask">
                     <p>Download the image and copy the sketch.<br />
-                        Then see whether you can extend the <code>setup()</code> method in this example to:</p>
+                        Then see whether you can extend the <code>setup()</code> method in the simple example sketch provided above to:</p>
                     <ol>
                         <li>draw the image so that its top left position is at the centre of the canvas?</li>
                         <li>draw the image twice, so that it appears at the top left of the canvas and half way across
@@ -1102,9 +1103,10 @@ image(img, 0, 0);
                 <pre class="brush: processing; gutter: false; toolbar: false; ">tint(190);
 image(img, 0, 0);
 </pre>
-                <div class="codeTask">
-                    Click the image to the right or copy the code below to see the effects of <code>tint()</code> on
-                    the image as you move the mouse around.
+                <div class="coreTask">
+                    <p>Click the image to the right or copy the code below to see the effects of <code>tint()</code> on
+                    the image as you move the mouse around.</p>
+                    <p>Can you explain this to a member of the teaching staff, or a colleague?</p>
                 </div>
                 <pre class="brush: processing; gutter: false; toolbar: false; ">PImage img;
 
@@ -1147,8 +1149,13 @@ void draw() {
             <div class="unit-70">
                 <p>If <code>tint</code> receives three arguments, the brightness is affected separately in each of the
                     colour components.</p>
+                    <div class="codeTask">
                 <p>Can you work out what happens when we apply the following <code>tint()</code> to an image like the
                     full colour image shown on the right?</p>
+                    <p>Have a think and then use the code above and below to see whether you were correct.<br/>
+                    If so, see whether you can explain this effect.<br/>
+                    If not - chat to somebody about what happened.</p>
+                </div>
             </div>
 
             <div class="unit-30 annotation">
