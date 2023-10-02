@@ -710,7 +710,7 @@ void draw()
                     It may contain multiple pieces of information about the thing, such the thing's position and elevation in the first case, or 
                     the things maximum heart rate recorded by an activity tracker for each hour of the day in the second.
                     And if these pieces of information about multiple things are in a consistent order then we can compare the things (people, days, whatever).</p>
-                    <p>For example, here are the elevations I was at for a short period yesterday afternoon, ,when my GPS was tracking me as I rode my bike:</p>
+                    <p>For example, here are the elevations I was at for a short period yesterday afternoon, while my GPS was tracking me as I rode my bike:</p>
 
                     <pre style="margin-top:1em; margin-bottom:1em">141.3,16:00:01
 141.4,16:00:02
@@ -723,24 +723,25 @@ void draw()
 142.2,16:00:09
 142.3,16:00:10</pre>
 
-                <p>Each row is a recording made by and downloaded from the GPS.
-                    Each contains an elevation (im metres) and the time at which the recording was made.<br/>
-                    These data are for the first 10 seconds after 4pm when I was climbing pretty steadily and ascended a whole metre!
+                <p>Each row of this data file is a recording made by, and downloaded from, the GPS.
+                    Each contains an elevation (in metres above sea level) and the time at which the recording was made, separated by a comma. 
+                    The data shown above are for the first 10 seconds after 4pm when I was climbing pretty steadily and ascended a whole metre!
                     But the GPS captured data more than 7,000 times over the afternoon and you can see all of the records here:
                 <a href="https://jsndyks.github.io/cityBootCamp/data/elevationData.txt" target="_blank">elevationData.txt</a><br/>
 
-                <img src="https://jsndyks.github.io/cityBootCamp/images/elevationTime38284.png" width="800" height="67">
+                <p>Loading these data into <i>Processing</i> and converting them into graphics is revealing.</p>
 
-                <p>Loading these data into <i>Processing</i> and converting them into graphics is revealing.
-                    You don't often see profiles over time. The climbs are lengthened and the descents shortened compared to physical profiles.
+                <img src="https://jsndyks.github.io/cityBootCamp/images/elevationTime38284.png" width="800" height="67"/>
+
+                <p>You don't often see profiles over time. The climbs are lengthened and the descents shortened compared to physical profiles.
                     This feels much more like the ride itself - with an emphasis on the up! 
                    The gaps are at times when the GPS was not tracking me - I was stationary here: having a drink, taking a photo, or in the first case tip-toeing through the
                    house in my cycling cleats to pick up my jacket as I had to turn back and head home to grab it when it started raining!</p>
                     
-                    <p>Here is an example text file that might be the basis of the <em>Year of NikeFuel</em> data
+                    <p>Here is an example of a text file with more data per line, that might be the basis of the <em>Year of NikeFuel</em> data
                     visualization we saw earlier - <a href="https://jsndyks.github.io/cityBootCamp/data/hourlyBPM.txt"
                         target="_blank">hourlyBPM.txt</a>. Each row is a day. Each line contains the name of the day and
-                    then 24 numbers that show maximum heart rate for each hour of the day:
+                    then 24 numbers that show maximum heart rate for each hour of the day. These are not real data:
                 </p>
 
                 <pre style="margin-top:1em; margin-bottom:1em">Monday,54,52,52,54,55,54,120,77,135,72,62,62,75,82,58,62,66,75,121,66,82,120,66,54 
@@ -757,8 +758,9 @@ Sunday,55,51,49,62,65,62,127,75,77,140,85,89,105,77,61,66,74,71,73,121,86,114,70
                     each line.
                     For example, the words that make up a sentence or the numbers in the kinds of comma separated lists
                     of numbers (or rows of numbers) shown above.
-                    These elements are often referred to as <i>tokens</i> and the process of extracting them as
-                    <i>parsing</i>.
+                    These elements are often referred to as <i>tokens</i> and the process of extracting them as<i>parsing</i>.
+                    This is what I did to extract the times and elevations from the <a href="https://jsndyks.github.io/cityBootCamp/data/elevationData.txt" target="_blank">elevationData.txt</a>
+                    file to convert it into the time profile: I <i>parsed</i> each line of the file, and split it into tokens using the comma as a separator. 
                 </p>
                 <ul>
                     <li><b>token</b> - part of a longer string that relates to a particular data value;</li>
@@ -770,8 +772,7 @@ Sunday,55,51,49,62,65,62,127,75,77,140,85,89,105,77,61,66,74,71,73,121,86,114,70
                     <em>Processing</em> provides a useful command to help with parsing tokens — <code><a
                         href="http://processing.org/reference/split_.html" target="_blank">split()</a></code>.</p>
                     <p>This method will take a string and a <i>separator</i> as parameters and split the text up into an
-                    array of
-                    smaller strings, using the separator character to divide the text.
+                    array of smaller strings, using the separator character to divide the text.
                 </p>
 
                 <p>Read that sentence one more time!</p>
