@@ -710,27 +710,32 @@ void draw()
                     It may contain multiple pieces of information about the thing, such the thing's position and elevation in the first case, or 
                     the things maximum heart rate recorded by an activity tracker for each hour of the day in the second.
                     And if these pieces of information about multiple things are in a consistent order then we can compare the things (people, days, whatever).</p>
-                    <p>For example, here are the elevations I was at, when my GPS was tracking me yesterday afternoon as I rode my bike:</p>
+                    <p>For example, here are the elevations I was at for a short period yesterday afternoon, ,when my GPS was tracking me as I rode my bike:</p>
 
-                    <pre style="margin-top:1em; margin-bottom:1em">141.3,16:00:00
-141.3,16:00:01
+                    <pre style="margin-top:1em; margin-bottom:1em">141.3,16:00:01
 141.4,16:00:02
 141.4,16:00:03
 141.5,16:00:04
 141.6,16:00:05
 141.8,16:00:06
 141.9,16:00:07
-142.0,16:00:08</pre>
+142.0,16:00:08
+142.2,16:00:09
+142.3,16:00:10</pre>
 
-
-                <p>Each row is recording made by and downloaded from my GPS. Each contains an elevation and the time at which the recording was made.<br/>
-                    These data are for the first 8 seconds after 4pm. But the GPS captured data about 8,000 times over the afternoon and you can see all of the records here:
+                <p>Each row is a recording made by and downloaded from the GPS.
+                    Each contains an elevation (im metres) and the time at which the recording was made.<br/>
+                    These data are for the first 10 seconds after 4pm when I was climbing pretty steadily and ascended a whole metre!
+                    But the GPS captured data mor than 7,000 times over the afternoon and you can see all of the records here:
                 <a href="https://jsndyks.github.io/cityBootCamp/data/elevationData.txt" target="_blank">elevationData.txt</a><br/>
 
                 <img src="https://jsndyks.github.io/cityBootCamp/images/elevationTime38284.png" width="800" height="67">
 
-                <p>The gaps are at times when the GPS was not tracking me - I was stationary here: having a drink, taking a photo, or in the first case tip-toeing through the
-                    house in my cycling cleats to pick up my jacket as I had to turn back and head home to grab it when it started raining!</p>
+                <p>Loading these data into <i>Processing</i> and converting them into graphics is revealing.
+                    You don't often see profiles over time. The climbs are lengthened and the descents shortened compared to physical profiles.
+                    This feels much more like the ride - an emphasis on the up! 
+                   The gaps are at times when the GPS was not tracking me - I was stationary here: having a drink, taking a photo, or in the first case tip-toeing through the
+                   house in my cycling cleats to pick up my jacket as I had to turn back and head home to grab it when it started raining!</p>
                     
                     <p>Here is an example text file that might be the basis of the <em>Year of NikeFuel</em> data
                     visualization we saw earlier - <a href="https://jsndyks.github.io/cityBootCamp/data/hourlyBPM.txt"
