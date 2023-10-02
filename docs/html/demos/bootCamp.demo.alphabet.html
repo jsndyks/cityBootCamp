@@ -54,9 +54,7 @@
             Here is one way and one solution - but surely you can do something more interesting?
         </p>
 
-        <p>In</p>
-
-        <p>Here is a <em>Processing</em> sketch that shows you one way to do this.</p>
+        <p>This <em>Processing</em> sketch that shows you one way to do this.</p>
 
         <ul><li><code><a href="https://jsndyks.github.io/cityBootCamp/sketches/crazyAlphabet/crazyAlphabet.pde">crazyAlphabet.pde</a></code></li></ul>
 
@@ -64,12 +62,30 @@
 
         <p>So, for example the letter <code>A</code> might be represented by the coordinate pairs <code>0,100 50,0 50,0 100,100 25,50 75,50</code>.</p>
 
+        <pre class="brush: processing; gutter: false; toolbar: false;">
+// -- create a StringDict to relate one string with another: 
+StringDict font = new StringDict();
+
+// -- relate the String "A" with a String containing a set of coordinates, same for "B", etc.
+font.set("A", "0,100 50,0 50,0 100,100 25,50 75,50");  
+font.set("B", "0,0 80,0 80,0 100,10 100,10 100,30 100,30 80,40 80,40 0,40 80,40 100,50 100,50 100,80 100,80 80,100 80,100 0,100 0,100 0,0");</pre>
+
         <p>
-            <img src="https://jsndyks.github.io/cityBootCamp/sketches/crazyAlphabet/crazyAlphabet.png"
-                width="700" height="175" alt="A Crazy Alphabet">
+            <img src="https://jsndyks.github.io/cityBootCamp/sketches/crazyAlphabet/crazyAlphabet.white01.png"
+                width="400" height="100" alt="A Crazy Alphabet">
         </p>
 
         <p>This all gets interesting when the letters are a little less well structured or well defined:</p>
+
+        <p>
+            <img src="https://jsndyks.github.io/cityBootCamp/sketches/crazyAlphabet/crazyAlphabet.white02.png"
+                width="400" height="100" alt="A Crazy Alphabet">
+        </p>
+
+        <p>
+            <img src="https://jsndyks.github.io/cityBootCamp/sketches/crazyAlphabet/crazyAlphabet.white03.png"
+                width="400" height="100" alt="A Crazy Alphabet">
+        </p>
 
         <ul>
             <li>Can you create a <a href="https://en.wikipedia.org/wiki/Cipher">cypher</a>?</li> 
