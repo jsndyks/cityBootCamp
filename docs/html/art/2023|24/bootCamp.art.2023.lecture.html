@@ -450,8 +450,8 @@ void draw()
 				<p>
 					An alternative is to use Processing's <code>noise()</code> method instead of <code>random()</code>.
 					This also generates random numbers, but in this case, each subsequent random number can be made to
-					be a little similar to the previous one in the sequence. To see how this works, see the <a
-						href="https://processing.org/reference/noise_.html" target="_blank">noise() reference page</a>.
+					be a little similar to the previous one in the sequence. To see how this works, see the <code><a
+						href="https://processing.org/reference/noise_.html" target="_blank">noise()</code> reference page</a>.
 				</p>
 
 				<p>
@@ -518,7 +518,7 @@ void draw()
 				<p><b>Can you recreate some of this ordered disorder using your <em>Processing</em> skills</b>...<br/>
 				  and does this enable you to learn anything about order, disorder, aesthetic, what Vera was doing and perhaps <em>Processing</em> in the process?</p>
 
-				  <p><a href="https://moodle.city.ac.uk/mod/page/view.php?id=2468265">Vera Molnár Digital Art Exercise</a></p>
+				  <p><a href="https://moodle4.city.ac.uk/mod/page/view.php?id=420935">Vera Molnár Digital Art Exercise</a></p>
 			</div>
 		</div>
 
@@ -682,9 +682,8 @@ void keyPressed()
 				</p>
 
 				<p>
-					This approach provides an interesting one on which to base a demo. See the <a
-						href="https://moodle.city.ac.uk/mod/page/view.php?id=2444884">Create a Step Sequencer</a>
-					 page for some further details.
+					This approach provides an interesting one on which to base a demo.<br/>
+					See the <a href="https://moodle4.city.ac.uk/mod/page/view.php?id=420960">Create a Step Sequencer</a> page for some further details.
 				</p>
 
 
@@ -695,8 +694,8 @@ void keyPressed()
 
 				<script>loadSketch("https://staff.city.ac.uk/~jwo/bootcamp2021/p5js/stepSequencer", 900, 450, "https://staff.city.ac.uk/~jwo/bootcamp2019/p5js/stepSequencer/screenshot.png");</script>
 				<p>
-					Drum kit sequencer<i> (click to activate; space to start; 1-5 for preset rhythms; click cell/track
-						to toggle sound)</i>
+					Drum kit sequencer - click to activate, resize window to see the full sketch.</p>
+					Use space to start; 1-5 for preset rhythms; click cell/track to toggle sounds on and off.</i>
 				</p>
 
 			</div> <!-- end of right column -->
@@ -713,7 +712,8 @@ void keyPressed()
                 
                     <div class="challenge">
                         <p><b>Challenge - Sophisticated Sound Capability</b><br />
-                            This section provides some additional possibilities for those who want to dive into the (amazing) <em>World of Sound in Processing</em>more fully. There are fantastic opportunities, but we do not consider this to be <em>core activity</em>.</p>
+                            This section provides some additional possibilities for those who want to dive into the (amazing) <em>World of Sound in Processing</em>more fully.</p>
+							<p>There are fantastic opportunities for those who want to explore and experiment, but we do not consider this to be <em>core activity</em>.</p>
                             <p>So, feel free to head to <b>Section 5</b> unless this sound stuff really excites you and you'd like to learn more and perhaps use more sophisticated sound capability in your demo.</p>
                     </div>
 
@@ -872,7 +872,7 @@ void draw()
 						webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 				</p>
 				<p>
-					The for loop iterates though the first 40% of the current <i>spectrum</i> produced by the FFT. As
+					The <code>for</code> loop iterates though the first 40% of the current <i>spectrum</i> produced by the FFT. As
 					the value of <code>i</code> increases in the loop, so the value of <code>fft.spectrum[i]</code>
 					represents the amplitude of sound at increasingly higher frequencies. These amplitude values that
 					are between 0-1 are then scaled to be between 0 and 0.7 times the height of the sketch using
@@ -883,7 +883,7 @@ void draw()
 				<div class="tip">
 					The example above takes the sound input from a <code>SoundFile</code> (stored in a
 					<code>sound</code> object). We can change the input to be the computer's internal microphone so that
-					we visualize any sound it picks up. To do this, simply replace the <code>SoundFile</code> with
+					we visualize any sound it picks up.<br/>To do this, simply replace the <code>SoundFile</code> with
 					<code>AudioIn</code> and call its <code>start()</code> method instead of <code>play()</code>:
 					<br /><br />
 					<pre class="brush: processing; gutter: false; toolbar: false;">//SoundFile sound = new SoundFile(this, "loop7.mp3");
@@ -921,9 +921,9 @@ sound.start();</pre>
 
                 <div class="challenge">
                     <p><b>Challenge - Working with Video</b><br />
-                        This section introduces capability for using and manipulating <em>video in Processing</em>.
-                        Once again, there are amazing opportunities here, but we do not consider this to be <em>core activity</em>.</p>
-                        <p>Feel free to head to <b>Section 6</b> unless you want to learn more about video and are perhaps thinking about using it in your demo.</p>
+                        This section introduces capability for using and manipulating <em>video in Processing</em>.</p>
+                        <p>Once again, there are some amazing opportunities here, but we do not consider this to be <em>core activity</em>.</p>
+                        <p>Feel free to head straight to <b>Section 6</b> unless you want to learn more about video and are perhaps thinking about using it in your demo.</p>
                 </div>
 
 				<p>
@@ -1140,7 +1140,7 @@ void movieEvent(Movie videoBuffer)
 						<li><a href="https://moodle4.city.ac.uk/mod/page/view.php?id=420962" target="_blank">Tile generator</a> &mdash; demo ideas.</li>
 						<li><a href="https://moodle4.city.ac.uk/mod/page/view.php?id=420947" target="_blank">Generative art</a> &mdash; demo ideas.</li>
 						<li><a href="https://moodle4.city.ac.uk/mod/page/view.php?id=420960" target="_blank">Step Sequencer</a> &mdash; demo ideas.</li>
-						<li><a href="https://moodle.city.ac.uk/mod/page/view.php?id=2443655" target="_blank">Adding randomness to a sketch</a> &mdash; Randomness and getting started with generative
+						<li><a href="https://moodle4.city.ac.uk/mod/page/view.php?id=464458" target="_blank">Adding randomness to a sketch</a> &mdash; Randomness and getting started with generative
 							design.</li>
 						<li><a href="https://processing.org/reference/libraries/sound/" target="_blank">Processing Sound library</a> &mdash; Library for reading, playing, generating and monitoring sound.</li>
 						<!--<li><a href="http://code.compartmental.net/tools/minim/" target="_blank">Minim</a> &mdash; Library for reading, playing, generating and monitoring sound.</li>-->
