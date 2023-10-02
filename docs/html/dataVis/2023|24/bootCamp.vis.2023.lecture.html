@@ -709,29 +709,42 @@ void draw()
                     such as a GPS reading at a particular time, or a day of the week about which we have information.
                     It may contain multiple pieces of information about the thing, such the thing's position and elevation in the first case, or 
                     the things maximum heart rate recorded by an activity tracker for each hour of the day in the second.
-                    And if these pieces of information about multiple things are in a consistent order then we can compare the things (people, days, whatever).<br/>
-                For example, here are the elevations that I was at, when my GPS was tracking me yesterday afternoon as I rode my bike:
-                <a href="https://jsndyks.github.io/cityBootCamp/data/elevationData.txt"
-                target="_blank">elevationData.txt</a><br/>
+                    And if these pieces of information about multiple things are in a consistent order then we can compare the things (people, days, whatever).</p>
+                    <p>For example, here are the elevations I was at, when my GPS was tracking me yesterday afternoon as I rode my bike:</p>
+
+                    <pre style="margin-top:1em; margin-bottom:1em">141.3,16:00:00
+141.3,16:00:01
+141.4,16:00:02
+141.4,16:00:03
+141.5,16:00:04
+141.6,16:00:05
+141.8,16:00:06
+141.9,16:00:07
+142.0,16:00:08</pre>
+
+
+                <p>Each row is recording made by and downloaded from my GPS. Each contains an elevation and the time at which the recording was made.<br/>
+                    These data are for the first 8 seconds after 4pm. But the GPS captured data about 8,000 times over the afternoon and you can see all of the records here:
+                <a href="https://jsndyks.github.io/cityBootCamp/data/elevationData.txt" target="_blank">elevationData.txt</a><br/>
 
                 <img src="https://jsndyks.github.io/cityBootCamp/images/elevationTime38284.png" width="800" height="67">
 
-                <p>The gaps are at times when the GPS was not tracking me - I was stationary here: having a drink, taking a photo, or in the first case tip-toeing through the house in my cleats to pick up my jacket as I had to turn back and get it when it started raining!</p>
+                <p>The gaps are at times when the GPS was not tracking me - I was stationary here: having a drink, taking a photo, or in the first case tip-toeing through the
+                    house in my cycling cleats to pick up my jacket as I had to turn back and head home to grab it when it started raining!</p>
                     
                     <p>Here is an example text file that might be the basis of the <em>Year of NikeFuel</em> data
                     visualization we saw earlier - <a href="https://jsndyks.github.io/cityBootCamp/data/hourlyBPM.txt"
                         target="_blank">hourlyBPM.txt</a>. Each row is a day. Each line contains the name of the day and
                     then 24 numbers that show maximum heart rate for each hour of the day:
                 </p>
-                <!--p>&nbsp;</p-->
-                <pre>Monday,54,52,52,54,55,54,120,77,135,72,62,62,75,82,58,62,66,75,121,66,82,120,66,54 
+
+                <pre style="margin-top:1em; margin-bottom:1em">Monday,54,52,52,54,55,54,120,77,135,72,62,62,75,82,58,62,66,75,121,66,82,120,66,54 
 Tuesday,56,53,54,52,58,63,121,79,137,71,59,64,75,82,55,64,71,75,119,69,85,120,65,57 
 Wednesday,62,52,51,53,59,65,122,77,139,68,62,62,76,79,57,63,69,73,121,66,84,118,68,59 
 Thursday,62,50,50,56,56,67,125,77,140,71,59,61,79,76,60,63,69,71,118,69,84,117,71,59 
 Friday,61,50,49,59,56,65,128,74,139,67,56,60,77,79,62,60,69,73,117,68,86,118,69,59 
 Saturday,58,53,46,59,55,65,130,75,80,137,88,92,106,76,62,68,72,72,71,118,86,116,72,56 
 Sunday,55,51,49,62,65,62,127,75,77,140,85,89,105,77,61,66,74,71,73,121,86,114,70,55 </pre>
-                <p></p>
                 <p>
                     We have seen that the <code>loadStrings()</code> method is very useful when you wish to read in
                     lines of text into an array, line by line.
