@@ -45,18 +45,19 @@
         <!-- Content below -->
 
         <!---
-You can view [this practical](https://jsndyks.github.io/cityBootCamp/html/objects/bootCamp.objects.exercise.html) outside of _Moodle_ should you wish to.
+You can view [this lecture](https://jsndyks.github.io/cityBootCamp/html/objects/bootCamp.objects.exercise.html) outside of _Moodle_ should you wish to.
        -->
        <p>
             These exercises give you practice at both using Processing's own classes as well as creating your own.
         </p>
 
         <div class="coreTask">
+        <p><b>Working with <code>String</code> objects</b></p>
             Starting with the following template:
             <br /><br />
             <pre class="brush: processing; gutter: false; toolbar: false;">void setup()
 {
-  String message = "Hello from Friday's BootCamp";
+  String message = "Hello from Friday's bootcamp";
 
   // Add your code here...
   // ...
@@ -84,82 +85,111 @@ You can view [this practical](https://jsndyks.github.io/cityBootCamp/html/object
 
         <br /><br />
 
-        <div class="coreTask">
-            Create a new sketch called "ButtonsDemo1". You are going to define a Button class. Then, in the main sketch
-            tab, you will create and display some buttons.
-            <ol>
-                <li>
-                    Create a new tab and name it "Button". In this tab, declare a class, also called "Button". In the
-                    Button class, declare three variables: one boolean variable named <code>on</code> (this will record
-                    whether the button is in its ON state or its OFF state), and a pair of float variables called
-                    <code>centreX</code> and <code>centreX</code> (these will record the position of the centre of the
-                    button in the sketch window).
-                </li>
-                <li>
-                    In the Button class, write a Button constructor with code to initialise <code>on</code> to
-                    <code>false</code> (so new Buttons will be OFF by default) and to position the button in the centre
-                    of the sketch window.
-                </li>
-                <li>
-                    In the Button class, write a method <code>void display()</code> which draws a circle of radius 30
-                    pixels (you can use a different shape if you wish, but using a circle makes part of the next task
-                    easier). Code the display method so that the circle is filled blue when the button is ON and yellow
-                    when the button is OFF.
-                </li>
-                <li>
-                    In the main sketch tab, declare a variable <code>b</code> of type <code>Button</code> and in
-                    <code>setup()</code>, initialise <code>b</code> to contain a new button:
-                    <code>b = new Button();</code>. In <code>draw()</code>, display the button by calling its
-                    <code>display()</code> method. When you run your sketch it should display a yellow button in the
-                    centre of the sketch window.
-                </li>
-                <li>
-                    Add code in <code>setup()</code> to change the button state to ON by assigning <code>true</code> to
-                    the button's <code>on</code> field. Check that the button now displays coloured blue.
-                </li>
-            </ol>
-        </div>
+
+
 
         <div class="coreTask">
-            Save a new version of your buttons sketch with the name "ButtonsDemo2".
-            <ol>
+        <p><b>Create a "button" class and "button" objects</b></p>
+        
+        <p>We will create a "button" class and then create buttons object from that class.</p>
+        
+        	<ol>
+        		<li>Start the new sketch and write <code>setup()</code> and <code>draw()</code> methods.
+<pre>void setup(){
+	size(800,600);
+}
+
+void draw(){
+  
+}</pre>                    
                 <li>
-                    Modify the code in your main sketch tab so that, instead of a single button, it uses an array of
-                    buttons: replace the variable <code>Button b</code> by a variable <code>Button[] buttons</code>. In
-                    <code>setup()</code>, initialise the array variable to contain an array of size 3 or more. Then
-                    initialise each element of the array to contain a new button:
-                    <pre>buttons[0] = new Button();
+                    Create a <b>new tab</b> in Processing and name it "button" (it doesn't matter what you call this). In this tab, declare a class, called "Button". <i>By convention, classes start with a capital letter.</i>
+<pre>class Button {
+
+}</pre>                    
+				<li>
+                    Within in the Button class, declare four variables - <code>x</code>, <code>y</code>, <code>w</code> and <code>h</code> - to describe the position, width and height of the button. Also declare an <code>isOn</code> variable that will be true if the button is its ON state and false if the button is in its OFF state). <i>These instance variables will stored within each object that is created and will be independent of other objects.</i>
+                </li>
+                <li>
+                    In the Button class, write a constructor with no parameters that sets the button's width to 100, its height to 30, places it at the top left of the sketch and sets <code>isOn</code> variable to <code>false</code> (so that new buttons are OFF by default). <i>The constructor is a special method that automatically runs where a new object of the class is created</i>.
+<pre>Button() {
+  //code here
+}</pre>                    
+                    
+                </li>
+                <li>
+                    In the Button class, write a method called <code>display()</code> that draws the button. It should use its instance variables to determine where to draw the rectangular button and how big it should be. If the button is ON it should be coloured blue; otherwise it should be yellow. <i>A class' method will often use the class' instance variables.</i>
+                </li>
+                <li>
+                    In the <b>main</b> sketch tab, declare a variable called <code>button</code> of type <code>Button</code>.
+                <li> In
+                    <code>setup()</code>, initialise <code>button</code> to contain a new button. You need to do it after
+<pre>button = new Button();</pre>                    
+                   <li>In <code>draw()</code>, call the button's display() method
+                    <code>display()</code> method. 
+                </li>
+                <li>Now run your sketch. If all went well, it should display a yellow button at the top left of the sketch window.
+                <li>
+                    Add code in <code>setup()</code> that places the button to the right of its default central position. Check that the button displays where you expect it.
+<pre>button.x=200;</pre>                                        
+				You can also try changing the button's y-position, width and height.
+                </li>
+
+                <li>
+                    Add code in <code>setup()</code> to change the button state to ON by setting the button's <code>isOn</code> to <code>true</code>. Check that the button is now blue.
+                </li>
+                <li>
+                    Create another button. Change its position to one that does not overlap the other button.
+  
+                </li>
+</ol>                
+     
+<p>Now we will use an array of buttons instead of separate variables, because we can then use loops to iterate through all the buttons.
+    
+<ol>           
+                
+                <li>
+                	Remove both button objects you created and remove all references to them. When you run the sketch, no buttons will appear.
+                	<li>Create a global array of 3 (or more) buttons.
+<pre>Button[] buttons = new Button[3];</pre>
+				<li> Create a button in each element of the array and change the position so they are along the top of the sketch and don't overlap. You may wish to have some ON and some OFF.
+<pre>buttons[0] = new Button();
+
 buttons[1] = new Button();
+buttons[1].x=100;
 // ... etc</pre>
-                    In <code>draw()</code>, write a for-loop (a for-each loop is best for this task) to iterate over the
-                    array and display each button in turn. When you run your sketch, you will only see one button,
-                    because all buttons are in the same place; so add code in <code>setup()</code> to change the
-                    position fields of the buttons so that they can all be seen separately.
+                <li> In <code>draw()</code>, write a for-loop (a for-each loop is best for this task) to iterate over the
+                    array and display each button in turn.
                 </li>
-                <li>In <code>setup()</code>, add code so that some buttons are ON and some are OFF. Make sure that they
-                    display in the expected colours after making this change.
-                </li>
+                <li>Run the sketch. If all went well, you should see all your buttons in the placed you expect.             
+            
+                
             </ol>
-        </div>
 
-        <div class="coreTask">
-            The final refinement of the buttons project is to add some interaction. We are simply going to allow each
-            button state to be toggled ON/OFF by clicking on it with the mouse. Save a third version of the sketch with,
-            name "ButtonsDemo3".
+            <p>Finally, we're going to add some interaction. We are going to allow each
+            button state to be toggled ON/OFF by clicking on it with the mouse.</p>
             <ol>
-                <li> In your Button class, write a new method <code>boolean contains(float x, float y)</code>. Note that
-                    this method has return type <code>boolean</code>, rather than <code>void</code>; it is going to
-                    return a value. Add code to your <code>contains</code> method so that it returns true if
-                    <code>(x,y)</code> is inside the button and false otherwise.
-                    <div class="tip">
-                        See the "Methods" lecture notes (near the bottom) for how to return a value from a method.
-                    </div>
+                <li> In your Button class, write a new method that checks if the mouse pointer in inside the button. This method checks if the mouse pointer is within (to the right of the left edge, the left of the right edge, below the top edge and above the bottom edge!)
+<pre>boolean containsMouse() {
+  if (mouseX&gt;x && mouseY&gt;y && mouseX&lt;x+w && mouseY&lt;y+h){
+    return true;
+  }
+  else{
+    return false;
+  }
+}</pre>
+                
                 </li>
                 <li> In the main sketch tab, add a <code>mouseClicked()</code> method. In this method, write a for-loop
-                    to iterate over the array; check each button to see if the the mouse is inside it
-                    (<code>if (b.contains(mouseX, mouseY)) ...</code>) and toggle its ON/OFF state (turn it ON if it's
-                    OFF, turn it OFF if it's ON).
+                    to iterate over the array, checking whether the mouse is within the button (by calling the button's <code>containsMouse()</code> method) and if it is, toggling its ON/OFF state (turning it ON if it's
+                    OFF or turning it OFF if it's ON).
+<pre>
+void mouseClicked() {
+  //code here
+}
+</pre>
                 </li>
+                <li>Run the sketch. If all went well, you should be able to click the buttons on and off.
             </ol>
         </div>
         <br /><br />
