@@ -386,23 +386,28 @@
 </div>
 
 <h3>7. Add Interaction</h3>
-<p>Add a <code>checkForMouse()</code> methods to your Invader class that changes the colour of your invader when the mouse is over it.</p>
+<p>Add a <code>checkForMouse()</code> method to your Invader class that changes the colour of your invader when the mouse is over it.</p>
 <p>You should be able to use the code from <b>Step 3.</b> above, but this needs to be a method in the class.</p>
-<p>Call the Invader's <code>checkForMouse()</code> method in the main <code>draw()</code> loop of the sketch before you draw the invader.</p>
+<p>Call the Invader's <code>checkForMouse()</code> method in the main <code>draw()</code> loop of the sketch before you draw the Invader.</p>
 
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-  void setup()
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [3,4]">
+  void checkForMouse()
   {
-    size(200, 200);
-  }
-  
-</pre>
+    // -- add the condition that checks for the mouse position and changes tint() depending on it.
+    // -- see Step 3 above.
+  }</pre>
 
     <!-- Hidden code button -->
     <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-// -- solution here 👾
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [1,2,3,4,5]">
+        if (mouseX> x-size/2 && mouseX< x+size/2 && mouseY> y-size/2 && mouseY< y+size/2) {
+          tint(180, 200, 255);
+        } else {
+          tint(255);
+        }
+
+        // --> call in the main draw() method of the sketch with - object.checkForMouse();
       </pre>
       </div>
 
@@ -413,23 +418,37 @@
 </div>
 
 <h3>8. Add Animation - Make your Invader Bounce in a Threatening Manner!</h3>
-<p>Give your Invader another characteristic, an <code>isAlive</code> variable that is boolean and set to <code>true</code>.</p>
-<p>Then, update Invader's <code>draw()</code> method as shown, to change the image depending upon the values of <code>frameCount</code> and <code>animSpeed</code>.</p>
-<p>Update the sketch to display the value of <code>whichImage</code>.</p>
+<p>Give your Invader class another characteristic, an <code>isAlive</code> variable that is boolean and set to <code>true</code>.</p>
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [1]">
+boolean isAlive = true;       // <-- Invader status.</pre>
+
+<p>Then, update the Invader's <code>draw()</code> method as shown, to change the image depending upon the values of <coe>isAlive</code> and if this is true, vary the image that is shown based upon <code>frameCount</code> and <code>animSpeed</code>.<br/>
+  You may want to create a local variable to make this more readable - I use and calculate <code>whichImage</code>.</p>
+<!-- <p>Update the sketch to display the value of <code>whichImage</code>.</p> -->
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-  void setup()
+  void draw()
   {
-    size(200, 200);
-  }
-  
-</pre>
+    int whichImage = (frameCount/animSpeed)%2;
+    if (! isAlive) {
+      tint(255, 64);
+      image(img2, x, y, size, size);
+    } else {
+      if (whichImage == 1) {
+        image(img1, x, y, size, size);
+      } else {
+        image(img2, x, y, size, size);
+      }
+    }
+  }</pre>
 
+  <p>Now update the initialization of your Invader to give it an <code>animSpeed</code> (final parameter) and experiment with this.</p>
     <!-- Hidden code button -->
     <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-// -- solution here 👾
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [1,2]">
+        // -- Initialise like this in the main sketch draw() method:
+        spaceInvader = new Invader (x,y,size,0,50);
       </pre>
       </div>
 
