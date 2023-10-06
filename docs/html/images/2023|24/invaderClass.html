@@ -154,23 +154,57 @@
 </div>
 
 <h3>3. Add an Interaction</h3>
-<p>Remove one of the images!<br/>Add an interaction to the remaining image so that it is a different colour when the mouse is over it.</p>
-<p>Use <code><a href="https://processing.org/reference/tint_.html">tint()</a></code> for this.</p>
+<p>Remove one of the images!<br/>
+  Make the image position and size if the remaining image dependent upon three global variables: <code>x</code>, <code>y</code> and <code>size</code></p>
+<p>
+  Add an interaction to this image so that it is a different colour when the mouse is over it.<br/>
+  Use <code><a href="https://processing.org/reference/tint_.html">tint()</a></code> to change the colour of the image if so.<br/>
+<code>tint(255)</code> will produce a regular (untinted) image, as will <code><a href="https://processing.org/reference/noTint_.html">noTint()</a></code></p>
 
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-  void setup()
-  {
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [25]">
+  PImage invader1, invader2;
+
+  int size = 25;
+  int x, y;
+  
+  void setup() {
     size(200, 200);
+  
+    invader1 = loadImage("invader11.up.png");
+    invader2 = loadImage("invader11.down.png");
+  
+    x = width /2;
+    y = height/2;
+  
+    imageMode(CENTER);
   }
   
+  void draw() {
+    background(255);
+  
+    // -- change the image:
+    text(frameCount, width-40, 12);
+  
+    // -- check mouse position - is it inside the invader?
+    if () {  // <-- add the condition to check whether the mouse is over the image
+      tint(180, 200, 255);  // <-- blue tint
+    } else {
+      tint(255); // <-- no tint
+    }
+  
+    // -- draw the invader:
+    image(invader1, x, y, size, size);
+  }
 </pre>
 
     <!-- Hidden code button -->
     <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-// -- solution here 👾
-      </pre>
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [2,3,4,5,6]">
+          // -- check mouse position - remember that the invader is centred on x and y because of imageAlign(CENTER)!
+          if (mouseX> x-size/2 && mouseX< x+size/2 && mouseY> y-size/2 && mouseY< y+size/2) {
+          }
+</pre>
       </div>
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
@@ -182,7 +216,7 @@
 <h3>4. Make a Simple Class - Invader</h3>
 <p>We are going to step back a little now and create a class for space invaders that will define their characteristics and behaviour.</p>
 <p>Create a new tab called '<b>Invader</b>' and use this code to define the class.<br/>Fill in the gaps in the constructor!</p>
-<p>Your class should take 4 parameters defining any new Invader's</p>
+<p>Your class should take _5 parameters_ defining any new Invader's</p>
 <ul>
   <li>position in x</li> 
   <li>position in y</li> 
@@ -192,57 +226,56 @@
 </ul>
 <p>So we might instantiate an Invader with ...</p>
 <pre>Invader mySpaceInvader = new Invader(width/2, height/2, 100, 3, 50) </pre>
-
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-  void setup()
+<p>Use this code snippet as the basis of your class and complete the constructor.</p>
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [11,12,13]">
+  class Invader
   {
-    size(200, 200);
-  }
+    float x, y;                   // <-- Invader position.
+    float size, speed;            // <-- Invader size & speed.
+    int   animSpeed;              // <-- Invader image animation change speed.
+    PImage img1, img2;            // <-- Invader images.
   
-</pre>
+    // -- Constructor - this is called whenever a new invader is created.
+    Invader(float xIn, float yIn, float sizeIn, float speedIn, int animIn)
+    {
+      // -- Initialise the state of the invader.
+      // -- The values passed into the object should be used to initialise
+      // --   the four floats and the integer here in the constructor.
+  
+      // -- Use these two images in the Invader ...
+      img1 = invader1;
+      img2 = invader2;
+    }
+  }
+  </pre>
 
     <!-- Hidden code button -->
     <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-// -- solution here 👾
-      </pre>
-      </div>
-
-<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
-
-<div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
-  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.04.png" width=125/>
-</div>
-
-<h3>4. Make a Simple Class - Invader</h3>
-<p>We are going to step back a little now and create a class for space invaders that will define their characteristics and behaviour.</p>
-<p>Create a new tab called '<b>Invader</b>' and use this code to define the class.<br/>Fill in the gaps in the constructor!</p>
-<p>Your class should take 4 parameters defining any new Invader's</p>
-<ul>
-  <li>position in x</li> 
-  <li>position in y</li> 
-  <li>size</li> 
-  <li>speed of movement (pixels per frame)</li> 
-  <li>speed of animation (more about this later)</li> 
-</ul>
-<p>So we might instantiate an Invader with ...</p>
-<pre>Invader mySpaceInvader = new Invader(width/2, height/2, 100, 3, 50) </pre>
-
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-  void setup()
-  {
-    size(200, 200);
-  }
-  
-</pre>
-
-    <!-- Hidden code button -->
-    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
-    <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-// -- solution here 👾
-      </pre>
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [12,13,14,15,16]">
+        class Invader
+        {
+          float x, y;                   // <-- Invader position.
+          float size, speed;            // <-- Invader size & speed.
+          int   animSpeed;              // <-- Invader image animation change speed.
+          PImage img1, img2;            // <-- Invader images.
+        
+          // -- Constructor - this is called whenever a new invader is created.
+          Invader(float xIn, float yIn, float sizeIn, float speedIn, int animIn)
+          {
+            // -- Initialise the state of the invader.
+            x=xIn;
+            y=yIn;
+            size=sizeIn;
+            speed=speedIn;
+            animSpeed=animIn;
+        
+            // -- Use these two images in the Invader ...
+            img1 = invader1;
+            img2 = invader2;
+          }
+        }
+              </pre>
       </div>
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
@@ -252,22 +285,47 @@
 </div>
 
 <h3>5. Add a draw() Method to Invader</h3>
-<p>Here is some code that will help - but how do we actually draw the invader?</p>
+<p>Add a <code>draw()</code> method under the constructor, to the Invader class to draw the Invader - but how do we actually draw the invader?</p>
 
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-  void setup()
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [26]">
+  class Invader
   {
-    size(200, 200);
-  }
+    float x, y;                   // <-- Invader position.
+    float size, speed;            // <-- Invader size & speed.
+    int   animSpeed;              // <-- Invader image animation change speed.
+    PImage img1, img2;            // <-- Invader images.
   
-</pre>
+    // -- Constructor - this is called whenever a new invader is created.
+    Invader(float xIn, float yIn, float sizeIn, float speedIn, int animIn)
+    {
+      // -- Initialise the state of the invader.
+      x=xIn;
+      y=yIn;
+      size=sizeIn;
+      speed=speedIn;
+      animSpeed=animIn;
+  
+      // -- Use these two images ...
+      img1 = invader1;
+      img2 = invader2;
+    }
+    
+    // -- draw method:  
+    void draw()
+    {
+      // -- Add code here to draw the Invader at x,y with size, size 
+    }
+  }</pre>
 
     <!-- Hidden code button -->
     <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-// -- solution here 👾
-      </pre>
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [4]">
+        // -- draw method:  
+        void draw()
+        {
+          image(img1, x, y, size, size);
+        }</pre>
       </div>
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
@@ -276,23 +334,49 @@
   <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.06.png" width=125/>
 </div>
 
-<h3>6. Declare, Instantiate an Draw Invader</h3>
-<p>Here is some code that will help - but how do we actually draw the invader?</p>
+<h3>6. Declare, Instantiate and Draw an Invader</h3>
+<p>OK - at last - let's declare, instantiate and draw an invader!</p>
 
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-  void setup()
-  {
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [29,30]">PImage invader1, invader2;
+
+  Invader spaceInvader;
+  
+  int size = 25;
+  int x, y;
+  
+  void setup() {
     size(200, 200);
+  
+    // -- load the images that the Invader objects use:
+    invader1 = loadImage("invader11.up.png");
+    invader2 = loadImage("invader11.down.png");
+  
+    x = width /2;
+    y = height/2;
+  
+    imageMode(CENTER);
+    
+    spaceInvader = new Invader (x,y,size,0,0);
   }
   
-</pre>
+  void draw() {
+    background(255);
+  
+    // -- change the image:
+    text(frameCount, width-40, 12);
+  
+    // -- add code to draw the Invader here:
+
+  }
+  </pre>
 
     <!-- Hidden code button -->
     <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-// -- solution here 👾
-      </pre>
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [1,2]">
+          // -- add code to draw the invader here:
+          spaceInvader.draw();
+</pre>
       </div>
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
