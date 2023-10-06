@@ -51,7 +51,7 @@
 
     <h2>Invader Class</h2>
   
-    <p><b>We are going to use what we have learned about _interaction_, _methods_, _images_ and _classes_ to write a simple game in <em>Processing</em>.</p>
+    <p>We are going to use what we have learned about <i>interaction</i>, <i>methods</i>, <i>images</i> and <i>classes</i> to write a simple game in <em>Processing</em>.</p>
   
     <hr/>
 
@@ -89,32 +89,62 @@
   <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.02.png" width=125/>
 </div>
 
-<h3>2. Add an Image</h3>
+<h3>2. Add Two Images</h3>
 <p>Load these these two images from the following URLs and display them in different places on the canvas.</p>
 <ul>
   <li><a href="https://jsndyks.github.io/cityBootCamp/images/invader11.up.png">https://jsndyks.github.io/cityBootCamp/images/invader11.up.png</a></li>
   <li><a href="https://jsndyks.github.io/cityBootCamp/images/invader11.up.png">https://jsndyks.github.io/cityBootCamp/images/invader11.down.png</a></li>
 </ul>
-
-<p>Call <code><a href="https://processing.org/reference/imageMode_.html">imageMode(CENTER)</a></code> in <code>setup()</code> to centre the image in the coordinates that you specify in the second and third parameters of https://processing.org/reference/image_.html">image()</a></code>.</p>
+<p>Declare the two <code>PImage</code>s as global variables.</p>
+<p>Call <code><a href="https://processing.org/reference/imageMode_.html">imageMode(CENTER)</a></code> in <code>setup()</code> to centre the image in the coordinates that you specify in the second and third parameters of <a href="https://processing.org/reference/image_.html">image()</a></code>.</p>
 
 <p>Use <code><a href="https://processing.org/reference/quad_.html">PImage</a></code> and the <code><a href="https://processing.org/reference/quad_.html">image()</a></code> method to do so.</p>
 
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-  void setup()
-  {
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [6, 17]">
+  PImage invader1, invader2;
+
+  void setup() {
     size(200, 200);
+  
+    // -- initialise the images here from their URLs
+  
     imageMode(CENTER);
   }
   
-</pre>
+  void draw() {
+    background(255);
+  
+    // -- change the image:
+    text(frameCount, width-40, 12);
+  
+    // -- use image() to draw the images here
+
+  }</pre>
 
     <!-- Hidden code button -->
     <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-// -- solution here 👾
-      </pre>
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: []">
+        PImage invader1, invader2;
+
+        void setup() {
+          size(200, 200);
+        
+          invader1 = loadImage("invader11.up.png");
+          invader2 = loadImage("invader11.down.png");
+        
+          imageMode(CENTER);
+        }
+        
+        void draw() {
+          background(255);
+        
+          // -- change the image:
+          text(frameCount, width-40, 12);
+        
+          image(invader1, width/2, height/4, 50, 50);
+          image(invader1, width/2, 3*height/4, 50, 50);
+        }</pre>
       </div>
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
