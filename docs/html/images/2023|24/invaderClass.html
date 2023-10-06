@@ -51,22 +51,21 @@
 
     <h2>Invader Class</h2>
   
-    <p><b>Let's see whether we can recreate some of this ordered disorder using our <em>Processing</em> skills</b>...<br/>
-      and whether we learn anything about order, disorder, aesthetic, what Vera was doing and perhaps <em>Processing</em> in the process.</p>
+    <p><b>We are going to use what we have learned about _interaction_, _methods_, _images_ and _classes_ to write a simple game in <em>Processing</em>.</p>
   
     <hr/>
 
     <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
-      <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.01.png" width=125/>
+      <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.02.png" width=125/>
     </div>
 
-    <h3>1. Show the frameCount on screen</h3>
+    <h3>1. Show the <code>frameCount</code> on a 200 x 200 canvas</h3>
     <p>Use the <code><a href="https://processing.org/reference/quad_.html">quad()</a></code> method to do so - it takes eight parameters that specify four coordinate pairs (x,y), one for each corner, clockwise from top left.</p>
 
     <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
       void setup()
       {
-        size(600, 600);
+        size(200, 200);
       }
       
 </pre>
@@ -81,7 +80,358 @@
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
+<h3>2. Add an Image</h3>
+<p>Load these these two images from the following URLs and display them in different places on the canvas.</p>
+<ul>
+  <li></li>
+  <li></li>
+</ul>
 
+<p>Call <code><a href="https://processing.org/reference/imageMode_.html">imageMode(CENTER)</a></code> in <code>setup()</code> to centre the image in the coordinates that you specify in the second and third parameters of https://processing.org/reference/image_.html">image()</a></code>.</p>
+
+<p>Use <code><a href="https://processing.org/reference/quad_.html">PImage</a></code> and the <code><a href="https://processing.org/reference/quad_.html">image()</a></code> method to do so.</p>
+
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+  void setup()
+  {
+    size(200, 200);
+  }
+  
+</pre>
+
+    <!-- Hidden code button -->
+    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+    <div class="prettyprint" style="display: none;">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+// -- solution here 👾
+      </pre>
+      </div>
+
+<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+
+
+<h3>3. Add an Interaction</h3>
+<p>Remove one of the images!<br/>Add an interaction to the remaining image so that it is a different colour when the mouse is over it.</p>
+<p>Use <code><a href="https://processing.org/reference/tint_.html">tint()</a></code> for this.</p>
+
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+  void setup()
+  {
+    size(200, 200);
+  }
+  
+</pre>
+
+    <!-- Hidden code button -->
+    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+    <div class="prettyprint" style="display: none;">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+// -- solution here 👾
+      </pre>
+      </div>
+
+<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+
+
+<h3>4. Make a Simple Class - Invader</h3>
+<p>We are going to step back a little now and create a class for space invaders that will define their characteristics and behaviour.</p>
+<p>Create a new tab called '<b>Invader</b>' and use this code to define the class.<br/>Fill in the gaps in the constructor!</p>
+<p>Your class should take 4 parameters defining any new Invader's</p>
+<ul>
+  <li>position in x</li> 
+  <li>position in y</li> 
+  <li>size</li> 
+  <li>speed of movement (pixels per frame)</li> 
+  <li>speed of animation (more about this later)</li> 
+</ul>
+<p>So we might instantiate an Invader with ...</p>
+<pre>Invader mySpaceInvader = new Invader(width/2, height/2, 100, 3, 50) </pre>
+
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+  void setup()
+  {
+    size(200, 200);
+  }
+  
+</pre>
+
+    <!-- Hidden code button -->
+    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+    <div class="prettyprint" style="display: none;">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+// -- solution here 👾
+      </pre>
+      </div>
+
+<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+
+<h3>4. Make a Simple Class - Invader</h3>
+<p>We are going to step back a little now and create a class for space invaders that will define their characteristics and behaviour.</p>
+<p>Create a new tab called '<b>Invader</b>' and use this code to define the class.<br/>Fill in the gaps in the constructor!</p>
+<p>Your class should take 4 parameters defining any new Invader's</p>
+<ul>
+  <li>position in x</li> 
+  <li>position in y</li> 
+  <li>size</li> 
+  <li>speed of movement (pixels per frame)</li> 
+  <li>speed of animation (more about this later)</li> 
+</ul>
+<p>So we might instantiate an Invader with ...</p>
+<pre>Invader mySpaceInvader = new Invader(width/2, height/2, 100, 3, 50) </pre>
+
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+  void setup()
+  {
+    size(200, 200);
+  }
+  
+</pre>
+
+    <!-- Hidden code button -->
+    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+    <div class="prettyprint" style="display: none;">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+// -- solution here 👾
+      </pre>
+      </div>
+
+<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+
+
+<h3>5. Add a draw() Method to Invader</h3>
+<p>Here is some code that will help - but how do we actually draw the invader?</p>
+
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+  void setup()
+  {
+    size(200, 200);
+  }
+  
+</pre>
+
+    <!-- Hidden code button -->
+    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+    <div class="prettyprint" style="display: none;">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+// -- solution here 👾
+      </pre>
+      </div>
+
+<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+
+<h3>6. Declare, Instantiate an Draw Invader</h3>
+<p>Here is some code that will help - but how do we actually draw the invader?</p>
+
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+  void setup()
+  {
+    size(200, 200);
+  }
+  
+</pre>
+
+    <!-- Hidden code button -->
+    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+    <div class="prettyprint" style="display: none;">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+// -- solution here 👾
+      </pre>
+      </div>
+
+<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+
+
+<h3>7. Add Interaction</h3>
+<p>Add a <code>checkForMouse()</code> methods to your Invader class that changes the colour of your invader when the mouse is over it.</p>
+<p>You should be able to use the code from <b>Step 3.</b> above, but this needs to be a method in the class.</p>
+<p>Call the Invader's <code>checkForMouse()</code> method in the main <code>draw()</code> loop of the sketch before you draw the invader.</p>
+
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+  void setup()
+  {
+    size(200, 200);
+  }
+  
+</pre>
+
+    <!-- Hidden code button -->
+    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+    <div class="prettyprint" style="display: none;">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+// -- solution here 👾
+      </pre>
+      </div>
+
+<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+
+
+<h3>8. Add Animation - Make your Invader Bounce in a Threatening Manner!</h3>
+<p>Give your Invader another characteristic, an <code>isAlive</code> variable that is boolean and set to <code>true</code>.</p>
+<p>Then, update Invader's <code>draw()</code> method as shown, to change the image depending upon the values of <code>frameCount</code> and <code>animSpeed</code>.</p>
+<p>Update the sketch to display the value of <code>whichImage</code>.</p>
+
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+  void setup()
+  {
+    size(200, 200);
+  }
+  
+</pre>
+
+    <!-- Hidden code button -->
+    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+    <div class="prettyprint" style="display: none;">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+// -- solution here 👾
+      </pre>
+      </div>
+
+<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+
+
+<h3>9. Make your Invader Move Across The Screen!</h3>
+<p>Add a <code>move()</code> method to the Invader class that changes the Invader's <code>x</code> position by <code>speed</code>.</p>
+<p>Update the sketch to <code>move()</code> the Invader each time the main <code>draw()</code> loop runs.</p>
+
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+  void setup()
+  {
+    size(200, 200);
+  }
+  
+</pre>
+
+    <!-- Hidden code button -->
+    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+    <div class="prettyprint" style="display: none;">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+// -- solution here 👾
+      </pre>
+      </div>
+
+<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+
+
+<h3>10. Make your Invader Stay on The Screen!</h3>
+<p>We need the Invader to stay on the screen, so add a method that will change the direction of travel when the Invader reaches the screen edge.</p>
+<p>A good way to do this is to add a <code>checkForEdge()</code> method and call this before you <code>draw()</code> the Invader.
+The method should change the speed if the Invader is at an edge: <code>speed = speed * -1</code>.</p>
+<p>Update the sketch to <code>checkForEdge()</code> after the Invader <code>move()</code>s in the main <code>draw()</code> loop.</p>
+
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+  void setup()
+  {
+    size(200, 200);
+  }
+  
+</pre>
+
+    <!-- Hidden code button -->
+    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+    <div class="prettyprint" style="display: none;">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+// -- solution here 👾
+      </pre>
+      </div>
+
+<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+
+
+<h3>11. Make your Invader Not Alive</h3>
+<p>If the Invader is not alive, we need to show it in a grey colour, and stop it bouncing and moving.</p>
+<p>Change <code>isAlive</code> to <code>false</code> and use conditions to make the image feint - <code>tint(255,64)</code>, the bouncing stop, and the movement stop <code>speed = 0</code> if <code>isAlive == false</code>.
+<p>Update the Invader class to draw the Invader differently if <code>isAlive == false</code>.</p>
+
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+  void setup()
+  {
+    size(200, 200);
+  }
+  
+</pre>
+
+    <!-- Hidden code button -->
+    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+    <div class="prettyprint" style="display: none;">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+// -- solution here 👾
+      </pre>
+      </div>
+
+<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+
+
+<h3>12. Add a Mouse Interaction to Make Your Invader Not Alive</h3>
+<p>Change the <code>checkForMouse</code> method in your Invader class so that if the mouse is on the Invader and <code>mousePressed</code> is <code>true</code>, your Invader is no longer alive!.</p>
+<p>This is almost a game. Almost, right.</p>
+<p>You could add a global <code>score</code> variable, add to it when an Invader is clicked and show this on the canvas.</p>
+
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+  void setup()
+  {
+    size(200, 200);
+  }
+  
+</pre>
+
+    <!-- Hidden code button -->
+    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+    <div class="prettyprint" style="display: none;">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+// -- solution here 👾
+      </pre>
+      </div>
+
+<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+
+
+<h3>13. Add More Invaders</h3>
+<p>But we need more Invaders - so let's declare an array full of them, and add them at random positions and with random speeds.</p>
+<p>Then we have a game!</p>
+<p>Use the code below to help.</p>
+
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+  void setup()
+  {
+    size(200, 200);
+  }
+  
+</pre>
+
+    <!-- Hidden code button -->
+    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+    <div class="prettyprint" style="display: none;">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+// -- solution here 👾
+      </pre>
+      </div>
+
+<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+
+<h3>14. Vary Game and GamePlay</h3>
+<p>Of course you could do much more - be imaginative.</p>
+<p>You might want to increase <code>y</code> by <code>speed</code> when a bounce occurs, change the <code>animSpeed</code> or <code>size</code> at the same time, or add a <b>Game Over</b> is an Invader hits the floor.</p>
+<p>With an <code>ArrayList</code>of Invaders (<code>ArrayList&lt;Invader&gt;</code>) you could add and remove Invaders with different characteristics over time.</p>
+<p>You could add sound to the game - do check the 'Art and Media' lecture for ideas here.</p>
+<p>Have fun and be imaginative</p>
+
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+  void setup()
+  {
+    size(200, 200);
+  }
+  
+</pre>
+
+    <!-- Hidden code button -->
+    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+    <div class="prettyprint" style="display: none;">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+// -- solution here 👾
+      </pre>
+      </div>
+
+<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
     <!-- End of content -->
             <hr />
