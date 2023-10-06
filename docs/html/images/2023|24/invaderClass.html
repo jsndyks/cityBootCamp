@@ -56,11 +56,11 @@
     <hr/>
 
     <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
-      <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.02.png" width=125/>
+      <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.01.png" width=125/>
     </div>
 
     <h3>1. Show the <code>frameCount</code> on a 200 x 200 canvas</h3>
-    <p>Use the <code><a href="https://processing.org/reference/quad_.html">quad()</a></code> method to do so - it takes eight parameters that specify four coordinate pairs (x,y), one for each corner, clockwise from top left.</p>
+    <p>Use the <code><a href="https://processing.org/reference/text_.html">text()</a></code> method to do so - it takes three parameters that specify the text String to show, and the x and y positions of the text.</p>
 
     <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
       void setup()
@@ -68,23 +68,32 @@
         size(200, 200);
       }
       
+      void draw() {
+        background(255);
+        // -- add the text() here
+      }
 </pre>
 
         <!-- Hidden code button -->
         <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
         <div class="prettyprint" style="display: none;">
           <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-// -- solution here 👾
-          </pre>
+            // -- add the text() here
+            text(frameCount, width-40, 12);
+                </pre>
           </div>
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
+<div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
+  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.02.png" width=125/>
+</div>
+
 <h3>2. Add an Image</h3>
 <p>Load these these two images from the following URLs and display them in different places on the canvas.</p>
 <ul>
-  <li></li>
-  <li></li>
+  <li><a href="https://jsndyks.github.io/cityBootCamp/images/invader11.up.png">https://jsndyks.github.io/cityBootCamp/images/invader11.up.png</a></li>
+  <li><a href="https://jsndyks.github.io/cityBootCamp/images/invader11.up.png">https://jsndyks.github.io/cityBootCamp/images/invader11.down.png</a></li>
 </ul>
 
 <p>Call <code><a href="https://processing.org/reference/imageMode_.html">imageMode(CENTER)</a></code> in <code>setup()</code> to centre the image in the coordinates that you specify in the second and third parameters of https://processing.org/reference/image_.html">image()</a></code>.</p>
@@ -95,6 +104,7 @@
   void setup()
   {
     size(200, 200);
+    imageMode(CENTER);
   }
   
 </pre>
@@ -109,6 +119,9 @@
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
+<div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
+  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.03.png" width=125/>
+</div>
 
 <h3>3. Add an Interaction</h3>
 <p>Remove one of the images!<br/>Add an interaction to the remaining image so that it is a different colour when the mouse is over it.</p>
@@ -132,6 +145,9 @@
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
+<div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
+  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.04.png" width=125/>
+</div>
 
 <h3>4. Make a Simple Class - Invader</h3>
 <p>We are going to step back a little now and create a class for space invaders that will define their characteristics and behaviour.</p>
@@ -165,6 +181,10 @@
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
+<div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
+  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.04.png" width=125/>
+</div>
+
 <h3>4. Make a Simple Class - Invader</h3>
 <p>We are going to step back a little now and create a class for space invaders that will define their characteristics and behaviour.</p>
 <p>Create a new tab called '<b>Invader</b>' and use this code to define the class.<br/>Fill in the gaps in the constructor!</p>
@@ -197,6 +217,9 @@
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
+<div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
+  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.05.png" width=125/>
+</div>
 
 <h3>5. Add a draw() Method to Invader</h3>
 <p>Here is some code that will help - but how do we actually draw the invader?</p>
@@ -219,6 +242,10 @@
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
+<div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
+  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.06.png" width=125/>
+</div>
+
 <h3>6. Declare, Instantiate an Draw Invader</h3>
 <p>Here is some code that will help - but how do we actually draw the invader?</p>
 
@@ -240,6 +267,9 @@
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
+<div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
+  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.07.png" width=125/>
+</div>
 
 <h3>7. Add Interaction</h3>
 <p>Add a <code>checkForMouse()</code> methods to your Invader class that changes the colour of your invader when the mouse is over it.</p>
@@ -264,6 +294,9 @@
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
+<div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
+  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.08.png" width=125/>
+</div>
 
 <h3>8. Add Animation - Make your Invader Bounce in a Threatening Manner!</h3>
 <p>Give your Invader another characteristic, an <code>isAlive</code> variable that is boolean and set to <code>true</code>.</p>
@@ -288,6 +321,9 @@
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
+<div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
+  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.09.png" width=125/>
+</div>
 
 <h3>9. Make your Invader Move Across The Screen!</h3>
 <p>Add a <code>move()</code> method to the Invader class that changes the Invader's <code>x</code> position by <code>speed</code>.</p>
@@ -311,6 +347,9 @@
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
+<div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
+  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.10.png" width=125/>
+</div>
 
 <h3>10. Make your Invader Stay on The Screen!</h3>
 <p>We need the Invader to stay on the screen, so add a method that will change the direction of travel when the Invader reaches the screen edge.</p>
@@ -336,6 +375,9 @@ The method should change the speed if the Invader is at an edge: <code>speed = s
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
+<div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
+  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.11.png" width=125/>
+</div>
 
 <h3>11. Make your Invader Not Alive</h3>
 <p>If the Invader is not alive, we need to show it in a grey colour, and stop it bouncing and moving.</p>
@@ -360,6 +402,9 @@ The method should change the speed if the Invader is at an edge: <code>speed = s
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
+<div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
+  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.12.png" width=125/>
+</div>
 
 <h3>12. Add a Mouse Interaction to Make Your Invader Not Alive</h3>
 <p>Change the <code>checkForMouse</code> method in your Invader class so that if the mouse is on the Invader and <code>mousePressed</code> is <code>true</code>, your Invader is no longer alive!.</p>
@@ -384,6 +429,9 @@ The method should change the speed if the Invader is at an edge: <code>speed = s
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
+<div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
+  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.13.png" width=125/>
+</div>
 
 <h3>13. Add More Invaders</h3>
 <p>But we need more Invaders - so let's declare an array full of them, and add them at random positions and with random speeds.</p>
@@ -407,6 +455,10 @@ The method should change the speed if the Invader is at an edge: <code>speed = s
       </div>
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+
+<div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
+  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.14.png" width=125/>
+</div>
 
 <h3>14. Vary Game and GamePlay</h3>
 <p>Of course you could do much more - be imaginative.</p>
