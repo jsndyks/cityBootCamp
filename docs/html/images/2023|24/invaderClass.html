@@ -65,7 +65,7 @@
 
     <h3>1. Show the <code>frameCount</code> on a 200 x 200 canvas</h3>
     <p>Use the <code><a href="https://processing.org/reference/text_.html">text()</a></code> method to do so - it takes three parameters that specify:
-      <br/>>the text String to show on the canvas, and then the x and y positions at which to display the text.</p>
+      <br/>the text String to show on the canvas, and then the x and y positions at which to display the text.</p>
 
     <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
       void setup()
@@ -111,12 +111,12 @@
 <p>Use <code><a href="https://processing.org/reference/quad_.html">PImage</a></code> and the <code><a href="https://processing.org/reference/quad_.html">image()</a></code> method to do so.</p>
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [6, 17]">
-  PImage invader1, invader2;
+  PImage invader1, invader2; // <-- declare two PImages as global variables
 
   void setup() {
     size(200, 200);
   
-    // -- initialise the images here from their URLs
+    // -- initialise the PImages here by loading them from the image URLs
   
     imageMode(CENTER);
   }
@@ -127,7 +127,7 @@
     // -- show the frameCount (small, near the top):
     text(frameCount, width-40, 12);
   
-    // -- use image() to draw the images here
+    // -- use image() to draw the PImages here
 
   }</pre>
 
@@ -140,7 +140,7 @@
         void setup() {
           size(200, 200);
         
-          // -- initialise the images here from their URLs
+          // -- initialise the PImages here by loading them from the image URLs
           invader1 = loadImage("invader11.up.png");
           invader2 = loadImage("invader11.down.png");
         
@@ -442,30 +442,22 @@
 </div>
 
 <h3>8. Add Animation - Make your Invader Wave in a Threatening Manner!</h3>
-<p>Give your Invader class another characteristic, an <code>isAlive</code> variable that is boolean and set to <code>true</code>.</p>
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [1]">
-boolean isAlive = true;       // <-- Invader status.</pre>
 
-<p>Then, update the Invader's <code>draw()</code> method as shown, to change the image depending upon:</p>
-  <ul><li>the value of <code>isAlive</code>,</li>
-  <li>and if this is true, vary the image that is shown based upon <code>frameCount</code> and <code>animSpeed</code>.</li></ul>
-  <p>You may want to create a local variable to make this more readable - I use and calculate <code>whichImage</code>.</p>
+<p>The reason that we have two <code>PImage</code>s is so that we can vary what is drawn in the Invader's <code>draw()</code> method to animate it.<br/>
+Update the <code>draw()</code> method in tne Invader class to change the image depending upon a combination of <code>frameCount</code> and <code>animSpeed</code> so that the image switching is faster when <code>animSpeed</code> is higher.</p>
+<p>You may want to create a local variable to make this calculation and condition readable - I use and calculate <code>whichImage</code>.</p>
 <!-- <p>Update the sketch to display the value of <code>whichImage</code>.</p> -->
 
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [3,4]">
   void draw()
   {
-    int whichImage = (frameCount/animSpeed)%2; // <-- uses modulo to return 1 or 0 from value that varies with frameCount
+    // -- Calculate a number that varies between 0 and 1 over time and allows us to choose one image or the other to draw:
+    int whichImage = ???????? %2; // <-- use modulo to return 1 or 0 from value that varies with frameCount
 
-    if (! isAlive) {
-      tint(255, 64);
-      image(img2, x, y, size, size);
-    } else {
-      if (whichImage == 1) {
+    if (whichImage == 1) {
         image(img1, x, y, size, size); // <-- vary image shown depending on value of whichImage
-      } else {
+    } else {
         image(img2, x, y, size, size); // <-- vary image shown depending on value of whichImage
-      }
     }
   }</pre>
 
@@ -473,8 +465,11 @@ boolean isAlive = true;       // <-- Invader status.</pre>
     <!-- Hidden code button -->
     <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [1,2]">
-        // -- Initialise like this in the main sketch draw() method:
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [2,5]">
+        // -- Calculate a number that varies between 0 and 1 over time and allows us to choose one image or the other to draw:
+        int whichImage = (frameCount/animSpeed)%2; // <-- uses modulo to return 1 or 0 from value that varies with frameCount
+
+        // -- Initialise your Invader with a non-zero animSpeed like this in the main sketch draw() method:
         spaceInvader = new Invader (x,y,size,0,50);
       </pre>
       </div>
@@ -486,34 +481,32 @@ boolean isAlive = true;       // <-- Invader status.</pre>
 </div>
 
 <h3>9. Make your Invader Move Across The Screen!</h3>
-<p>Add a <code>move()</code> method to the Invader class that changes the Invader's <code>x</code> position by <code>speed</code>, <code>if</code> the Invader <code>isAlive</code>.</p>
+<p>Add a <code>move()</code> method to the Invader class that changes the Invader's <code>x</code> position by <code>speed</code>.</p>
 <p>Update the sketch to <code>move()</code> the Invader each time the main <code>draw()</code> loop runs.</p>
 
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [4,5]">
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [4]">
   // -- This method needs to go in the Invader class definition, in the Invader tab near (but not in) move(): 
   void move()
   {
-    // -- check whether Invader isAlive
-    // -- change x position by speed if so
+    // -- change x position by speed:
   }
   </pre>
 
     <!-- Hidden code button -->
     <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [4,5,6]">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [5,9,12]">
 // -- This method needs to go in the Invader class definition, in the Invader tab near (but not in) move(): 
 void move()
 {
-  if (isAlive) {
-    x+= speed;
-  }
+  // -- change x position by speed:
+  x+= speed;
 }
 
 // -- You will need to run the Invader's move() method in the draw() loop:
 spaceInvader.draw();
 
-// -- Remember to give your Invader a non-zero speed when you initialize it: 4th parameter:
+// -- Remember to give your Invader a non-zero speed when you initialize it: 4th parameter, bigger is faster:
 spaceInvader = new Invader (x,y,size,1,100);
       </pre>
       </div>
@@ -527,7 +520,7 @@ spaceInvader = new Invader (x,y,size,1,100);
 <h3>10. Make your Invader Stay on The Screen!</h3>
 <p>We need the Invader to stay on the screen, so add a method that will change the direction of travel when the Invader reaches the screen edge.</p>
 <p>A good way to do this is to add a <code>checkForEdge()</code> method to the Invader class and call this before you <code>draw()</code> the Invader.<br/>
-The method should change the speed to the <i>negative</i>i> of the current speed if the Invader is at an edge - this will effectively make it change direction: <code>speed = speed * -1</code>.</p>
+The method should change the speed to the <i>negative</i> of the current speed if the Invader is at an edge - this will effectively make it change direction: <code>speed = speed * -1</code>.</p>
 <p>Update the sketch to <code>checkForEdge()</code> after the Invader <code>move()</code>s in the main <code>draw()</code> loop.</p>
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [3]">
@@ -546,7 +539,7 @@ The method should change the speed to the <i>negative</i>i> of the current speed
       <pre class="brush: processing; gutter: false; toolbar: false; highlight: [3]">
         void checkForEdge()
         {
-          if (x<size x>width-size)
+          if (x&lt;size &verbar;&verbar; x&gt;width-size) // <-- you could use 0 or size/2 here and get different effects
           {
             speed = speed * -1;
           }
@@ -559,25 +552,66 @@ The method should change the speed to the <i>negative</i>i> of the current speed
   <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.11.png" width=125/>
 </div>
 
-<h3>11. Make your Invader Not Alive</h3>
-<p>If the Invader is not alive, we need to show it in a grey colour, and stop it bouncing and moving.</p>
-<p>Change <code>isAlive</code> to <code>false</code> and use conditions to make the image feint - <code>tint(255,64)</code>, the bouncing stop, and the movement stop <code>speed = 0</code> if <code>isAlive == false</code>.
-<p>Update the Invader class to draw the Invader differently if <code>isAlive == false</code>.</p>
+<h3>11. Give your Invader Not Alive Status</h3>
+<p>To make a game, we need to be able to give our Invader a different status according to whether it is alive and active or, well ... not.</p>
+<p>Give your Invader class another characteristic, an <code>isAlive</code> variable that is a global boolean, initially set to <code>true</code> in the constructor when a new Invader object is initialised.</p>
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [1]">
+boolean isAlive = true;       // <-- Invader status.</pre>
+<p>If the Invader is <b>not alive</b>, we need to reflect this in its look and behaviours.<br/>
+So let's display it in a grey colour, and stop it waving and moving.</p>
+<p>Change <code>isAlive</code> to <code>false</code> and use conditions to make ...</p>
+<ul>
+<li>the image feint - <code>tint(255,64)</code></li>
+<li>the waving stop</li>
+<li>and the movement stop: <code>speed = 0</code></li>
+</ul>
+<p>... if <code>isAlive == false</code>.</p>
+<p>You will need to update the <code>draw()</code> and <code>move()</code> methods in the Invader class to draw the Invader differently if <code>isAlive == false</code>.</p>
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-  void setup()
+  void draw()
   {
-    size(200, 200);
+    if (! isAlive) {
+      // -- Faded out
+    } else {
+      // -- Not faded out  
+      // Only waves if isAlive
+    }
   }
-  
-</pre>
+
+
+  void move()
+  {
+    // Only moves if isAlive
+  }  </pre>
 
     <!-- Hidden code button -->
     <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-// -- solution here 👾
-      </pre>
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [4,7,13]">
+        void draw()
+        {
+          int whichImage = (frameCount/animSpeed)%2;
+          if (! isAlive) {
+            tint(255, 64);  // <-- faded out
+            image(img1, x, y, size, size);
+          } else {
+            if (whichImage == 1) {  // <-- only waves if isAlive
+              image(img1, x, y, size, size);
+            } else {
+              image(img2, x, y, size, size);
+            }
+          }
+        }
+      
+      
+        void move()
+        {
+          if (isAlive) {  // <-- only moves if isAlive
+            x+= speed;
+          }
+        }
+</pre>
       </div>
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
@@ -590,21 +624,32 @@ The method should change the speed to the <i>negative</i>i> of the current speed
 <p>Change the <code>checkForMouse</code> method in your Invader class so that if the mouse is on the Invader and <code>mousePressed</code> is <code>true</code>, your Invader is no longer alive!.</p>
 <p>This is almost a game. Almost, right.</p>
 <p>You could add a global <code>score</code> variable, add to it when an Invader is clicked and show this on the canvas.</p>
+<p>Can you work out where to add the following code?</p>
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-  void setup()
-  {
-    size(200, 200);
+  if (mousePressed) {
+    tint(255, 0, 0);
+    isAlive = false;
   }
-  
 </pre>
 
     <!-- Hidden code button -->
     <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
     <div class="prettyprint" style="display: none;">
       <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-// -- solution here 👾
-      </pre>
+        void checkForMouse()
+        {
+          if (mouseX&gt; x-size/2 && mouseX&lt; x+size/2 && mouseY&gt; y-size/2 && mouseY&lt; y+size/2) {
+            tint(180, 200, 255);
+            if (mousePressed) {
+              tint(255, 0, 0);
+              isAlive = false;
+              //score ++;  // <-- add to the score (if you have a 'score' global declared at the top of the sketch and initialised to 0)
+            }
+          } else {
+            tint(255);
+          }
+        }      </pre>
       </div>
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
@@ -614,24 +659,39 @@ The method should change the speed to the <i>negative</i>i> of the current speed
 </div>
 
 <h3>13. Add More Invaders (Groups!)</h3>
-<p>But we need more Invaders - so let's declare an array full of them, and add them at random positions and with random speeds.</p>
+<p>But the point of all of this becomes more evident when we realise that we need more Invaders. Because now we have an Invader class we can easily declare amy more instances with behaviours that vary. So let's declare an array full of them, and add them at random positions and with random speeds.</p>
 <p>Then we have a game!</p>
 <p>Use the code below to help.</p>
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-  void setup()
-  {
-    size(200, 200);
+  // -- Declare a global variable at the top of the sketch - an array of Invaders:
+  Invader [] spaceInvaders;
+
+  // -- Then in setup() ...
+  // -- Initialise this array with as many Invaders as you need:
+  spaceInvaders = new Invader [55];
+
+  // -- Run through the array initialising Invaders in each array element with random characteristics:
+  for (int i=0; i&lt; spaceInvaders.length; i++) {
+    spaceInvaders[i] = new Invader (random(size, width-size), random(size, height-size), size, random(-3, 3), int(random(25, 75)));
   }
-  
 </pre>
+
+<p>Can you refactor your code to declare and initialise these arrays and then work out how you loop through the array to move, check for edges, check for the mouse and then draw, each Invader?</p>
 
     <!-- Hidden code button -->
     <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-// -- solution here 👾
-      </pre>
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [4,5,6,7]">
+        // -- You need to loop through the array of Invaders in turn and run the methods that invoke the behaviours.
+        // -- Something like this goes in the main sketch draw() loop: 
+        for (Invader i : spaceInvaders) {
+          i.move();
+          i.checkForEdge();
+          i.checkForMouse();
+          i.draw();
+        }
+</pre>
       </div>
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
