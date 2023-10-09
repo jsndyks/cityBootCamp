@@ -34,6 +34,10 @@
 
   <!-- iFrame -->
     <script type="text/javascript" src="https://jsndyks.github.io/cityBootCamp/js/iframeResizer.contentWindow.min.js"></script>
+
+    <style>
+     img,.invader {border:dashed 1px #e0e0e0}
+    </style>
 </head>
 
 <body>
@@ -56,11 +60,12 @@
     <hr/>
 
     <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
-      <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.01.png" width=125/>
+      <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.01.png" width=125/>
     </div>
 
     <h3>1. Show the <code>frameCount</code> on a 200 x 200 canvas</h3>
-    <p>Use the <code><a href="https://processing.org/reference/text_.html">text()</a></code> method to do so - it takes three parameters that specify the text String to show, and the x and y positions of the text.</p>
+    <p>Use the <code><a href="https://processing.org/reference/text_.html">text()</a></code> method to do so - it takes three parameters that specify:
+      <br/>>the text String to show on the canvas, and then the x and y positions at which to display the text.</p>
 
     <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
       void setup()
@@ -91,7 +96,7 @@
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
-  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.02.png" width=125/>
+  <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.02.png" width=125/>
 </div>
 
 <h3>2. Add Two Images</h3>
@@ -119,7 +124,7 @@
   void draw() {
     background(255);
   
-    // -- change the image:
+    // -- show the frameCount (small, near the top):
     text(frameCount, width-40, 12);
   
     // -- use image() to draw the images here
@@ -129,12 +134,13 @@
     <!-- Hidden code button -->
     <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: []">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [7,8,20,21]">
         PImage invader1, invader2;
 
         void setup() {
           size(200, 200);
         
+          // -- initialise the images here from their URLs
           invader1 = loadImage("invader11.up.png");
           invader2 = loadImage("invader11.down.png");
         
@@ -144,9 +150,10 @@
         void draw() {
           background(255);
         
-          // -- change the image:
+          // -- show the frameCount (small, near the top):
           text(frameCount, width-40, 12);
         
+          // -- use image() to draw the images here
           image(invader1, width/2, height/4, 50, 50);
           image(invader1, width/2, 3*height/4, 50, 50);
         }</pre>
@@ -155,16 +162,17 @@
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
-  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.03.png" width=125/>
+  <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.03.png" width=125/>
 </div>
 
 <h3>3. Add an Interaction</h3>
 <p>Remove one of the images!<br/>
-  Make the image position and size if the remaining image dependent upon three global variables: <code>x</code>, <code>y</code> and <code>size</code></p>
+  Make the image position and size of the remaining image dependent upon three global variables declared at the top of your sketch before <code>setup()</code>:
+  <code>x</code>, <code>y</code> and <code>size</code></p>
 <p>
   Add an interaction to this image so that it is a different colour when the mouse is over it.<br/>
   Use <code><a href="https://processing.org/reference/tint_.html">tint()</a></code> to change the colour of the image if so.<br/>
-<code>tint(255)</code> will produce a regular (untinted) image, as will <code><a href="https://processing.org/reference/noTint_.html">noTint()</a></code></p>
+<code>tint(255)</code> will produce a regular (untinted) image, as will <code><a href="https://processing.org/reference/noTint_.html">noTint()</a></code>.</p>
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [25]">
   PImage invader1, invader2;
@@ -187,11 +195,12 @@
   void draw() {
     background(255);
   
-    // -- change the image:
+    // -- show the frameCount (small, near the top):
     text(frameCount, width-40, 12);
   
     // -- check mouse position - is it inside the invader?
-    if () {  // <-- add the condition to check whether the mouse is over the image
+    if (true) // <-- add the condition to check whether the mouse is over the image
+    {  
       tint(180, 200, 255);  // <-- blue tint
     } else {
       tint(255); // <-- no tint
@@ -205,31 +214,36 @@
     <!-- Hidden code button -->
     <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [2,3,4,5,6]">
-          // -- check mouse position - remember that the invader is centred on x and y because of imageAlign(CENTER)!
-          if (mouseX> x-size/2 && mouseX< x+size/2 && mouseY> y-size/2 && mouseY< y+size/2) {
-          }
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [3]">
+          // -- check mouse position - remember that the invader is centred on x and y because of imageMode(CENTER)!
+
+          if (mouseX &gt; x-size/2 && mouseX&lt; x+size/2 && mouseY &gt; y-size/2 && mouseY &lt; y+size/2)
+          {
+            tint(180, 200, 255);  // <-- blue tint
+          } else {
+            tint(255); // <-- no tint
+          }      
 </pre>
       </div>
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
-  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.04.png" width=125/>
+  <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.04.png" width=125/>
 </div>
 
 <h3>4. Make a Simple Class - Invader</h3>
 <p>We are going to step back a little now and create a class for space invaders that will define their characteristics and behaviour.</p>
 <p>Create a new tab called '<b>Invader</b>' and use this code to define the class.<br/>Fill in the gaps in the constructor!</p>
-<p>Your class should take _5 parameters_ defining any new Invader's</p>
+<p>Your class should take <em>5 parameters</em> defining any new Invader's</p>
 <ul>
   <li>position in x</li> 
   <li>position in y</li> 
   <li>size</li> 
-  <li>speed of movement (pixels per frame)</li> 
-  <li>speed of animation (more about this later)</li> 
+  <li>speed of movement (<em>pixels per frame</em>)</li> 
+  <li>speed of animation (<em>more about this later, just go with it as a 5th unused parameter for now</em>)</li> 
 </ul>
-<p>So we might instantiate an Invader with ...</p>
+<p>So we might declare and instantiate a new Invader object called <code>mySpaceInvader</code> with ...</p>
 <pre>Invader mySpaceInvader = new Invader(width/2, height/2, 100, 3, 50) </pre>
 <p>Use this code snippet as the basis of your class and complete the constructor.</p>
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [11,12,13]">
@@ -286,11 +300,12 @@
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
-  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.05.png" width=125/>
+  <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.05.png" width=125/>
 </div>
 
 <h3>5. Add a draw() Method to Invader</h3>
-<p>Add a <code>draw()</code> method under the constructor, to the Invader class to draw the Invader - but how do we actually draw the invader?</p>
+<p>Add a <code>draw()</code> method under the constructor, to the Invader class.</p>
+<p>This should to draw the Invader by putting a <code>PImage</code> on the canvas at <code>x</code>,<code>y</code> - but how do we actually draw the Invader?</p>
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [26]">
   class Invader
@@ -329,22 +344,23 @@
         // -- draw method:  
         void draw()
         {
-          image(img1, x, y, size, size);
+          image(img1, x, y, size, size); // <-- either of the images will do for now!
         }</pre>
       </div>
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
-  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.06.png" width=125/>
+  <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.06.png" width=125/>
 </div>
 
 <h3>6. Declare, Instantiate and Draw an Invader</h3>
-<p>OK - at last - let's declare, instantiate and draw an invader!</p>
+<p>OK - at last, we have an <code>Invader</code> class that will enable us to declare and instantiate <code>Invader</code> objects that have (some of) the characteristics of Space Invaders! So let's declare, instantiate and draw an invader!</p>
 
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [29,30]">PImage invader1, invader2;
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [3, 20, 29,30]">
+  PImage invader1, invader2;
 
-  Invader spaceInvader;
+  Invader spaceInvader; // <-- declare and Invader called spaceInvader
   
   int size = 25;
   int x, y;
@@ -361,7 +377,7 @@
   
     imageMode(CENTER);
     
-    spaceInvader = new Invader (x,y,size,0,0);
+    spaceInvader = new Invader (x,y,size,0,0); // <-- instantiate the Invader
   }
   
   void draw() {
@@ -370,7 +386,7 @@
     // -- change the image:
     text(frameCount, width-40, 12);
   
-    // -- add code to draw the Invader here:
+    // -- add code to draw the Invader 60 times per second here - use its draw() method:
 
   }
   </pre>
@@ -387,7 +403,7 @@
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
-  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.07.png" width=125/>
+  <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.07.png" width=125/>
 </div>
 
 <h3>7. Add Interaction</h3>
@@ -395,54 +411,60 @@
 <p>You should be able to use the code from <b>Step 3.</b> above, but this needs to be a method in the class.</p>
 <p>Call the Invader's <code>checkForMouse()</code> method in the main <code>draw()</code> loop of the sketch before you draw the Invader.</p>
 
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [3,4]">
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [3,4,5]">
   void checkForMouse()
   {
     // -- add the condition that checks for the mouse position and changes tint() depending on it.
     // -- see Step 3 above.
+    // -- but this code needs to be a method of the Invader class, in the Invader tab.
   }</pre>
 
     <!-- Hidden code button -->
     <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [1,2,3,4,5]">
-        if (mouseX> x-size/2 && mouseX< x+size/2 && mouseY> y-size/2 && mouseY< y+size/2) {
-          tint(180, 200, 255);
-        } else {
-          tint(255);
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [6,2,3,4,5]">
+        void checkForMouse() {
+          if (mouseX> x-size/2 && mouseX< x+size/2 && mouseY> y-size/2 && mouseY< y+size/2) {
+            tint(180, 200, 255);
+          } else {
+            tint(255);
+          }
         }
 
-        // --> call in the main draw() method of the sketch with - object.checkForMouse();
+        // --> call this method in the main draw() method of the sketch with - object.checkForMouse();
       </pre>
       </div>
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
-  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.08.png" width=125/>
+  <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.08.png" width=125/>
 </div>
 
-<h3>8. Add Animation - Make your Invader Bounce in a Threatening Manner!</h3>
+<h3>8. Add Animation - Make your Invader Wave in a Threatening Manner!</h3>
 <p>Give your Invader class another characteristic, an <code>isAlive</code> variable that is boolean and set to <code>true</code>.</p>
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [1]">
 boolean isAlive = true;       // <-- Invader status.</pre>
 
-<p>Then, update the Invader's <code>draw()</code> method as shown, to change the image depending upon the values of <coe>isAlive</code> and if this is true, vary the image that is shown based upon <code>frameCount</code> and <code>animSpeed</code>.<br/>
-  You may want to create a local variable to make this more readable - I use and calculate <code>whichImage</code>.</p>
+<p>Then, update the Invader's <code>draw()</code> method as shown, to change the image depending upon:</p>
+  <ul><li>the value of <code>isAlive</code>,</li>
+  <li>and if this is true, vary the image that is shown based upon <code>frameCount</code> and <code>animSpeed</code>.</li></ul>
+  <p>You may want to create a local variable to make this more readable - I use and calculate <code>whichImage</code>.</p>
 <!-- <p>Update the sketch to display the value of <code>whichImage</code>.</p> -->
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
   void draw()
   {
-    int whichImage = (frameCount/animSpeed)%2;
+    int whichImage = (frameCount/animSpeed)%2; // <-- uses modulo to return 1 or 0 from value that varies with frameCount
+
     if (! isAlive) {
       tint(255, 64);
       image(img2, x, y, size, size);
     } else {
       if (whichImage == 1) {
-        image(img1, x, y, size, size);
+        image(img1, x, y, size, size); // <-- vary image shown depending on value of whichImage
       } else {
-        image(img2, x, y, size, size);
+        image(img2, x, y, size, size); // <-- vary image shown depending on value of whichImage
       }
     }
   }</pre>
@@ -460,61 +482,81 @@ boolean isAlive = true;       // <-- Invader status.</pre>
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
-  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.09.png" width=125/>
+  <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.09.png" width=125/>
 </div>
 
 <h3>9. Make your Invader Move Across The Screen!</h3>
-<p>Add a <code>move()</code> method to the Invader class that changes the Invader's <code>x</code> position by <code>speed</code>.</p>
+<p>Add a <code>move()</code> method to the Invader class that changes the Invader's <code>x</code> position by <code>speed</code>, <code>if</code> the Invader <code>isAlive</code>.</p>
 <p>Update the sketch to <code>move()</code> the Invader each time the main <code>draw()</code> loop runs.</p>
 
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-  void setup()
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [4,5]">
+  // -- This method needs to go in the Invader class definition, in the Invader tab near (but not in) move(): 
+  void move()
   {
-    size(200, 200);
+    // -- check whether Invader isAlive
+    // -- change x position by speed if so
   }
-  
-</pre>
+  </pre>
 
     <!-- Hidden code button -->
     <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-// -- solution here 👾
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [4,5,6]">
+// -- This method needs to go in the Invader class definition, in the Invader tab near (but not in) move(): 
+void move()
+{
+  if (isAlive) {
+    x+= speed;
+  }
+}
+
+// -- You will need to run the Invader's move() method in the draw() loop:
+spaceInvader.draw();
+
+// -- Remember to give your Invader a non-zero speed when you initialize it: 4th parameter:
+spaceInvader = new Invader (x,y,size,1,100);
       </pre>
       </div>
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
-  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.10.png" width=125/>
+  <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.10.png" width=125/>
 </div>
 
 <h3>10. Make your Invader Stay on The Screen!</h3>
 <p>We need the Invader to stay on the screen, so add a method that will change the direction of travel when the Invader reaches the screen edge.</p>
-<p>A good way to do this is to add a <code>checkForEdge()</code> method and call this before you <code>draw()</code> the Invader.
-The method should change the speed if the Invader is at an edge: <code>speed = speed * -1</code>.</p>
+<p>A good way to do this is to add a <code>checkForEdge()</code> method to the Invader class and call this before you <code>draw()</code> the Invader.<br/>
+The method should change the speed to the <i>negative</i>i> of the current speed if the Invader is at an edge - this will effectively make it change direction: <code>speed = speed * -1</code>.</p>
 <p>Update the sketch to <code>checkForEdge()</code> after the Invader <code>move()</code>s in the main <code>draw()</code> loop.</p>
 
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-  void setup()
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [3]">
+  void checkForEdge()
   {
-    size(200, 200);
-  }
-  
+    if (condition) // <-- under what condition(s) do we want to change the direction of travel of the Invader?
+    {
+      speed = speed * -1;
+    }
+  }  
 </pre>
 
     <!-- Hidden code button -->
     <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-// -- solution here 👾
-      </pre>
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [3]">
+        void checkForEdge()
+        {
+          if (x<size x>width-size)
+          {
+            speed = speed * -1;
+          }
+        }      </pre>
       </div>
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
-  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.11.png" width=125/>
+  <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.11.png" width=125/>
 </div>
 
 <h3>11. Make your Invader Not Alive</h3>
@@ -541,7 +583,7 @@ The method should change the speed if the Invader is at an edge: <code>speed = s
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
-  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.12.png" width=125/>
+  <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.12.png" width=125/>
 </div>
 
 <h3>12. Add a Mouse Interaction to Make Your Invader Not Alive</h3>
@@ -568,7 +610,7 @@ The method should change the speed if the Invader is at an edge: <code>speed = s
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
-  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.13.png" width=125/>
+  <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.13.png" width=125/>
 </div>
 
 <h3>13. Add More Invaders</h3>
@@ -595,7 +637,7 @@ The method should change the speed if the Invader is at an edge: <code>speed = s
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
-  <img src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.14.png" width=125/>
+  <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.14.png" width=125/>
 </div>
 
 <h3>14. Vary Game and GamePlay</h3>
