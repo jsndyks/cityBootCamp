@@ -444,9 +444,9 @@
   }</pre>
 
     <!-- Hidden code button -->
-    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+    <span><a href="#" class="link-show-code">Click to Show checkForMouse() solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [6,2,3,4,5,15,16,17,18]">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [6,2,3,4,5]">
         void checkForMouse() {
           if (mouseX> x-size/2 && mouseX< x+size/2 && mouseY> y-size/2 && mouseY< y+size/2) {
             tint(180, 200, 255);
@@ -454,7 +454,13 @@
             tint(255);
           }
         }
-
+      </pre></div>
+      <p>&nbsp;</p>
+      <p>This gives you the functionality.<br/>But to use it you will need to call this new method for each Invader in the <code>draw()</code> loop.</p>
+      <!-- Hidden code button -->
+    <span><a href="#" class="link-show-code">Click to Show checkForMouse() solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+    <div class="prettyprint" style="display: none;">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [7,8,9,10]">
         void draw() {
           background(255);
         
