@@ -411,14 +411,13 @@
     <!-- Hidden code button -->
     <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [8,9,10]">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [7,8,9]">
         void draw() {
           background(255);
         
           // -- change the image:
           text(frameCount, width-40, 12);
         
-          // -- add code to draw the Invaders 60 times per second here - use the draw() method:
           spaceInvader1.draw(); // <-- that's all we need to do to call the Invader's draw() method!
           spaceInvader2.draw(); // <-- do the same to draw the next Invader!
           spaceInvader3.draw(); // <-- and by now you are hopefully wondering about loops?
@@ -434,7 +433,7 @@
 <h3>Step 7. Add Interaction</h3>
 <p>Add a <code>checkForMouse()</code> method to your Invader class that changes the colour of your invader when the mouse is over it.</p>
 <p>You should be able to use the code from <b>Step 3.</b> above, but this needs to be a method in the class.</p>
-<p>Call the Invader's <code>checkForMouse()</code> method in the main <code>draw()</code> loop of the sketch before you draw the Invader so that the fill colour or tint is set before the Invader is drawn.</p>
+<p>Call the Invader's <code>checkForMouse()</code> method in the main <code>draw()</code> loop of the sketch before you draw the Invader so that the fill colour or tint is set before the Invader is drawn: <code>object.checkForMouse()</code>.</p>
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [3,4,5]">
   void checkForMouse()
@@ -447,7 +446,7 @@
     <!-- Hidden code button -->
     <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [6,2,3,4,5]">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [6,2,3,4,5,15,16,17,18]">
         void checkForMouse() {
           if (mouseX> x-size/2 && mouseX< x+size/2 && mouseY> y-size/2 && mouseY< y+size/2) {
             tint(180, 200, 255);
@@ -456,8 +455,22 @@
           }
         }
 
-        // --> call this method in the main draw() method of the sketch with - object.checkForMouse();
-      </pre>
+        void draw() {
+          background(255);
+        
+          // -- change the image:
+          text(frameCount, width-40, 12);
+        
+          // --> call this new method in the main draw() method of the sketch with - object.checkForMouse():
+          spaceInvader1.checkForMouse(); // <-- use the new checkForMouse() method to see if the mouse is in spaceInvader1
+          spaceInvader2.checkForMouse(); // <-- or spaceInvader2
+          spaceInvader3.checkForMouse(); // <-- or spaceInvader3?
+
+          spaceInvader1.draw(); // <-- that's all we need to do to call the Invader's draw() method!
+          spaceInvader2.draw(); // <-- do the same to draw the next Invader!
+          spaceInvader3.draw(); // <-- and by now you are hopefully wondering about loops?
+        }
+    </pre>
       </div>
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
