@@ -621,7 +621,7 @@ So let's display it in a grey colour, and stop it waving and moving.</p>
 </div>
 
 <h3>12. Add a Mouse Interaction to Make Your Invader Not Alive</h3>
-<p>Change the <code>checkForMouse</code> method in your Invader class so that if the mouse is on the Invader and <code>mousePressed</code> is <code>true</code>, your Invader is no longer alive!.</p>
+<p>Change the <code>checkForMouse</code> method in your Invader class so that if the mouse is on the Invader and <code>mousePressed</code> is <code>true</code>, your Invader is no longer alive!. You remember the <code><a href="https://processing.org/reference/mousePressed.html">mousePressed</a></code> variable?</p>
 <p>This is almost a game. Almost, right.</p>
 <p>You could add a global <code>score</code> variable, add to it when an Invader is clicked and show this on the canvas.</p>
 <p>Can you work out where to add the following code?</p>
@@ -636,17 +636,20 @@ So let's display it in a grey colour, and stop it waving and moving.</p>
     <!-- Hidden code button -->
     <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [8,9]">
         void checkForMouse()
         {
           if (mouseX&gt; x-size/2 && mouseX&lt; x+size/2 && mouseY&gt; y-size/2 && mouseY&lt; y+size/2) {
+            // -- mouse is in image:
             tint(180, 200, 255);
             if (mousePressed) {
+              // -- mouse button is pressed:
               tint(255, 0, 0);
               isAlive = false;
               //score ++;  // <-- add to the score (if you have a 'score' global declared at the top of the sketch and initialised to 0)
             }
           } else {
+            // -- mouse is not in image:
             tint(255);
           }
         }      </pre>
@@ -663,10 +666,15 @@ So let's display it in a grey colour, and stop it waving and moving.</p>
 <p>Then we have a game!</p>
 <p>Use the code below to help.</p>
 
+Declare a global variable at the top of the sketch - an array of Invaders:
+
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
   // -- Declare a global variable at the top of the sketch - an array of Invaders:
-  Invader [] spaceInvaders;
+  Invader [] spaceInvaders;</pre>
 
+ <p>Then in <code>setup()</code>, initialise this array with as many Invaders as you need, before looping through the array and initialising Invaders in each array element with random characteristics.</p>
+
+  <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
   // -- Then in setup() ...
   // -- Initialise this array with as many Invaders as you need:
   spaceInvaders = new Invader [55];
@@ -706,22 +714,15 @@ So let's display it in a grey colour, and stop it waving and moving.</p>
 <p>With an <code>ArrayList</code>of Invaders (<code>ArrayList&lt;Invader&gt;</code>) you could add and remove Invaders with different characteristics over time.</p>
 <p>You could add sound to the game - do check the 'Art and Media' lecture for ideas here.</p>
 <p>Have fun and be imaginative</p>
+<p>Here is a sketch that does some of this, and an Invader class that supports it:</p>
 
+<p><b>Sketch : spaceInvader.pde</b></p>
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-  void setup()
-  {
-    size(200, 200);
-  }
-  
 </pre>
 
-    <!-- Hidden code button -->
-    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
-    <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
-// -- solution here 👾
-      </pre>
-      </div>
+<p><b>Invader Class : Invader.pde</b> - put this in a tab called 'Invader'</p>
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+</pre>
 
 <hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
@@ -729,7 +730,8 @@ So let's display it in a grey colour, and stop it waving and moving.</p>
             <hr />
             <div class="sig">
                 <b>Jason DYKES</b><br />
-                <i>06 Oct 2023</i>
+                <!-- <i>06 Oct 2023</i> -->
+                <i>10 Oct 2023</i>
             </div>
             <div style="padding-bottom:2em;clear:both" />
 
