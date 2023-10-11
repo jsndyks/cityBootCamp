@@ -268,7 +268,9 @@
   <li><code>animSpeed</code> - speed of animation (<em>more about this later, just go with it as a 5th unused parameter for now: #forwardPlanning</em>)</li> 
 </ul>
 <p>So we might declare and instantiate a new Invader object called <code>mySpaceInvader</code> with ...</p>
-<pre>Invader mySpaceInvader = new Invader(width/2, height/2, 100, 3, 50) </pre>
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [1]">
+  Invader mySpaceInvader = new Invader(width/2, height/2, 100, 3, 50)
+</pre>
 <p>Use this code snippet as the basis of your class and complete the constructor.</p>
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [11,12,13,14]">
   class Invader
@@ -291,7 +293,9 @@
 
   <p>&nbsp;</p>
   <p>Check whether your class works by creating a new Invader object. Simply add the code that we suggested above to the <code>setup()</code> method.</p>
-  <pre>Invader mySpaceInvader = new Invader(width/2, height/2, 100, 3, 50); </pre>
+  <pre class="brush: processing; gutter: false; toolbar: false; highlight: [1]">
+    Invader mySpaceInvader = new Invader(width/2, height/2, 100, 3, 50);
+  </pre>
   <p>We won't see anything, as we haven't drawn it. But if this instantiation runs without an error, then we have successfully defined a class to define Invaders, and created an instance of that class: an invader - '<code>mySpaceInvader</code>'</p>
 
     <!-- Hidden code button -->
@@ -323,7 +327,7 @@
 <hr class="step"/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
-  <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/invader/gif/invader.05.gif" width=125/>
+  <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/invader/gif/invader.step05.gif" width=125/>
 </div>
 
 <h3>Step 5. Add a draw() Method to the Invader Class</h3>
@@ -358,9 +362,23 @@
     }
   }</pre>
 
+  <p>&nbsp;</p>
+  <p>Check whether your Invader <code>draw()</code> method works by defining a new global Invader object and instantiating it with a bigger size (3rd parameter).<br/>
+    Call the Invader's <code>draw()</code> method in the main sketch <code>draw()</code> loop.</p>
+    <pre class="brush: processing; gutter: false; toolbar: false; highlight: [2,5,8]">
+      // -- Declare a global variable of type Invader:
+      Invader mySpaceInvader;
+
+      // -- Initialise this Invader object once in setup():
+      mySpaceInvader = new Invader(width/2, height/2, 100, 3, 50);
+
+      // -- Call the object's draw() method in the main draw() loop:
+      mySpaceInvader.draw();
+    </pre>
+    <p>What do you notice?<br/>Can you explain this?</p>
     <!-- Hidden code button -->
 <hr class="solutionButton"/>
-        <span class="showSolutionButton">&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - What do we put in there to draw an invader with a PImage?</span>
+        <span class="showSolutionButton">&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - What do we put in the object's <code>draw()</code> method to draw an invader with a PImage?</span>
     <div class="prettyprint" style="display: none;">
       <pre class="brush: processing; gutter: false; toolbar: false; highlight: [4]">
         // -- draw method:  
@@ -440,8 +458,9 @@
 </div>
 
 <h3>Step 7. Add an Interaction Method to the Invader Class</h3>
-<p>Add a <code>checkForMouse()</code> method to your Invader class that changes the colour of your invader when the mouse is over it.</p>
-<p>You should be able to use the code from <b>Step 3.</b> above, but this needs to be a method in the class.</p>
+<p>You may have noticed above that our interaction is no longer reliable!</p>
+<p>We need to add a <code>checkForMouse()</code> method to the Invader class that changes the colour of the invader when the mouse is over it.</p>
+<p>You should be able to use the code from <b>Step 3.</b> above, but this needs to be a method in the Invader class.</p>
 <p>Call the Invader's <code>checkForMouse()</code> method in the main <code>draw()</code> loop of the sketch before you draw the Invader so that the fill colour or tint is set before the Invader is drawn: <code>object.checkForMouse()</code>.</p>
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [3,4,5]">
@@ -472,7 +491,7 @@
 <hr class="solutionButton"/>
     <span class="showSolutionButton">&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - Can you remember how to to call the method of an object that you have instantiated? </span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [7,8,9,10]">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [8,9,1,12,14,15]">
         void draw() {
           background(255);
         
@@ -481,12 +500,13 @@
         
           // --> call this new method in the main draw() method of the sketch with - object.checkForMouse():
           spaceInvader1.checkForMouse(); // <-- use the new checkForMouse() method to see if the mouse is in spaceInvader1
-          spaceInvader2.checkForMouse(); // <-- or spaceInvader2
-          spaceInvader3.checkForMouse(); // <-- or spaceInvader3?
+          spaceInvader1.draw();          // <-- draw the Invader as the tint may have changed above!
 
-          spaceInvader1.draw(); // <-- that's all we need to do to call the Invader's draw() method!
-          spaceInvader2.draw(); // <-- do the same to draw the next Invader!
-          spaceInvader3.draw(); // <-- and by now you are hopefully wondering about loops?
+          spaceInvader2.checkForMouse(); // <-- or spaceInvader2
+          spaceInvader2.draw();          // <-- draw the Invader as the tint may have changed above!
+
+          spaceInvader3.checkForMouse(); // <-- or spaceInvader3?
+          spaceInvader3.draw();          // <-- draw the Invader as the tint may have changed above!
         }
     </pre>
       </div>
