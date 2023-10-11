@@ -719,12 +719,13 @@ The  <code>checkForEdge()</code> method should change the speed to the <i>negati
 
 <h3>Step 11. Give your Invaders Not Alive Status</h3>
 <p>To make a game, we need to be able to give our Invaders a different <i>state</i> according to whether they are alive and active or, well ... not.</p>
-<p>Give your Invader class another characteristic, an <code>isAlive</code> field that is a <b>boolean</b>, initially set to <code>true</code> in the constructor when a new Invader object is initialised to capture its state.</p>
+<p>Give your Invader class another characteristic, by adding an <code>isAlive</code> field that is a <b>boolean</b>.
+  Initially set this to <code>true</code> in the constructor when a new Invader object is initialised to capture its 'alive' initial state.</p>
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [1]">
 boolean isAlive = true;       // <-- Invader status.</pre>
 <p>If the Invader is <b>not alive</b>, we need to reflect this in its look and behaviours.<br/>
-So let's display it in a grey colour, and stop it waving and moving.</p>
-<p>Change <code>isAlive</code> to <code>false</code> and use conditions so that ... <code>if (isAlive == false)</code> ...</p>
+So let's display it in a grey colour, and stop it waving and moving, based on the status of <code>idsAlive</code>.</p>
+<p>Change <code>isAlive</code> to <code>false</code> in the constructor and use conditions so that ... <code>if (isAlive == false)</code> ...</p>
 <ul>
 <li>the image feint - <code>tint(255,64)</code></li>
 <li>the waving stops</li>
@@ -732,10 +733,11 @@ So let's display it in a grey colour, and stop it waving and moving.</p>
 </ul>
 <p>You will need to update the <code>draw()</code> and <code>move()</code> methods in the Invader class to draw the Invader differently <code>if (isAlive == false)</code>.</p>
 
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [5,7,8,15]">
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [6,8,9,16]">
   // -- Methods of Invader class :
   void draw()
   {
+    int whichImage = (frameCount/animSpeed)%2;
     if (! isAlive) {
       // -- Faded out
     } else {
