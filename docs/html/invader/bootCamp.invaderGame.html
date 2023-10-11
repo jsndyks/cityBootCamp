@@ -540,9 +540,9 @@
 <h3>Step 8. Add Animation - Make your Invaders Wave in a Threatening Manner!</h3>
 
 <p>The reason that we have two <code>PImage</code>s in the sketch is so that we can vary what is drawn in the Invader's <code>draw()</code> method.
-  If we change the image that is drawn over time then we can animate it.<br/>
-Update the <code>draw()</code> method in the Invader class to change the image depending upon a combination of <code>frameCount</code> and <code>animSpeed</code> so that the image switching is faster when <code>animSpeed</code> is higher.</p>
-<p>You may want to create a local variable to make this calculation and condition readable - I declare and calculate <code>whichImage</code>.</p>
+  If we change the image that is drawn over time then we can animate it.</p>
+Update the <code>draw()</code> method in the Invader class to change the image depending upon a combination of <code>frameCount</code> and <code>animSpeed</code> so that the image switching is faster when <code>animSpeed</code> is higher.
+<br/>You may want to create a local variable to make this calculation and condition readable - I declare and calculate <code>whichImage</code>.</p>
 <!-- <p>Update the sketch to display the value of <code>whichImage</code>.</p> -->
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [3,4]">
@@ -601,8 +601,6 @@ Update the <code>draw()</code> method in the Invader class to change the image d
 <p>Add a <code>move()</code> method to the Invader class that changes the Invader's <code>x</code> position by <code>speed</code>.</p>
 <p>Update the sketch to <code>move()</code> the Invader each time the main <code>draw()</code> loop runs.</p>
 
-<p>To get the Invaders to move, you will need to call each Invader's <code>move()</code> method in the main <code>draw()</code> loop of the main sketch, and initialise the Invaders with a non-zero <code>speed</code>.</p>
-
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [4]">
   // -- This method needs to go in the Invader class definition, in the Invader tab near (but not in) draw(): 
   void move()
@@ -623,6 +621,10 @@ void move()
   x+= speed; // <-- it's as easy as that!
 }</pre>
 </div>
+
+<p>&nbsp;</p>
+<p>To get the Invaders to move, you will need to call each Invader's <code>move()</code> method in the main <code>draw()</code> loop of the main sketch.</p>
+<p>Stil static? Remember to initialise the Invaders with a non-zero <code>speed</code>!</p>
 
     <!-- Hidden code button -->
     <hr class="solutionButton"/>
