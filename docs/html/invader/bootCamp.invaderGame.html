@@ -190,17 +190,17 @@
 <p>Remove one of the images!<br/>
   Make the image position and size of the remaining image dependent upon three global variables.<br/>
   These should be declared at the top of your sketch before the <code>setup()</code> method:
-  <code>x</code>, <code>y</code> and <code>size</code></p>
+  <code>xI</code>, <code>yI</code> and <code>sI</code> for the x and y positions, and size of the invader respectively.</p>
 <p>
   Add an interaction to this image so that it is a different colour when the mouse is over it.<br/>
   Use <code><a href="https://processing.org/reference/tint_.html">tint()</a></code> to change the colour of the image if so.<br/>
 <code>tint(255)</code> will produce a regular (untinted) image, as will <code><a href="https://processing.org/reference/noTint_.html">noTint()</a></code>.</p>
 
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [25]">
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [25,26]">
   PImage invader1, invader2;
 
-  int sI = 25;  // <-- Invader position (declare and initialise)
-  int xI, yI;   // <-- Invader size (declare)
+  int sI = 25;  // &lt;-- Invader size (declare)
+  int xI, yI;   // &lt;-- Invader position (declare and initialise)
   
   void setup() {
     size(200, 200);
@@ -208,7 +208,7 @@
     invader1 = loadImage("invader11.up.png");
     invader2 = loadImage("invader11.down.png");
   
-    xI = width /2;  // -- initialise Invader position
+    xI = width /2;  // &lt;-- initialise Invader position
     yI = height/2;
   
     imageMode(CENTER);
@@ -222,10 +222,10 @@
     text(frameCount, width-40, 12);
   
     // -- check mouse position - is it inside the invader?
-    if (true) // <-- add the condition to check whether the mouse is over the image
-      tint(180, 200, 255);  // <-- blue tint
+    if (true) // &lt;-- add the condition to check whether the mouse is over the image
+      tint(180, 200, 255);  // &lt;-- blue tint
     } else {
-      tint(255); // <-- no tint
+      tint(255); // &lt;-- no tint
     }
   
     // -- draw the invader:
@@ -258,14 +258,14 @@
 
 <h3>Step 4. Make a Simple Class - Invader</h3>
 <p>We are going to step back a little now and create a <b>class</b> for space invaders 👾 that will define their characteristics and behaviour.</p>
-<p>Create a new tab called '<b>Invader</b>' and add the rudimentary code that follows to define the class.<br/>The Invader has seven <i>fields</i> - variables that are available to all methods in the class.<br/>You will need to fill in the gaps in the constructor to set these fields!</p>
-<p>Your class should take <em>5 parameters</em> defining any new Invader's ...</p>
+<p>Create a new tab called '<b>Invader</b>' and add the following rudimentary code to define the class.<br/>The Invader has <i>five fields</i> - variables that are available to all methods in the class.<br/>You will need to fill in the gaps in the constructor to set these fields from the arguments that are passed into the class when the Invader is initialised</p>
+<p>So your class should take <em>5 parameters</em> defining any new Invader's ...</p>
 <ul>
-  <li>position in x</li> 
-  <li>position in y</li> 
-  <li>size</li> 
-  <li>speed of movement (<em>pixels per frame</em>)</li> 
-  <li>speed of animation (<em>more about this later, just go with it as a 5th unused parameter for now</em>)</li> 
+  <li><code>x</code> - position in x</li> 
+  <li><code>y</code> - position in y</li> 
+  <li><code>size</code> - size of the image to be drawn</li> 
+  <li><code>speed</code> - speed of movement (<em>pixels per frame</em>)</li> 
+  <li><code>animSpeed</code> - speed of animation (<em>more about this later, just go with it as a 5th unused parameter for now</em>)</li> 
 </ul>
 <p>So we might declare and instantiate a new Invader object called <code>mySpaceInvader</code> with ...</p>
 <pre>Invader mySpaceInvader = new Invader(width/2, height/2, 100, 3, 50) </pre>
@@ -277,7 +277,6 @@
     float x, y;                   // <-- Invader position.
     float size, speed;            // <-- Invader size & speed.
     int   animSpeed;               // <-- Invader image animation change speed.
-    PImage img1, img2;            // <-- Invader images.
   
     // -- Constructor - this is called whenever a new invader is created.
     Invader(float xIn, float yIn, float sizeIn, float speedIn, int animIn)
@@ -286,12 +285,14 @@
       // -- The values passed into the object should be used to initialise
       // --   the four floats and the integer here in the constructor.
   
-      // -- Use these two images in the Invader ...
-      img1 = invader1;
-      img2 = invader2;
     }
   }
   </pre>
+
+  <p>&nbsp;</p>
+  <p>Check whether your class works by creating a new Invader object by adding the code that we suggested above in <code>setup()</code>.</p>
+  <pre>Invader mySpaceInvader = new Invader(width/2, height/2, 100, 3, 50); </pre>
+  <p>We won't see anything, as we haven't drawn it. But if this instantiation runs without an error, then we have successfully defined a class to define Invaders, and created an instance of that class: an invader - '<code>mySpaceInvader</code>'</p>
 
     <!-- Hidden code button -->
 <hr class="solutionButton"/>
@@ -304,7 +305,6 @@
           float x, y;                   // <-- Invader position.
           float size, speed;            // <-- Invader size & speed.
           int   animSpeed;               // <-- Invader image animation change speed.
-          PImage img1, img2;            // <-- Invader images.
         
           // -- Constructor - this is called whenever a new invader is created.
           Invader(float xIn, float yIn, float sizeIn, float speedIn, int animIn)
@@ -315,10 +315,6 @@
             size=sizeIn;
             speed=speedIn;
             animSpeed=animIn;
-        
-            // -- Use these two images in the Invader ...
-            img1 = invader1;
-            img2 = invader2;
           }
         }
               </pre>
@@ -331,6 +327,7 @@
 </div>
 
 <h3>Step 5. Add a draw() Method to the Invader Class</h3>
+<p>OK - but we want to see the Invader! So we need to draw it.</p>
 <p>Add a <code>draw()</code> method under the constructor, to the Invader class.<br/>This will allow us to display any Invader that we create when it is called.</p>
 <p>This should to draw the Invader by putting a <code>PImage</code> on the canvas at <code>x</code>,<code>y</code> - but how do we actually draw the Invader?</p>
 
@@ -341,7 +338,6 @@
     float x, y;                   // <-- Invader position.
     float size, speed;            // <-- Invader size & speed.
     int   animSpeed;              // <-- Invader image animation change speed.
-    PImage img1, img2;            // <-- Invader images.
   
     // -- Constructor - this is called whenever a new invader is created.
     Invader(float xIn, float yIn, float sizeIn, float speedIn, int animIn)
@@ -353,9 +349,6 @@
       speed=speedIn;
       animSpeed=animIn;
   
-      // -- Use these two images ...
-      img1 = invader1;
-      img2 = invader2;
     }
     
     // -- draw method:  
