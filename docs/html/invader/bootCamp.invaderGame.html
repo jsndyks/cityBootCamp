@@ -131,7 +131,7 @@
 <!-- <p>Use <code><a href="https://processing.org/reference/quad_.html">PImage</a></code> and the <code><a href="https://processing.org/reference/quad_.html">image()</a></code> method to do so.</p> -->
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [6, 17]">
-  PImage invader1, invader2; // <-- declare two PImages as global variables
+  PImage img1, img2; // <-- declare two PImages as global variables
 
   void setup() {
     size(200, 200);
@@ -156,14 +156,14 @@
     <span class="showSolutionButton">&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - How do we load a <code>PImage</code> and show it on the canvas?</span>
     <div class="prettyprint" style="display: none;">
       <pre class="brush: processing; gutter: false; toolbar: false; highlight: [7,8,20,21]">
-        PImage invader1, invader2;
+        PImage img1, img2;
 
         void setup() {
           size(200, 200);
         
           // -- initialise the PImages here by loading them from the image URLs
-          invader1 = loadImage("invader11.up.png");
-          invader2 = loadImage("invader11.down.png");
+          img1 = loadImage("invader11.up.png");
+          img2 = loadImage("invader11.down.png");
         
           imageMode(CENTER);
         }
@@ -175,8 +175,8 @@
           text(frameCount, width-40, 12);
         
           // -- use image() to draw the images here
-          image(invader1, width/2, height/4, 50, 50);
-          image(invader2, width/2, 3*height/4, 50, 50);
+          image(img1, width/2, height/4, 50, 50);
+          image(img2, width/2, 3*height/4, 50, 50);
         }</pre>
       </div>
 
@@ -197,7 +197,7 @@
 <code>tint(255)</code> will produce a regular (untinted) image, as will <code><a href="https://processing.org/reference/noTint_.html">noTint()</a></code>.</p>
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [25,26]">
-  PImage invader1, invader2;
+  PImage img1, img2;
 
   int sI = 25;  // &lt;-- Invader size (declare)
   int xI, yI;   // &lt;-- Invader position (declare and initialise)
@@ -205,8 +205,8 @@
   void setup() {
     size(200, 200);
   
-    invader1 = loadImage("invader11.up.png");
-    invader2 = loadImage("invader11.down.png");
+    img1 = loadImage("invader11.up.png");
+    img2 = loadImage("invader11.down.png");
   
     xI = width /2;  // &lt;-- initialise Invader position
     yI = height/2;
@@ -229,7 +229,7 @@
     }
   
     // -- draw the invader:
-    image(invader1, xI, yI, sI, sI);
+    image(img1, xI, yI, sI, sI);
   }
 </pre>
 
@@ -265,12 +265,12 @@
   <li><code>y</code> - position in y</li> 
   <li><code>size</code> - size of the image to be drawn</li> 
   <li><code>speed</code> - speed of movement (<em>pixels per frame</em>)</li> 
-  <li><code>animSpeed</code> - speed of animation (<em>more about this later, just go with it as a 5th unused parameter for now</em>)</li> 
+  <li><code>animSpeed</code> - speed of animation (<em>more about this later, just go with it as a 5th unused parameter for now: #forwardPlanning</em>)</li> 
 </ul>
 <p>So we might declare and instantiate a new Invader object called <code>mySpaceInvader</code> with ...</p>
 <pre>Invader mySpaceInvader = new Invader(width/2, height/2, 100, 3, 50) </pre>
 <p>Use this code snippet as the basis of your class and complete the constructor.</p>
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [12,13,14]">
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [11,12,13,14]">
   class Invader
   {
     // -- Create Invader with 7 fields - variables that are accessible to all methods in the class:
@@ -290,7 +290,7 @@
   </pre>
 
   <p>&nbsp;</p>
-  <p>Check whether your class works by creating a new Invader object by adding the code that we suggested above in <code>setup()</code>.</p>
+  <p>Check whether your class works by creating a new Invader object. Simply add the code that we suggested above to the <code>setup()</code> method.</p>
   <pre>Invader mySpaceInvader = new Invader(width/2, height/2, 100, 3, 50); </pre>
   <p>We won't see anything, as we haven't drawn it. But if this instantiation runs without an error, then we have successfully defined a class to define Invaders, and created an instance of that class: an invader - '<code>mySpaceInvader</code>'</p>
 
@@ -298,7 +298,7 @@
 <hr class="solutionButton"/>
         <span class="showSolutionButton">&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - How do we get the values of the arguments passed into the Invader into the fields in the object we create?</span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [13,14,15,16,17]">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [11,12,13,14,15,16]">
         class Invader
         {
           // -- Create Invader with 7 fields - variables that are accessible to all methods in the class:
@@ -328,10 +328,11 @@
 
 <h3>Step 5. Add a draw() Method to the Invader Class</h3>
 <p>OK - but we want to see the Invader! So we need to draw it.</p>
-<p>Add a <code>draw()</code> method under the constructor, to the Invader class.<br/>This will allow us to display any Invader that we create when it is called.</p>
+<p>Add a <code>draw()</code> method to the Invader class, under the constructor.<br/>
+  This will allow us to display any Invader that we create when it is called.</p>
 <p>This should to draw the Invader by putting a <code>PImage</code> on the canvas at <code>x</code>,<code>y</code> - but how do we actually draw the Invader?</p>
 
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [27]">
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [22]">
   class Invader
   {
     // -- Create Invader with 7 fields - variables that are accessible to all methods in the class:
@@ -348,7 +349,6 @@
       size=sizeIn;
       speed=speedIn;
       animSpeed=animIn;
-  
     }
     
     // -- draw method:  
@@ -381,7 +381,7 @@
 <p>This may seem like a lot of work for a little gain right now, but we will reap the rewards later when it becomes easy to create many Invaders ... should we need them.</p>
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [3, 20,21,22, 31,32]">
-  PImage invader1, invader2;
+  PImage img1, img2;
 
   Invader spaceInvader1, spaceInvader2, spaceInvader3; // <-- declare and Invaders called spaceInvader1, 2 and 3
   
@@ -392,8 +392,8 @@
     size(200, 200);
   
     // -- load the images that the Invader objects use:
-    invader1 = loadImage("invader11.up.png");
-    invader2 = loadImage("invader11.down.png");
+    img1 = loadImage("invader11.up.png");
+    img2 = loadImage("invader11.down.png");
   
     x = width /2;
     y = height/2;
