@@ -663,8 +663,8 @@ spaceInvader3.checkForEdge(); // &lt;-- what happens if you hash this command ou
 </div>
 
 <h3>Step 11. Give your Invaders Not Alive Status</h3>
-<p>To make a game, we need to be able to give our Invaders a different status according to whether they are alive and active or, well ... not.</p>
-<p>Give your Invader class another characteristic, an <code>isAlive</code> field that is a <b>boolean</b>, initially set to <code>true</code> in the constructor when a new Invader object is initialised.</p>
+<p>To make a game, we need to be able to give our Invaders a different <i>state</i> according to whether they are alive and active or, well ... not.</p>
+<p>Give your Invader class another characteristic, an <code>isAlive</code> field that is a <b>boolean</b>, initially set to <code>true</code> in the constructor when a new Invader object is initialised to capture its state.</p>
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [1]">
 boolean isAlive = true;       // <-- Invader status.</pre>
 <p>If the Invader is <b>not alive</b>, we need to reflect this in its look and behaviours.<br/>
