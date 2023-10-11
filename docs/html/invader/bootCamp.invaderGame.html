@@ -427,6 +427,7 @@
     background(255);
   
     // -- show the frameCount:
+    fill(32);
     text(frameCount, width-40, 12);
   
     // -- check mouse position - is it inside the invader?
@@ -449,7 +450,8 @@
         void draw() {
           background(255);
         
-          // -- change the image:
+          // -- show the frameCount:
+          fill(32);
           text(frameCount, width-40, 12);
 
           // -- check mouse position - is it inside the invader?
@@ -474,9 +476,8 @@
 
 <h3>Step 7. Add an Interaction Method to the Invader Class</h3>
 <p>You may have noticed above that our interaction is no longer reliable!<br/>
-  We need to add a <code>checkForMouse()</code> method to the Invader class that changes the colour of each invader instance when the mouse is over it. So we can get rid of the legacy 'check mouse position' code but use this to develop a method in Invader.</p>
-<p>You should be able to use the code from <b>Step 3.</b> above, as the basis for method in the Invader class.</p>
-<p>Call the Invader's <code>checkForMouse()</code> method in the main <code>draw()</code> loop of the sketch before you draw the Invader so that the fill colour or tint is set before the Invader is drawn: <code>object.checkForMouse()</code>.</p>
+  We need to add a <code>checkForMouse()</code> method to the Invader class that changes the colour of each invader instance when the mouse is over it. So we can get rid of the legacy '<i>check mouse position</i>' code from the main <code>draw()</code> loop, but use this as the basis for developing a method in Invader.</p>
+<p>You should be able to use the code from <b>Step 3.</b> above, and adapt this to create a method that checks whether the mouse is in the invader in the Invader class.</p>
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [3,4,5]">
   void checkForMouse()
@@ -501,26 +502,30 @@
       </pre></div>
       <p>&nbsp;</p>
       <p>This gives you the functionality.<br/>But to actually use it you will need to call this new method for each Invader in the <code>draw()</code> loop.<br/>
-      Add the commands to the main sketch <code>draw()</code> method that call the new <code>checkForMouse()</code> method of each Invader</p>
+      Add the commands to the main sketch <code>draw()</code> method that call the new <code>checkForMouse()</code> method of each Invader.</p>
+      <p>Be sure to call the Invader's <code>checkForMouse()</code> method in the main <code>draw()</code> loop of the sketch before you draw the Invader so that the fill colour or tint is set before the Invader is drawn: <code>object.checkForMouse()</code>.</p>
+      <p>A good solution wil give us reliable interaction for each Invader that we initialise.</p>
+
       <!-- Hidden code button -->
 <hr class="solutionButton"/>
     <span class="showSolutionButton">&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - Can you remember how to to call the method of an object that you have instantiated? </span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [8,9,1,12,14,15]">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [9,10,12,13,15,16]">
         void draw() {
           background(255);
         
-          // -- change the image:
+          // -- show the frameCount:
+          fill(32);
           text(frameCount, width-40, 12);
         
           // --> call this new method in the main draw() method of the sketch with - object.checkForMouse():
-          spaceInvader1.checkForMouse(); // <-- use the new checkForMouse() method to see if the mouse is in spaceInvader1
+          spaceInvader1.checkForMouse();  // <-- use the new checkForMouse() method to see if the mouse is in spaceInvader1
           spaceInvader1.draw();          // <-- draw the Invader as the tint may have changed above!
-
-          spaceInvader2.checkForMouse(); // <-- or spaceInvader2
+         
+          spaceInvader2.checkForMouse();  // <-- or spaceInvader2
           spaceInvader2.draw();          // <-- draw the Invader as the tint may have changed above!
-
-          spaceInvader3.checkForMouse(); // <-- or spaceInvader3?
+         
+          spaceInvader3.checkForMouse();  // <-- or spaceInvader3?
           spaceInvader3.draw();          // <-- draw the Invader as the tint may have changed above!
         }
     </pre>
@@ -544,12 +549,12 @@ Update the <code>draw()</code> method in the Invader class to change the image d
   void draw() // <-- this is the draw() method of the Invader class
   {
     // -- Calculate a number that varies between 0 and 1 over time and allows us to choose one image or the other to draw:
-    int whichImage = ???????? %2; // <-- use modulo to return 1 or 0 from value that varies with frameCount
+    int whichImage = (????????????)%2; // <-- uses modulo to return 1 or 0 from value that varies with frameCount
 
-    if (whichImage == 1) {
-        image(img1, x, y, size, size); // <-- vary image shown depending on value of whichImage
+    if (whichImage == 1) {           // <-- vary image shown depending on value of whichImage
+      image(img1, x, y, size, size); // <-- show img1 on the canvas
     } else {
-        image(img2, x, y, size, size); // <-- vary image shown depending on value of whichImage
+      image(img2, x, y, size, size); // <-- show img2 on the canvas
     }
   }</pre>
 
@@ -560,16 +565,16 @@ Update the <code>draw()</code> method in the Invader class to change the image d
     <div class="prettyprint" style="display: none;">
       <pre class="brush: processing; gutter: false; toolbar: false; highlight: [4]">
         void draw() // <-- this is the draw() method of the Invader class
-        {
-          // -- Calculate a number that varies between 0 and 1 over time and allows us to choose one image or the other to draw:
-          int whichImage = (frameCount/animSpeed)%2; // <-- uses modulo to return 1 or 0 from value that varies with frameCount
-      
-          if (whichImage == 1) {
-              image(img1, x, y, size, size); // <-- vary image shown depending on value of whichImage
-          } else {
-              image(img2, x, y, size, size); // <-- vary image shown depending on value of whichImage
-          }
-        }</pre>
+          {
+            // -- Calculate a number that varies between 0 and 1 over time and allows us to choose one image or the other to draw:
+            int whichImage = (frameCount/animSpeed)%2; // <-- uses modulo to return 1 or 0 from value that varies with frameCount
+        
+            if (whichImage == 1) {           // <-- vary image shown depending on value of whichImage
+              image(img1, x, y, size, size); // <-- show img1 on the canvas
+            } else {
+              image(img2, x, y, size, size); // <-- show img2 on the canvas
+            }
+          }</pre>
       </div>
 
       <p>&nbsp;</p>
@@ -580,10 +585,10 @@ Update the <code>draw()</code> method in the Invader class to change the image d
       <div class="prettyprint" style="display: none;">
         <pre class="brush: processing; gutter: false; toolbar: false; highlight: [2,3,4]">
         // -- Initialise your Invaders with a non-zero animSpeed like this in the main sketch draw() method:
-        spaceInvader1 = new Invader (x, y, size, 0, 25); // <-- instantiate the first Invader
-        spaceInvader2 = new Invader (x, y-30, size, 0, 20); // <-- instantiate the second Invader above
-        spaceInvader3 = new Invader (x, y+30, size, 0, 35); // <-- instantiate the third Invader below
-        </pre>
+        spaceInvader1 = new Invader (xI, yI, sI, 0, 25);    // <-- instantiate the first Invader
+        spaceInvader2 = new Invader (xI, yI-30, sI, 0, 20); // <-- instantiate the second Invader above
+        spaceInvader3 = new Invader (xI, yI+30, sI, 0, 35); // <-- instantiate the third Invader below
+      </pre>
       </div>
 
 <hr class="step"/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
