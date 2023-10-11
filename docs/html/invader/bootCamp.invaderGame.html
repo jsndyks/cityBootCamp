@@ -624,7 +624,7 @@ void move()
 
 <p>&nbsp;</p>
 <p>To get the Invaders to move, you will need to call each Invader's <code>move()</code> method in the main <code>draw()</code> loop of the main sketch.</p>
-<p>Stil static? Remember to initialise the Invaders with a non-zero <code>speed</code>!</p>
+<p>Still static? Remember to initialise the Invaders with a non-zero <code>speed</code>!</p>
 
     <!-- Hidden code button -->
     <hr class="solutionButton"/>
@@ -637,9 +637,9 @@ spaceInvader2.move();
 spaceInvader3.move(); // <-- what happens if you hash this command out?
 
 // -- Remember to give your Invaders a non-zero speed when you initialize them: 4th parameter, bigger is faster:
-spaceInvader1 = new Invader (x, y, size, 1, 25);     // <-- instantiate the first Invader - right
-spaceInvader2 = new Invader (x, y-30, size, 2, 20);  // <-- instantiate the second Invader above - fast!
-spaceInvader3 = new Invader (x, y+30, size, -1, 35); // <-- instantiate the third Invader below - left
+spaceInvader1 = new Invader (x, y, size, 1, 25);     // <-- instantiate the first Invader - speed is 1
+spaceInvader2 = new Invader (x, y-30, size, 2, 20);  // <-- instantiate the second Invader above - faster!
+spaceInvader3 = new Invader (x, y+30, size, -1, 35); // <-- instantiate the third Invader below - moves left
 </pre>
       </div>
 
@@ -649,8 +649,8 @@ spaceInvader3 = new Invader (x, y+30, size, -1, 35); // <-- instantiate the thir
   <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/invader/img/invader.10.png" width=125/>
 </div>
 
-<h3>Step 10. Make your Invader Stay on The Screen!</h3>
-<p>We need the Invaders to stay on the screen, so add a method to the Invader class that will change the direction of travel when the Invader reaches the screen edge.</p>
+<h3>Step 10. Make your Invaders Stay on The Screen!</h3>
+<p>Hang on - we lost out Invaders there!<br/>We need them to stay on the screen, so add a method to the Invader class that will change the direction of travel when the Invader reaches the screen edge.</p>
 <p>A good way to do this is to add a <code>checkForEdge()</code> method to the Invader class and call this in the main <code>draw()</code> method before you <code>draw()</code> the Invader.<br/>
 The  <code>checkForEdge()</code> method should change the speed to the <i>negative</i> of the current speed if the Invader is at an edge - this will effectively make it change direction: <code>speed = speed * -1</code>.</p>
 <p>Update the sketch to <code>checkForEdge()</code> after the Invader <code>move()</code>s in the main <code>draw()</code> loop.</p>
@@ -686,12 +686,30 @@ The  <code>checkForEdge()</code> method should change the speed to the <i>negati
 <hr class="solutionButton"/>
 <span class="showSolutionButton">&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - How and where do we call our new <code>checkForEdge()</code> method?</span>
 <div class="prettyprint" style="display: none;">
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [2,3,4]">
-// -- You will need to run each Invaders' checkForEdge() method in the draw() loop:
-spaceInvader1.checkForEdge();
-spaceInvader2.checkForEdge();
-spaceInvader3.checkForEdge(); // &lt;-- what happens if you hash this command out?
-</pre></div>
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [11,16,21]">
+  void draw() {
+    background(255);
+  
+    // -- show the frameCount:
+    fill(32);
+    text(frameCount, width-40, 12);
+  
+    // --> call this new method in the main draw() method of the sketch with - object.checkForEdge():
+    spaceInvader1.checkForMouse(); // <-- use the new checkForMouse() method to see if the mouse is in spaceInvader1
+    spaceInvader1.move();          // <-- move spaceInvader1
+    spaceInvader1.checkForEdge();  // <-- check whether spaceInvader1 is at an edge?
+    spaceInvader1.draw();          // <-- draw the Invader as the tint may have changed above!
+  
+    spaceInvader2.checkForMouse(); // <-- or spaceInvader2
+    spaceInvader2.move();          // <-- move spaceInvader2
+    spaceInvader2.checkForEdge();  // <-- check whether spaceInvader2 is at an edge?
+    spaceInvader2.draw();          // <-- draw the Invader as the tint may have changed above!
+  
+    spaceInvader3.checkForMouse(); // <-- or spaceInvader3?
+    spaceInvader3.move();          // <-- move spaceInvader3
+    spaceInvader3.checkForEdge();  // <-- check whether spaceInvader3 is at an edge? What happens if you hash this out?
+    spaceInvader3.draw();          // <-- draw the Invader as the tint may have changed above!
+  }</pre></div>
 
 <hr class="step"/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
