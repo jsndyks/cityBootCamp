@@ -398,37 +398,44 @@
 <p>OK - at last, we have an <code>Invader</code> class that will enable us to declare and instantiate <code>Invader</code> objects that have (some of) the characteristics of Space Invaders! So let's declare, instantiate and draw three Invaders!</p>
 <p>This may seem like a lot of work for a little gain right now, but we will reap the rewards later when it becomes easy to create many Invaders ... should we need them.</p>
 
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [3, 20,21,22, 31,32]">
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [3, 20,21,22, 38,39]">
   PImage img1, img2;
-
-  Invader spaceInvader1, spaceInvader2, spaceInvader3; // <-- declare and Invaders called spaceInvader1, 2 and 3
-  
-  int size = 25;
-  int x, y;
+ 
+  Invader spaceInvader1, spaceInvader2, spaceInvader3; // <-- declare Invaders called spaceInvader1, 2 and 3
+   
+  int sI = 25;  // <-- Invader size (declare)
+  int xI, yI;   // <-- Invader position (declare and initialise)
   
   void setup() {
     size(200, 200);
-  
+   
     // -- load the images that the Invader objects use:
     img1 = loadImage("invader11.up.png");
     img2 = loadImage("invader11.down.png");
-  
-    x = width /2;
-    y = height/2;
-  
+   
+    xI = width /2;
+    yI = height/2;
+   
     imageMode(CENTER);
-    
-    spaceInvader1 = new Invader (x,y,size,0,0); // <-- instantiate the first Invader
-    spaceInvader2 = new Invader (x,y-30,size,0,0); // <-- instantiate the second Invader above
-    spaceInvader3 = new Invader (x,y+30,size,0,0); // <-- instantiate the third Invader below
+     
+    spaceInvader1 = new Invader (xI,yI,sI,0,0);    // <-- instantiate the first Invader
+    spaceInvader2 = new Invader (xI,yI-30,sI,0,0); // <-- instantiate the second Invader above
+    spaceInvader3 = new Invader (xI,yI+30,sI,0,0); // <-- instantiate the third Invader below
   }
-  
+
   void draw() {
     background(255);
   
-    // -- change the image:
+    // -- show the frameCount:
     text(frameCount, width-40, 12);
   
+    // -- check mouse position - is it inside the invader?
+    if (mouseX> xI-sI/2 && mouseX< xI+sI/2 && mouseY> yI-sI/2 && mouseY< yI+sI/2) {
+      tint(180, 200, 255);  // <-- blue tint
+    } else {
+      tint(255); // <-- no tint
+    }
+    
     // -- add code to draw the Invaders 60 times per second here - use the draw() method:
 
   }
@@ -438,13 +445,21 @@
 <hr class="solutionButton"/>
         <span class="showSolutionButton">&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - How do you call the <code>draw()</code> method that you have just written to draw an Invader!</span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [7,8,9]">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [15,16,17]">
         void draw() {
           background(255);
         
           // -- change the image:
           text(frameCount, width-40, 12);
-        
+
+          // -- check mouse position - is it inside the invader?
+          if (mouseX> xI-sI/2 && mouseX< xI+sI/2 && mouseY> yI-sI/2 && mouseY< yI+sI/2) {
+            tint(180, 200, 255);  // <-- blue tint
+          } else {
+            tint(255); // <-- no tint
+          }
+              
+          // -- draw the Invaders 60 times per second here - using the Invader draw() method:
           spaceInvader1.draw(); // <-- that's all we need to do to call the Invader's draw() method!
           spaceInvader2.draw(); // <-- do the same to draw the next Invader!
           spaceInvader3.draw(); // <-- and by now you are hopefully wondering about loops?
@@ -454,13 +469,13 @@
 <hr class="step"/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
-  <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/invader/img/invader.07.png" width=125/>
+  <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/invader/gif/invader.step07.gif" width=125/>
 </div>
 
 <h3>Step 7. Add an Interaction Method to the Invader Class</h3>
-<p>You may have noticed above that our interaction is no longer reliable!</p>
-<p>We need to add a <code>checkForMouse()</code> method to the Invader class that changes the colour of the invader when the mouse is over it.</p>
-<p>You should be able to use the code from <b>Step 3.</b> above, but this needs to be a method in the Invader class.</p>
+<p>You may have noticed above that our interaction is no longer reliable!<br/>
+  We need to add a <code>checkForMouse()</code> method to the Invader class that changes the colour of each invader instance when the mouse is over it. So we can get rid of the legacy 'check mouse position' code but use this to develop a method in Invader.</p>
+<p>You should be able to use the code from <b>Step 3.</b> above, as the basis for method in the Invader class.</p>
 <p>Call the Invader's <code>checkForMouse()</code> method in the main <code>draw()</code> loop of the sketch before you draw the Invader so that the fill colour or tint is set before the Invader is drawn: <code>object.checkForMouse()</code>.</p>
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [3,4,5]">
