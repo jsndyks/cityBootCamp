@@ -36,7 +36,10 @@
     <script type="text/javascript" src="https://jsndyks.github.io/cityBootCamp/js/iframeResizer.contentWindow.min.js"></script>
 
     <style>
-     img,.invader {border:dashed 1px #e0e0e0}
+     img.invader {border:dashed 1px #e0e0e0}
+     hr.step {margin-top:10em}
+     hr.solutionButton {width:60%;margin-top:3em;padding-top:1em; color:#d0d0d0}
+     .link-show-code {margin-top:2em;padding-top:1em; padding-bottom:1em;border-top:dashed #e0e0e0 1px}
     </style>
 </head>
 
@@ -56,7 +59,8 @@
     <h2>Invader Class</h2>
   
     <p>Let's use what we have learned about <i>interaction</i>, <i>methods</i>, <i>images</i> and <i>classes</i> to write a simple game in <em>Processing</em>.</p>
-    <p>This gives you code snippets and asks you to develop these to achieve particular capability. You can reveal solutions by clicking the buttons at the end of each step - bit of course, you will learn most and most successfully if you try to complete the tasks without these solutions. Gaining capabilities in programming is all about practicing, making mistakes and learning from this experience.</p>
+    <p>This page sets 14 successive tasks to build the game. In each case it gives you code snippets and asks you to develop these to achieve particular capability.</p>
+    <p>You can reveal solutions by clicking the buttons at the end of each step - but of course, you will learn most and most successfully if you try to complete the tasks without these solutions.</p><p></p>Gaining capabilities in programming is all about practicing, making mistakes and learning from this experience - with guidance and solutions to help. HAve a go, and see what you learn through the process.</p>
   
     <hr/>
 
@@ -64,12 +68,13 @@
       <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.01.png" width=125/>
     </div>
 
-    <h3>Step 1. Show the frameCount on a 200 x 200 canvas</h3>
+    <h3>Step 1. Show the FrameCount</h3>
+    <p>Make a simple sketch that shows the <code><a href="https://processing.org/reference/frameCount.html">frameCount</a></code> on a canvas of <code><a href="https://processing.org/reference/size_.html">size()</a></code> <b>200 x 200</b>.</p>
     <p>Use the <code><a href="https://processing.org/reference/text_.html">text()</a></code> method to do so - it takes three parameters that specify:
       <br/>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;the text String to show on the canvas, and then the x and y positions at which to display the text: 
     <code>text(string, x, y)</code></p>
-    <p>Remember that <code><a href="https://processing.org/reference/frameCount.html">frameCount</a></code> is a variable held and updated by <i>Processing</i> that records the number of times the <code>draw()</code> loop has been called.</p>
-    <p>Change <code><a href="https://processing.org/reference/textSize_.html">textSize()</a></code> and the colour to <code><a href="https://processing.org/reference/fill_.html">fill()</a></code> with in <code>setup()</code> if you like - e.g. big, orange 👉!</p>
+    <p>Remember that <code><a href="https://processing.org/reference/frameCount.html">frameCount</a></code> is a variable held and updated by <i>Processing</i> that records the number of times the <code>draw()</code> loop has been called.
+    <br/>Change <code><a href="https://processing.org/reference/textSize_.html">textSize()</a></code> and the colour to <code><a href="https://processing.org/reference/fill_.html">fill()</a></code> the text with in <code>setup()</code> if you like - e.g. big, orange 👉!</p>
 
 
     <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
@@ -85,7 +90,8 @@
 </pre>
 
         <!-- Hidden code button -->
-        <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+<hr class="solutionButton"/>
+            <span>&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - Coding Takes Practice and Requires 'Doing' (and mistakes)!</span>
         <div class="prettyprint" style="display: none;">
           <pre class="brush: processing; gutter: false; toolbar: false; highlight: [4,5,6,7,13]">
             void setup()
@@ -105,7 +111,7 @@
           </pre>
           </div>
 
-<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+<hr class="step"/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
   <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.02.png" width=125/>
@@ -113,7 +119,7 @@
 
 <h3>Step 2. Add Two Images</h3>
 <p>Declare two <code>PImage</code>s as global variables.</p>
-<p>Initialise them in <code>setup()</code> to contain these these two images from the following URLs, or from your local filespace.</p>
+<p>Initialise them in the <code>setup()</code> method of the sketch to contain these these two images from the following URLs, or from your local filespace.</p>
 <ul>
   <li><a href="https://jsndyks.github.io/cityBootCamp/images/invader11.up.png">https://jsndyks.github.io/cityBootCamp/images/invader11.up.png</a></li>
   <li><a href="https://jsndyks.github.io/cityBootCamp/images/invader11.down.png">https://jsndyks.github.io/cityBootCamp/images/invader11.down.png</a></li>
@@ -145,7 +151,8 @@
   }</pre>
 
     <!-- Hidden code button -->
-    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+<hr class="solutionButton"/>
+    <span>&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - How do we load a <code>PImage</code> and show it on the canvas?</span>
     <div class="prettyprint" style="display: none;">
       <pre class="brush: processing; gutter: false; toolbar: false; highlight: [7,8,20,21]">
         PImage invader1, invader2;
@@ -172,7 +179,7 @@
         }</pre>
       </div>
 
-<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+<hr class="step"/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
   <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.03.png" width=125/>
@@ -226,7 +233,8 @@
 </pre>
 
     <!-- Hidden code button -->
-    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+<hr class="solutionButton"/>
+        <span>&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - What is the condition to test whether the mouse is within the Invader?</span>
     <div class="prettyprint" style="display: none;">
       <pre class="brush: processing; gutter: false; toolbar: false; highlight: [3]">
           // -- check mouse position - remember that the invader is centred on x and y because of imageMode(CENTER)!
@@ -240,7 +248,7 @@
 </pre>
       </div>
 
-<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+<hr class="step"/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
   <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.04.png" width=125/>
@@ -248,8 +256,8 @@
 
 <h3>Step 4. Make a Simple Class - Invader</h3>
 <p>We are going to step back a little now and create a <b>class</b> for space invaders 👾 that will define their characteristics and behaviour.</p>
-<p>Create a new tab called '<b>Invader</b>' and add the rudimentary code that follows to define the class.<br/>You will need to fill in the gaps in the constructor!</p>
-<p>Your class should take <em>5 parameters</em> defining any new Invader's</p>
+<p>Create a new tab called '<b>Invader</b>' and add the rudimentary code that follows to define the class.<br/>The Invader has seven <i>fields</i> - variables that are available to all methods in the class.<br/>You will need to fill in the gaps in the constructor to set these fields!</p>
+<p>Your class should take <em>5 parameters</em> defining any new Invader's ...</p>
 <ul>
   <li>position in x</li> 
   <li>position in y</li> 
@@ -260,9 +268,10 @@
 <p>So we might declare and instantiate a new Invader object called <code>mySpaceInvader</code> with ...</p>
 <pre>Invader mySpaceInvader = new Invader(width/2, height/2, 100, 3, 50) </pre>
 <p>Use this code snippet as the basis of your class and complete the constructor.</p>
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [11,12,13]">
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [12,13,14]">
   class Invader
   {
+    // -- Create Invader with 7 fields - variables that are accessible to all methods in the class:
     float x, y;                   // <-- Invader position.
     float size, speed;            // <-- Invader size & speed.
     int   animSpeed;               // <-- Invader image animation change speed.
@@ -283,11 +292,13 @@
   </pre>
 
     <!-- Hidden code button -->
-    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+<hr class="solutionButton"/>
+        <span>&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - How do we get the values of the arguments passed into the Invader into the fields in the object we create?</span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [12,13,14,15,16]">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [13,14,15,16,17]">
         class Invader
         {
+          // -- Create Invader with 7 fields - variables that are accessible to all methods in the class:
           float x, y;                   // <-- Invader position.
           float size, speed;            // <-- Invader size & speed.
           int   animSpeed;               // <-- Invader image animation change speed.
@@ -311,7 +322,7 @@
               </pre>
       </div>
 
-<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+<hr class="step"/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
   <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.05.png" width=125/>
@@ -321,9 +332,10 @@
 <p>Add a <code>draw()</code> method under the constructor, to the Invader class.<br/>This will allow us to display any Invader that we create when it is called.</p>
 <p>This should to draw the Invader by putting a <code>PImage</code> on the canvas at <code>x</code>,<code>y</code> - but how do we actually draw the Invader?</p>
 
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [26]">
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [27]">
   class Invader
   {
+    // -- Create Invader with 7 fields - variables that are accessible to all methods in the class:
     float x, y;                   // <-- Invader position.
     float size, speed;            // <-- Invader size & speed.
     int   animSpeed;              // <-- Invader image animation change speed.
@@ -352,7 +364,8 @@
   }</pre>
 
     <!-- Hidden code button -->
-    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+<hr class="solutionButton"/>
+        <span>&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - What dio we put in there to draw an invader with a PImage?</span>
     <div class="prettyprint" style="display: none;">
       <pre class="brush: processing; gutter: false; toolbar: false; highlight: [4]">
         // -- draw method:  
@@ -362,7 +375,7 @@
         }</pre>
       </div>
 
-<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+<hr class="step"/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
   <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.06.png" width=125/>
@@ -409,7 +422,8 @@
   </pre>
 
     <!-- Hidden code button -->
-    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+<hr class="solutionButton"/>
+        <span>&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - How do you call the <code>draw()</code> method that you have just written to draw an Invader!</span>
     <div class="prettyprint" style="display: none;">
       <pre class="brush: processing; gutter: false; toolbar: false; highlight: [7,8,9]">
         void draw() {
@@ -424,7 +438,7 @@
         }</pre>
       </div>
 
-<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+<hr class="step"/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
   <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.07.png" width=125/>
@@ -444,8 +458,9 @@
   }</pre>
 
     <!-- Hidden code button -->
-    <span><a href="#" class="link-show-code">Click to Show checkForMouse() solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
-    <div class="prettyprint" style="display: none;">
+<hr class="solutionButton"/>
+<span>&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - How do you check whether the mouse is in the Invader object or not?</span>
+<div class="prettyprint" style="display: none;">
       <pre class="brush: processing; gutter: false; toolbar: false; highlight: [6,2,3,4,5]">
         void checkForMouse() {
           if (mouseX> x-size/2 && mouseX< x+size/2 && mouseY> y-size/2 && mouseY< y+size/2) {
@@ -456,9 +471,11 @@
         }
       </pre></div>
       <p>&nbsp;</p>
-      <p>This gives you the functionality.<br/>But to use it you will need to call this new method for each Invader in the <code>draw()</code> loop.</p>
+      <p>This gives you the functionality.<br/>But to actually use it you will need to call this new method for each Invader in the <code>draw()</code> loop.<br/>
+      Add the commands to the main sketch <code>draw()</code> method that call the new <code>checkForMouse()</code> method of each Invader</p>
       <!-- Hidden code button -->
-    <span><a href="#" class="link-show-code">Click to Show checkForMouse() solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+<hr class="solutionButton"/>
+    <span>&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - Can you remember how to to call the method of an object that you have instantiated? </span>
     <div class="prettyprint" style="display: none;">
       <pre class="brush: processing; gutter: false; toolbar: false; highlight: [7,8,9,10]">
         void draw() {
@@ -479,21 +496,22 @@
     </pre>
       </div>
 
-<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+<hr class="step"/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
   <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.08.png" width=125/>
 </div>
 
-<h3>8. Add Animation - Make your Invader Wave in a Threatening Manner!</h3>
+<h3>Step 8. Add Animation - Make your Invaders Wave in a Threatening Manner!</h3>
 
-<p>The reason that we have two <code>PImage</code>s is so that we can vary what is drawn in the Invader's <code>draw()</code> method to animate it.<br/>
-Update the <code>draw()</code> method in tne Invader class to change the image depending upon a combination of <code>frameCount</code> and <code>animSpeed</code> so that the image switching is faster when <code>animSpeed</code> is higher.</p>
-<p>You may want to create a local variable to make this calculation and condition readable - I use and calculate <code>whichImage</code>.</p>
+<p>The reason that we have two <code>PImage</code>s in the sketch is so that we can vary what is drawn in the Invader's <code>draw()</code> method.
+  If we change the image that is drawn over time then we can animate it.<br/>
+Update the <code>draw()</code> method in the Invader class to change the image depending upon a combination of <code>frameCount</code> and <code>animSpeed</code> so that the image switching is faster when <code>animSpeed</code> is higher.</p>
+<p>You may want to create a local variable to make this calculation and condition readable - I declare and calculate <code>whichImage</code>.</p>
 <!-- <p>Update the sketch to display the value of <code>whichImage</code>.</p> -->
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [3,4]">
-  void draw()
+  void draw() // <-- this is the draw() method of the Invader class
   {
     // -- Calculate a number that varies between 0 and 1 over time and allows us to choose one image or the other to draw:
     int whichImage = ???????? %2; // <-- use modulo to return 1 or 0 from value that varies with frameCount
@@ -505,31 +523,53 @@ Update the <code>draw()</code> method in tne Invader class to change the image d
     }
   }</pre>
 
-  <p>Now update the initialization of your Invader to give it an <code>animSpeed</code> (final parameter) and experiment with this.</p>
+  <p>See if you can calculate a value that varies a couple of times per second and then check for a solution.</p>
     <!-- Hidden code button -->
-    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+<hr class="solutionButton"/>
+        <span>&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - Can you calculate a value that results in 0 or 1 based <code>frameCount</code>?</span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [2,5]">
-        // -- Calculate a number that varies between 0 and 1 over time and allows us to choose one image or the other to draw:
-        int whichImage = (frameCount/animSpeed)%2; // <-- uses modulo to return 1 or 0 from value that varies with frameCount
-
-        // -- Initialise your Invader with a non-zero animSpeed like this in the main sketch draw() method:
-        spaceInvader = new Invader (x,y,size,0,50);
-      </pre>
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [4]">
+        void draw() // <-- this is the draw() method of the Invader class
+        {
+          // -- Calculate a number that varies between 0 and 1 over time and allows us to choose one image or the other to draw:
+          int whichImage = (frameCount/animSpeed)%2; // <-- uses modulo to return 1 or 0 from value that varies with frameCount
+      
+          if (whichImage == 1) {
+              image(img1, x, y, size, size); // <-- vary image shown depending on value of whichImage
+          } else {
+              image(img2, x, y, size, size); // <-- vary image shown depending on value of whichImage
+          }
+        }</pre>
       </div>
 
-<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+      <p>&nbsp;</p>
+
+      <p>Now update the initialization of your Invaders in the main <code>draw()</code>method to give them an <code>animSpeed</code> - it's the final parameter.<br/>
+        Experiment with this. What happens as you vary it?</p>
+          <span>&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - Initialise your Invaders with a non-zero <code>animSpeed</code> - final parameter</span>
+      <div class="prettyprint" style="display: none;">
+        <pre class="brush: processing; gutter: false; toolbar: false; highlight: [2,3,4]">
+        // -- Initialise your Invaders with a non-zero animSpeed like this in the main sketch draw() method:
+        spaceInvader1 = new Invader (x, y, size, 0, 25); // <-- instantiate the first Invader
+        spaceInvader2 = new Invader (x, y-30, size, 0, 20); // <-- instantiate the second Invader above
+        spaceInvader3 = new Invader (x, y+30, size, 0, 35); // <-- instantiate the third Invader below
+        </pre>
+      </div>
+
+<hr class="step"/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
   <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.09.png" width=125/>
 </div>
 
-<h3>9. Make your Invader Move Across The Screen!</h3>
+<h3>Step 9. Make your Invader Move Across The Screen!</h3>
 <p>Add a <code>move()</code> method to the Invader class that changes the Invader's <code>x</code> position by <code>speed</code>.</p>
 <p>Update the sketch to <code>move()</code> the Invader each time the main <code>draw()</code> loop runs.</p>
 
+<p>To get the Invaders to move, you will need to call each Invader's <code>move()</code> method in the main <code>draw()</code> loop of the main sketch, and initialise the Invaders with a non-zero <code>speed</code>.</p>
+
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [4]">
-  // -- This method needs to go in the Invader class definition, in the Invader tab near (but not in) move(): 
+  // -- This method needs to go in the Invader class definition, in the Invader tab near (but not in) draw(): 
   void move()
   {
     // -- change x position by speed:
@@ -537,34 +577,45 @@ Update the <code>draw()</code> method in tne Invader class to change the image d
   </pre>
 
     <!-- Hidden code button -->
-    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+<hr class="solutionButton"/>
+        <span>&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - Add <code>speed</code> to the <code>x</code> position of the Invader</span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [5,9,12]">
-// -- This method needs to go in the Invader class definition, in the Invader tab near (but not in) move(): 
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [5]">
+// -- This method needs to go in the Invader class definition, in the Invader tab near (but not in) draw(): 
 void move()
 {
   // -- change x position by speed:
-  x+= speed;
-}
+  x+= speed; // <-- it's as easy as that!
+}</pre>
+</div>
 
-// -- You will need to run the Invader's move() method in the draw() loop:
-spaceInvader.draw();
+    <!-- Hidden code button -->
+    <hr class="solutionButton"/>
+    <span>&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - How and where do we call the new <code>move()</code> method?</span>
+<div class="prettyprint" style="display: none;">
+  <pre class="brush: processing; gutter: false; toolbar: false; highlight: [2,3,4,7,8,9]">
+// -- You will need to run the Invaders' move() method in the draw() loop:
+spaceInvader1.move();
+spaceInvader2.move();
+spaceInvader3.move(); // <-- what happens if you hash this command out?
 
-// -- Remember to give your Invader a non-zero speed when you initialize it: 4th parameter, bigger is faster:
-spaceInvader = new Invader (x,y,size,1,100);
-      </pre>
+// -- Remember to give your Invaders a non-zero speed when you initialize them: 4th parameter, bigger is faster:
+spaceInvader1 = new Invader (x, y, size, 1, 25);     // <-- instantiate the first Invader - right
+spaceInvader2 = new Invader (x, y-30, size, 2, 20);  // <-- instantiate the second Invader above - fast!
+spaceInvader3 = new Invader (x, y+30, size, -1, 35); // <-- instantiate the third Invader below - left
+</pre>
       </div>
 
-<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+<hr class="step"/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
   <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.10.png" width=125/>
 </div>
 
-<h3>10. Make your Invader Stay on The Screen!</h3>
-<p>We need the Invader to stay on the screen, so add a method that will change the direction of travel when the Invader reaches the screen edge.</p>
-<p>A good way to do this is to add a <code>checkForEdge()</code> method to the Invader class and call this before you <code>draw()</code> the Invader.<br/>
-The method should change the speed to the <i>negative</i> of the current speed if the Invader is at an edge - this will effectively make it change direction: <code>speed = speed * -1</code>.</p>
+<h3>Step 10. Make your Invader Stay on The Screen!</h3>
+<p>We need the Invaders to stay on the screen, so add a method to the Invader class that will change the direction of travel when the Invader reaches the screen edge.</p>
+<p>A good way to do this is to add a <code>checkForEdge()</code> method to the Invader class and call this in the main <code>draw()</code> method before you <code>draw()</code> the Invader.<br/>
+The  <code>checkForEdge()</code> method should change the speed to the <i>negative</i> of the current speed if the Invader is at an edge - this will effectively make it change direction: <code>speed = speed * -1</code>.</p>
 <p>Update the sketch to <code>checkForEdge()</code> after the Invader <code>move()</code>s in the main <code>draw()</code> loop.</p>
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [3]">
@@ -578,41 +629,56 @@ The method should change the speed to the <i>negative</i> of the current speed i
 </pre>
 
     <!-- Hidden code button -->
-    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+<hr class="solutionButton"/>
+        <span>&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - How do we detect whether the Invader is at the left or right edge?</span>
     <div class="prettyprint" style="display: none;">
       <pre class="brush: processing; gutter: false; toolbar: false; highlight: [3]">
         void checkForEdge()
         {
-          if (x&lt;size &verbar;&verbar; x&gt;width-size) // <-- you could use 0 or size/2 here and get different effects
+          if (x&lt;size &verbar;&verbar; x&gt;width-size) // &lt;-- you could use x&lt;0 or x&lt;size/2 here and get different effects
           {
             speed = speed * -1;
           }
         }      </pre>
       </div>
 
-<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+      <p><br/>Now we need to call this method in the main <code>draw()</code> loop to change the direction of the Invader is an edge is detected.<br/>
+        How and where do we call our new <code>checkForEdge()</code> method?</p>
+
+          <!-- Hidden code button -->
+<hr class="solutionButton"/>
+<span>&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - How and where do we call our new <code>checkForEdge()</code> method?</span>
+<div class="prettyprint" style="display: none;">
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [2,3,4]">
+// -- You will need to run each Invaders' checkForEdge() method in the draw() loop:
+spaceInvader1.checkForEdge();
+spaceInvader2.checkForEdge();
+spaceInvader3.checkForEdge(); // &lt;-- what happens if you hash this command out?
+</pre></div>
+
+<hr class="step"/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
   <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.11.png" width=125/>
 </div>
 
-<h3>11. Give your Invader Not Alive Status</h3>
-<p>To make a game, we need to be able to give our Invader a different status according to whether it is alive and active or, well ... not.</p>
-<p>Give your Invader class another characteristic, an <code>isAlive</code> variable that is a global boolean, initially set to <code>true</code> in the constructor when a new Invader object is initialised.</p>
+<h3>Step 11. Give your Invaders Not Alive Status</h3>
+<p>To make a game, we need to be able to give our Invaders a different status according to whether they are alive and active or, well ... not.</p>
+<p>Give your Invader class another characteristic, an <code>isAlive</code> field that is a <b>boolean</b>, initially set to <code>true</code> in the constructor when a new Invader object is initialised.</p>
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [1]">
 boolean isAlive = true;       // <-- Invader status.</pre>
 <p>If the Invader is <b>not alive</b>, we need to reflect this in its look and behaviours.<br/>
 So let's display it in a grey colour, and stop it waving and moving.</p>
-<p>Change <code>isAlive</code> to <code>false</code> and use conditions to make ...</p>
+<p>Change <code>isAlive</code> to <code>false</code> and use conditions so that ... <code>if (isAlive == false)</code> ...</p>
 <ul>
 <li>the image feint - <code>tint(255,64)</code></li>
-<li>the waving stop</li>
+<li>the waving stops</li>
 <li>and the movement stop: <code>speed = 0</code></li>
 </ul>
-<p>... if <code>isAlive == false</code>.</p>
-<p>You will need to update the <code>draw()</code> and <code>move()</code> methods in the Invader class to draw the Invader differently if <code>isAlive == false</code>.</p>
+<p>You will need to update the <code>draw()</code> and <code>move()</code> methods in the Invader class to draw the Invader differently <code>if (isAlive == false)</code>.</p>
 
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [5,7,8,15]">
+  // -- Methods of Invader class :
   void draw()
   {
     if (! isAlive) {
@@ -630,9 +696,11 @@ So let's display it in a grey colour, and stop it waving and moving.</p>
   }  </pre>
 
     <!-- Hidden code button -->
-    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+<hr class="solutionButton"/>
+        <span>&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - How do we use <code>isAlive</code> to determine how the Invader is drawn and whether it moves?</span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [4,7,13]">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [5,8,14,20,21,22]">
+        // -- Methods of Invader class :
         void draw()
         {
           int whichImage = (frameCount/animSpeed)%2;
@@ -658,7 +726,9 @@ So let's display it in a grey colour, and stop it waving and moving.</p>
 </pre>
       </div>
 
-<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+<hr class="step"/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+
+// -- HERE!
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
   <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.12.png" width=125/>
@@ -678,7 +748,8 @@ So let's display it in a grey colour, and stop it waving and moving.</p>
 </pre>
 
     <!-- Hidden code button -->
-    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+<hr class="solutionButton"/>
+        <span>&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - Coding Takes Practice and Requires 'Doing' (and mistakes)!</span>
     <div class="prettyprint" style="display: none;">
       <pre class="brush: processing; gutter: false; toolbar: false; highlight: [8,9]">
         void checkForMouse()
@@ -699,7 +770,7 @@ So let's display it in a grey colour, and stop it waving and moving.</p>
         }      </pre>
       </div>
 
-<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+<hr class="step"/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
   <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.13.png" width=125/>
@@ -732,7 +803,8 @@ Declare a global variable at the top of the sketch - an array of Invaders:
 <p>Can you refactor your code to declare and initialise these arrays and then work out how you loop through the array to move, check for edges, check for the mouse and then draw, each Invader?</p>
 
     <!-- Hidden code button -->
-    <span><a href="#" class="link-show-code">Click to Show Solution - But Have a Try First! Coding Takes Practice and Requires 'Doing'! </a></span>
+<hr class="solutionButton"/>
+        <span>&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - Coding Takes Practice and Requires 'Doing' (and mistakes)!</span>
     <div class="prettyprint" style="display: none;">
       <pre class="brush: processing; gutter: false; toolbar: false; highlight: [4,5,6,7]">
         // -- You need to loop through the array of Invaders in turn and run the methods that invoke the behaviours.
@@ -746,7 +818,7 @@ Declare a global variable at the top of the sketch - an array of Invaders:
 </pre>
       </div>
 
-<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+<hr class="step"/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
 <div style="float:right; padding-left:1em;padding-bottom:1em;padding-top:2em">
   <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/images/2023%7C24/img/invader/invader.14.png" width=125/>
@@ -768,7 +840,7 @@ Declare a global variable at the top of the sketch - an array of Invaders:
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
 </pre>
 
-<hr/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
+<hr class="step"/> <!--- 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 👾 --->
 
     <!-- End of content -->
             <hr />
