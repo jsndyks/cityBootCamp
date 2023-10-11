@@ -199,8 +199,8 @@
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [25]">
   PImage invader1, invader2;
 
-  int size = 25;
-  int x, y;
+  int sI = 25;  // <-- Invader position (declare and initialise)
+  int xI, yI;   // <-- Invader size (declare)
   
   void setup() {
     size(200, 200);
@@ -208,8 +208,8 @@
     invader1 = loadImage("invader11.up.png");
     invader2 = loadImage("invader11.down.png");
   
-    x = width /2;
-    y = height/2;
+    xI = width /2;  // -- initialise Invader position
+    yI = height/2;
   
     imageMode(CENTER);
   }
@@ -217,30 +217,31 @@
   void draw() {
     background(255);
   
-    // -- show the frameCount (small, near the top):
+    // -- change the image:
+    fill(32);
     text(frameCount, width-40, 12);
   
     // -- check mouse position - is it inside the invader?
     if (true) // <-- add the condition to check whether the mouse is over the image
-    {  
       tint(180, 200, 255);  // <-- blue tint
     } else {
       tint(255); // <-- no tint
     }
   
     // -- draw the invader:
-    image(invader1, x, y, size, size);
+    image(invader1, xI, yI, sI, sI);
   }
 </pre>
+
 
     <!-- Hidden code button -->
 <hr class="solutionButton"/>
         <span class="showSolutionButton">&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - What is the condition to test whether the mouse is within the Invader?</span>
     <div class="prettyprint" style="display: none;">
       <pre class="brush: processing; gutter: false; toolbar: false; highlight: [3]">
-          // -- check mouse position - remember that the invader is centred on x and y because of imageMode(CENTER)!
+          // -- check mouse position - remember that the invader is centred on xI and yI because of imageMode(CENTER)!
 
-            if (mouseX &gt; x-size/2 && mouseX&lt; x+size/2 && mouseY &gt; y-size/2 && mouseY &lt; y+size/2)
+          if (mouseX&gt; xI-sI/2 && mouseX&lt; xI+sI/2 && mouseY&gt; yI-sI/2 && mouseY&lt; yI+sI/2) {
             {
               tint(180, 200, 255);  // <-- blue tint
             } else {
@@ -366,7 +367,7 @@
 
     <!-- Hidden code button -->
 <hr class="solutionButton"/>
-        <span class="showSolutionButton">&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - What dio we put in there to draw an invader with a PImage?</span>
+        <span class="showSolutionButton">&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - What do we put in there to draw an invader with a PImage?</span>
     <div class="prettyprint" style="display: none;">
       <pre class="brush: processing; gutter: false; toolbar: false; highlight: [4]">
         // -- draw method:  
