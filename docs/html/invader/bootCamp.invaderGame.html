@@ -728,55 +728,55 @@ The <code>checkForEdge()</code> method should change the speed to the <i>negativ
   <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/invader/gif/invader.step11.gif" width=125/>
 </div>
 
-<h3>Step 11. Give your Invaders Not Alive Status</h3>
-<p>To make a game, we need to be able to give our Invaders a different <i>state</i> according to whether they are alive and active or, well ... not.</p>
-<p>Give your Invader class another characteristic, by adding an <code>isAlive</code> field that is a <b>boolean</b>.
-  Initially set this to <code>true</code> in the constructor when a new Invader object is initialised to capture its 'alive' initial state.</p>
+<h3>Step 11. Give your Invaders Not Active Status</h3>
+<p>To make a game, we need to be able to give our Invaders a different <i>state</i> according to whether they are active and active or, well ... not.</p>
+<p>Give your Invader class another characteristic, by adding an <code>isActive</code> field that is a <b>boolean</b>.
+  Initially set this to <code>true</code> in the constructor when a new Invader object is initialised to capture its 'active' initial state.</p>
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [1]">
-boolean isAlive = true;       // <-- Invader status.</pre>
-<p>If the Invader is <b>not alive</b>, we need to reflect this in its look and behaviours.<br/>
-So let's display it in a grey colour, and stop it waving and moving, based on the status of <code>idsAlive</code>.</p>
-<p>Change <code>isAlive</code> to <code>false</code> in the constructor and use conditions so that ... <code>if (isAlive == false)</code> ...</p>
+boolean isActive = true;       // <-- Invader status.</pre>
+<p>If the Invader is <b>not active</b>, we need to reflect this in its look and behaviours.<br/>
+So let's display it in a grey colour, and stop it waving and moving, based on the status of <code>idsActive</code>.</p>
+<p>Change <code>isActive</code> to <code>false</code> in the constructor and use conditions so that ... <code>if (isActive == false)</code> ...</p>
 <ul>
 <li>the image feint - <code>tint(255,64)</code></li>
 <li>the waving stops</li>
 <li>and the movement stop: <code>speed = 0</code></li>
 </ul>
-<p>You will need to update the <code>draw()</code> and <code>move()</code> methods in the Invader class to draw the Invader differently <code>if (isAlive == false)</code>.</p>
+<p>You will need to update the <code>draw()</code> and <code>move()</code> methods in the Invader class to draw the Invader differently <code>if (isActive == false)</code>.</p>
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [6,8,9,16]">
   // -- Methods of Invader class :
   void draw()
   {
     int whichImage = (frameCount/animSpeed)%2;
-    if (! isAlive) {
+    if (! isActive) {
       // -- Faded out
     } else {
       // -- Not faded out  
-      // Only waves if isAlive
+      // Only waves if isActive
     }
   }
 
 
   void move()
   {
-    // Only moves if isAlive
+    // Only moves if isActive
   }  </pre>
 
     <!-- Hidden code button -->
 <hr class="solutionButton"/>
-        <span class="showSolutionButton">&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - How do we use <code>isAlive</code> to determine how the Invader is drawn and whether it moves?</span>
+        <span class="showSolutionButton">&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - How do we use <code>isActive</code> to determine how the Invader is drawn and whether it moves?</span>
     <div class="prettyprint" style="display: none;">
       <pre class="brush: processing; gutter: false; toolbar: false; highlight: [5,8,14,20,21,22]">
         // -- Methods of Invader class :
         void draw()
         {
           int whichImage = (frameCount/animSpeed)%2;
-          if (! isAlive) {
+          if (! isActive) {
             tint(255, 64);  // <-- faded out
             image(img1, x, y, size, size);
           } else {
-            if (whichImage == 1) {  // <-- only waves if isAlive
+            if (whichImage == 1) {  // <-- only waves if isActive
               image(img1, x, y, size, size);
             } else {
               image(img2, x, y, size, size);
@@ -787,7 +787,7 @@ So let's display it in a grey colour, and stop it waving and moving, based on th
       
         void move()
         {
-          if (isAlive) {  // <-- only moves if isAlive
+          if (isActive) {  // <-- only moves if isActive
             x+= speed;
           }
         }
@@ -800,8 +800,8 @@ So let's display it in a grey colour, and stop it waving and moving, based on th
   <img class="invader" src="https://jsndyks.github.io/cityBootCamp/html/invader/gif/invader.step12.gif" width=125/>
 </div>
 
-<h3>Step 12. Add a Mouse Interaction to Make Your Invader Not Alive</h3>
-<p>Change the <code>checkForMouse</code> method in your Invader class so that if the mouse is on the Invader and <code>mousePressed</code> is <code>true</code>, your Invader is no longer alive!<br/>
+<h3>Step 12. Add a Mouse Interaction to Make Your Invader Not Active</h3>
+<p>Change the <code>checkForMouse</code> method in your Invader class so that if the mouse is on the Invader and <code>mousePressed</code> is <code>true</code>, your Invader is no longer active!<br/>
   You remember the <code><a href="https://processing.org/reference/mousePressed.html">mousePressed</a></code> variable that <i>Processing</i> stores?</p>
 
   <p>Can you work out where to add the following code in your Invader class?<br/>Which method would this work in?<br/>Where do you need to put it to change the status if the Invader if the mouse is pressed when it is on the Invader?</p>
@@ -809,14 +809,14 @@ So let's display it in a grey colour, and stop it waving and moving, based on th
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18]">
   if (mousePressed) {
     tint(255, 0, 0);
-    isAlive = false;
+    isActive = false;
   }
 </pre>
 
 
     <!-- Hidden code button -->
 <hr class="solutionButton"/>
-        <span class="showSolutionButton">&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - Where would you put the code that changes the <code>isAlive</code> state of an Invader?</span>
+        <span class="showSolutionButton">&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - Where would you put the code that changes the <code>isActive</code> state of an Invader?</span>
     <div class="prettyprint" style="display: none;">
       <pre class="brush: processing; gutter: false; toolbar: false; highlight: [7,8,9,10,11]">
         void checkForMouse()
@@ -825,11 +825,11 @@ So let's display it in a grey colour, and stop it waving and moving, based on th
             // -- mouse is in image:
             tint(180, 200, 255);
 
-            // -- put it here so that isAlive changes if the mouse is pressed and the mouse is on the Invader:
+            // -- put it here so that isActive changes if the mouse is pressed and the mouse is on the Invader:
             if (mousePressed) {
               // -- mouse button is pressed - and mouse is within Invader - so change the status:
               tint(255, 0, 0);
-              isAlive = false;
+              isActive = false;
               //score ++;  // <-- add to the score (if you have a 'score' global declared at the top of the sketch and initialised to 0)
             }
           } else {
@@ -1083,7 +1083,7 @@ Declare a global variable at the top of the sketch - an array of Invaders:
       float x, y;                   // <-- Invader position.
       float size, speed;            // <-- Invader size & speed.
       int   animSpeed;              // <-- Invader image animation change speed.
-      boolean isAlive = true;       // <-- Invader status.
+      boolean isActive = true;       // <-- Invader status.
       boolean isKiller = false;     // <-- Is this the killer invader?
     
       // -- Constructor - this is called whenever a new invader is created.
@@ -1100,7 +1100,7 @@ Declare a global variable at the top of the sketch - an array of Invaders:
       void draw()
       {
         int whichImage = (frameCount/animSpeed)%2;
-        if (! isAlive) {
+        if (! isActive) {
           tint(255, 64);
           image(img2, x, y, size, size);
         } else {
@@ -1117,7 +1117,7 @@ Declare a global variable at the top of the sketch - an array of Invaders:
     
       void move()
       {
-        if (isAlive) {
+        if (isActive) {
           x+= speed;
         }
       }
@@ -1143,10 +1143,10 @@ Declare a global variable at the top of the sketch - an array of Invaders:
         if (mouseX> x-size/2 && mouseX< x+size/2 && mouseY> y-size/2 && mouseY< y+size/2) {
           tint(180, 200, 255);
           if (mousePressed && !gameOver) {
-            if (isAlive) {
+            if (isActive) {
               score ++;
             }
-            isAlive = false;
+            isActive = false;
             tint(255, 0, 0);
           }
         } else {
