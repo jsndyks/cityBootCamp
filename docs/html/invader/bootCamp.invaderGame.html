@@ -262,7 +262,8 @@ Remember that <code>tint(255)</code> will produce a regular (untinted) image, as
 </div>
 
 <h3>Step 4. Make a Simple Class - Invader</h3>
-<p>We are going to step back a little now and create a <b>class</b> for space invaders 👾 that will define their characteristics and behaviour.</p>
+<p>We are going to step back a little now and ...</p>
+<p class="stepTask">... create a <b>class</b> for space invaders 👾 that will define their characteristics and behaviour.</p>
 <p>Create a new tab called '<b>Invader</b>' and add the following rudimentary code to define the class.<br/>The Invader has <i>five fields</i> - variables that are available to all methods in the class.<br/>You will need to fill in the gaps in the constructor to set these fields from the arguments that are passed into the class when the Invader is initialised</p>
 <p>So your class should take <em>5 parameters</em> defining any new Invader's ...</p>
 <ul>
@@ -336,6 +337,7 @@ Remember that <code>tint(255)</code> will produce a regular (untinted) image, as
 </div>
 
 <h3>Step 5. Add a draw() Method to the Invader Class</h3>
+<p class="stepTask">Add a <code>draw()</code> method to draw the Invader.</p>
 <p>OK - but we want to see the Invader! So we need to draw it.</p>
 <p>Add a <code>draw()</code> method to the Invader class, under the constructor.<br/>
   This will allow us to display any Invader that we create when it is called.</p>
@@ -400,10 +402,11 @@ Remember that <code>tint(255)</code> will produce a regular (untinted) image, as
 </div>
 
 <h3>Step 6. Declare, Instantiate and Draw Invaders</h3>
+<p class="stepTask">Create and draw three Invaders.</p>
 <p>OK - at last, we have an <code>Invader</code> class that will enable us to declare and instantiate <code>Invader</code> objects that have (some of) the characteristics of Space Invaders! So let's declare, instantiate and draw three Invaders!</p>
 <p>This may seem like a lot of work for a little gain right now, but we will reap the rewards later when it becomes easy to create many Invaders ... should we need them.</p>
 
-<pre class="brush: processing; gutter: false; toolbar: false; highlight: [3, 20,21,22, 38,39]">
+<pre class="brush: processing; gutter: false; toolbar: false; highlight: [3, 20,21,22, 39,40]">
   PImage img1, img2;
  
   Invader spaceInvader1, spaceInvader2, spaceInvader3; // <-- declare Invaders called spaceInvader1, 2 and 3
@@ -451,7 +454,7 @@ Remember that <code>tint(255)</code> will produce a regular (untinted) image, as
 <hr class="solutionButton"/>
         <span class="showSolutionButton">&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - How do you call the <code>draw()</code> method that you have just written to draw an Invader!</span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [15,16,17]">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [18,16,17]">
         void draw() {
           background(255);
         
@@ -482,6 +485,7 @@ Remember that <code>tint(255)</code> will produce a regular (untinted) image, as
 <h3>Step 7. Add an Interaction Method to the Invader Class</h3>
 <p>You may have noticed above that our interaction is no longer reliable!<br/>
   We need to add a <code>checkForMouse()</code> method to the Invader class that changes the colour of each invader instance when the mouse is over it. So we can get rid of the legacy '<i>check mouse position</i>' code from the main <code>draw()</code> loop, but use this as the basis for developing a method in Invader.</p>
+  <p class="stepTask">Add a method to the Invader class that checks whether the mouse is over the Invader and changes the colour if so.</p>
 <p>You should be able to use the code from <b>Step 3.</b> above, and adapt this to create a method that checks whether the mouse is in the invader in the Invader class.</p>
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [3,4,5]">
@@ -544,6 +548,7 @@ Remember that <code>tint(255)</code> will produce a regular (untinted) image, as
 
 <h3>Step 8. Add Animation - Make your Invaders Wave in a Threatening Manner!</h3>
 
+<p class="stepTask">Like it says : add animation to make your Invaders wave!</p>
 <p>The reason that we have two <code>PImage</code>s in the sketch is so that we can vary what is drawn in the Invader's <code>draw()</code> method.
   If we change the image that is drawn over time then we can animate it.</p>
 Update the <code>draw()</code> method in the Invader class to change the image depending upon a combination of <code>frameCount</code> and <code>animSpeed</code> so that the image switching is faster when <code>animSpeed</code> is higher.
@@ -603,7 +608,7 @@ Update the <code>draw()</code> method in the Invader class to change the image d
 </div>
 
 <h3>Step 9. Make your Invader Move Across The Screen!</h3>
-<p>Add a <code>move()</code> method to the Invader class that changes the Invader's <code>x</code> position by <code>speed</code>.</p>
+<p class="stepTask">Add a <code>move()</code> method to the Invader class that changes the Invader's <code>x</code> position by <code>speed</code>.</p>
 <p>Update the sketch to <code>move()</code> the Invader each time the main <code>draw()</code> loop runs.</p>
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [4]">
@@ -656,8 +661,9 @@ spaceInvader3 = new Invader (x, y+30, size, -1, 35); // <-- instantiate the thir
 
 <h3>Step 10. Make your Invaders Stay on The Screen!</h3>
 <p>Hang on - we lost out Invaders there!<br/>We need them to stay on the screen, so add a method to the Invader class that will change the direction of travel when the Invader reaches the screen edge.</p>
+<p class="stepTask">Stop the Invaders from moving off the screen with a <code>checkForEdge()</code> method in the Invader that is called in the <code>draw()</code> loop.</p>
 <p>A good way to do this is to add a <code>checkForEdge()</code> method to the Invader class and call this in the main <code>draw()</code> method before you <code>draw()</code> the Invader.<br/>
-The  <code>checkForEdge()</code> method should change the speed to the <i>negative</i> of the current speed if the Invader is at an edge - this will effectively make it change direction: <code>speed = speed * -1</code>.</p>
+The <code>checkForEdge()</code> method should change the speed to the <i>negative</i> of the current speed if the Invader is at an edge - this will effectively make it change direction: <code>speed = speed * -1</code>.</p>
 <p>Update the sketch to <code>checkForEdge()</code> after the Invader <code>move()</code>s in the main <code>draw()</code> loop.</p>
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [3]">
