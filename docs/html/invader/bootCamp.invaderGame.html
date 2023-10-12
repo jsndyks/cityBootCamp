@@ -158,7 +158,7 @@ Initialise them in the <code>setup()</code> method of the sketch to contain thes
 <hr class="solutionButton"/>
     <span class="showSolutionButton">&nbsp;<a href="#" class="link-show-code">&nbsp;Show Solution&nbsp;</a> 👈 <b>But Have a Try First!</b> - How do we load a <code>PImage</code> and show it on the canvas?</span>
     <div class="prettyprint" style="display: none;">
-      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [7,8,20,21]">
+      <pre class="brush: processing; gutter: false; toolbar: false; highlight: [7,8,21,22]">
         PImage img1, img2;
 
         void setup() {
@@ -175,6 +175,7 @@ Initialise them in the <code>setup()</code> method of the sketch to contain thes
           background(255);
         
           // -- show the frameCount (small, near the top):
+          fill(32);
           text(frameCount, width-40, 12);
         
           // -- use image() to draw the images here
@@ -190,14 +191,14 @@ Initialise them in the <code>setup()</code> method of the sketch to contain thes
 </div>
 
 <h3>Step 3. Add an Interaction</h3>
+<p class="stepTask">Add an interaction to one image so that it is a different colour when the mouse is over it.</p>
 <p>Remove one of the images!<br/>
   Make the image position and size of the remaining image dependent upon three global variables.<br/>
   These should be declared at the top of your sketch before the <code>setup()</code> method:
   <code>xI</code>, <code>yI</code> and <code>sI</code> for the x and y positions, and size of the invader respectively.</p>
-<p>
-  Add an interaction to this image so that it is a different colour when the mouse is over it.<br/>
+  <p>Check whether the mouse is over the image.<br/>
   Use <code><a href="https://processing.org/reference/tint_.html">tint()</a></code> to change the colour of the image if so.<br/>
-<code>tint(255)</code> will produce a regular (untinted) image, as will <code><a href="https://processing.org/reference/noTint_.html">noTint()</a></code>.</p>
+Remember that <code>tint(255)</code> will produce a regular (untinted) image, as will <code><a href="https://processing.org/reference/noTint_.html">noTint()</a></code>.</p>
 
 <pre class="brush: processing; gutter: false; toolbar: false; highlight: [25,26]">
   PImage img1, img2;
@@ -220,12 +221,13 @@ Initialise them in the <code>setup()</code> method of the sketch to contain thes
   void draw() {
     background(255);
   
-    // -- change the image:
+    // -- show the frameCount (small, near the top):
     fill(32);
     text(frameCount, width-40, 12);
   
     // -- check mouse position - is it inside the invader?
     if (true) // &lt;-- add the condition to check whether the mouse is over the image
+    {
       tint(180, 200, 255);  // &lt;-- blue tint
     } else {
       tint(255); // &lt;-- no tint
@@ -244,7 +246,7 @@ Initialise them in the <code>setup()</code> method of the sketch to contain thes
       <pre class="brush: processing; gutter: false; toolbar: false; highlight: [3]">
           // -- check mouse position - remember that the invader is centred on xI and yI because of imageMode(CENTER)!
 
-          if (mouseX&gt; xI-sI/2 && mouseX&lt; xI+sI/2 && mouseY&gt; yI-sI/2 && mouseY&lt; yI+sI/2) {
+          if (mouseX&gt; xI-sI/2 && mouseX&lt; xI+sI/2 && mouseY&gt; yI-sI/2 && mouseY&lt; yI+sI/2) 
             {
               tint(180, 200, 255);  // <-- blue tint
             } else {
