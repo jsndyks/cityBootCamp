@@ -41,6 +41,8 @@
      hr.solutionButton {width:60%;margin-top:3em;padding-top:1em; color:#d0d0d0}
      .link-show-code {margin-top:2em;padding-top:1em; padding-bottom:1em;border-top:dashed #e0e0e0 1px}
      .showSolutionButton {padding-bottom:2em;}
+     .stepTask {padding:0.5em; color:#a04040; background-color:#fff0f0}
+     h3 {margin-top:2.5em; color:#a04040;}
     </style>
 </head>
 
@@ -70,7 +72,7 @@
     </div>
 
     <h3>Step 1. Show the FrameCount</h3>
-    <p>Make a simple sketch that shows the <code><a href="https://processing.org/reference/frameCount.html">frameCount</a></code> on a canvas of <code><a href="https://processing.org/reference/size_.html">size()</a></code> <b>200 x 200</b>.</p>
+    <p class="stepTask">Make a simple sketch that shows the <code><a href="https://processing.org/reference/frameCount.html">frameCount</a></code> on a canvas of <code><a href="https://processing.org/reference/size_.html">size()</a></code> <b>200 x 200</b>.</p>
     <p>Use the <code><a href="https://processing.org/reference/text_.html">text()</a></code> method to do so - it takes three parameters that specify:
       <br/>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;the text String to show on the canvas, and then the x and y positions at which to display the text: 
     <code>text(string, x, y)</code></p>
@@ -119,8 +121,9 @@
 </div>
 
 <h3>Step 2. Add Two Images</h3>
-<p>Declare two <code>PImage</code>s as global variables.</p>
-<p>Initialise them in the <code>setup()</code> method of the sketch to contain these these two images from the following URLs, or from your local filespace.</p>
+<p class="stepTask">Declare, initialise and display two <code>PImage</code>s.</p>
+<p>Declare the two <code>PImage</code>s as global variables.<br/>
+Initialise them in the <code>setup()</code> method of the sketch to contain these these two images loaded from the following URLs, or from your local filespace.</p>
 <ul>
   <li><a href="https://jsndyks.github.io/cityBootCamp/images/invader11.up.png">https://jsndyks.github.io/cityBootCamp/images/invader11.up.png</a></li>
   <li><a href="https://jsndyks.github.io/cityBootCamp/images/invader11.down.png">https://jsndyks.github.io/cityBootCamp/images/invader11.down.png</a></li>
