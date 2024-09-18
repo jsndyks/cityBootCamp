@@ -26,4 +26,6 @@ We are calling this: **CreativeCoding**
 - have some space to do some [fun stuff, creative thinking]
 - learn to learn / develop your journey
 
+##### Schedule
+
 <img src="img/creativeCoding.2024.schedule.v5.png" width="80%" style="margin-left:10%; margin-right:10%"/>
