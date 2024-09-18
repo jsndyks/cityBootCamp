@@ -22,8 +22,8 @@ We are calling this: **CreativeCoding**
 ##### Opportunities
 
 - get to know your personal tutor
-- receive a personal mini-reference
+- receive a personal mini-reference on your _Creativity_ &amp; _Analytical Thinking_
 - have some space to do some [fun stuff, creative thinking]
-- learn to learn
+- learn to learn / develop your journay
 
 <img src="img/creativeCoding.2024.schedule.v4.png" width="80%" style="margin-left:10%; margin-right:10%"/>
